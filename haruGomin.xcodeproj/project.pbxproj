@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04DA2E706C5F58E01D6934BE /* Pods_haruGomin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F612E390C7B06EC3EBE00E /* Pods_haruGomin.framework */; };
+		FF6FCEB224F6BF2100451815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEB124F6BF2100451815 /* AppDelegate.swift */; };
+		FF6FCEB424F6BF2100451815 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEB324F6BF2100451815 /* SceneDelegate.swift */; };
+		FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEB524F6BF2100451815 /* ViewController.swift */; };
+		FF6FCEB924F6BF2100451815 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6FCEB724F6BF2100451815 /* Main.storyboard */; };
+		FF6FCEBC24F6BF2100451815 /* haruGomin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEBA24F6BF2100451815 /* haruGomin.xcdatamodeld */; };
+		FF6FCEBE24F6BF2200451815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF6FCEBD24F6BF2200451815 /* Assets.xcassets */; };
+		FF6FCEC124F6BF2200451815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6FCEBF24F6BF2200451815 /* LaunchScreen.storyboard */; };
+		FF6FCECB24F6BF3D00451815 /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEC924F6BF3D00451815 /* logInViewController.swift */; };
+		FF6FCECC24F6BF3D00451815 /* logInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF6FCECA24F6BF3D00451815 /* logInViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1E82307EA5C4B6C7E6375768 /* Pods-haruGomin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-haruGomin.release.xcconfig"; path = "Target Support Files/Pods-haruGomin/Pods-haruGomin.release.xcconfig"; sourceTree = "<group>"; };
+		A7FC68437CA99C1233C92595 /* Pods-haruGomin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-haruGomin.debug.xcconfig"; path = "Target Support Files/Pods-haruGomin/Pods-haruGomin.debug.xcconfig"; sourceTree = "<group>"; };
+		C6F612E390C7B06EC3EBE00E /* Pods_haruGomin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_haruGomin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF6FCEAE24F6BF2100451815 /* haruGomin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = haruGomin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF6FCEB124F6BF2100451815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FF6FCEB324F6BF2100451815 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FF6FCEB524F6BF2100451815 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF6FCEB824F6BF2100451815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FF6FCEBB24F6BF2100451815 /* haruGomin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = haruGomin.xcdatamodel; sourceTree = "<group>"; };
+		FF6FCEBD24F6BF2200451815 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF6FCEC024F6BF2200451815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF6FCEC224F6BF2200451815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF6FCEC924F6BF3D00451815 /* logInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
+		FF6FCECA24F6BF3D00451815 /* logInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = logInViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF6FCEAB24F6BF2100451815 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DA2E706C5F58E01D6934BE /* Pods_haruGomin.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A482F9C7DB694DB8297D9AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7FC68437CA99C1233C92595 /* Pods-haruGomin.debug.xcconfig */,
+				1E82307EA5C4B6C7E6375768 /* Pods-haruGomin.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C711842A9DEF634D4744DDE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6F612E390C7B06EC3EBE00E /* Pods_haruGomin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF6FCEA524F6BF2100451815 = {
+			isa = PBXGroup;
+			children = (
+				FF6FCEB024F6BF2100451815 /* haruGomin */,
+				FF6FCEAF24F6BF2100451815 /* Products */,
+				1A482F9C7DB694DB8297D9AC /* Pods */,
+				C711842A9DEF634D4744DDE0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FF6FCEAF24F6BF2100451815 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF6FCEAE24F6BF2100451815 /* haruGomin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF6FCEB024F6BF2100451815 /* haruGomin */ = {
+			isa = PBXGroup;
+			children = (
+				FF6FCEC824F6BF2F00451815 /* logIn */,
+				FF6FCEB124F6BF2100451815 /* AppDelegate.swift */,
+				FF6FCEB324F6BF2100451815 /* SceneDelegate.swift */,
+				FF6FCEB524F6BF2100451815 /* ViewController.swift */,
+				FF6FCEB724F6BF2100451815 /* Main.storyboard */,
+				FF6FCEBD24F6BF2200451815 /* Assets.xcassets */,
+				FF6FCEBF24F6BF2200451815 /* LaunchScreen.storyboard */,
+				FF6FCEC224F6BF2200451815 /* Info.plist */,
+				FF6FCEBA24F6BF2100451815 /* haruGomin.xcdatamodeld */,
+			);
+			path = haruGomin;
+			sourceTree = "<group>";
+		};
+		FF6FCEC824F6BF2F00451815 /* logIn */ = {
+			isa = PBXGroup;
+			children = (
+				FF6FCEC924F6BF3D00451815 /* logInViewController.swift */,
+				FF6FCECA24F6BF3D00451815 /* logInViewController.xib */,
+			);
+			path = logIn;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF6FCEAD24F6BF2100451815 /* haruGomin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF6FCEC524F6BF2200451815 /* Build configuration list for PBXNativeTarget "haruGomin" */;
+			buildPhases = (
+				26D20292803FD5A28F21612F /* [CP] Check Pods Manifest.lock */,
+				FF6FCEAA24F6BF2100451815 /* Sources */,
+				FF6FCEAB24F6BF2100451815 /* Frameworks */,
+				FF6FCEAC24F6BF2100451815 /* Resources */,
+				8BD488E96A3E0C5434955E51 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = haruGomin;
+			productName = haruGomin;
+			productReference = FF6FCEAE24F6BF2100451815 /* haruGomin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF6FCEA624F6BF2100451815 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "이진하";
+				TargetAttributes = {
+					FF6FCEAD24F6BF2100451815 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = FF6FCEA924F6BF2100451815 /* Build configuration list for PBXProject "haruGomin" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF6FCEA524F6BF2100451815;
+			productRefGroup = FF6FCEAF24F6BF2100451815 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF6FCEAD24F6BF2100451815 /* haruGomin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF6FCEAC24F6BF2100451815 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF6FCECC24F6BF3D00451815 /* logInViewController.xib in Resources */,
+				FF6FCEC124F6BF2200451815 /* LaunchScreen.storyboard in Resources */,
+				FF6FCEBE24F6BF2200451815 /* Assets.xcassets in Resources */,
+				FF6FCEB924F6BF2100451815 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26D20292803FD5A28F21612F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-haruGomin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BD488E96A3E0C5434955E51 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-haruGomin/Pods-haruGomin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-haruGomin/Pods-haruGomin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-haruGomin/Pods-haruGomin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF6FCEAA24F6BF2100451815 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF6FCEBC24F6BF2100451815 /* haruGomin.xcdatamodeld in Sources */,
+				FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */,
+				FF6FCEB224F6BF2100451815 /* AppDelegate.swift in Sources */,
+				FF6FCEB424F6BF2100451815 /* SceneDelegate.swift in Sources */,
+				FF6FCECB24F6BF3D00451815 /* logInViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FF6FCEB724F6BF2100451815 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF6FCEB824F6BF2100451815 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FF6FCEBF24F6BF2200451815 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF6FCEC024F6BF2200451815 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF6FCEC324F6BF2200451815 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF6FCEC424F6BF2200451815 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF6FCEC624F6BF2200451815 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7FC68437CA99C1233C92595 /* Pods-haruGomin.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3L398A7UTZ;
+				INFOPLIST_FILE = haruGomin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.makeus.ios.haruGomin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF6FCEC724F6BF2200451815 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E82307EA5C4B6C7E6375768 /* Pods-haruGomin.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3L398A7UTZ;
+				INFOPLIST_FILE = haruGomin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.makeus.ios.haruGomin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF6FCEA924F6BF2100451815 /* Build configuration list for PBXProject "haruGomin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF6FCEC324F6BF2200451815 /* Debug */,
+				FF6FCEC424F6BF2200451815 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF6FCEC524F6BF2200451815 /* Build configuration list for PBXNativeTarget "haruGomin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF6FCEC624F6BF2200451815 /* Debug */,
+				FF6FCEC724F6BF2200451815 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FF6FCEBA24F6BF2100451815 /* haruGomin.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FF6FCEBB24F6BF2100451815 /* haruGomin.xcdatamodel */,
+			);
+			currentVersion = FF6FCEBB24F6BF2100451815 /* haruGomin.xcdatamodel */;
+			path = haruGomin.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FF6FCEA624F6BF2100451815 /* Project object */;
+}

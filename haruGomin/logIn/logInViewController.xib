@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -9,6 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="logInViewController" customModule="haruGomin" customModuleProvider="target">
             <connections>
+                <outlet property="kakaoBtn" destination="6PZ-NR-jw3" id="IVO-u3-ZGI"/>
+                <outlet property="naverBtn" destination="jnl-VK-sNu" id="cLL-Lh-5yY"/>
+                <outlet property="text1" destination="pJv-ek-pqP" id="GSs-nY-T1k"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,14 +21,56 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PZ-NR-jw3">
-                    <rect key="frame" x="184" y="433" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
+                    <rect key="frame" x="20" y="298" width="374" height="52"/>
+                    <color key="backgroundColor" red="0.96277731659999999" green="0.4970326424" blue="0.57254827019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="Vjr-kT-TpM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <state key="normal" title="카카오로 로그인하기">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnl-VK-sNu">
+                    <rect key="frame" x="20" y="362" width="374" height="52"/>
+                    <color key="backgroundColor" red="0.61221651310000003" green="0.78598279910000002" blue="0.42373228800000001" alpha="0.92628959759999996" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="AG1-Mi-mcB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <state key="normal" title="네이버로 로그인하기">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="naverLogin:" destination="-1" eventType="touchUpInside" id="mj3-GB-RQy"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다음에 할래요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJv-ek-pqP">
+                    <rect key="frame" x="168.5" y="473" width="77" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gub-uS-edt">
+                    <rect key="frame" x="20" y="258" width="47" height="22"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="6PZ-NR-jw3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="MGz-D2-za1"/>
-                <constraint firstItem="6PZ-NR-jw3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="XJj-26-4sD"/>
+                <constraint firstItem="pJv-ek-pqP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1Hr-sg-yY0"/>
+                <constraint firstItem="pJv-ek-pqP" firstAttribute="top" secondItem="jnl-VK-sNu" secondAttribute="bottom" constant="59" id="4oP-pf-5Ms"/>
+                <constraint firstItem="jnl-VK-sNu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="A7e-0m-bf2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="gub-uS-edt" secondAttribute="trailing" constant="347" id="I2Y-Oh-4u6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6PZ-NR-jw3" secondAttribute="trailing" constant="20" id="IAj-Et-404"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jnl-VK-sNu" secondAttribute="trailing" constant="20" id="PYk-Aw-FT8"/>
+                <constraint firstItem="gub-uS-edt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Vfv-mm-ZCS"/>
+                <constraint firstItem="jnl-VK-sNu" firstAttribute="top" secondItem="6PZ-NR-jw3" secondAttribute="bottom" constant="12" id="gQr-8k-kUo"/>
+                <constraint firstItem="6PZ-NR-jw3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="254" id="lSx-s1-KG6"/>
+                <constraint firstItem="6PZ-NR-jw3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="tK9-2X-2kE"/>
+                <constraint firstItem="6PZ-NR-jw3" firstAttribute="top" secondItem="gub-uS-edt" secondAttribute="bottom" constant="18" id="yE7-L5-uFh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="153"/>

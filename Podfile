@@ -6,10 +6,10 @@ target 'haruGomin' do
   use_frameworks!
 
   # Pods for haruGomin
-  pod 'KakaoSDKCommon'
+
   pod 'KakaoSDKAuth'
   pod 'KakaoSDKUser'
-  pod 'KakaoSDKTalk'
-  pod 'RxKakaoSDK', '~> 2.0.0-beta.3'
+  pod 'naveridlogin-sdk-ios'
+
 
 end

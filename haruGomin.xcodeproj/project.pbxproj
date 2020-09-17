@@ -16,6 +16,7 @@
 		FF6FCEC124F6BF2200451815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6FCEBF24F6BF2200451815 /* LaunchScreen.storyboard */; };
 		FF6FCECB24F6BF3D00451815 /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEC924F6BF3D00451815 /* logInViewController.swift */; };
 		FF6FCECC24F6BF3D00451815 /* logInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF6FCECA24F6BF3D00451815 /* logInViewController.xib */; };
+		FF8E27392513A8BC00531E40 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E27382513A8BC00531E40 /* UITextField.swift */; };
 		FF993E22250BDDFA00E67251 /* colorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF993E21250BDDFA00E67251 /* colorPalette.swift */; };
 		FF993E26250BE55000E67251 /* setProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF993E24250BE55000E67251 /* setProfileViewController.swift */; };
 		FF993E27250BE55000E67251 /* setProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF993E25250BE55000E67251 /* setProfileViewController.xib */; };
@@ -35,6 +36,7 @@
 		FF6FCEC224F6BF2200451815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF6FCEC924F6BF3D00451815 /* logInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		FF6FCECA24F6BF3D00451815 /* logInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = logInViewController.xib; sourceTree = "<group>"; };
+		FF8E27382513A8BC00531E40 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		FF993E21250BDDFA00E67251 /* colorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorPalette.swift; sourceTree = "<group>"; };
 		FF993E24250BE55000E67251 /* setProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setProfileViewController.swift; sourceTree = "<group>"; };
 		FF993E25250BE55000E67251 /* setProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = setProfileViewController.xib; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				FF993E21250BDDFA00E67251 /* colorPalette.swift */,
+				FF8E27382513A8BC00531E40 /* UITextField.swift */,
 			);
 			path = config;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				FF6FCEBC24F6BF2100451815 /* haruGomin.xcdatamodeld in Sources */,
 				FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */,
 				FF6FCEB224F6BF2100451815 /* AppDelegate.swift in Sources */,
+				FF8E27392513A8BC00531E40 /* UITextField.swift in Sources */,
 				FF6FCEB424F6BF2100451815 /* SceneDelegate.swift in Sources */,
 				FF6FCECB24F6BF3D00451815 /* logInViewController.swift in Sources */,
 				FF993E26250BE55000E67251 /* setProfileViewController.swift in Sources */,

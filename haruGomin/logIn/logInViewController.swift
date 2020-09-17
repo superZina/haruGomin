@@ -27,13 +27,15 @@ class logInViewController: UIViewController{
     }
     
     @IBAction func kakaoLogin(_ sender: Any) {
-        AuthApi.shared.loginWithKakaoAccount { (oauthToken, error) in
-            if let error = error {
-                print(error)
-            }else {
-                print("login with kakao is success.")
-            }
-        }
+        let setprofileVC = setProfileViewController()
+        self.navigationController?.pushViewController(setprofileVC, animated: true)
+//        AuthApi.shared.loginWithKakaoAccount { (oauthToken, error) in
+//            if let error = error {
+//                print(error)
+//            }else {
+//                print("login with kakao is success.")
+//            }
+//        }
     }
     
     override func viewDidLoad() {

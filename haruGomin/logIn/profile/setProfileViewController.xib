@@ -1,22 +1,100 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="setProfileViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="setProfileViewController" customModule="haruGomin" customModuleProvider="target">
             <connections>
+                <outlet property="age" destination="Jzb-Ri-BZC" id="gfY-6E-TTU"/>
+                <outlet property="nextBtn" destination="lXN-EQ-JH8" id="Itc-Ie-UtR"/>
+                <outlet property="nickName" destination="VQa-0K-tee" id="Ag8-kB-PBX"/>
+                <outlet property="profileImg" destination="WKE-4j-61Z" id="mCT-BS-3ee"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-0K-tee">
+                    <rect key="frame" x="20" y="246" width="374" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="jXh-Yv-JfC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2u-Ft-vpm">
+                    <rect key="frame" x="20" y="208" width="47" height="22"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="연령을 선택해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jzb-Ri-BZC">
+                    <rect key="frame" x="20" y="392" width="374" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="1T8-eh-bUA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연령" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DL-au-g76">
+                    <rect key="frame" x="20" y="354" width="31.5" height="22"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXN-EQ-JH8">
+                    <rect key="frame" x="20" y="794" width="374" height="48"/>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="mQM-hG-vFU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="다음">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKE-4j-61Z">
+                    <rect key="frame" x="157" y="84" width="100" height="100"/>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Wii-hK-77v"/>
+                        <constraint firstAttribute="width" constant="100" id="nLy-Ss-oEC"/>
+                    </constraints>
+                    <connections>
+                        <action selector="selectImg:" destination="-1" eventType="touchUpInside" id="jOM-ho-GLv"/>
+                    </connections>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lXN-EQ-JH8" secondAttribute="bottom" constant="20" id="0fL-Z5-I2Y"/>
+                <constraint firstItem="5DL-au-g76" firstAttribute="top" secondItem="VQa-0K-tee" secondAttribute="bottom" constant="60" id="8C8-7d-20b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VQa-0K-tee" secondAttribute="trailing" constant="20" id="CY6-Ld-gzF"/>
+                <constraint firstItem="VQa-0K-tee" firstAttribute="top" secondItem="t2u-Ft-vpm" secondAttribute="bottom" constant="16" id="HpH-pO-hOf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="t2u-Ft-vpm" secondAttribute="trailing" constant="347" id="JP7-TU-0qN"/>
+                <constraint firstItem="WKE-4j-61Z" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="Ku5-kS-k7P"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jzb-Ri-BZC" secondAttribute="trailing" constant="20" id="MhB-M1-6Kl"/>
+                <constraint firstItem="WKE-4j-61Z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P9a-So-LfG"/>
+                <constraint firstItem="Jzb-Ri-BZC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Rie-jv-Mcm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lXN-EQ-JH8" secondAttribute="trailing" constant="20" id="Use-ML-Sy0"/>
+                <constraint firstItem="5DL-au-g76" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="aO2-zS-KGF"/>
+                <constraint firstItem="VQa-0K-tee" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="202" id="bWa-NA-CGM"/>
+                <constraint firstItem="Jzb-Ri-BZC" firstAttribute="top" secondItem="5DL-au-g76" secondAttribute="bottom" constant="16" id="esS-Sl-7kG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="5DL-au-g76" secondAttribute="trailing" constant="362.5" id="ggR-Fp-3gE"/>
+                <constraint firstItem="t2u-Ft-vpm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="qkc-3F-dSX"/>
+                <constraint firstItem="lXN-EQ-JH8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="vSY-41-3E6"/>
+                <constraint firstItem="VQa-0K-tee" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="x0r-fP-Vfj"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="100"/>
         </view>
     </objects>
 </document>

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="selectGominViewController" customModule="haruGomin" customModuleProvider="target">
             <connections>
+                <outlet property="gominCollection" destination="H7x-4h-Jsv" id="H85-wJ-g97"/>
                 <outlet property="infoView" destination="y0B-Xm-gyX" id="CDF-aX-tuP"/>
                 <outlet property="nextBtn" destination="bFb-w8-DGp" id="D3v-aj-WJo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -59,11 +60,27 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="H7x-4h-Jsv">
+                    <rect key="frame" x="20" y="244" width="374" height="160"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="0Q2-mP-wGk"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HZi-kS-d4j">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="H7x-4h-Jsv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="1yM-K3-Ju4"/>
+                <constraint firstItem="H7x-4h-Jsv" firstAttribute="top" secondItem="y0B-Xm-gyX" secondAttribute="bottom" constant="64" id="7vJ-ha-GKH"/>
                 <constraint firstItem="bFb-w8-DGp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ION-a7-PTb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="H7x-4h-Jsv" secondAttribute="trailing" constant="20" id="Mrq-Cv-oe7"/>
                 <constraint firstItem="y0B-Xm-gyX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RCA-Bs-qHr"/>
                 <constraint firstItem="y0B-Xm-gyX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="doi-qV-NgG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bFb-w8-DGp" secondAttribute="bottom" constant="20" id="f23-5d-YvW"/>

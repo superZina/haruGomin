@@ -8,40 +8,83 @@
 
 import UIKit
 
-class selectGominViewController: UIViewController {
-
+class selectGominViewController: UIViewController, UICollectionViewDataSource {
+    
+    @IBOutlet weak var gominCollection: UICollectionView!
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var nextBtn: UIButton!
-    var btnText:[String] = ["1","1","1","1","1","1","1","1","1"]
+    var btnText:[String] = ["일상","가족","친구","연애","학교","직장","취업","진로","돈","건강","기혼","육아"]
     var buttons:[UIButton] = []
     override func viewDidLoad() {
+        self.view.backgroundColor = ColorPalette.background
         self.infoView.backgroundColor = ColorPalette.borderGray
+        self.gominCollection.backgroundColor = ColorPalette.background
         super.viewDidLoad()
-        makeBtns()
+        
+        
+        let itemCellNib = UINib(nibName: "CollectionViewCell", bundle: nil)
+        self.gominCollection.register(itemCellNib, forCellWithReuseIdentifier: "gomin")
+        
+        let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        gominCollection.collectionViewLayout = layout
+        self.gominCollection.delegate = self
+        self.gominCollection.dataSource = self
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         nextBtn.layer.cornerRadius = 8
         nextBtn.isEnabled = false
         nextBtn.backgroundColor = ColorPalette.borderGray
     }
-    func makeBtns(){
-        for i in 0...btnText.count - 1 {
-            var btn = UIButton()
-            buttons.append(btn)
-            if i == 0{
-                buttons[i] = UIButton(frame: CGRect(x: 20, y: 200, width: 72, height: 40))
-            }else if i % 4 == 0 && i != 0{
-                buttons[i] = UIButton(frame: CGRect(x: 20, y: buttons[i-4].bounds.maxY + 20, width: 72, height: 40))
-            }else {
-                buttons[i] = UIButton(frame: CGRect(x: buttons[i-1].bounds.maxX + 20, y: buttons[i-1].bounds.minY, width: 72, height: 40))
+    
+    
+    
+}
+extension selectGominViewController:UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.btnText.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = gominCollection.dequeueReusableCell(withReuseIdentifier: "gomin", for: indexPath) as! CollectionViewCell
+        cell.contentView.backgroundColor = .none
+        cell.btn.layer.cornerRadius = 8
+        cell.btn.layer.borderWidth = 1
+        cell.btn.layer.borderColor = ColorPalette.borderGray.cgColor
+        cell.btn.setTitle(btnText[indexPath.item], for: .normal)
+        cell.btn.setTitleColor(ColorPalette.textGray, for: .normal)
+        
+        cell.btn.addTarget(self, action: #selector(selected(sender:)), for: .touchUpInside)
+        return cell
+    }
+    @objc func selected(sender: UIButton){
+        sender.isSelected = !sender.isSelected
+        sender.adjustsImageWhenHighlighted = false;
+        if sender.isSelected {
+            sender.layer.borderColor = ColorPalette.hagoRed.cgColor
+            sender.setTitleColor(ColorPalette.hagoRed, for: .normal)
+            buttons.append(sender)
+        }else {
+            sender.layer.borderColor = ColorPalette.borderGray.cgColor
+            sender.setTitleColor(ColorPalette.textGray, for: .normal)
+            for i in 0...buttons.count - 1 {
+                if buttons[i] == sender {
+                    buttons.remove(at: i)
+                    break
+                }
             }
-            buttons[i].setTitle(btnText[i], for: .normal)
-            buttons[i].layer.cornerRadius = 8
-            buttons[i].layer.borderWidth = 1
-            buttons[i].layer.borderColor = ColorPalette.borderGray.cgColor
-            self.view.addSubview(buttons[i])
+        }
+        if buttons.count != 0 {
+            self.nextBtn.isEnabled = true
+            self.nextBtn.backgroundColor = ColorPalette.hagoRed
+        }else {
+            self.nextBtn.isEnabled = false
+            self.nextBtn.backgroundColor = ColorPalette.borderGray
         }
     }
-
-
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 72, height: 40)
+    }
+    
+    
 }

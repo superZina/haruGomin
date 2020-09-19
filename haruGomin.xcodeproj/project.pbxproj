@@ -22,6 +22,8 @@
 		FF993E27250BE55000E67251 /* setProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF993E25250BE55000E67251 /* setProfileViewController.xib */; };
 		FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9B7C12516385B0039FB22 /* selectGominViewController.swift */; };
 		FFC9B7C42516385B0039FB22 /* selectGominViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */; };
+		FFE05F28251660600048B56F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE05F26251660600048B56F /* CollectionViewCell.swift */; };
+		FFE05F29251660600048B56F /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFE05F27251660600048B56F /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		FF993E25250BE55000E67251 /* setProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = setProfileViewController.xib; sourceTree = "<group>"; };
 		FFC9B7C12516385B0039FB22 /* selectGominViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectGominViewController.swift; sourceTree = "<group>"; };
 		FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = selectGominViewController.xib; sourceTree = "<group>"; };
+		FFE05F26251660600048B56F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		FFE05F27251660600048B56F /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 			children = (
 				FFC9B7C12516385B0039FB22 /* selectGominViewController.swift */,
 				FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */,
+				FFE05F26251660600048B56F /* CollectionViewCell.swift */,
+				FFE05F27251660600048B56F /* CollectionViewCell.xib */,
 			);
 			path = selectGomin;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 			files = (
 				FF6FCECC24F6BF3D00451815 /* logInViewController.xib in Resources */,
 				FF993E27250BE55000E67251 /* setProfileViewController.xib in Resources */,
+				FFE05F29251660600048B56F /* CollectionViewCell.xib in Resources */,
 				FF6FCEC124F6BF2200451815 /* LaunchScreen.storyboard in Resources */,
 				FF6FCEBE24F6BF2200451815 /* Assets.xcassets in Resources */,
 				FFC9B7C42516385B0039FB22 /* selectGominViewController.xib in Resources */,
@@ -264,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFE05F28251660600048B56F /* CollectionViewCell.swift in Sources */,
 				FF6FCEBC24F6BF2100451815 /* haruGomin.xcdatamodeld in Sources */,
 				FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */,
 				FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */,

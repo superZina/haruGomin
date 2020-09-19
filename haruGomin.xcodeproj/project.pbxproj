@@ -20,6 +20,8 @@
 		FF993E22250BDDFA00E67251 /* colorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF993E21250BDDFA00E67251 /* colorPalette.swift */; };
 		FF993E26250BE55000E67251 /* setProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF993E24250BE55000E67251 /* setProfileViewController.swift */; };
 		FF993E27250BE55000E67251 /* setProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF993E25250BE55000E67251 /* setProfileViewController.xib */; };
+		FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9B7C12516385B0039FB22 /* selectGominViewController.swift */; };
+		FFC9B7C42516385B0039FB22 /* selectGominViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		FF993E21250BDDFA00E67251 /* colorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorPalette.swift; sourceTree = "<group>"; };
 		FF993E24250BE55000E67251 /* setProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setProfileViewController.swift; sourceTree = "<group>"; };
 		FF993E25250BE55000E67251 /* setProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = setProfileViewController.xib; sourceTree = "<group>"; };
+		FFC9B7C12516385B0039FB22 /* selectGominViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectGominViewController.swift; sourceTree = "<group>"; };
+		FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = selectGominViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		FF6FCEC824F6BF2F00451815 /* logIn */ = {
 			isa = PBXGroup;
 			children = (
+				FFC9B7C0251638460039FB22 /* selectGomin */,
 				FF993E23250BE52600E67251 /* profile */,
 				FF6FCEC924F6BF3D00451815 /* logInViewController.swift */,
 				FF6FCECA24F6BF3D00451815 /* logInViewController.xib */,
@@ -131,6 +136,15 @@
 				FF993E25250BE55000E67251 /* setProfileViewController.xib */,
 			);
 			path = profile;
+			sourceTree = "<group>";
+		};
+		FFC9B7C0251638460039FB22 /* selectGomin */ = {
+			isa = PBXGroup;
+			children = (
+				FFC9B7C12516385B0039FB22 /* selectGominViewController.swift */,
+				FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */,
+			);
+			path = selectGomin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +211,7 @@
 				FF993E27250BE55000E67251 /* setProfileViewController.xib in Resources */,
 				FF6FCEC124F6BF2200451815 /* LaunchScreen.storyboard in Resources */,
 				FF6FCEBE24F6BF2200451815 /* Assets.xcassets in Resources */,
+				FFC9B7C42516385B0039FB22 /* selectGominViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +266,7 @@
 			files = (
 				FF6FCEBC24F6BF2100451815 /* haruGomin.xcdatamodeld in Sources */,
 				FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */,
+				FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */,
 				FF6FCEB224F6BF2100451815 /* AppDelegate.swift in Sources */,
 				FF8E27392513A8BC00531E40 /* UITextField.swift in Sources */,
 				FF6FCEB424F6BF2100451815 /* SceneDelegate.swift in Sources */,

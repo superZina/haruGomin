@@ -24,6 +24,20 @@
 		FFC9B7C42516385B0039FB22 /* selectGominViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */; };
 		FFE05F28251660600048B56F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE05F26251660600048B56F /* CollectionViewCell.swift */; };
 		FFE05F29251660600048B56F /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFE05F27251660600048B56F /* CollectionViewCell.xib */; };
+		FFFA763225185C100008101C /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA763025185C100008101C /* homeViewController.swift */; };
+		FFFA763325185C100008101C /* homeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA763125185C100008101C /* homeViewController.xib */; };
+		FFFA766325188CD70008101C /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA766125188CD70008101C /* tabBarViewController.swift */; };
+		FFFA766425188CD70008101C /* tabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA766225188CD70008101C /* tabBarViewController.xib */; };
+		FFFA76692518959A0008101C /* gominCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA76672518959A0008101C /* gominCollectionViewCell.swift */; };
+		FFFA766A2518959A0008101C /* gominCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA76682518959A0008101C /* gominCollectionViewCell.xib */; };
+		FFFA76702518A5230008101C /* gominImgCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA766E2518A5230008101C /* gominImgCollectionViewCell.swift */; };
+		FFFA76712518A5230008101C /* gominImgCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA766F2518A5230008101C /* gominImgCollectionViewCell.xib */; };
+		FFFA76762518AE530008101C /* detailGominViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA76742518AE530008101C /* detailGominViewController.swift */; };
+		FFFA76772518AE530008101C /* detailGominViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA76752518AE530008101C /* detailGominViewController.xib */; };
+		FFFA767D2518BEF60008101C /* commentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA767B2518BEF60008101C /* commentViewController.swift */; };
+		FFFA767E2518BEF60008101C /* commentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA767C2518BEF60008101C /* commentViewController.xib */; };
+		FFFA76822518EE0F0008101C /* commentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA76802518EE0F0008101C /* commentTableViewCell.swift */; };
+		FFFA76832518EE0F0008101C /* commentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA76812518EE0F0008101C /* commentTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +62,20 @@
 		FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = selectGominViewController.xib; sourceTree = "<group>"; };
 		FFE05F26251660600048B56F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FFE05F27251660600048B56F /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		FFFA763025185C100008101C /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
+		FFFA763125185C100008101C /* homeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = homeViewController.xib; sourceTree = "<group>"; };
+		FFFA766125188CD70008101C /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
+		FFFA766225188CD70008101C /* tabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tabBarViewController.xib; sourceTree = "<group>"; };
+		FFFA76672518959A0008101C /* gominCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gominCollectionViewCell.swift; sourceTree = "<group>"; };
+		FFFA76682518959A0008101C /* gominCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = gominCollectionViewCell.xib; sourceTree = "<group>"; };
+		FFFA766E2518A5230008101C /* gominImgCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gominImgCollectionViewCell.swift; sourceTree = "<group>"; };
+		FFFA766F2518A5230008101C /* gominImgCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = gominImgCollectionViewCell.xib; sourceTree = "<group>"; };
+		FFFA76742518AE530008101C /* detailGominViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailGominViewController.swift; sourceTree = "<group>"; };
+		FFFA76752518AE530008101C /* detailGominViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = detailGominViewController.xib; sourceTree = "<group>"; };
+		FFFA767B2518BEF60008101C /* commentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentViewController.swift; sourceTree = "<group>"; };
+		FFFA767C2518BEF60008101C /* commentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = commentViewController.xib; sourceTree = "<group>"; };
+		FFFA76802518EE0F0008101C /* commentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentTableViewCell.swift; sourceTree = "<group>"; };
+		FFFA76812518EE0F0008101C /* commentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = commentTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +128,8 @@
 		FF6FCEB024F6BF2100451815 /* haruGomin */ = {
 			isa = PBXGroup;
 			children = (
+				FFFA766025188C770008101C /* Main */,
+				FFFA762F25185BEF0008101C /* home */,
 				FF993E20250BDDE300E67251 /* config */,
 				FF6FCEC824F6BF2F00451815 /* logIn */,
 				FF6FCEB124F6BF2100451815 /* AppDelegate.swift */,
@@ -151,6 +181,58 @@
 				FFE05F27251660600048B56F /* CollectionViewCell.xib */,
 			);
 			path = selectGomin;
+			sourceTree = "<group>";
+		};
+		FFFA762F25185BEF0008101C /* home */ = {
+			isa = PBXGroup;
+			children = (
+				FFFA76732518AE3A0008101C /* detail */,
+				FFFA763625185E450008101C /* gomin */,
+				FFFA763025185C100008101C /* homeViewController.swift */,
+				FFFA763125185C100008101C /* homeViewController.xib */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		FFFA763625185E450008101C /* gomin */ = {
+			isa = PBXGroup;
+			children = (
+				FFFA76672518959A0008101C /* gominCollectionViewCell.swift */,
+				FFFA76682518959A0008101C /* gominCollectionViewCell.xib */,
+				FFFA766E2518A5230008101C /* gominImgCollectionViewCell.swift */,
+				FFFA766F2518A5230008101C /* gominImgCollectionViewCell.xib */,
+			);
+			path = gomin;
+			sourceTree = "<group>";
+		};
+		FFFA766025188C770008101C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FFFA766125188CD70008101C /* tabBarViewController.swift */,
+				FFFA766225188CD70008101C /* tabBarViewController.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FFFA76732518AE3A0008101C /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				FFFA767A2518BEE90008101C /* comment */,
+				FFFA76742518AE530008101C /* detailGominViewController.swift */,
+				FFFA76752518AE530008101C /* detailGominViewController.xib */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
+		FFFA767A2518BEE90008101C /* comment */ = {
+			isa = PBXGroup;
+			children = (
+				FFFA767B2518BEF60008101C /* commentViewController.swift */,
+				FFFA767C2518BEF60008101C /* commentViewController.xib */,
+				FFFA76802518EE0F0008101C /* commentTableViewCell.swift */,
+				FFFA76812518EE0F0008101C /* commentTableViewCell.xib */,
+			);
+			path = comment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,10 +296,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF6FCECC24F6BF3D00451815 /* logInViewController.xib in Resources */,
+				FFFA766A2518959A0008101C /* gominCollectionViewCell.xib in Resources */,
+				FFFA766425188CD70008101C /* tabBarViewController.xib in Resources */,
+				FFFA76712518A5230008101C /* gominImgCollectionViewCell.xib in Resources */,
 				FF993E27250BE55000E67251 /* setProfileViewController.xib in Resources */,
 				FFE05F29251660600048B56F /* CollectionViewCell.xib in Resources */,
 				FF6FCEC124F6BF2200451815 /* LaunchScreen.storyboard in Resources */,
+				FFFA763325185C100008101C /* homeViewController.xib in Resources */,
+				FFFA767E2518BEF60008101C /* commentViewController.xib in Resources */,
+				FFFA76832518EE0F0008101C /* commentTableViewCell.xib in Resources */,
 				FF6FCEBE24F6BF2200451815 /* Assets.xcassets in Resources */,
+				FFFA76772518AE530008101C /* detailGominViewController.xib in Resources */,
 				FFC9B7C42516385B0039FB22 /* selectGominViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,8 +368,15 @@
 				FF8E27392513A8BC00531E40 /* UITextField.swift in Sources */,
 				FF6FCEB424F6BF2100451815 /* SceneDelegate.swift in Sources */,
 				FF6FCECB24F6BF3D00451815 /* logInViewController.swift in Sources */,
+				FFFA767D2518BEF60008101C /* commentViewController.swift in Sources */,
+				FFFA763225185C100008101C /* homeViewController.swift in Sources */,
+				FFFA766325188CD70008101C /* tabBarViewController.swift in Sources */,
 				FF993E26250BE55000E67251 /* setProfileViewController.swift in Sources */,
 				FF993E22250BDDFA00E67251 /* colorPalette.swift in Sources */,
+				FFFA76762518AE530008101C /* detailGominViewController.swift in Sources */,
+				FFFA76702518A5230008101C /* gominImgCollectionViewCell.swift in Sources */,
+				FFFA76692518959A0008101C /* gominCollectionViewCell.swift in Sources */,
+				FFFA76822518EE0F0008101C /* commentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

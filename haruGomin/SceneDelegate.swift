@@ -18,10 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         //        guard let _ = (scene as? UIWindowScene) else { return }
         let loginVC = logInViewController()
-        
+        let tabbarVC = tabBarViewController()
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UINavigationController(rootViewController: loginVC)
+            window.rootViewController = UINavigationController(rootViewController: tabbarVC)
             window.rootViewController?.navigationController?.navigationBar.shadowImage = UIImage()
             window.rootViewController?.navigationController?.navigationBar.isTranslucent = false
             window.rootViewController?.navigationController?.navigationBar.barTintColor = .white

@@ -25,11 +25,11 @@ struct ColorPalette {
     // rgb 237 237 237
     static let borderSoft: UInt = 0xededed
     
-    static let background: UIColor = UIColor(red: 48/255, green: 53/255, blue: 67/255, alpha: 1)
-    static let hagoRed: UIColor = UIColor(red: 255/255, green: 73/255, blue: 59/255, alpha: 1)
-    static let darkBackground: UIColor =  UIColor(red: 33/255, green: 37/255, blue: 48/255, alpha: 1)
+    static let background: UIColor = UIColor(red: 59/255, green: 63/255, blue: 81/255, alpha: 1)
+    static let hagoRed: UIColor = UIColor(red: 150/255, green: 137/255, blue: 252/255, alpha: 1)
+    static let darkBackground: UIColor =  UIColor(red: 46/255, green: 48/255, blue: 66/255, alpha: 1)
     static let textGray:UIColor = UIColor(red: 203/255, green: 205/255, blue: 213/255, alpha: 1)
-    static let borderGray:UIColor = UIColor(red: 80/255, green: 84/255, blue: 99/255, alpha: 1)
+    static let borderGray:UIColor = UIColor(red: 83/255, green: 89/255, blue: 116/255, alpha: 1)
 
 }
 

@@ -36,6 +36,13 @@ class selectGominViewController: UIViewController, UICollectionViewDataSource {
         nextBtn.isEnabled = false
         nextBtn.backgroundColor = ColorPalette.borderGray
     }
+    @IBAction func selectAllgomin(_ sender: Any) {
+        
+    }
+    @IBAction func moveNext(_ sender: Any) {
+        let mainVC = tabBarViewController()
+        self.navigationController?.pushViewController(mainVC,animated: true)
+    }
     
     
     

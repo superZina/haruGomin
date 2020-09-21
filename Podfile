@@ -10,6 +10,6 @@ target 'haruGomin' do
   pod 'KakaoSDKAuth'
   pod 'KakaoSDKUser'
   pod 'naveridlogin-sdk-ios'
-
+  pod 'Tabman', '~> 2.9'
 
 end

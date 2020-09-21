@@ -36,7 +36,18 @@ class detailGominViewController: UIViewController {
     @IBOutlet weak var commentTextField: UITextField!
     
     override func viewDidLoad() {
+        
+        //MARK: navigation bar
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = ColorPalette.darkBackground
+        self.navigationController?.navigationBar.backItem?.title = ""
+        self.navigationController?.navigationBar.topItem?.title = "서른둘, 취업 힘들까요"
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white ]
+        
         super.viewDidLoad()
+        print(self.view.bounds.height)
         self.navigationController?.isNavigationBarHidden = false
         self.view.backgroundColor = ColorPalette.background
         self.tag.layer.cornerRadius = 8
@@ -60,7 +71,8 @@ class detailGominViewController: UIViewController {
         self.commentTextField.isEnabled = true
         self.view.isUserInteractionEnabled = true
         self.commentTextField.attributedPlaceholder = NSAttributedString(string: "   댓글을 입력해 주세요",            attributes: [NSAttributedString.Key.foregroundColor: ColorPalette.borderGray])
-        
+        self.view.bringSubviewToFront(self.commentTextView)
+        // self.view.bringSubviewToFront(self.commentTextField)
     }
     
     func setupCommend(){
@@ -68,11 +80,16 @@ class detailGominViewController: UIViewController {
         visualEffectView.frame = self.view.frame
         self.view.addSubview(visualEffectView)
         
-        commentVC = commentViewController(nibName: "commentViewController", bundle: nil)
+        commentVC = commentViewController()
         self.addChild(commentVC)
         self.view.addSubview(commentVC.view)
         
-        commentVC.view.frame = CGRect(x: 0, y: self.view.frame.height - commentHandleArea, width: self.view.bounds.width, height: commentHeight)
+        if self.view.frame.height == 667 {
+            commentVC.view.frame = CGRect(x: 0, y: self.view.frame.height - commentHandleArea + 150, width: self.view.bounds.width, height: 623)
+            
+        }else {
+            commentVC.view.frame = CGRect(x: 0, y: self.view.frame.height - commentHandleArea, width: self.view.bounds.width, height: commentVC.view.bounds.height)
+        }
         commentVC.view.clipsToBounds = true
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleCommentTap(recognizer:)))

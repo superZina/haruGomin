@@ -38,6 +38,14 @@
 		FFFA767E2518BEF60008101C /* commentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA767C2518BEF60008101C /* commentViewController.xib */; };
 		FFFA76822518EE0F0008101C /* commentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA76802518EE0F0008101C /* commentTableViewCell.swift */; };
 		FFFA76832518EE0F0008101C /* commentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA76812518EE0F0008101C /* commentTableViewCell.xib */; };
+		FFFA768825190EAA0008101C /* searchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA768625190EAA0008101C /* searchViewController.swift */; };
+		FFFA768925190EAA0008101C /* searchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA768725190EAA0008101C /* searchViewController.xib */; };
+		FFFA769025190F3B0008101C /* addGominViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA768E25190F3B0008101C /* addGominViewController.swift */; };
+		FFFA769125190F3B0008101C /* addGominViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA768F25190F3B0008101C /* addGominViewController.xib */; };
+		FFFA769625190F490008101C /* noticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA769425190F490008101C /* noticeViewController.swift */; };
+		FFFA769725190F490008101C /* noticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA769525190F490008101C /* noticeViewController.xib */; };
+		FFFA769B25190F590008101C /* myPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA769925190F590008101C /* myPageViewController.swift */; };
+		FFFA769C25190F590008101C /* myPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA769A25190F590008101C /* myPageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +84,14 @@
 		FFFA767C2518BEF60008101C /* commentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = commentViewController.xib; sourceTree = "<group>"; };
 		FFFA76802518EE0F0008101C /* commentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentTableViewCell.swift; sourceTree = "<group>"; };
 		FFFA76812518EE0F0008101C /* commentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = commentTableViewCell.xib; sourceTree = "<group>"; };
+		FFFA768625190EAA0008101C /* searchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchViewController.swift; sourceTree = "<group>"; };
+		FFFA768725190EAA0008101C /* searchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = searchViewController.xib; sourceTree = "<group>"; };
+		FFFA768E25190F3B0008101C /* addGominViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addGominViewController.swift; sourceTree = "<group>"; };
+		FFFA768F25190F3B0008101C /* addGominViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addGominViewController.xib; sourceTree = "<group>"; };
+		FFFA769425190F490008101C /* noticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noticeViewController.swift; sourceTree = "<group>"; };
+		FFFA769525190F490008101C /* noticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = noticeViewController.xib; sourceTree = "<group>"; };
+		FFFA769925190F590008101C /* myPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPageViewController.swift; sourceTree = "<group>"; };
+		FFFA769A25190F590008101C /* myPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myPageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				FFFA766025188C770008101C /* Main */,
-				FFFA762F25185BEF0008101C /* home */,
 				FF993E20250BDDE300E67251 /* config */,
 				FF6FCEC824F6BF2F00451815 /* logIn */,
 				FF6FCEB124F6BF2100451815 /* AppDelegate.swift */,
@@ -208,6 +223,11 @@
 		FFFA766025188C770008101C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FFFA768D25190F290008101C /* myPage */,
+				FFFA768C25190F100008101C /* notice */,
+				FFFA768B25190F000008101C /* addGomin */,
+				FFFA768525190E8C0008101C /* search */,
+				FFFA762F25185BEF0008101C /* home */,
 				FFFA766125188CD70008101C /* tabBarViewController.swift */,
 				FFFA766225188CD70008101C /* tabBarViewController.xib */,
 			);
@@ -233,6 +253,42 @@
 				FFFA76812518EE0F0008101C /* commentTableViewCell.xib */,
 			);
 			path = comment;
+			sourceTree = "<group>";
+		};
+		FFFA768525190E8C0008101C /* search */ = {
+			isa = PBXGroup;
+			children = (
+				FFFA768625190EAA0008101C /* searchViewController.swift */,
+				FFFA768725190EAA0008101C /* searchViewController.xib */,
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
+		FFFA768B25190F000008101C /* addGomin */ = {
+			isa = PBXGroup;
+			children = (
+				FFFA768E25190F3B0008101C /* addGominViewController.swift */,
+				FFFA768F25190F3B0008101C /* addGominViewController.xib */,
+			);
+			path = addGomin;
+			sourceTree = "<group>";
+		};
+		FFFA768C25190F100008101C /* notice */ = {
+			isa = PBXGroup;
+			children = (
+				FFFA769425190F490008101C /* noticeViewController.swift */,
+				FFFA769525190F490008101C /* noticeViewController.xib */,
+			);
+			path = notice;
+			sourceTree = "<group>";
+		};
+		FFFA768D25190F290008101C /* myPage */ = {
+			isa = PBXGroup;
+			children = (
+				FFFA769925190F590008101C /* myPageViewController.swift */,
+				FFFA769A25190F590008101C /* myPageViewController.xib */,
+			);
+			path = myPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,14 +351,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFFA769125190F3B0008101C /* addGominViewController.xib in Resources */,
 				FF6FCECC24F6BF3D00451815 /* logInViewController.xib in Resources */,
 				FFFA766A2518959A0008101C /* gominCollectionViewCell.xib in Resources */,
 				FFFA766425188CD70008101C /* tabBarViewController.xib in Resources */,
+				FFFA769C25190F590008101C /* myPageViewController.xib in Resources */,
 				FFFA76712518A5230008101C /* gominImgCollectionViewCell.xib in Resources */,
 				FF993E27250BE55000E67251 /* setProfileViewController.xib in Resources */,
 				FFE05F29251660600048B56F /* CollectionViewCell.xib in Resources */,
 				FF6FCEC124F6BF2200451815 /* LaunchScreen.storyboard in Resources */,
 				FFFA763325185C100008101C /* homeViewController.xib in Resources */,
+				FFFA768925190EAA0008101C /* searchViewController.xib in Resources */,
+				FFFA769725190F490008101C /* noticeViewController.xib in Resources */,
 				FFFA767E2518BEF60008101C /* commentViewController.xib in Resources */,
 				FFFA76832518EE0F0008101C /* commentTableViewCell.xib in Resources */,
 				FF6FCEBE24F6BF2200451815 /* Assets.xcassets in Resources */,
@@ -374,7 +434,11 @@
 				FF993E26250BE55000E67251 /* setProfileViewController.swift in Sources */,
 				FF993E22250BDDFA00E67251 /* colorPalette.swift in Sources */,
 				FFFA76762518AE530008101C /* detailGominViewController.swift in Sources */,
+				FFFA769625190F490008101C /* noticeViewController.swift in Sources */,
+				FFFA769B25190F590008101C /* myPageViewController.swift in Sources */,
+				FFFA768825190EAA0008101C /* searchViewController.swift in Sources */,
 				FFFA76702518A5230008101C /* gominImgCollectionViewCell.swift in Sources */,
+				FFFA769025190F3B0008101C /* addGominViewController.swift in Sources */,
 				FFFA76692518959A0008101C /* gominCollectionViewCell.swift in Sources */,
 				FFFA76822518EE0F0008101C /* commentTableViewCell.swift in Sources */,
 			);

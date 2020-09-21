@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -11,21 +11,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="commentViewController" customModule="haruGomin" customModuleProvider="target">
             <connections>
-                <outlet property="commentTableVeiw" destination="VGm-xb-gdm" id="TFo-vS-9Hm"/>
+                <outlet property="commentTableVeiw" destination="VGm-xb-gdm" id="LNo-ea-D2j"/>
                 <outlet property="handleArea" destination="djg-MF-sb8" id="ykP-oy-hoL"/>
+                <outlet property="tableAndBottom" destination="jkk-1y-kN0" id="enl-1n-hma"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djg-MF-sb8">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6o-oQ-U6P">
-                            <rect key="frame" x="187" y="16" width="40" height="4"/>
+                            <rect key="frame" x="167.5" y="16" width="40" height="4"/>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="PD8-94-uYq"/>
@@ -40,8 +41,8 @@
                         <constraint firstAttribute="bottom" secondItem="Z6o-oQ-U6P" secondAttribute="bottom" constant="17" id="tUa-GI-meP"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VGm-xb-gdm">
-                    <rect key="frame" x="20" y="44" width="374" height="818"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VGm-xb-gdm">
+                    <rect key="frame" x="20" y="39" width="335" height="428"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
@@ -51,12 +52,11 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VGm-xb-gdm" secondAttribute="trailing" constant="20" id="7mi-jS-LJi"/>
                 <constraint firstItem="djg-MF-sb8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DAE-90-Oc3"/>
                 <constraint firstItem="djg-MF-sb8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HA1-w7-yhM"/>
-                <constraint firstItem="VGm-xb-gdm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Pmx-U1-f8j"/>
                 <constraint firstItem="VGm-xb-gdm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="VE1-jL-tSP"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VGm-xb-gdm" secondAttribute="bottom" id="dbg-aW-snI"/>
+                <constraint firstItem="VGm-xb-gdm" firstAttribute="top" secondItem="djg-MF-sb8" secondAttribute="bottom" constant="2" id="eFz-1s-36E"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VGm-xb-gdm" secondAttribute="bottom" constant="200" id="jkk-1y-kN0"/>
                 <constraint firstAttribute="trailing" secondItem="djg-MF-sb8" secondAttribute="trailing" id="yx7-lF-elh"/>
             </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="106.47321428571428"/>
         </view>
     </objects>

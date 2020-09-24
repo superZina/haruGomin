@@ -26,10 +26,24 @@ class commentViewController: UIViewController {
         self.commentTableVeiw.register(cellNib, forCellReuseIdentifier: "comment")
         self.commentTableVeiw.backgroundColor = ColorPalette.darkBackground
         print(self.view.bounds.height)
-        if self.view.frame.height == 667 {
+        switch(UIScreen.main.nativeBounds.height) {
+        case 1334: //se2 , 8
             tableAndBottom.constant = 100
-        }else {
-            tableAndBottom.constant = 100
+            break
+        case 2688: //promax
+            tableAndBottom.constant = 250
+            break
+        case 2436: //pro
+            tableAndBottom.constant = 270
+            break
+        case 1792: //11
+            tableAndBottom.constant = 300
+            break
+        case 2208: //8+
+            tableAndBottom.constant = 260
+            break
+        default:
+            break
         }
     }
 

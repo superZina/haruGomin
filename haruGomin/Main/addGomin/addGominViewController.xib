@@ -14,7 +14,7 @@
                 <outlet property="gominContentTextView" destination="chr-04-0La" id="Nr6-Sg-Lsk"/>
                 <outlet property="gominTagCollection" destination="fb5-5j-5Xm" id="ioW-7n-Do3"/>
                 <outlet property="gominTitle" destination="LeD-DE-fLJ" id="HzQ-b4-ILW"/>
-                <outlet property="textViewAndbottom" destination="NEo-f6-nzZ" id="9MT-tR-V91"/>
+                <outlet property="textViewAndbottom" destination="KyG-A1-K1C" id="3o1-Mw-0i5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목을 적어주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LeD-DE-fLJ">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+                    <rect key="frame" x="0.0" y="62" width="375" height="68"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="68" id="vxO-Nl-eei"/>
                     </constraints>
@@ -32,7 +32,7 @@
                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                 </textField>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fb5-5j-5Xm">
-                    <rect key="frame" x="0.0" y="68" width="375" height="60"/>
+                    <rect key="frame" x="0.0" y="130" width="375" height="60"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="QDG-TY-2Bv"/>
@@ -45,11 +45,11 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="chr-04-0La">
-                    <rect key="frame" x="0.0" y="128" width="375" height="249"/>
+                    <rect key="frame" x="0.0" y="190" width="375" height="249"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <attributedString key="attributedText">
                         <fragment>
-                            <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                            <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                             <attributes>
                                 <color key="NSColor" systemColor="labelColor"/>
                                 <font key="NSFont" metaFont="system" size="16"/>
@@ -59,22 +59,31 @@
                     </attributedString>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" keyboardAppearance="alert"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkQ-fB-gnL">
+                    <rect key="frame" x="16" y="15" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="c:" destination="-1" eventType="touchUpInside" id="TPZ-gH-WrS"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="chr-04-0La" firstAttribute="top" secondItem="fb5-5j-5Xm" secondAttribute="bottom" id="Bam-mI-rHF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="chr-04-0La" secondAttribute="trailing" id="G9p-SY-i4f"/>
+                <constraint firstItem="HkQ-fB-gnL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="JbP-lN-21F"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="chr-04-0La" secondAttribute="bottom" constant="228" id="KyG-A1-K1C"/>
                 <constraint firstItem="LeD-DE-fLJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="L9H-pW-UXo"/>
                 <constraint firstItem="fb5-5j-5Xm" firstAttribute="top" secondItem="LeD-DE-fLJ" secondAttribute="bottom" id="LR1-e2-mtZ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="chr-04-0La" secondAttribute="bottom" constant="290" id="NEo-f6-nzZ"/>
+                <constraint firstItem="LeD-DE-fLJ" firstAttribute="top" secondItem="HkQ-fB-gnL" secondAttribute="bottom" constant="17" id="OCu-Q9-Wob"/>
                 <constraint firstItem="fb5-5j-5Xm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aMf-sm-2ba"/>
-                <constraint firstItem="LeD-DE-fLJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nny-LH-WdY"/>
+                <constraint firstItem="HkQ-fB-gnL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="gKr-sA-Xdg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fb5-5j-5Xm" secondAttribute="trailing" id="ogj-dd-1Q2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LeD-DE-fLJ" secondAttribute="trailing" id="p34-26-a4N"/>
                 <constraint firstItem="chr-04-0La" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uKg-x3-YtQ"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="96"/>
+            <point key="canvasLocation" x="82" y="34"/>
         </view>
     </objects>
     <resources>

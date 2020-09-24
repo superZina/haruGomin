@@ -15,6 +15,18 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
     var keyboardHeight:CGFloat = 0
     @IBOutlet weak var gominContentTextView: UITextView!
     var btnText:[String] = ["일상","가족","친구","연애","학교","직장","취업","진로","돈","건강","기혼","육아"]
+    //MARK: bar Buttons
+    let cancelBtn: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(title: nil, style: .plain, target: self, action: #selector(close))
+        barButtonItem.image = UIImage(named: "cancel")
+        return barButtonItem
+    }()
+    @objc func close(){
+        self.tabBarController?.view.removeFromSuperview()
+    }
+    @IBAction func c(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBOutlet weak var textViewAndbottom: NSLayoutConstraint!
     override func viewDidLoad() {
@@ -25,6 +37,8 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
         self.navigationController?.navigationBar.barTintColor = ColorPalette.darkBackground
         self.navigationController?.navigationBar.topItem?.title = "고민글 작성"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
+        let leftButtons:[UIBarButtonItem]? = [cancelBtn]
+        self.tabBarController?.navigationController?.navigationBar.topItem?.setLeftBarButtonItems(leftButtons, animated: false)
         
         self.view.backgroundColor = ColorPalette.darkBackground
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)

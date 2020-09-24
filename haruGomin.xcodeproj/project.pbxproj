@@ -123,6 +123,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FF311C20251D0A2A0034208B /* tabBarItem */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = tabBarItem;
+			sourceTree = "<group>";
+		};
 		FF6FCEA524F6BF2100451815 = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +179,7 @@
 		FF993E20250BDDE300E67251 /* config */ = {
 			isa = PBXGroup;
 			children = (
+				FF311C20251D0A2A0034208B /* tabBarItem */,
 				FF993E21250BDDFA00E67251 /* colorPalette.swift */,
 				FF8E27382513A8BC00531E40 /* UITextField.swift */,
 			);

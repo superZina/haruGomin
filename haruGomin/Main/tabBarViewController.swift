@@ -34,4 +34,13 @@ class tabBarViewController: UITabBarController , UITabBarControllerDelegate{
         let vcs = [homeVC,searchVC,addVC , notice, myPageVC]
         self.viewControllers = vcs
     }
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+          if viewController.isKind(of: addGominViewController.self) {
+             let vc =  addGominViewController()
+             vc.modalPresentationStyle = .overFullScreen
+             self.present(vc, animated: true, completion: nil)
+             return false
+          }
+          return true
+        }
 }

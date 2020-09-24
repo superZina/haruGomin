@@ -19,8 +19,10 @@ class detailGominViewController: UIViewController {
     var commentVC : commentViewController!
     var visualEffectView:UIVisualEffectView!
     
-    let commentHeight:CGFloat = 600
-    let commentHandleArea:CGFloat = 400
+    var commentHeight:CGFloat = 600
+    var commentHandleArea:CGFloat = 100
+    var distance:CGFloat = 0
+    var height:CGFloat = 0
     
     var commentVisible = false
     var nextState:commentState {
@@ -47,7 +49,7 @@ class detailGominViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white ]
         
         super.viewDidLoad()
-        print(self.view.bounds.height)
+        print(UIScreen.main.nativeBounds.height)
         self.navigationController?.isNavigationBarHidden = false
         self.view.backgroundColor = ColorPalette.background
         self.tag.layer.cornerRadius = 8
@@ -76,6 +78,35 @@ class detailGominViewController: UIViewController {
     }
     
     func setupCommend(){
+        switch(UIScreen.main.nativeBounds.height) {
+        case 1334: //se2 , 8
+            commentHandleArea = 400
+            distance = 64
+            break
+        case 2688: //promax
+            commentHandleArea = 250
+            commentHeight = 800
+            distance = -200
+
+            break
+        case 2436: //pro
+            commentHandleArea = 300
+            commentHeight = 700
+            distance = -50
+            break
+        case 1792: //1
+            commentHandleArea = 300
+            commentHeight = 750
+            distance = -100
+            break
+        case 2208: //8+
+            commentHandleArea = 300
+            commentHeight = 650
+            distance = 0
+            break
+        default:
+            break
+        }
         visualEffectView = UIVisualEffectView()
         visualEffectView.frame = self.view.frame
         self.view.addSubview(visualEffectView)
@@ -84,12 +115,12 @@ class detailGominViewController: UIViewController {
         self.addChild(commentVC)
         self.view.addSubview(commentVC.view)
         
-        if self.view.frame.height == 667 {
-            commentVC.view.frame = CGRect(x: 0, y: self.view.frame.height - commentHandleArea + 150, width: self.view.bounds.width, height: 623)
-            
-        }else {
-            commentVC.view.frame = CGRect(x: 0, y: self.view.frame.height - commentHandleArea, width: self.view.bounds.width, height: commentVC.view.bounds.height)
-        }
+        
+        commentVC.view.frame = CGRect(x: 0, y: self.view.frame.height - commentHandleArea, width: self.view.bounds.width, height: commentVC.view.bounds.height)
+        
+        print("commentVC Height : ",self.view.frame.height - commentHandleArea)
+
+        
         commentVC.view.clipsToBounds = true
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleCommentTap(recognizer:)))
@@ -128,12 +159,13 @@ class detailGominViewController: UIViewController {
     
     func animationTransitionIfNeeded(state: commentState, duration: TimeInterval) {
         if runningAnimations.isEmpty {
-            let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
+            let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) { [self] in
                 switch state {
                 case .expanded:
                     self.commentVC.view.frame.origin.y = self.view.frame.height - self.commentHeight
                 case .collapsed:
-                    self.commentVC.view.frame.origin.y = self.view.frame.height - self.commentHandleArea + 200
+                    self.commentVC.view.frame.origin.y = self.view.frame.height - self.commentHandleArea + distance
+                    print("y : ",self.commentVC.view.frame.origin.y)
                 }
             }
             

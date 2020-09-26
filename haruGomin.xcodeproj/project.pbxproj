@@ -10,6 +10,10 @@
 		04DA2E706C5F58E01D6934BE /* Pods_haruGomin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F612E390C7B06EC3EBE00E /* Pods_haruGomin.framework */; };
 		FF1A7AE2251F83F300B95773 /* storyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A7AE0251F83F300B95773 /* storyCollectionViewCell.swift */; };
 		FF1A7AE3251F83F300B95773 /* storyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1A7AE1251F83F300B95773 /* storyCollectionViewCell.xib */; };
+		FF1A7AE8251F8C1900B95773 /* newGominTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A7AE6251F8C1900B95773 /* newGominTableViewCell.swift */; };
+		FF1A7AE9251F8C1900B95773 /* newGominTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1A7AE7251F8C1900B95773 /* newGominTableViewCell.xib */; };
+		FF1A7AEE251FA11700B95773 /* noticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A7AEC251FA11700B95773 /* noticeTableViewCell.swift */; };
+		FF1A7AEF251FA11700B95773 /* noticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1A7AED251FA11700B95773 /* noticeTableViewCell.xib */; };
 		FF6FCEB224F6BF2100451815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEB124F6BF2100451815 /* AppDelegate.swift */; };
 		FF6FCEB424F6BF2100451815 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEB324F6BF2100451815 /* SceneDelegate.swift */; };
 		FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEB524F6BF2100451815 /* ViewController.swift */; };
@@ -56,6 +60,10 @@
 		C6F612E390C7B06EC3EBE00E /* Pods_haruGomin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_haruGomin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1A7AE0251F83F300B95773 /* storyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storyCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF1A7AE1251F83F300B95773 /* storyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = storyCollectionViewCell.xib; sourceTree = "<group>"; };
+		FF1A7AE6251F8C1900B95773 /* newGominTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newGominTableViewCell.swift; sourceTree = "<group>"; };
+		FF1A7AE7251F8C1900B95773 /* newGominTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = newGominTableViewCell.xib; sourceTree = "<group>"; };
+		FF1A7AEC251FA11700B95773 /* noticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noticeTableViewCell.swift; sourceTree = "<group>"; };
+		FF1A7AED251FA11700B95773 /* noticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = noticeTableViewCell.xib; sourceTree = "<group>"; };
 		FF6FCEAE24F6BF2100451815 /* haruGomin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = haruGomin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6FCEB124F6BF2100451815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF6FCEB324F6BF2100451815 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +133,17 @@
 				C6F612E390C7B06EC3EBE00E /* Pods_haruGomin.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF1A7AE5251F8BFE00B95773 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				FF1A7AE0251F83F300B95773 /* storyCollectionViewCell.swift */,
+				FF1A7AE1251F83F300B95773 /* storyCollectionViewCell.xib */,
+				FF1A7AE6251F8C1900B95773 /* newGominTableViewCell.swift */,
+				FF1A7AE7251F8C1900B95773 /* newGominTableViewCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		FF311C20251D0A2A0034208B /* tabBarItem */ = {
@@ -270,10 +289,9 @@
 		FFFA768525190E8C0008101C /* search */ = {
 			isa = PBXGroup;
 			children = (
+				FF1A7AE5251F8BFE00B95773 /* cell */,
 				FFFA768625190EAA0008101C /* searchViewController.swift */,
 				FFFA768725190EAA0008101C /* searchViewController.xib */,
-				FF1A7AE0251F83F300B95773 /* storyCollectionViewCell.swift */,
-				FF1A7AE1251F83F300B95773 /* storyCollectionViewCell.xib */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -292,6 +310,8 @@
 			children = (
 				FFFA769425190F490008101C /* noticeViewController.swift */,
 				FFFA769525190F490008101C /* noticeViewController.xib */,
+				FF1A7AEC251FA11700B95773 /* noticeTableViewCell.swift */,
+				FF1A7AED251FA11700B95773 /* noticeTableViewCell.xib */,
 			);
 			path = notice;
 			sourceTree = "<group>";
@@ -374,10 +394,12 @@
 				FFFA76712518A5230008101C /* gominImgCollectionViewCell.xib in Resources */,
 				FF993E27250BE55000E67251 /* setProfileViewController.xib in Resources */,
 				FFE05F29251660600048B56F /* CollectionViewCell.xib in Resources */,
+				FF1A7AEF251FA11700B95773 /* noticeTableViewCell.xib in Resources */,
 				FF6FCEC124F6BF2200451815 /* LaunchScreen.storyboard in Resources */,
 				FFFA763325185C100008101C /* homeViewController.xib in Resources */,
 				FFFA768925190EAA0008101C /* searchViewController.xib in Resources */,
 				FFFA769725190F490008101C /* noticeViewController.xib in Resources */,
+				FF1A7AE9251F8C1900B95773 /* newGominTableViewCell.xib in Resources */,
 				FFFA767E2518BEF60008101C /* commentViewController.xib in Resources */,
 				FFFA76832518EE0F0008101C /* commentTableViewCell.xib in Resources */,
 				FF6FCEBE24F6BF2200451815 /* Assets.xcassets in Resources */,
@@ -436,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFE05F28251660600048B56F /* CollectionViewCell.swift in Sources */,
+				FF1A7AEE251FA11700B95773 /* noticeTableViewCell.swift in Sources */,
 				FF6FCEBC24F6BF2100451815 /* haruGomin.xcdatamodeld in Sources */,
 				FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */,
 				FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */,
@@ -452,6 +475,7 @@
 				FFFA76762518AE530008101C /* detailGominViewController.swift in Sources */,
 				FFFA769625190F490008101C /* noticeViewController.swift in Sources */,
 				FFFA769B25190F590008101C /* myPageViewController.swift in Sources */,
+				FF1A7AE8251F8C1900B95773 /* newGominTableViewCell.swift in Sources */,
 				FFFA768825190EAA0008101C /* searchViewController.swift in Sources */,
 				FFFA76702518A5230008101C /* gominImgCollectionViewCell.swift in Sources */,
 				FFFA769025190F3B0008101C /* addGominViewController.swift in Sources */,

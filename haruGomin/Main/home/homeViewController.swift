@@ -16,6 +16,7 @@ class homeViewController: UIViewController, UICollectionViewDataSource {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = ColorPalette.background
         self.upperView.backgroundColor = ColorPalette.background
         self.gominCollection.backgroundColor = ColorPalette.darkBackground
@@ -25,7 +26,7 @@ class homeViewController: UIViewController, UICollectionViewDataSource {
         self.gominCollection.register(itemCellNib, forCellWithReuseIdentifier: "gominView")
         let imgCellNib = UINib(nibName: "gominImgCollectionViewCell", bundle: nil)
         self.gominCollection.register(imgCellNib, forCellWithReuseIdentifier: "gominImgView")
-        self.navigationController?.isNavigationBarHidden = true
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {

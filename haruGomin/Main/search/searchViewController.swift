@@ -22,6 +22,7 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
         self.gominCategoryCollection.backgroundColor = ColorPalette.darkBackground
         self.gominCategoryCollection.backgroundColor = ColorPalette.darkBackground
         self.gominStoryCollection.backgroundColor = ColorPalette.background
+        self.newGominTable.backgroundColor = ColorPalette.darkBackground
         
         let itemCellNib = UINib(nibName: "CollectionViewCell", bundle: nil)
         self.gominCategoryCollection.register(itemCellNib, forCellWithReuseIdentifier: "gomin")
@@ -39,13 +40,16 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
         storyLayout.scrollDirection = .horizontal
         gominStoryCollection.collectionViewLayout = storyLayout
         
-        self.newGominTable.backgroundColor = ColorPalette.darkBackground
+        let newGominCellNib = UINib(nibName: "newGominTableViewCell", bundle: nil)
+        self.newGominTable.register(newGominCellNib, forCellReuseIdentifier: "newGomin")
+        self.newGominTable.delegate = self
+        self.newGominTable.dataSource = self
      
     }
 
 
 }
-extension searchViewController: UICollectionViewDelegateFlowLayout {
+extension searchViewController: UICollectionViewDelegateFlowLayout , UITableViewDelegate,UITableViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == gominCategoryCollection {
             return self.btnText.count
@@ -91,13 +95,14 @@ extension searchViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 9
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = newGominTable.dequeueReusableCell(withIdentifier: "newGomin", for: indexPath) as! newGominTableViewCell
+        return cell
+    }
 //
     @objc func selected(sender: UIButton){
         sender.isSelected = !sender.isSelected

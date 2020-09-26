@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		04DA2E706C5F58E01D6934BE /* Pods_haruGomin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F612E390C7B06EC3EBE00E /* Pods_haruGomin.framework */; };
+		FF1A7AE2251F83F300B95773 /* storyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A7AE0251F83F300B95773 /* storyCollectionViewCell.swift */; };
+		FF1A7AE3251F83F300B95773 /* storyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1A7AE1251F83F300B95773 /* storyCollectionViewCell.xib */; };
 		FF6FCEB224F6BF2100451815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEB124F6BF2100451815 /* AppDelegate.swift */; };
 		FF6FCEB424F6BF2100451815 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEB324F6BF2100451815 /* SceneDelegate.swift */; };
 		FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEB524F6BF2100451815 /* ViewController.swift */; };
@@ -52,6 +54,8 @@
 		1E82307EA5C4B6C7E6375768 /* Pods-haruGomin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-haruGomin.release.xcconfig"; path = "Target Support Files/Pods-haruGomin/Pods-haruGomin.release.xcconfig"; sourceTree = "<group>"; };
 		A7FC68437CA99C1233C92595 /* Pods-haruGomin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-haruGomin.debug.xcconfig"; path = "Target Support Files/Pods-haruGomin/Pods-haruGomin.debug.xcconfig"; sourceTree = "<group>"; };
 		C6F612E390C7B06EC3EBE00E /* Pods_haruGomin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_haruGomin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF1A7AE0251F83F300B95773 /* storyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storyCollectionViewCell.swift; sourceTree = "<group>"; };
+		FF1A7AE1251F83F300B95773 /* storyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = storyCollectionViewCell.xib; sourceTree = "<group>"; };
 		FF6FCEAE24F6BF2100451815 /* haruGomin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = haruGomin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6FCEB124F6BF2100451815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF6FCEB324F6BF2100451815 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -268,6 +272,8 @@
 			children = (
 				FFFA768625190EAA0008101C /* searchViewController.swift */,
 				FFFA768725190EAA0008101C /* searchViewController.xib */,
+				FF1A7AE0251F83F300B95773 /* storyCollectionViewCell.swift */,
+				FF1A7AE1251F83F300B95773 /* storyCollectionViewCell.xib */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1A7AE3251F83F300B95773 /* storyCollectionViewCell.xib in Resources */,
 				FFFA769125190F3B0008101C /* addGominViewController.xib in Resources */,
 				FF6FCECC24F6BF3D00451815 /* logInViewController.xib in Resources */,
 				FFFA766A2518959A0008101C /* gominCollectionViewCell.xib in Resources */,
@@ -432,6 +439,7 @@
 				FF6FCEBC24F6BF2100451815 /* haruGomin.xcdatamodeld in Sources */,
 				FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */,
 				FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */,
+				FF1A7AE2251F83F300B95773 /* storyCollectionViewCell.swift in Sources */,
 				FF6FCEB224F6BF2100451815 /* AppDelegate.swift in Sources */,
 				FF8E27392513A8BC00531E40 /* UITextField.swift in Sources */,
 				FF6FCEB424F6BF2100451815 /* SceneDelegate.swift in Sources */,

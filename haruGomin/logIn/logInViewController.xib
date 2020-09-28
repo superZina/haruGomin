@@ -62,19 +62,24 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cOt-DP-mCf">
+                    <rect key="frame" x="127" y="104" width="160" height="71"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="pJv-ek-pqP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1Hr-sg-yY0"/>
+                <constraint firstItem="cOt-DP-mCf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="1MV-p3-QtQ"/>
                 <constraint firstItem="pJv-ek-pqP" firstAttribute="top" secondItem="jnl-VK-sNu" secondAttribute="bottom" constant="59" id="4oP-pf-5Ms"/>
                 <constraint firstItem="jnl-VK-sNu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="A7e-0m-bf2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="gub-uS-edt" secondAttribute="trailing" constant="347" id="I2Y-Oh-4u6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6PZ-NR-jw3" secondAttribute="trailing" constant="20" id="IAj-Et-404"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jnl-VK-sNu" secondAttribute="trailing" constant="20" id="PYk-Aw-FT8"/>
+                <constraint firstItem="cOt-DP-mCf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TyW-hV-139"/>
                 <constraint firstItem="gub-uS-edt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Vfv-mm-ZCS"/>
                 <constraint firstItem="jnl-VK-sNu" firstAttribute="top" secondItem="6PZ-NR-jw3" secondAttribute="bottom" constant="12" id="gQr-8k-kUo"/>
-                <constraint firstItem="6PZ-NR-jw3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="254" id="lSx-s1-KG6"/>
+                <constraint firstItem="6PZ-NR-jw3" firstAttribute="top" secondItem="cOt-DP-mCf" secondAttribute="bottom" constant="123" id="t3L-7u-XKp"/>
                 <constraint firstItem="6PZ-NR-jw3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="tK9-2X-2kE"/>
                 <constraint firstItem="6PZ-NR-jw3" firstAttribute="top" secondItem="gub-uS-edt" secondAttribute="bottom" constant="18" id="yE7-L5-uFh"/>
             </constraints>
@@ -82,6 +87,7 @@
         </view>
     </objects>
     <resources>
+        <image name="logo" width="160" height="71"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

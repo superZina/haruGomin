@@ -39,13 +39,13 @@ class setProfileViewController: UIViewController {
         self.nickName.layer.cornerRadius = 9
         self.nickName.layer.borderWidth = 1
         self.nickName.layer.borderColor = ColorPalette.borderGray.cgColor
-        self.nickName.textColor = ColorPalette.borderGray
+        self.nickName.textColor = ColorPalette.textGray
         self.nickName.attributedPlaceholder = NSAttributedString(string: "닉네임을 입력해주세요.",attributes: [NSAttributedString.Key.foregroundColor: ColorPalette.borderGray])
         
         self.age.layer.cornerRadius = 9
         self.age.layer.borderWidth = 1
         self.age.layer.borderColor = ColorPalette.borderGray.cgColor
-        self.age.textColor = ColorPalette.borderGray
+        self.age.textColor = ColorPalette.textGray
         self.age.attributedPlaceholder = NSAttributedString(string: "연령을 선택해주세요.",attributes: [NSAttributedString.Key.foregroundColor: ColorPalette.borderGray])
         
         
@@ -81,8 +81,13 @@ class setProfileViewController: UIViewController {
         toolbar.sizeToFit()
         
         let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneTimePressed))
+        doneBtn.title = "확인"
+        doneBtn.tintColor = ColorPalette.hagoRed
         let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolbar.setItems([flexible,doneBtn], animated: true)
+        toolbar.barTintColor = ColorPalette.darkBackground
+        toolbar.isTranslucent = false
+        toolbar.backgroundColor = ColorPalette.darkBackground
         age.inputAccessoryView = toolbar
         agePicker.backgroundColor = ColorPalette.darkBackground
         age.inputView = agePicker
@@ -124,4 +129,11 @@ extension setProfileViewController:UIPickerViewDelegate, UIPickerViewDataSource 
             self.nextBtn.backgroundColor = ColorPalette.hagoRed
         }
     }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            if(string == "\n"){
+                textField.resignFirstResponder()
+            }
+           return true
+       
+        }
 }

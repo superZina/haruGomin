@@ -12,6 +12,7 @@ class homeViewController: UIViewController, UICollectionViewDataSource {
     
     @IBOutlet weak var gominCollection: UICollectionView!
     
+    @IBOutlet weak var gominPageControll: UIPageControl!
     @IBOutlet weak var upperView: UIView!
     override func viewDidLoad() {
         
@@ -31,10 +32,13 @@ class homeViewController: UIViewController, UICollectionViewDataSource {
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+        gominPageControll.numberOfPages = 3
+        gominPageControll.currentPageIndicatorTintColor = ColorPalette.hagoRed
+        gominPageControll.tintColor = ColorPalette.hagoRed
     }
     
 }
-extension homeViewController:UICollectionViewDelegateFlowLayout {
+extension homeViewController:UICollectionViewDelegateFlowLayout,UIScrollViewDelegate  {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
@@ -53,5 +57,8 @@ extension homeViewController:UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = detailGominViewController()
         self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        gominPageControll.currentPage = Int(scrollView.contentOffset.x / 300)
     }
 }

@@ -32,22 +32,23 @@ class logInViewController: UIViewController{
         AuthApi.shared.loginWithKakaoAccount { (oauthToken, error) in
             if let error = error {
                 print(error)
-            }else {
+            } else {
                 print("login with kakao is success.")
-                var id:Int64 = 0
+//                var id: Int64 = 0
                 UserApi.shared.accessTokenInfo {(accessTokenInfo, error) in
                     if let error = error {
                         print(error)
-                    }
-                    else {
+                    } else {
                         print("accessTokenInfo() success.")
                         //do something
-                        _ = accessTokenInfo
-                        id = accessTokenInfo!.id
-                        print(accessTokenInfo)
+                        guard let accessTokenInfo = accessTokenInfo else { return }
+                        let id = accessTokenInfo.id
+                        print("DEBUG: AccessTokenInfo is \(accessTokenInfo)")
+                        print("DEBUG: AccessTokenInfo is \(oauthToken?.accessToken)")
+                        LoginDataManager.shared.login(self, token: oauthToken!.accessToken, id: id)
                     }
                 }
-                loginDataManager().login(self, token: oauthToken!.accessToken, id: id)
+                
                 
             }
             
@@ -69,6 +70,13 @@ class logInViewController: UIViewController{
         
         text1.textColor = ColorPalette.textGray
     }
+    func presentWebviewcontrollerWithRequest(request: URLRequest) {
+//            let controller: NLoginThirdPartyOAuth20InAppBrowserViewController = NLoginThirdPartyOAuth20InAppBrowserViewController(request: request)
+//            controller.parentOrientation = UIInterfaceOrientation(rawValue: UIDevice.current.orientation.rawValue)!
+//            present(controller, animated: true, completion: nil)
+        loginInstance?.delegate = self
+        loginInstance?.requestThirdPartyLogin()
+    }
 }
 
 
@@ -88,4 +96,7 @@ extension logInViewController: NaverThirdPartyLoginConnectionDelegate {
        func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
             print("[Error] :", error.localizedDescription)
        }
+    func oauth20ConnectionDidOpenInAppBrowser(forOAuth request: URLRequest!) {
+            presentWebviewcontrollerWithRequest(request: request)
+    }
 }

@@ -39,7 +39,7 @@ class selectGominViewController: UIViewController, UICollectionViewDataSource {
     }
 
     @IBAction func moveNext(_ sender: Any) {
-        var ageRange:Int32 = 0
+        var ageRange:Int = 0
         var hashTags:[String] = []
         let id:Int64 = UserDefaults.standard.value(forKey: "id") as! Int64
         
@@ -66,7 +66,7 @@ class selectGominViewController: UIViewController, UICollectionViewDataSource {
             "nickname" : self.nickName,
             "profileImage" : "image",
             "userHashtags" : hashTags ,
-            "userid" : id
+            "userId" : id
         ]
         signUpDataManager().signUp(self, parameter: parameters)
 //        let mainVC = tabBarViewController()

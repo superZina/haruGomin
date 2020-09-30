@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let instance = NaverThirdPartyLoginConnection.getSharedInstance()
         
         instance?.isNaverAppOauthEnable = true
-        instance?.isNaverAppOauthEnable = true
+        instance?.isInAppOauthEnable = true
         
         instance?.isOnlyPortraitSupportedInIphone()
         
@@ -38,6 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: UISceneSession Lifecycle
 
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        NaverThirdPartyLoginConnection.getSharedInstance()?.application(app, open: url, options: options)
+        return true
+      }
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.

@@ -9,7 +9,8 @@
 import UIKit
 
 class selectGominViewController: UIViewController, UICollectionViewDataSource {
-    
+    var nickName:String = ""
+    var age:String = ""
     @IBOutlet weak var gominCollection: UICollectionView!
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var nextBtn: UIButton!
@@ -36,12 +37,40 @@ class selectGominViewController: UIViewController, UICollectionViewDataSource {
         nextBtn.isEnabled = false
         nextBtn.backgroundColor = ColorPalette.borderGray
     }
-    @IBAction func selectAllgomin(_ sender: Any) {
-        
-    }
+
     @IBAction func moveNext(_ sender: Any) {
-        let mainVC = tabBarViewController()
-        self.navigationController?.pushViewController(mainVC,animated: true)
+        var ageRange:Int32 = 0
+        var hashTags:[String] = []
+        let id:Int64 = UserDefaults.standard.value(forKey: "id") as! Int64
+        
+        switch self.age {
+        case "1 ~ 9":
+            ageRange = 0
+        case "10 ~ 19":
+            ageRange = 10
+        case "20 ~ 29":
+            ageRange = 20
+        case "30 ~ 39":
+            ageRange = 30
+        case "40 ~ 49":
+            ageRange = 40
+        default:
+            break
+        }
+        
+        for i in buttons {
+            hashTags.append(i.title(for: .normal)!)
+        }
+        let parameters:[String:Any] = [
+            "ageRange" : ageRange,
+            "nickname" : self.nickName,
+            "profileImage" : "image",
+            "userHashtags" : hashTags ,
+            "userid" : id
+        ]
+        signUpDataManager().signUp(self, parameter: parameters)
+//        let mainVC = tabBarViewController()
+//        self.navigationController?.pushViewController(mainVC,animated: true)
     }
     
     

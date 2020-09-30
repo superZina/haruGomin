@@ -1,14 +1,12 @@
 PODS:
   - Alamofire (5.2.2)
-  - DynamicCodable (1.0)
-  - KakaoSDKAuth (2.0.0):
-    - KakaoSDKCommon (= 2.0.0)
-  - KakaoSDKCommon (2.0.0):
+  - KakaoSDKAuth (2.0.2):
+    - KakaoSDKCommon (= 2.0.2)
+  - KakaoSDKCommon (2.0.2):
     - Alamofire (~> 5.1)
-    - DynamicCodable (~> 1.0)
-  - KakaoSDKUser (2.0.0):
-    - KakaoSDKAuth (= 2.0.0)
-    - KakaoSDKCommon (= 2.0.0)
+  - KakaoSDKUser (2.0.2):
+    - KakaoSDKAuth (= 2.0.2)
+    - KakaoSDKCommon (= 2.0.2)
   - naveridlogin-sdk-ios (4.1.2)
   - Pageboy (3.6.1)
   - Tabman (2.9.1):
@@ -23,7 +21,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - DynamicCodable
     - KakaoSDKAuth
     - KakaoSDKCommon
     - KakaoSDKUser
@@ -33,14 +30,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
-  DynamicCodable: 2cf558d057b3e6540552943254e1c9eeb706dde2
-  KakaoSDKAuth: 8c4575565c4b7800fb60f3b90baa1198c2299cad
-  KakaoSDKCommon: 0273f3c70e1334baa8396d63981bd3e9ad236950
-  KakaoSDKUser: 15ae4cfde8d85f15a5c74fe72b7f8b1ef574b966
+  KakaoSDKAuth: 69698a4a6726f2b43fb43246891a1a747343935e
+  KakaoSDKCommon: 2226e13fbbd4a875826c7a348cf4f535392a4b8f
+  KakaoSDKUser: a4a82ba374e0b3478be3f66307943e85542149ee
   naveridlogin-sdk-ios: cf8afccdb1793d4ecfcd5d46aa8729d8b5058c70
   Pageboy: 29a2d474ad99404b4d77f325e0ab6d705930a4fb
   Tabman: 085d89c65be9e883629bdaf5b1453a6397e57846
 
-PODFILE CHECKSUM: 82c951b6d5846b3d62d4d4ea38e0a0800d4334cc
+PODFILE CHECKSUM: f28957549990be9d1e219cecb7fa2fb56f380f31
 
 COCOAPODS: 1.9.1

@@ -64,7 +64,7 @@
                     </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="H7x-4h-Jsv">
-                    <rect key="frame" x="20" y="244" width="374" height="160"/>
+                    <rect key="frame" x="20" y="204" width="374" height="160"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="160" id="0Q2-mP-wGk"/>
@@ -76,24 +76,15 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ona-Yw-fOJ">
-                    <rect key="frame" x="312" y="200" width="82" height="24"/>
-                    <state key="normal" image="invalidName"/>
-                    <connections>
-                        <action selector="selectAllgomin:" destination="-1" eventType="touchUpInside" id="hVp-6i-e4G"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="H7x-4h-Jsv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="1yM-K3-Ju4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ona-Yw-fOJ" secondAttribute="trailing" constant="20" id="3cR-xu-duc"/>
-                <constraint firstItem="H7x-4h-Jsv" firstAttribute="top" secondItem="y0B-Xm-gyX" secondAttribute="bottom" constant="64" id="7vJ-ha-GKH"/>
                 <constraint firstItem="bFb-w8-DGp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ION-a7-PTb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="H7x-4h-Jsv" secondAttribute="trailing" constant="20" id="Mrq-Cv-oe7"/>
                 <constraint firstItem="y0B-Xm-gyX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RCA-Bs-qHr"/>
-                <constraint firstItem="H7x-4h-Jsv" firstAttribute="top" secondItem="Ona-Yw-fOJ" secondAttribute="bottom" constant="20" id="Xo5-GI-sNc"/>
+                <constraint firstItem="H7x-4h-Jsv" firstAttribute="top" secondItem="y0B-Xm-gyX" secondAttribute="bottom" constant="24" id="VwQ-ou-Lu9"/>
                 <constraint firstItem="y0B-Xm-gyX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="doi-qV-NgG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bFb-w8-DGp" secondAttribute="bottom" constant="20" id="f23-5d-YvW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bFb-w8-DGp" secondAttribute="trailing" constant="20" id="s0t-5V-Dfa"/>
@@ -103,7 +94,6 @@
         </view>
     </objects>
     <resources>
-        <image name="invalidName" width="82" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

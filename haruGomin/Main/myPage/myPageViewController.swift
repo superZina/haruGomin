@@ -10,6 +10,7 @@ import UIKit
 
 class myPageViewController: UIViewController {
 
+    @IBOutlet weak var myPageTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,3 +19,14 @@ class myPageViewController: UIViewController {
 
 
 }
+//extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        2
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+//    
+//    
+//}

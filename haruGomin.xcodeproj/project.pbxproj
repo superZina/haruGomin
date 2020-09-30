@@ -14,6 +14,13 @@
 		FF1A7AE9251F8C1900B95773 /* newGominTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1A7AE7251F8C1900B95773 /* newGominTableViewCell.xib */; };
 		FF1A7AEE251FA11700B95773 /* noticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A7AEC251FA11700B95773 /* noticeTableViewCell.swift */; };
 		FF1A7AEF251FA11700B95773 /* noticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1A7AED251FA11700B95773 /* noticeTableViewCell.xib */; };
+		FF5257F0252435080076C7EB /* myWrittenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5257EE252435080076C7EB /* myWrittenTableViewCell.swift */; };
+		FF5257F1252435080076C7EB /* myWrittenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF5257EF252435080076C7EB /* myWrittenTableViewCell.xib */; };
+		FF5257F52524351C0076C7EB /* deleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5257F32524351C0076C7EB /* deleteTableViewCell.swift */; };
+		FF5257F62524351C0076C7EB /* deleteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF5257F42524351C0076C7EB /* deleteTableViewCell.xib */; };
+		FF5257FA25245B9A0076C7EB /* loginDataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5257F925245B9A0076C7EB /* loginDataManger.swift */; };
+		FF5258622524AE4E0076C7EB /* checkNameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5258612524AE4E0076C7EB /* checkNameDataManager.swift */; };
+		FF52587F2524BD380076C7EB /* signUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52587E2524BD380076C7EB /* signUpDataManager.swift */; };
 		FF6FCEB224F6BF2100451815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEB124F6BF2100451815 /* AppDelegate.swift */; };
 		FF6FCEB424F6BF2100451815 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEB324F6BF2100451815 /* SceneDelegate.swift */; };
 		FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEB524F6BF2100451815 /* ViewController.swift */; };
@@ -64,6 +71,13 @@
 		FF1A7AE7251F8C1900B95773 /* newGominTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = newGominTableViewCell.xib; sourceTree = "<group>"; };
 		FF1A7AEC251FA11700B95773 /* noticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noticeTableViewCell.swift; sourceTree = "<group>"; };
 		FF1A7AED251FA11700B95773 /* noticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = noticeTableViewCell.xib; sourceTree = "<group>"; };
+		FF5257EE252435080076C7EB /* myWrittenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myWrittenTableViewCell.swift; sourceTree = "<group>"; };
+		FF5257EF252435080076C7EB /* myWrittenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myWrittenTableViewCell.xib; sourceTree = "<group>"; };
+		FF5257F32524351C0076C7EB /* deleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteTableViewCell.swift; sourceTree = "<group>"; };
+		FF5257F42524351C0076C7EB /* deleteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = deleteTableViewCell.xib; sourceTree = "<group>"; };
+		FF5257F925245B9A0076C7EB /* loginDataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginDataManger.swift; sourceTree = "<group>"; };
+		FF5258612524AE4E0076C7EB /* checkNameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkNameDataManager.swift; sourceTree = "<group>"; };
+		FF52587E2524BD380076C7EB /* signUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpDataManager.swift; sourceTree = "<group>"; };
 		FF6FCEAE24F6BF2100451815 /* haruGomin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = haruGomin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6FCEB124F6BF2100451815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF6FCEB324F6BF2100451815 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +167,41 @@
 			path = tabBarItem;
 			sourceTree = "<group>";
 		};
+		FF5257EC252434C50076C7EB /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				FF5257EE252435080076C7EB /* myWrittenTableViewCell.swift */,
+				FF5257EF252435080076C7EB /* myWrittenTableViewCell.xib */,
+				FF5257F32524351C0076C7EB /* deleteTableViewCell.swift */,
+				FF5257F42524351C0076C7EB /* deleteTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		FF5257F825245B870076C7EB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FF5257F925245B9A0076C7EB /* loginDataManger.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FF5258602524AE2E0076C7EB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FF5258612524AE4E0076C7EB /* checkNameDataManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FF52587D2524BD1E0076C7EB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FF52587E2524BD380076C7EB /* signUpDataManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		FF6FCEA524F6BF2100451815 = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +240,7 @@
 		FF6FCEC824F6BF2F00451815 /* logIn */ = {
 			isa = PBXGroup;
 			children = (
+				FF5257F825245B870076C7EB /* Network */,
 				FFC9B7C0251638460039FB22 /* selectGomin */,
 				FF993E23250BE52600E67251 /* profile */,
 				FF6FCEC924F6BF3D00451815 /* logInViewController.swift */,
@@ -212,6 +262,7 @@
 		FF993E23250BE52600E67251 /* profile */ = {
 			isa = PBXGroup;
 			children = (
+				FF5258602524AE2E0076C7EB /* Network */,
 				FF993E24250BE55000E67251 /* setProfileViewController.swift */,
 				FF993E25250BE55000E67251 /* setProfileViewController.xib */,
 			);
@@ -221,6 +272,7 @@
 		FFC9B7C0251638460039FB22 /* selectGomin */ = {
 			isa = PBXGroup;
 			children = (
+				FF52587D2524BD1E0076C7EB /* Network */,
 				FFC9B7C12516385B0039FB22 /* selectGominViewController.swift */,
 				FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */,
 				FFE05F26251660600048B56F /* CollectionViewCell.swift */,
@@ -319,6 +371,7 @@
 		FFFA768D25190F290008101C /* myPage */ = {
 			isa = PBXGroup;
 			children = (
+				FF5257EC252434C50076C7EB /* cell */,
 				FFFA769925190F590008101C /* myPageViewController.swift */,
 				FFFA769A25190F590008101C /* myPageViewController.xib */,
 			);
@@ -392,6 +445,7 @@
 				FFFA766425188CD70008101C /* tabBarViewController.xib in Resources */,
 				FFFA769C25190F590008101C /* myPageViewController.xib in Resources */,
 				FFFA76712518A5230008101C /* gominImgCollectionViewCell.xib in Resources */,
+				FF5257F1252435080076C7EB /* myWrittenTableViewCell.xib in Resources */,
 				FF993E27250BE55000E67251 /* setProfileViewController.xib in Resources */,
 				FFE05F29251660600048B56F /* CollectionViewCell.xib in Resources */,
 				FF1A7AEF251FA11700B95773 /* noticeTableViewCell.xib in Resources */,
@@ -400,6 +454,7 @@
 				FFFA768925190EAA0008101C /* searchViewController.xib in Resources */,
 				FFFA769725190F490008101C /* noticeViewController.xib in Resources */,
 				FF1A7AE9251F8C1900B95773 /* newGominTableViewCell.xib in Resources */,
+				FF5257F62524351C0076C7EB /* deleteTableViewCell.xib in Resources */,
 				FFFA767E2518BEF60008101C /* commentViewController.xib in Resources */,
 				FFFA76832518EE0F0008101C /* commentTableViewCell.xib in Resources */,
 				FF6FCEBE24F6BF2200451815 /* Assets.xcassets in Resources */,
@@ -457,22 +512,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF5257F52524351C0076C7EB /* deleteTableViewCell.swift in Sources */,
 				FFE05F28251660600048B56F /* CollectionViewCell.swift in Sources */,
 				FF1A7AEE251FA11700B95773 /* noticeTableViewCell.swift in Sources */,
 				FF6FCEBC24F6BF2100451815 /* haruGomin.xcdatamodeld in Sources */,
 				FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */,
 				FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */,
 				FF1A7AE2251F83F300B95773 /* storyCollectionViewCell.swift in Sources */,
+				FF5257FA25245B9A0076C7EB /* loginDataManger.swift in Sources */,
 				FF6FCEB224F6BF2100451815 /* AppDelegate.swift in Sources */,
 				FF8E27392513A8BC00531E40 /* UITextField.swift in Sources */,
 				FF6FCEB424F6BF2100451815 /* SceneDelegate.swift in Sources */,
 				FF6FCECB24F6BF3D00451815 /* logInViewController.swift in Sources */,
 				FFFA767D2518BEF60008101C /* commentViewController.swift in Sources */,
+				FF5258622524AE4E0076C7EB /* checkNameDataManager.swift in Sources */,
 				FFFA763225185C100008101C /* homeViewController.swift in Sources */,
 				FFFA766325188CD70008101C /* tabBarViewController.swift in Sources */,
 				FF993E26250BE55000E67251 /* setProfileViewController.swift in Sources */,
 				FF993E22250BDDFA00E67251 /* colorPalette.swift in Sources */,
+				FF5257F0252435080076C7EB /* myWrittenTableViewCell.swift in Sources */,
 				FFFA76762518AE530008101C /* detailGominViewController.swift in Sources */,
+				FF52587F2524BD380076C7EB /* signUpDataManager.swift in Sources */,
 				FFFA769625190F490008101C /* noticeViewController.swift in Sources */,
 				FFFA769B25190F590008101C /* myPageViewController.swift in Sources */,
 				FF1A7AE8251F8C1900B95773 /* newGominTableViewCell.swift in Sources */,

@@ -73,8 +73,9 @@ class setProfileViewController: UIViewController {
     }
     
     @IBAction func moveNext(_ sender: Any) {
-        let selectVC = selectGominViewController()
-        self.navigationController?.pushViewController(selectVC, animated: true)
+        checkNameDataManager().check(self, name: nickName.text! , age: self.age.text)
+//        let selectVC = selectGominViewController()
+//        self.navigationController?.pushViewController(selectVC, animated: true)
     }
     func createAgePicker() {
         let toolbar = UIToolbar()

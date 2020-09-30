@@ -8,7 +8,9 @@
 
 import UIKit
 import KakaoSDKAuth
+import KakaoSDKCommon
 import KakaoSDKUser
+
 import Alamofire
 import NaverThirdPartyLogin
 
@@ -27,15 +29,31 @@ class logInViewController: UIViewController{
     }
     
     @IBAction func kakaoLogin(_ sender: Any) {
-        let setprofileVC = setProfileViewController()
-        self.navigationController?.pushViewController(setprofileVC, animated: true)
-//        AuthApi.shared.loginWithKakaoAccount { (oauthToken, error) in
-//            if let error = error {
-//                print(error)
-//            }else {
-//                print("login with kakao is success.")
-//            }
-//        }
+        AuthApi.shared.loginWithKakaoAccount { (oauthToken, error) in
+            if let error = error {
+                print(error)
+            }else {
+                print("login with kakao is success.")
+                var id:Int64 = 0
+                UserApi.shared.accessTokenInfo {(accessTokenInfo, error) in
+                    if let error = error {
+                        print(error)
+                    }
+                    else {
+                        print("accessTokenInfo() success.")
+                        //do something
+                        _ = accessTokenInfo
+                        id = accessTokenInfo!.id
+                        print(accessTokenInfo)
+                    }
+                }
+                loginDataManager().login(self, token: oauthToken!.accessToken, id: id)
+                
+            }
+            
+        }
+        
+
     }
     
     override func viewDidLoad() {

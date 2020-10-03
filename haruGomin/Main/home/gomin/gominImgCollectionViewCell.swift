@@ -15,6 +15,9 @@ class gominImgCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var line: UILabel!
     @IBOutlet weak var gominContent: UILabel!
+    @IBOutlet weak var gominTitle: UILabel!
+    @IBOutlet weak var createTime: UILabel!
+    @IBOutlet weak var commentCount: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

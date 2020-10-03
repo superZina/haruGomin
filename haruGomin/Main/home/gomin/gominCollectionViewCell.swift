@@ -13,6 +13,9 @@ class gominCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dailyBtn: UIButton!
     @IBOutlet weak var detailBtn: UIButton!
     
+    @IBOutlet weak var gominTitle: UILabel!
+    @IBOutlet weak var commentCount: UILabel!
+    @IBOutlet weak var createTime: UILabel!
     @IBOutlet weak var line: UILabel!
     @IBOutlet weak var gominContent: UILabel!
     @IBOutlet weak var innerView: UIView!

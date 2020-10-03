@@ -18,18 +18,19 @@ class detailGominViewController: UIViewController {
     @IBOutlet weak var commentTextView: UIView!
     var commentVC : commentViewController!
     var visualEffectView:UIVisualEffectView!
-    
+    var postId:Int = 0
     var commentHeight:CGFloat = 600
     var commentHandleArea:CGFloat = 100
     var distance:CGFloat = 0
     var height:CGFloat = 0
-    
     var commentVisible = false
     var nextState:commentState {
         return commentVisible ? .collapsed : .expanded
     }
-    @IBOutlet weak var tag: UIButton!
     
+    
+    @IBOutlet weak var createTime: UILabel!
+    @IBOutlet weak var tag: UIButton!
     @IBOutlet weak var gominTextView: UITextView!
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted:CGFloat = 0
@@ -38,13 +39,13 @@ class detailGominViewController: UIViewController {
     @IBOutlet weak var commentTextField: UITextField!
     
     override func viewDidLoad() {
-        
+        detailGominDataManager.shared.getGominDetail(self, postId: self.postId, pageNum: 0)
         //MARK: navigation bar
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = ColorPalette.darkBackground
         self.navigationController?.navigationBar.backItem?.title = ""
-        self.navigationController?.navigationBar.topItem?.title = "서른둘, 취업 힘들까요"
+        
         self.navigationController?.navigationBar.tintColor = .white
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white ]
         
@@ -76,7 +77,18 @@ class detailGominViewController: UIViewController {
         self.view.bringSubviewToFront(self.commentTextView)
         // self.view.bringSubviewToFront(self.commentTextField)
     }
+    //MARK: gomin content Settings
+    func setGominContent(gomin: gomin) {
+        let createdAt:String = gomin.createdDate!
+        let createTime:String = createdAt.components(separatedBy: "T")[1]
+        let time:[String] = createTime.components(separatedBy: ":")
+        self.createTime.text = time[0] + ":" + time[1]
+        self.tag.setTitle(gomin.tagName, for: .normal)
+        self.gominTextView.text = gomin.content
+        self.navigationController?.navigationBar.topItem?.title = gomin.title
+    }
     
+    //MARK: commentVC Settings
     func setupCommend(){
         switch(UIScreen.main.nativeBounds.height) {
         case 1334: //se2 , 8
@@ -112,6 +124,7 @@ class detailGominViewController: UIViewController {
         self.view.addSubview(visualEffectView)
         
         commentVC = commentViewController()
+        commentVC.postId = self.postId
         self.addChild(commentVC)
         self.view.addSubview(commentVC.view)
         

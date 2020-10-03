@@ -12,10 +12,13 @@ class homeViewController: UIViewController, UICollectionViewDataSource {
     
     @IBOutlet weak var gominCollection: UICollectionView!
     
+    @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var gominPageControll: UIPageControl!
     @IBOutlet weak var upperView: UIView!
+    var gomins:[gomin] = []
     override func viewDidLoad() {
-        
+        guard let username:String = UserDefaults.standard.value(forKey: "userName") as? String else {return}
+        self.userName.text = username
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = ColorPalette.background
@@ -27,10 +30,12 @@ class homeViewController: UIViewController, UICollectionViewDataSource {
         self.gominCollection.register(itemCellNib, forCellWithReuseIdentifier: "gominView")
         let imgCellNib = UINib(nibName: "gominImgCollectionViewCell", bundle: nil)
         self.gominCollection.register(imgCellNib, forCellWithReuseIdentifier: "gominImgView")
-        
-        
+    }
+    func setGomin(){
+        self.gominCollection.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
+        mainGominDataManager.shared.getMainGomin(self)
         self.navigationController?.isNavigationBarHidden = true
         gominPageControll.numberOfPages = 3
         gominPageControll.currentPageIndicatorTintColor = ColorPalette.hagoRed
@@ -40,25 +45,52 @@ class homeViewController: UIViewController, UICollectionViewDataSource {
 }
 extension homeViewController:UICollectionViewDelegateFlowLayout,UIScrollViewDelegate  {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return gomins.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = gominCollection.dequeueReusableCell(withReuseIdentifier: "gominImgView", for: indexPath) as! gominImgCollectionViewCell
-        
-        return cell
+        if self.gomins[indexPath.row].postImage != "default.png" {
+            
+            let cell = gominCollection.dequeueReusableCell(withReuseIdentifier: "gominImgView", for: indexPath) as! gominImgCollectionViewCell
+            cell.dailyBtn.setTitle(self.gomins[indexPath.row].tagName, for: .normal)
+            cell.gominContent.text = self.gomins[indexPath.row].content
+            cell.gominTitle.text = self.gomins[indexPath.row].title
+            let createdAt:String = self.gomins[indexPath.row].createdDate!
+            let createTime:String = createdAt.components(separatedBy: "T")[1]
+            let time:[String] = createTime.components(separatedBy: ":")
+            cell.createTime.text = time[0] + ":" + time[1]
+            cell.commentCount.text = String(self.gomins[indexPath.row].comments!.count)
+            cell.detailBtn.tag = self.gomins[indexPath.row].postId!
+            cell.detailBtn.addTarget(self, action: #selector(goDetailVC(sender:)), for: .touchUpInside)
+            return cell
+        }else{
+            let cell = gominCollection.dequeueReusableCell(withReuseIdentifier: "gominView", for: indexPath) as! gominCollectionViewCell
+            cell.dailyBtn.setTitle(self.gomins[indexPath.row].tagName, for: .normal)
+            cell.gominContent.text = self.gomins[indexPath.row].content
+            cell.gominTitle.text = self.gomins[indexPath.row].title
+            let createdAt:String = self.gomins[indexPath.row].createdDate!
+            let createTime:String = createdAt.components(separatedBy: "T")[1]
+            let time:[String] = createTime.components(separatedBy: ":")
+            cell.createTime.text = time[0] + ":" + time[1]
+            cell.commentCount.text = String(self.gomins[indexPath.row].comments!.count)
+            cell.detailBtn.tag = self.gomins[indexPath.row].postId!
+            cell.detailBtn.addTarget(self, action: #selector(goDetailVC(sender:)), for: .touchUpInside)
+            return cell
+        }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.bounds.width, height: self.gominCollection.bounds.height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-           return UIEdgeInsets(top: 0, left: -10, bottom: 0, right: -10)
-        }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailVC = detailGominViewController()
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        return UIEdgeInsets(top: 0, left: -10, bottom: 0, right: -10)
     }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         gominPageControll.currentPage = Int(scrollView.contentOffset.x / 300)
+    }
+    @objc func goDetailVC(sender:UIButton) {
+        let detailVC = detailGominViewController()
+        detailVC.postId = sender.tag
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

@@ -23,9 +23,11 @@ class signUpDataManager {
                 print(obj)
                 do {
                     print(obj)
-//                    let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
-//                    let getData = try JSONDecoder().decode(UserToeken.self, from: dataJSON)
-                    
+                    let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+                    let getData = try JSONDecoder().decode(Profile.self, from: dataJSON)
+                    UserDefaults.standard.setValue(getData.nickname, forKey: "userName")
+                    let mainVC = tabBarViewController()
+                    selectVC.navigationController?.pushViewController(mainVC, animated: true)
                 }catch {
 //                    print(error.localizedDescription)
                 }

@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="commentTextField" destination="IOq-5w-vkO" id="chw-Kf-ZEV"/>
                 <outlet property="commentTextView" destination="qFj-r4-mvI" id="YnF-sS-bDN"/>
+                <outlet property="createTime" destination="e8D-Dj-W7P" id="Sv3-Th-BBc"/>
                 <outlet property="gominTextView" destination="iT8-SV-YoG" id="hmd-BG-aU3"/>
                 <outlet property="line" destination="Agd-p4-PcU" id="Rpt-8U-Yqh"/>
                 <outlet property="tag" destination="ZxL-ze-YXh" id="KwP-Tb-yK3"/>
@@ -124,7 +125,7 @@
                 <constraint firstItem="qFj-r4-mvI" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="wag-KS-N4L"/>
                 <constraint firstItem="e8D-Dj-W7P" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="19" id="wbq-Oq-r4Z"/>
             </constraints>
-            <point key="canvasLocation" x="137.68115942028987" y="106.47321428571428"/>
+            <point key="canvasLocation" x="136.80000000000001" y="105.69715142428787"/>
         </view>
         <viewController id="B24-c7-cOy">
             <view key="view" contentMode="scaleToFill" id="NPq-TJ-uGJ">

@@ -33,6 +33,11 @@
 		FF993E22250BDDFA00E67251 /* colorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF993E21250BDDFA00E67251 /* colorPalette.swift */; };
 		FF993E26250BE55000E67251 /* setProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF993E24250BE55000E67251 /* setProfileViewController.swift */; };
 		FF993E27250BE55000E67251 /* setProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF993E25250BE55000E67251 /* setProfileViewController.xib */; };
+		FFBC731C2528870700CF4FA3 /* mainGominDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC731B2528870700CF4FA3 /* mainGominDataManager.swift */; };
+		FFBC73212528A8FF00CF4FA3 /* mainGominResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC73202528A8FF00CF4FA3 /* mainGominResponse.swift */; };
+		FFBC73252528A95300CF4FA3 /* signUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC73242528A95300CF4FA3 /* signUpResponse.swift */; };
+		FFBC73292528B9EA00CF4FA3 /* detailGominDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC73282528B9EA00CF4FA3 /* detailGominDataManager.swift */; };
+		FFBC732E2528BFEE00CF4FA3 /* commentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC732D2528BFEE00CF4FA3 /* commentDataManager.swift */; };
 		FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9B7C12516385B0039FB22 /* selectGominViewController.swift */; };
 		FFC9B7C42516385B0039FB22 /* selectGominViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */; };
 		FFE05F28251660600048B56F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE05F26251660600048B56F /* CollectionViewCell.swift */; };
@@ -92,6 +97,11 @@
 		FF993E21250BDDFA00E67251 /* colorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorPalette.swift; sourceTree = "<group>"; };
 		FF993E24250BE55000E67251 /* setProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setProfileViewController.swift; sourceTree = "<group>"; };
 		FF993E25250BE55000E67251 /* setProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = setProfileViewController.xib; sourceTree = "<group>"; };
+		FFBC731B2528870700CF4FA3 /* mainGominDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainGominDataManager.swift; sourceTree = "<group>"; };
+		FFBC73202528A8FF00CF4FA3 /* mainGominResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainGominResponse.swift; sourceTree = "<group>"; };
+		FFBC73242528A95300CF4FA3 /* signUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpResponse.swift; sourceTree = "<group>"; };
+		FFBC73282528B9EA00CF4FA3 /* detailGominDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailGominDataManager.swift; sourceTree = "<group>"; };
+		FFBC732D2528BFEE00CF4FA3 /* commentDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentDataManager.swift; sourceTree = "<group>"; };
 		FFC9B7C12516385B0039FB22 /* selectGominViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectGominViewController.swift; sourceTree = "<group>"; };
 		FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = selectGominViewController.xib; sourceTree = "<group>"; };
 		FFE05F26251660600048B56F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -198,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				FF52587E2524BD380076C7EB /* signUpDataManager.swift */,
+				FFBC73242528A95300CF4FA3 /* signUpResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -269,6 +280,31 @@
 			path = profile;
 			sourceTree = "<group>";
 		};
+		FFBC731A252886E800CF4FA3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FFBC731B2528870700CF4FA3 /* mainGominDataManager.swift */,
+				FFBC73202528A8FF00CF4FA3 /* mainGominResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FFBC73272528B9D900CF4FA3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FFBC73282528B9EA00CF4FA3 /* detailGominDataManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FFBC732C2528BFDB00CF4FA3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FFBC732D2528BFEE00CF4FA3 /* commentDataManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		FFC9B7C0251638460039FB22 /* selectGomin */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +320,7 @@
 		FFFA762F25185BEF0008101C /* home */ = {
 			isa = PBXGroup;
 			children = (
+				FFBC731A252886E800CF4FA3 /* Network */,
 				FFFA76732518AE3A0008101C /* detail */,
 				FFFA763625185E450008101C /* gomin */,
 				FFFA763025185C100008101C /* homeViewController.swift */,
@@ -320,6 +357,7 @@
 		FFFA76732518AE3A0008101C /* detail */ = {
 			isa = PBXGroup;
 			children = (
+				FFBC73272528B9D900CF4FA3 /* Network */,
 				FFFA767A2518BEE90008101C /* comment */,
 				FFFA76742518AE530008101C /* detailGominViewController.swift */,
 				FFFA76752518AE530008101C /* detailGominViewController.xib */,
@@ -330,6 +368,7 @@
 		FFFA767A2518BEE90008101C /* comment */ = {
 			isa = PBXGroup;
 			children = (
+				FFBC732C2528BFDB00CF4FA3 /* Network */,
 				FFFA767B2518BEF60008101C /* commentViewController.swift */,
 				FFFA767C2518BEF60008101C /* commentViewController.xib */,
 				FFFA76802518EE0F0008101C /* commentTableViewCell.swift */,
@@ -519,23 +558,28 @@
 				FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */,
 				FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */,
 				FF1A7AE2251F83F300B95773 /* storyCollectionViewCell.swift in Sources */,
+				FFBC731C2528870700CF4FA3 /* mainGominDataManager.swift in Sources */,
 				FF5257FA25245B9A0076C7EB /* loginDataManger.swift in Sources */,
 				FF6FCEB224F6BF2100451815 /* AppDelegate.swift in Sources */,
 				FF8E27392513A8BC00531E40 /* UITextField.swift in Sources */,
 				FF6FCEB424F6BF2100451815 /* SceneDelegate.swift in Sources */,
 				FF6FCECB24F6BF3D00451815 /* logInViewController.swift in Sources */,
 				FFFA767D2518BEF60008101C /* commentViewController.swift in Sources */,
+				FFBC73292528B9EA00CF4FA3 /* detailGominDataManager.swift in Sources */,
 				FF5258622524AE4E0076C7EB /* checkNameDataManager.swift in Sources */,
 				FFFA763225185C100008101C /* homeViewController.swift in Sources */,
 				FFFA766325188CD70008101C /* tabBarViewController.swift in Sources */,
 				FF993E26250BE55000E67251 /* setProfileViewController.swift in Sources */,
 				FF993E22250BDDFA00E67251 /* colorPalette.swift in Sources */,
 				FF5257F0252435080076C7EB /* myWrittenTableViewCell.swift in Sources */,
+				FFBC73252528A95300CF4FA3 /* signUpResponse.swift in Sources */,
 				FFFA76762518AE530008101C /* detailGominViewController.swift in Sources */,
 				FF52587F2524BD380076C7EB /* signUpDataManager.swift in Sources */,
 				FFFA769625190F490008101C /* noticeViewController.swift in Sources */,
+				FFBC732E2528BFEE00CF4FA3 /* commentDataManager.swift in Sources */,
 				FFFA769B25190F590008101C /* myPageViewController.swift in Sources */,
 				FF1A7AE8251F8C1900B95773 /* newGominTableViewCell.swift in Sources */,
+				FFBC73212528A8FF00CF4FA3 /* mainGominResponse.swift in Sources */,
 				FFFA768825190EAA0008101C /* searchViewController.swift in Sources */,
 				FFFA76702518A5230008101C /* gominImgCollectionViewCell.swift in Sources */,
 				FFFA769025190F3B0008101C /* addGominViewController.swift in Sources */,

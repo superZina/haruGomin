@@ -14,6 +14,7 @@
                 <outlet property="gominCollection" destination="Zgh-7Q-hrr" id="9qb-mh-wmR"/>
                 <outlet property="gominPageControll" destination="trG-h5-508" id="buM-iT-rv3"/>
                 <outlet property="upperView" destination="lyO-K5-FNj" id="UJt-ND-UWR"/>
+                <outlet property="userName" destination="XAx-8j-ZG2" id="FbK-HH-iCL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,17 +26,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyO-K5-FNj">
                     <rect key="frame" x="0.0" y="44" width="414" height="148"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKf-nq-71G">
-                            <rect key="frame" x="20" y="20" width="201" height="29"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="201" id="cBq-TW-4fC"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공감할 고민이 있어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oua-I7-nG9">
-                            <rect key="frame" x="20" y="53" width="274" height="29"/>
+                            <rect key="frame" x="20" y="49" width="274" height="29"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="274" id="LLc-AP-iS2"/>
                             </constraints>
@@ -44,25 +36,39 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="trG-h5-508">
-                            <rect key="frame" x="8" y="112" width="123" height="28"/>
+                            <rect key="frame" x="8" y="108" width="123" height="32"/>
                             <color key="tintColor" red="0.63088923689999998" green="0.42073500159999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </pageControl>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="하고" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAx-8j-ZG2">
+                            <rect key="frame" x="20" y="16" width="42" height="29"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKf-nq-71G">
+                            <rect key="frame" x="66" y="16" width="42" height="29"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <constraints>
                         <constraint firstItem="trG-h5-508" firstAttribute="leading" secondItem="lyO-K5-FNj" secondAttribute="leading" constant="8" id="5dy-OI-8Xs"/>
                         <constraint firstItem="trG-h5-508" firstAttribute="top" secondItem="oua-I7-nG9" secondAttribute="bottom" constant="30" id="6Ly-Fn-YWv"/>
                         <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="oua-I7-nG9" secondAttribute="trailing" constant="120" id="KAF-3k-1EU"/>
-                        <constraint firstItem="QKf-nq-71G" firstAttribute="top" secondItem="lyO-K5-FNj" secondAttribute="top" constant="20" id="WfE-e8-wuH"/>
+                        <constraint firstItem="QKf-nq-71G" firstAttribute="leading" secondItem="XAx-8j-ZG2" secondAttribute="trailing" constant="4" id="Mfs-lb-UUM"/>
+                        <constraint firstItem="XAx-8j-ZG2" firstAttribute="top" secondItem="lyO-K5-FNj" secondAttribute="top" constant="16" id="Tyi-i5-75Z"/>
                         <constraint firstAttribute="height" constant="148" id="XON-A4-ojT"/>
-                        <constraint firstItem="QKf-nq-71G" firstAttribute="leading" secondItem="lyO-K5-FNj" secondAttribute="leading" constant="20" id="cBS-hU-12z"/>
-                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="QKf-nq-71G" secondAttribute="trailing" constant="193" id="ep8-Pg-T2P"/>
                         <constraint firstAttribute="bottom" secondItem="trG-h5-508" secondAttribute="bottom" constant="8" id="ere-o5-jiS"/>
+                        <constraint firstItem="XAx-8j-ZG2" firstAttribute="leading" secondItem="lyO-K5-FNj" secondAttribute="leading" constant="20" id="gPW-cr-7Tl"/>
                         <constraint firstItem="oua-I7-nG9" firstAttribute="leading" secondItem="lyO-K5-FNj" secondAttribute="leading" constant="20" id="gYv-rP-5No"/>
+                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="QKf-nq-71G" secondAttribute="trailing" constant="306" id="gsJ-as-bep"/>
+                        <constraint firstItem="QKf-nq-71G" firstAttribute="top" secondItem="lyO-K5-FNj" secondAttribute="top" constant="16" id="nKo-HN-l20"/>
                         <constraint firstItem="oua-I7-nG9" firstAttribute="top" secondItem="QKf-nq-71G" secondAttribute="bottom" constant="4" id="r1f-P7-le8"/>
                     </constraints>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Zgh-7Q-hrr">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Zgh-7Q-hrr">
                     <rect key="frame" x="0.0" y="192" width="414" height="670"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vmO-bc-LNc">

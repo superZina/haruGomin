@@ -146,9 +146,12 @@
             </constraints>
             <size key="customSize" width="414" height="700"/>
             <connections>
+                <outlet property="commentCount" destination="xWn-M3-bWR" id="lfE-sx-Su4"/>
+                <outlet property="createTime" destination="NG5-mE-ooB" id="Frr-F6-Q5j"/>
                 <outlet property="dailyBtn" destination="l2A-fP-FCc" id="1Jm-0W-nHS"/>
                 <outlet property="detailBtn" destination="ybg-gz-Pe1" id="inO-Ki-iIi"/>
                 <outlet property="gominContent" destination="V3Y-M9-T8a" id="NYm-RJ-40J"/>
+                <outlet property="gominTitle" destination="wEM-2E-nLu" id="QzV-ME-zaf"/>
                 <outlet property="img" destination="hNM-dd-uO3" id="von-Ig-I5e"/>
                 <outlet property="innerView" destination="ZWH-Z9-oLS" id="Sf5-97-kOK"/>
                 <outlet property="line" destination="U80-Bp-zMg" id="mNR-g2-mvT"/>

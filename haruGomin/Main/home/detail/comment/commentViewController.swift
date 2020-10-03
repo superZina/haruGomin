@@ -10,11 +10,13 @@ import UIKit
 
 class commentViewController: UIViewController {
 
+    var postId:Int = 0
     @IBOutlet weak var commentTableVeiw: UITableView!
     @IBOutlet weak var handleArea: UIView!
     @IBOutlet weak var tableAndBottom: NSLayoutConstraint!
     var commnetList:[String] = []
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.view.layer.cornerRadius = 8
         commnetList = ["asdfasdf","dfsfllflelfllflflflflflflflflflflflflflflflfllfflfllfflflfllflflflflflfl","kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk","저도 얼마 전에 비슷한 상황이었어요. 힘들다는 생각말고 그냥 지금 할 수 있는 걸 하다보면 자신감도 생기고 길이 보이더라고요! 분명 원하는 일 하실 수 있을거에요! 모두 화이팅이요 :)"]

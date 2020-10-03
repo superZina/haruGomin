@@ -15,6 +15,7 @@ class commentViewController: UIViewController {
     @IBOutlet weak var handleArea: UIView!
     @IBOutlet weak var tableAndBottom: NSLayoutConstraint!
     var commnetList:[String] = []
+    var comment:[comment?] = []
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -49,18 +50,43 @@ class commentViewController: UIViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        commentDataManager.shared.getGominDetail(self, postId: self.postId, pageNum: 0)
+//        self.view.layoutIfNeeded()
+    }
+//    func setComment() {
+//        print(self.comment)
+//
+//        self.view.setNeedsLayout()
+//        self.view.setNeedsDisplay()
+//    }
 
 }
 extension commentViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return commnetList.count
+        return self.comment.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard  let cell = commentTableVeiw.dequeueReusableCell(withIdentifier: "comment") as? commentTableViewCell else {
             return UITableViewCell()
         }
-        cell.comment.text = commnetList[indexPath.row]
+        let createdAt:String = (self.comment[indexPath.row]?.createdDate)!
+        let createTime:String = createdAt.components(separatedBy: "T")[1]
+        let time:[String] = createTime.components(separatedBy: ":")
+        if Int(time[0])! > 12 {
+            cell.ampm.text = "PM"
+            let hour = Int(time[0])! - 12
+            cell.time.text = String(hour) + ":" + time[1]
+        }else{
+            cell.ampm.text = "AM"
+            cell.time.text =
+                time[0] + ":" + time[1]
+        }
+        cell.comment.text = self.comment[indexPath.row]?.content
+        cell.likeCount.text = String((self.comment[indexPath.row]?.commentLikes)!)
+        cell.userName.text = self.comment[indexPath.row]?.nickname
+//        cell.comment.text = commnetList[indexPath.row]
         return cell
     }
     

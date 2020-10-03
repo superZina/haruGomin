@@ -13,10 +13,13 @@ class commentTableViewCell: UITableViewCell {
     @IBOutlet weak var additionLabel: UIButton!
     @IBOutlet weak var labelHeight: NSLayoutConstraint!
     @IBOutlet weak var labelAndComment: NSLayoutConstraint!
-    @IBOutlet weak var likeNum: UILabel!
+    @IBOutlet weak var likeCount: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var like: UIButton!
+    @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var ampm: UILabel!
     var isBest:Bool = false
     var isWriter:Bool = false
     override func awakeFromNib() {
@@ -26,7 +29,7 @@ class commentTableViewCell: UITableViewCell {
         self.innerView.backgroundColor = ColorPalette.background
         self.comment.textColor = .white
         self.time.textColor = ColorPalette.textGray
-        self.likeNum.textColor = ColorPalette.textGray
+        self.likeCount.textColor = ColorPalette.textGray
         additionLabel.layer.cornerRadius = 4
         additionLabel.backgroundColor = UIColor(red: 90/255, green: 219/255, blue: 235/255, alpha: 1)
         additionLabel.setTitleColor(ColorPalette.background, for: .normal)
@@ -42,6 +45,9 @@ class commentTableViewCell: UITableViewCell {
             label.font = .boldSystemFont(ofSize: 14)
             innerView.addSubview(label)
         }
+        self.profileImg.image = UIImage(named: "rectangleCopy2-1")
+        self.userName.textColor = .white
+        self.ampm.textColor = ColorPalette.textGray
         
     }
 

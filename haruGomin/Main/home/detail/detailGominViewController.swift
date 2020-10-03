@@ -16,7 +16,7 @@ class detailGominViewController: UIViewController {
     }
     
     @IBOutlet weak var commentTextView: UIView!
-    var commentVC : commentViewController!
+    var commentVC : commentViewController!  = commentViewController()
     var visualEffectView:UIVisualEffectView!
     var postId:Int = 0
     var commentHeight:CGFloat = 600
@@ -27,11 +27,12 @@ class detailGominViewController: UIViewController {
     var nextState:commentState {
         return commentVisible ? .collapsed : .expanded
     }
-    
-    
+    @IBOutlet weak var username: UILabel!
     @IBOutlet weak var createTime: UILabel!
+    @IBOutlet weak var commentCount: UILabel!
     @IBOutlet weak var tag: UIButton!
     @IBOutlet weak var gominTextView: UITextView!
+    @IBOutlet weak var profileImg: UIImageView!
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted:CGFloat = 0
     @IBOutlet weak var line: UILabel!
@@ -86,6 +87,7 @@ class detailGominViewController: UIViewController {
         self.tag.setTitle(gomin.tagName, for: .normal)
         self.gominTextView.text = gomin.content
         self.navigationController?.navigationBar.topItem?.title = gomin.title
+        self.commentCount.text = String(gomin.comments!.count)
     }
     
     //MARK: commentVC Settings
@@ -99,12 +101,11 @@ class detailGominViewController: UIViewController {
             commentHandleArea = 250
             commentHeight = 800
             distance = -200
-
             break
         case 2436: //pro
-            commentHandleArea = 300
+            commentHandleArea = 400
             commentHeight = 700
-            distance = -50
+            distance = 50
             break
         case 1792: //1
             commentHandleArea = 300
@@ -123,7 +124,6 @@ class detailGominViewController: UIViewController {
         visualEffectView.frame = self.view.frame
         self.view.addSubview(visualEffectView)
         
-        commentVC = commentViewController()
         commentVC.postId = self.postId
         self.addChild(commentVC)
         self.view.addSubview(commentVC.view)

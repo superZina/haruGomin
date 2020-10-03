@@ -73,9 +73,15 @@
                     </constraints>
                     <state key="normal" image="36"/>
                     <connections>
-                        <action selector="selectImg:" destination="-1" eventType="touchUpInside" id="jOM-ho-GLv"/>
+                        <action selector="selectImg:" destination="-1" eventType="touchUpInside" id="8sq-Er-EgA"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="변경" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcF-BM-KLB">
+                    <rect key="frame" x="194.5" y="194" width="25" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,7 +99,9 @@
                 <constraint firstItem="5DL-au-g76" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="aO2-zS-KGF"/>
                 <constraint firstItem="VQa-0K-tee" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="202" id="bWa-NA-CGM"/>
                 <constraint firstItem="Jzb-Ri-BZC" firstAttribute="top" secondItem="5DL-au-g76" secondAttribute="bottom" constant="16" id="esS-Sl-7kG"/>
+                <constraint firstItem="qcF-BM-KLB" firstAttribute="top" secondItem="WKE-4j-61Z" secondAttribute="bottom" constant="10" id="gQm-N4-9Sp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="5DL-au-g76" secondAttribute="trailing" constant="362.5" id="ggR-Fp-3gE"/>
+                <constraint firstItem="qcF-BM-KLB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iUA-t5-kcx"/>
                 <constraint firstItem="t2u-Ft-vpm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="qkc-3F-dSX"/>
                 <constraint firstItem="lXN-EQ-JH8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="vSY-41-3E6"/>
                 <constraint firstItem="VQa-0K-tee" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="x0r-fP-Vfj"/>

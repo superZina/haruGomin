@@ -38,6 +38,11 @@
 		FFBC73252528A95300CF4FA3 /* signUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC73242528A95300CF4FA3 /* signUpResponse.swift */; };
 		FFBC73292528B9EA00CF4FA3 /* detailGominDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC73282528B9EA00CF4FA3 /* detailGominDataManager.swift */; };
 		FFBC732E2528BFEE00CF4FA3 /* commentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC732D2528BFEE00CF4FA3 /* commentDataManager.swift */; };
+		FFBC73332528DA2200CF4FA3 /* imgPopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBC73322528DA2200CF4FA3 /* imgPopUp.storyboard */; };
+		FFBC733A2528DB5B00CF4FA3 /* imgPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC73392528DB5B00CF4FA3 /* imgPopUp.swift */; };
+		FFBC733D2528DE1100CF4FA3 /* imgPopUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC733C2528DE1100CF4FA3 /* imgPopUpDelegate.swift */; };
+		FFBC73492528E1FB00CF4FA3 /* profileImgCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC73472528E1FB00CF4FA3 /* profileImgCollectionViewCell.swift */; };
+		FFBC734A2528E1FB00CF4FA3 /* profileImgCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBC73482528E1FB00CF4FA3 /* profileImgCollectionViewCell.xib */; };
 		FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9B7C12516385B0039FB22 /* selectGominViewController.swift */; };
 		FFC9B7C42516385B0039FB22 /* selectGominViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */; };
 		FFE05F28251660600048B56F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE05F26251660600048B56F /* CollectionViewCell.swift */; };
@@ -102,6 +107,11 @@
 		FFBC73242528A95300CF4FA3 /* signUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpResponse.swift; sourceTree = "<group>"; };
 		FFBC73282528B9EA00CF4FA3 /* detailGominDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailGominDataManager.swift; sourceTree = "<group>"; };
 		FFBC732D2528BFEE00CF4FA3 /* commentDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentDataManager.swift; sourceTree = "<group>"; };
+		FFBC73322528DA2200CF4FA3 /* imgPopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = imgPopUp.storyboard; sourceTree = "<group>"; };
+		FFBC73392528DB5B00CF4FA3 /* imgPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imgPopUp.swift; sourceTree = "<group>"; };
+		FFBC733C2528DE1100CF4FA3 /* imgPopUpDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imgPopUpDelegate.swift; sourceTree = "<group>"; };
+		FFBC73472528E1FB00CF4FA3 /* profileImgCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileImgCollectionViewCell.swift; sourceTree = "<group>"; };
+		FFBC73482528E1FB00CF4FA3 /* profileImgCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = profileImgCollectionViewCell.xib; sourceTree = "<group>"; };
 		FFC9B7C12516385B0039FB22 /* selectGominViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectGominViewController.swift; sourceTree = "<group>"; };
 		FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = selectGominViewController.xib; sourceTree = "<group>"; };
 		FFE05F26251660600048B56F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -273,6 +283,7 @@
 		FF993E23250BE52600E67251 /* profile */ = {
 			isa = PBXGroup;
 			children = (
+				FFBC73312528DA0500CF4FA3 /* popup */,
 				FF5258602524AE2E0076C7EB /* Network */,
 				FF993E24250BE55000E67251 /* setProfileViewController.swift */,
 				FF993E25250BE55000E67251 /* setProfileViewController.xib */,
@@ -303,6 +314,26 @@
 				FFBC732D2528BFEE00CF4FA3 /* commentDataManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		FFBC73312528DA0500CF4FA3 /* popup */ = {
+			isa = PBXGroup;
+			children = (
+				FFBC733F2528E02400CF4FA3 /* cell */,
+				FFBC73322528DA2200CF4FA3 /* imgPopUp.storyboard */,
+				FFBC73392528DB5B00CF4FA3 /* imgPopUp.swift */,
+				FFBC733C2528DE1100CF4FA3 /* imgPopUpDelegate.swift */,
+			);
+			path = popup;
+			sourceTree = "<group>";
+		};
+		FFBC733F2528E02400CF4FA3 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				FFBC73472528E1FB00CF4FA3 /* profileImgCollectionViewCell.swift */,
+				FFBC73482528E1FB00CF4FA3 /* profileImgCollectionViewCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		FFC9B7C0251638460039FB22 /* selectGomin */ = {
@@ -481,6 +512,7 @@
 				FFFA769125190F3B0008101C /* addGominViewController.xib in Resources */,
 				FF6FCECC24F6BF3D00451815 /* logInViewController.xib in Resources */,
 				FFFA766A2518959A0008101C /* gominCollectionViewCell.xib in Resources */,
+				FFBC73332528DA2200CF4FA3 /* imgPopUp.storyboard in Resources */,
 				FFFA766425188CD70008101C /* tabBarViewController.xib in Resources */,
 				FFFA769C25190F590008101C /* myPageViewController.xib in Resources */,
 				FFFA76712518A5230008101C /* gominImgCollectionViewCell.xib in Resources */,
@@ -496,6 +528,7 @@
 				FF5257F62524351C0076C7EB /* deleteTableViewCell.xib in Resources */,
 				FFFA767E2518BEF60008101C /* commentViewController.xib in Resources */,
 				FFFA76832518EE0F0008101C /* commentTableViewCell.xib in Resources */,
+				FFBC734A2528E1FB00CF4FA3 /* profileImgCollectionViewCell.xib in Resources */,
 				FF6FCEBE24F6BF2200451815 /* Assets.xcassets in Resources */,
 				FFFA76772518AE530008101C /* detailGominViewController.xib in Resources */,
 				FFC9B7C42516385B0039FB22 /* selectGominViewController.xib in Resources */,
@@ -552,9 +585,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF5257F52524351C0076C7EB /* deleteTableViewCell.swift in Sources */,
+				FFBC733A2528DB5B00CF4FA3 /* imgPopUp.swift in Sources */,
 				FFE05F28251660600048B56F /* CollectionViewCell.swift in Sources */,
 				FF1A7AEE251FA11700B95773 /* noticeTableViewCell.swift in Sources */,
 				FF6FCEBC24F6BF2100451815 /* haruGomin.xcdatamodeld in Sources */,
+				FFBC733D2528DE1100CF4FA3 /* imgPopUpDelegate.swift in Sources */,
 				FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */,
 				FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */,
 				FF1A7AE2251F83F300B95773 /* storyCollectionViewCell.swift in Sources */,
@@ -582,6 +617,7 @@
 				FFBC73212528A8FF00CF4FA3 /* mainGominResponse.swift in Sources */,
 				FFFA768825190EAA0008101C /* searchViewController.swift in Sources */,
 				FFFA76702518A5230008101C /* gominImgCollectionViewCell.swift in Sources */,
+				FFBC73492528E1FB00CF4FA3 /* profileImgCollectionViewCell.swift in Sources */,
 				FFFA769025190F3B0008101C /* addGominViewController.swift in Sources */,
 				FFFA76692518959A0008101C /* gominCollectionViewCell.swift in Sources */,
 				FFFA76822518EE0F0008101C /* commentTableViewCell.swift in Sources */,

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class setProfileViewController: UIViewController {
+class setProfileViewController: UIViewController,imgPopUpDelegate {
+    
+    
 
     var ages:[String] = ["1 ~ 9" , "10 ~ 19", "20 ~ 29", "30 ~ 39", "40 ~ 49"]
     var selectedAge:String = "1 ~ 9"
     @IBOutlet weak var profileImg: UIButton!
-    @IBAction func selectImg(_ sender: Any) {
-    }
     @IBOutlet weak var nickName: UITextField!
     @IBOutlet weak var age: UITextField!
     @IBOutlet weak var nextBtn: UIButton!
@@ -72,6 +72,20 @@ class setProfileViewController: UIViewController {
         }
     }
     
+    @IBAction func selectImg(_ sender: Any) {
+        let imgPopUpStoryboard = UIStoryboard(name: "imgPopUp", bundle: Bundle.main)
+        guard let imgPopup = imgPopUpStoryboard
+            .instantiateViewController(withIdentifier: "imgPopUp") as? imgPopUp else {
+            return
+        }
+//        imgPopup.modalTransitionStyle = .full
+        imgPopup.modalPresentationStyle = .overFullScreen
+        imgPopup.imgPopupDelegate = self
+        self.present(imgPopup, animated: true, completion: nil)
+    }
+    func pressDismissBtn(imgName:String) {
+        self.profileImg.setImage(UIImage(named: imgName), for: .normal)
+    }
     @IBAction func moveNext(_ sender: Any) {
         checkNameDataManager().check(self, name: nickName.text! , age: self.age.text!)
 //        let selectVC = selectGominViewController()
@@ -100,6 +114,9 @@ class setProfileViewController: UIViewController {
     }
 }
 
+
+
+//MARK: EXTENSIONS
 extension setProfileViewController:UIPickerViewDelegate, UIPickerViewDataSource , UITextFieldDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

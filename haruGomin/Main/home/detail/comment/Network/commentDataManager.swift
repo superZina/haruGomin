@@ -22,8 +22,8 @@ class commentDataManager{
                         do{
                             let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                             let getData = try JSONDecoder().decode(gomin.self, from: dataJSON)
-                            commentVC.comment = getData.comments!
-                            print(getData.comments)
+//                            commentVC.comment = getData.comments!
+//                            print(getData.comments)
                             commentVC.commentTableVeiw.reloadData()
                             commentVC.commentTableVeiw.setNeedsDisplay()
 //                            commentVC.commentTableVeiw.layoutIfNeeded()

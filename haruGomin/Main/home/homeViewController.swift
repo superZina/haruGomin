@@ -24,6 +24,11 @@ class homeViewController: UIViewController, UICollectionViewDataSource {
         self.view.backgroundColor = ColorPalette.background
         self.upperView.backgroundColor = ColorPalette.background
         self.gominCollection.backgroundColor = ColorPalette.darkBackground
+        let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        self.gominCollection.collectionViewLayout = layout
         self.gominCollection.delegate = self
         self.gominCollection.dataSource = self
         let itemCellNib = UINib(nibName: "gominCollectionViewCell", bundle: nil)
@@ -59,7 +64,6 @@ extension homeViewController:UICollectionViewDelegateFlowLayout,UIScrollViewDele
             let createTime:String = createdAt.components(separatedBy: "T")[1]
             let time:[String] = createTime.components(separatedBy: ":")
             cell.createTime.text = time[0] + ":" + time[1]
-            cell.commentCount.text = String(self.gomins[indexPath.row].comments!.count)
             cell.detailBtn.tag = self.gomins[indexPath.row].postId!
             cell.detailBtn.addTarget(self, action: #selector(goDetailVC(sender:)), for: .touchUpInside)
             return cell
@@ -72,7 +76,6 @@ extension homeViewController:UICollectionViewDelegateFlowLayout,UIScrollViewDele
             let createTime:String = createdAt.components(separatedBy: "T")[1]
             let time:[String] = createTime.components(separatedBy: ":")
             cell.createTime.text = time[0] + ":" + time[1]
-            cell.commentCount.text = String(self.gomins[indexPath.row].comments!.count)
             cell.detailBtn.tag = self.gomins[indexPath.row].postId!
             cell.detailBtn.addTarget(self, action: #selector(goDetailVC(sender:)), for: .touchUpInside)
             return cell
@@ -82,7 +85,7 @@ extension homeViewController:UICollectionViewDelegateFlowLayout,UIScrollViewDele
         return CGSize(width: self.view.bounds.width, height: self.gominCollection.bounds.height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: -10, bottom: 0, right: -10)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

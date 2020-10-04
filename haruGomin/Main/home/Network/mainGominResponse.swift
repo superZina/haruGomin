@@ -20,7 +20,6 @@ struct gomin:Codable {
     let content:String?
     let tagName:String?
     let postImage:String?
-    let comments:[comment?]?
     let hits:Int?
     let postLikes:Int?
 }

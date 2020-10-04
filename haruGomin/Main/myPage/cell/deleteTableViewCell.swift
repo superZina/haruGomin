@@ -10,9 +10,13 @@ import UIKit
 
 class deleteTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var menuText: UILabel!
+    @IBOutlet weak var additionText: UILabel!
+    @IBOutlet weak var seperator: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.contentView.backgroundColor = ColorPalette.darkBackground
+        self.seperator.backgroundColor = ColorPalette.background
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

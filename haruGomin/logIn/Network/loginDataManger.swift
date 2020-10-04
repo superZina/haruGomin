@@ -25,12 +25,13 @@ class LoginDataManager {
                     let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                     let getData = try JSONDecoder().decode(UserToeken.self, from: dataJSON)
                     guard let jwt:String = getData.jwt else { return }
-//                    print("DEBUG: AccessTokenInfo is \(jwt)")
+                    print("DEBUG: AccessTokenInfo is \(jwt)")
+                    print("DEBUG: login is Success")
                     UserDefaults.standard.setValue(jwt, forKey: "jwt")
                     UserDefaults.standard.setValue(id, forKey: "id")
                     let setprofileVC = setProfileViewController()
                     loginVC.navigationController?.pushViewController(setprofileVC, animated: true)
-                } catch {
+                }catch {
                     print(error.localizedDescription)
                 }
             default:

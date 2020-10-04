@@ -87,7 +87,7 @@ class detailGominViewController: UIViewController {
         self.tag.setTitle(gomin.tagName, for: .normal)
         self.gominTextView.text = gomin.content
         self.navigationController?.navigationBar.topItem?.title = gomin.title
-        self.commentCount.text = String(gomin.comments!.count)
+//        self.commentCount.text = String(gomin.comments!.count)
     }
     
     //MARK: commentVC Settings

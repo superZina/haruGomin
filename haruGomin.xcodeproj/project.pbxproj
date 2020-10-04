@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		04DA2E706C5F58E01D6934BE /* Pods_haruGomin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F612E390C7B06EC3EBE00E /* Pods_haruGomin.framework */; };
+		FF0D85CA2529F25700512993 /* myWritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85C82529F25700512993 /* myWritingViewController.swift */; };
+		FF0D85CB2529F25700512993 /* myWritingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0D85C92529F25700512993 /* myWritingViewController.xib */; };
+		FF0D85D02529F93100512993 /* myWritingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85CE2529F93100512993 /* myWritingCollectionViewCell.swift */; };
+		FF0D85D12529F93100512993 /* myWritingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0D85CF2529F93100512993 /* myWritingCollectionViewCell.xib */; };
+		FF0D85DD252A091A00512993 /* myGominTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85DB252A091A00512993 /* myGominTableViewCell.swift */; };
+		FF0D85DE252A091A00512993 /* myGominTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0D85DC252A091A00512993 /* myGominTableViewCell.xib */; };
 		FF1A7AE2251F83F300B95773 /* storyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A7AE0251F83F300B95773 /* storyCollectionViewCell.swift */; };
 		FF1A7AE3251F83F300B95773 /* storyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1A7AE1251F83F300B95773 /* storyCollectionViewCell.xib */; };
 		FF1A7AE8251F8C1900B95773 /* newGominTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A7AE6251F8C1900B95773 /* newGominTableViewCell.swift */; };
@@ -75,6 +81,12 @@
 		1E82307EA5C4B6C7E6375768 /* Pods-haruGomin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-haruGomin.release.xcconfig"; path = "Target Support Files/Pods-haruGomin/Pods-haruGomin.release.xcconfig"; sourceTree = "<group>"; };
 		A7FC68437CA99C1233C92595 /* Pods-haruGomin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-haruGomin.debug.xcconfig"; path = "Target Support Files/Pods-haruGomin/Pods-haruGomin.debug.xcconfig"; sourceTree = "<group>"; };
 		C6F612E390C7B06EC3EBE00E /* Pods_haruGomin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_haruGomin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF0D85C82529F25700512993 /* myWritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myWritingViewController.swift; sourceTree = "<group>"; };
+		FF0D85C92529F25700512993 /* myWritingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myWritingViewController.xib; sourceTree = "<group>"; };
+		FF0D85CE2529F93100512993 /* myWritingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myWritingCollectionViewCell.swift; sourceTree = "<group>"; };
+		FF0D85CF2529F93100512993 /* myWritingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myWritingCollectionViewCell.xib; sourceTree = "<group>"; };
+		FF0D85DB252A091A00512993 /* myGominTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myGominTableViewCell.swift; sourceTree = "<group>"; };
+		FF0D85DC252A091A00512993 /* myGominTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myGominTableViewCell.xib; sourceTree = "<group>"; };
 		FF1A7AE0251F83F300B95773 /* storyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storyCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF1A7AE1251F83F300B95773 /* storyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = storyCollectionViewCell.xib; sourceTree = "<group>"; };
 		FF1A7AE6251F8C1900B95773 /* newGominTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newGominTableViewCell.swift; sourceTree = "<group>"; };
@@ -169,6 +181,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FF0D85C72529F1DA00512993 /* myWritting */ = {
+			isa = PBXGroup;
+			children = (
+				FF0D85D3252A03D900512993 /* cell */,
+				FF0D85C82529F25700512993 /* myWritingViewController.swift */,
+				FF0D85C92529F25700512993 /* myWritingViewController.xib */,
+			);
+			path = myWritting;
+			sourceTree = "<group>";
+		};
+		FF0D85D3252A03D900512993 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				FF0D85DB252A091A00512993 /* myGominTableViewCell.swift */,
+				FF0D85DC252A091A00512993 /* myGominTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		FF0D85E0252A0F7200512993 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		FF1A7AE5251F8BFE00B95773 /* cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +232,8 @@
 				FF5257EF252435080076C7EB /* myWrittenTableViewCell.xib */,
 				FF5257F32524351C0076C7EB /* deleteTableViewCell.swift */,
 				FF5257F42524351C0076C7EB /* deleteTableViewCell.xib */,
+				FF0D85CE2529F93100512993 /* myWritingCollectionViewCell.swift */,
+				FF0D85CF2529F93100512993 /* myWritingCollectionViewCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -421,6 +461,7 @@
 		FFFA768B25190F000008101C /* addGomin */ = {
 			isa = PBXGroup;
 			children = (
+				FF0D85E0252A0F7200512993 /* Network */,
 				FFFA768E25190F3B0008101C /* addGominViewController.swift */,
 				FFFA768F25190F3B0008101C /* addGominViewController.xib */,
 			);
@@ -441,6 +482,7 @@
 		FFFA768D25190F290008101C /* myPage */ = {
 			isa = PBXGroup;
 			children = (
+				FF0D85C72529F1DA00512993 /* myWritting */,
 				FF5257EC252434C50076C7EB /* cell */,
 				FFFA769925190F590008101C /* myPageViewController.swift */,
 				FFFA769A25190F590008101C /* myPageViewController.xib */,
@@ -517,6 +559,8 @@
 				FFFA769C25190F590008101C /* myPageViewController.xib in Resources */,
 				FFFA76712518A5230008101C /* gominImgCollectionViewCell.xib in Resources */,
 				FF5257F1252435080076C7EB /* myWrittenTableViewCell.xib in Resources */,
+				FF0D85D12529F93100512993 /* myWritingCollectionViewCell.xib in Resources */,
+				FF0D85DE252A091A00512993 /* myGominTableViewCell.xib in Resources */,
 				FF993E27250BE55000E67251 /* setProfileViewController.xib in Resources */,
 				FFE05F29251660600048B56F /* CollectionViewCell.xib in Resources */,
 				FF1A7AEF251FA11700B95773 /* noticeTableViewCell.xib in Resources */,
@@ -531,6 +575,7 @@
 				FFBC734A2528E1FB00CF4FA3 /* profileImgCollectionViewCell.xib in Resources */,
 				FF6FCEBE24F6BF2200451815 /* Assets.xcassets in Resources */,
 				FFFA76772518AE530008101C /* detailGominViewController.xib in Resources */,
+				FF0D85CB2529F25700512993 /* myWritingViewController.xib in Resources */,
 				FFC9B7C42516385B0039FB22 /* selectGominViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,11 +629,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF0D85DD252A091A00512993 /* myGominTableViewCell.swift in Sources */,
 				FF5257F52524351C0076C7EB /* deleteTableViewCell.swift in Sources */,
 				FFBC733A2528DB5B00CF4FA3 /* imgPopUp.swift in Sources */,
 				FFE05F28251660600048B56F /* CollectionViewCell.swift in Sources */,
 				FF1A7AEE251FA11700B95773 /* noticeTableViewCell.swift in Sources */,
 				FF6FCEBC24F6BF2100451815 /* haruGomin.xcdatamodeld in Sources */,
+				FF0D85CA2529F25700512993 /* myWritingViewController.swift in Sources */,
 				FFBC733D2528DE1100CF4FA3 /* imgPopUpDelegate.swift in Sources */,
 				FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */,
 				FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */,
@@ -609,6 +656,7 @@
 				FF5257F0252435080076C7EB /* myWrittenTableViewCell.swift in Sources */,
 				FFBC73252528A95300CF4FA3 /* signUpResponse.swift in Sources */,
 				FFFA76762518AE530008101C /* detailGominViewController.swift in Sources */,
+				FF0D85D02529F93100512993 /* myWritingCollectionViewCell.swift in Sources */,
 				FF52587F2524BD380076C7EB /* signUpDataManager.swift in Sources */,
 				FFFA769625190F490008101C /* noticeViewController.swift in Sources */,
 				FFBC732E2528BFEE00CF4FA3 /* commentDataManager.swift in Sources */,

@@ -14,6 +14,7 @@ class myPageViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var line2: UILabel!
     @IBOutlet weak var myPageTable: UITableView!
     @IBOutlet weak var writingCollectionView: UICollectionView!
+    var myPosting:[addedGomin] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = ColorPalette.darkBackground
@@ -40,6 +41,15 @@ class myPageViewController: UIViewController, UICollectionViewDataSource {
         layout.minimumLineSpacing = 0
         writingCollectionView.collectionViewLayout = layout
         self.writingCollectionView.backgroundColor = ColorPalette.darkBackground
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
+        print("UserID:\(userId)")
+        myPostingDataManager.shared.getmyPostings(myPageVC: self, userId: userId, pageNum: 0)
+        myPostingDataManager.shared.getmyPostings(myPageVC: self, userId: userId, pageNum: 1)
+    }
+    func setmyPosting(){
+        self.writingCollectionView.reloadData()
     }
 
 
@@ -93,10 +103,16 @@ extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
 
 extension myPageViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return self.myPosting.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = writingCollectionView.dequeueReusableCell(withReuseIdentifier: "myGomin", for: indexPath) as! myWritingCollectionViewCell
+        cell.gominTitle.text = self.myPosting[indexPath.row].title
+        cell.gominContent.text = self.myPosting[indexPath.row].content
+        let createdAt:String = self.myPosting[indexPath.row].createdDate!
+        let createTime:String = createdAt.components(separatedBy: "T")[1]
+        let time:[String] = createTime.components(separatedBy: ":")
+        cell.time.text = time[0] + ":" + time[1]
             return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

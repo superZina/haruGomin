@@ -26,6 +26,7 @@ class signUpDataManager {
                     let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                     let getData = try JSONDecoder().decode(Profile.self, from: dataJSON)
                     UserDefaults.standard.setValue(getData.nickname, forKey: "userName")
+                    UserDefaults.standard.setValue(getData.userId, forKey: "userId")
                     let mainVC = tabBarViewController()
                     selectVC.navigationController?.pushViewController(mainVC, animated: true)
                 }catch {

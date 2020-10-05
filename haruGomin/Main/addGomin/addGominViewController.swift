@@ -15,14 +15,34 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
     @IBOutlet weak var gominTagCollection: UICollectionView!
     var keyboardHeight:CGFloat = 0
     @IBOutlet weak var gominContentTextView: UITextView!
+    var btns:[UIButton] = []
+    
     var btnText:[String] = ["일상","가족","친구","연애","학교","직장","취업","진로","돈","건강","기혼","육아"]
     //MARK: bar Buttons
-
+    
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func regist(_ sender: Any) {
+        let content:String = self.gominContentTextView.text
+        var tagName:String = ""
+        for i in btns {
+            if i.isSelected {
+                tagName = i.title(for: .normal)!
+            }
+        }
+        let Title:String = self.gominTitle.text!
+        let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
+        let parameter:[String:Any] = [
+            "content": content,
+            "postId": -1,
+            "postImage": "string",
+            "tagName": tagName,
+            "title": Title,
+            "userId": userId
+        ]
+        registGominDataManager.shared.registGomin(self, parameter: parameter)
     }
     @IBOutlet weak var textViewAndbottom: NSLayoutConstraint!
     override func viewDidLoad() {
@@ -78,7 +98,7 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
         self.keyboardHeight = keyboardHeight
         print("키보드 : \(keyboardHeight)")
         if self.view.bounds.height <= 667 {
-        print("height : \(self.view.bounds.height)")
+            print("height : \(self.view.bounds.height)")
             self.textViewAndbottom.constant = keyboardHeight - 50
         }else{
             self.textViewAndbottom.constant = keyboardHeight - 80
@@ -95,10 +115,9 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
         toolbar.items =  [
             flexibleSpace,
             UIBarButtonItem( image: UIImage(named: "24"), style: .done, target: self, action: #selector(takePicture)),
-                            UIBarButtonItem(image: UIImage(named: "picture"), style: .done, target: self, action: #selector(addImage))]
+            UIBarButtonItem(image: UIImage(named: "picture"), style: .done, target: self, action: #selector(addImage))]
         
         toolbar.sizeToFit()
-        
         gominContentTextView.inputAccessoryView = toolbar
         
     }
@@ -125,20 +144,28 @@ extension addGominViewController:UICollectionViewDelegateFlowLayout{
         cell.btn.layer.borderColor = ColorPalette.borderGray.cgColor
         cell.btn.setTitle(btnText[indexPath.item], for: .normal)
         cell.btn.setTitleColor(ColorPalette.textGray, for: .normal)
-        
-        cell.btn.addTarget(self, action: #selector(selected(sender:)), for: .touchUpInside)
+        self.btns.append(cell.btn)
+        cell.btn.tag = indexPath.item
+        cell.btn.addTarget(self, action: #selector(isSelected(_:)), for: .touchUpInside)
         return cell
     }
-    @objc func selected(sender: UIButton){
+
+    @objc func isSelected(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
             sender.layer.borderColor = ColorPalette.hagoRed.cgColor
             sender.setTitleColor(ColorPalette.hagoRed, for: .normal)
+            for i in btns {
+                if i != sender && i.isSelected {
+                    i.isSelected = !i.isSelected
+                    i.layer.borderColor = ColorPalette.borderGray.cgColor
+                    i.setTitleColor(.white, for: .normal)
+                }
+            }
         }else {
             sender.layer.borderColor = ColorPalette.borderGray.cgColor
-            sender.setTitleColor(ColorPalette.textGray, for: .normal)
+            sender.setTitleColor(.white, for: .normal)
         }
-        
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 72, height: 40)

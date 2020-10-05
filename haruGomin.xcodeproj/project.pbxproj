@@ -14,6 +14,12 @@
 		FF0D85D12529F93100512993 /* myWritingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0D85CF2529F93100512993 /* myWritingCollectionViewCell.xib */; };
 		FF0D85DD252A091A00512993 /* myGominTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85DB252A091A00512993 /* myGominTableViewCell.swift */; };
 		FF0D85DE252A091A00512993 /* myGominTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0D85DC252A091A00512993 /* myGominTableViewCell.xib */; };
+		FF0D85E2252A105100512993 /* registGominDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85E1252A105100512993 /* registGominDataManager.swift */; };
+		FF0D85E6252A1A9E00512993 /* registGominResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85E5252A1A9E00512993 /* registGominResponse.swift */; };
+		FF0D85EA252A1E6300512993 /* tagListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85E9252A1E6300512993 /* tagListDataManager.swift */; };
+		FF0D85EE252A1F4700512993 /* tagResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85ED252A1F4700512993 /* tagResponse.swift */; };
+		FF0D85F1252A26A000512993 /* selectTagDatatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85F0252A26A000512993 /* selectTagDatatManager.swift */; };
+		FF0D85F9252A30C200512993 /* myPostingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85F8252A30C200512993 /* myPostingDataManager.swift */; };
 		FF1A7AE2251F83F300B95773 /* storyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A7AE0251F83F300B95773 /* storyCollectionViewCell.swift */; };
 		FF1A7AE3251F83F300B95773 /* storyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1A7AE1251F83F300B95773 /* storyCollectionViewCell.xib */; };
 		FF1A7AE8251F8C1900B95773 /* newGominTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A7AE6251F8C1900B95773 /* newGominTableViewCell.swift */; };
@@ -87,6 +93,12 @@
 		FF0D85CF2529F93100512993 /* myWritingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myWritingCollectionViewCell.xib; sourceTree = "<group>"; };
 		FF0D85DB252A091A00512993 /* myGominTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myGominTableViewCell.swift; sourceTree = "<group>"; };
 		FF0D85DC252A091A00512993 /* myGominTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myGominTableViewCell.xib; sourceTree = "<group>"; };
+		FF0D85E1252A105100512993 /* registGominDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registGominDataManager.swift; sourceTree = "<group>"; };
+		FF0D85E5252A1A9E00512993 /* registGominResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registGominResponse.swift; sourceTree = "<group>"; };
+		FF0D85E9252A1E6300512993 /* tagListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tagListDataManager.swift; sourceTree = "<group>"; };
+		FF0D85ED252A1F4700512993 /* tagResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tagResponse.swift; sourceTree = "<group>"; };
+		FF0D85F0252A26A000512993 /* selectTagDatatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectTagDatatManager.swift; sourceTree = "<group>"; };
+		FF0D85F8252A30C200512993 /* myPostingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPostingDataManager.swift; sourceTree = "<group>"; };
 		FF1A7AE0251F83F300B95773 /* storyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storyCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF1A7AE1251F83F300B95773 /* storyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = storyCollectionViewCell.xib; sourceTree = "<group>"; };
 		FF1A7AE6251F8C1900B95773 /* newGominTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newGominTableViewCell.swift; sourceTree = "<group>"; };
@@ -203,6 +215,26 @@
 		FF0D85E0252A0F7200512993 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				FF0D85E1252A105100512993 /* registGominDataManager.swift */,
+				FF0D85E5252A1A9E00512993 /* registGominResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FF0D85E8252A1DD700512993 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FF0D85E9252A1E6300512993 /* tagListDataManager.swift */,
+				FF0D85ED252A1F4700512993 /* tagResponse.swift */,
+				FF0D85F0252A26A000512993 /* selectTagDatatManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FF0D85F7252A308100512993 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FF0D85F8252A30C200512993 /* myPostingDataManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -451,6 +483,7 @@
 		FFFA768525190E8C0008101C /* search */ = {
 			isa = PBXGroup;
 			children = (
+				FF0D85E8252A1DD700512993 /* Network */,
 				FF1A7AE5251F8BFE00B95773 /* cell */,
 				FFFA768625190EAA0008101C /* searchViewController.swift */,
 				FFFA768725190EAA0008101C /* searchViewController.xib */,
@@ -482,6 +515,7 @@
 		FFFA768D25190F290008101C /* myPage */ = {
 			isa = PBXGroup;
 			children = (
+				FF0D85F7252A308100512993 /* Network */,
 				FF0D85C72529F1DA00512993 /* myWritting */,
 				FF5257EC252434C50076C7EB /* cell */,
 				FFFA769925190F590008101C /* myPageViewController.swift */,
@@ -641,11 +675,13 @@
 				FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */,
 				FF1A7AE2251F83F300B95773 /* storyCollectionViewCell.swift in Sources */,
 				FFBC731C2528870700CF4FA3 /* mainGominDataManager.swift in Sources */,
+				FF0D85F9252A30C200512993 /* myPostingDataManager.swift in Sources */,
 				FF5257FA25245B9A0076C7EB /* loginDataManger.swift in Sources */,
 				FF6FCEB224F6BF2100451815 /* AppDelegate.swift in Sources */,
 				FF8E27392513A8BC00531E40 /* UITextField.swift in Sources */,
 				FF6FCEB424F6BF2100451815 /* SceneDelegate.swift in Sources */,
 				FF6FCECB24F6BF3D00451815 /* logInViewController.swift in Sources */,
+				FF0D85E2252A105100512993 /* registGominDataManager.swift in Sources */,
 				FFFA767D2518BEF60008101C /* commentViewController.swift in Sources */,
 				FFBC73292528B9EA00CF4FA3 /* detailGominDataManager.swift in Sources */,
 				FF5258622524AE4E0076C7EB /* checkNameDataManager.swift in Sources */,
@@ -655,8 +691,11 @@
 				FF993E22250BDDFA00E67251 /* colorPalette.swift in Sources */,
 				FF5257F0252435080076C7EB /* myWrittenTableViewCell.swift in Sources */,
 				FFBC73252528A95300CF4FA3 /* signUpResponse.swift in Sources */,
+				FF0D85E6252A1A9E00512993 /* registGominResponse.swift in Sources */,
+				FF0D85F1252A26A000512993 /* selectTagDatatManager.swift in Sources */,
 				FFFA76762518AE530008101C /* detailGominViewController.swift in Sources */,
 				FF0D85D02529F93100512993 /* myWritingCollectionViewCell.swift in Sources */,
+				FF0D85EA252A1E6300512993 /* tagListDataManager.swift in Sources */,
 				FF52587F2524BD380076C7EB /* signUpDataManager.swift in Sources */,
 				FFFA769625190F490008101C /* noticeViewController.swift in Sources */,
 				FFBC732E2528BFEE00CF4FA3 /* commentDataManager.swift in Sources */,
@@ -669,6 +708,7 @@
 				FFFA769025190F3B0008101C /* addGominViewController.swift in Sources */,
 				FFFA76692518959A0008101C /* gominCollectionViewCell.swift in Sources */,
 				FFFA76822518EE0F0008101C /* commentTableViewCell.swift in Sources */,
+				FF0D85EE252A1F4700512993 /* tagResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

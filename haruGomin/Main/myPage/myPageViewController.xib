@@ -14,6 +14,7 @@
                 <outlet property="line1" destination="WWv-xW-wuE" id="IZb-vd-WDb"/>
                 <outlet property="line2" destination="IS3-io-jaO" id="ln9-SL-wgf"/>
                 <outlet property="myPageTable" destination="4Dp-zo-RW5" id="5kE-Ww-L3F"/>
+                <outlet property="nickName" destination="rFb-i3-ev3" id="5bR-FZ-kGy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="writingCollectionView" destination="s3h-KG-NJv" id="akf-lz-qwc"/>
             </connections>

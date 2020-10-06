@@ -25,6 +25,8 @@ class myWritingViewController: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
+        myGominDataManager.shared.getmyGomins(myWritngVC: self, userId: userId, pageNum: 0)
         self.navigationController?.isNavigationBarHidden = false
     }
 }

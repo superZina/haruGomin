@@ -14,6 +14,7 @@
                 <outlet property="gominContentTextView" destination="chr-04-0La" id="Nr6-Sg-Lsk"/>
                 <outlet property="gominTagCollection" destination="fb5-5j-5Xm" id="ioW-7n-Do3"/>
                 <outlet property="gominTitle" destination="LeD-DE-fLJ" id="HzQ-b4-ILW"/>
+                <outlet property="img" destination="n2p-id-Ibw" id="LV7-fw-HDI"/>
                 <outlet property="registBtn" destination="Ez0-sz-aOH" id="j6u-va-YBW"/>
                 <outlet property="textViewAndbottom" destination="KyG-A1-K1C" id="3o1-Mw-0i5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -75,6 +76,13 @@
                         <action selector="regist:" destination="-1" eventType="touchUpInside" id="Suf-wd-swu"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n2p-id-Ibw">
+                    <rect key="frame" x="0.0" y="439" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="daK-g2-TOM"/>
+                        <constraint firstAttribute="height" constant="100" id="txR-uh-yjx"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -82,6 +90,7 @@
                 <constraint firstItem="Ez0-sz-aOH" firstAttribute="leading" secondItem="xLM-Iz-Aul" secondAttribute="trailing" constant="65" id="0Bs-m7-eDd"/>
                 <constraint firstItem="HkQ-fB-gnL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="5RC-dP-fmG"/>
                 <constraint firstItem="chr-04-0La" firstAttribute="top" secondItem="fb5-5j-5Xm" secondAttribute="bottom" id="Bam-mI-rHF"/>
+                <constraint firstItem="n2p-id-Ibw" firstAttribute="top" secondItem="chr-04-0La" secondAttribute="bottom" id="Bmv-5U-jkj"/>
                 <constraint firstItem="LeD-DE-fLJ" firstAttribute="top" secondItem="Ez0-sz-aOH" secondAttribute="bottom" constant="12" id="F8a-ym-jh1"/>
                 <constraint firstItem="xLM-Iz-Aul" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="FHS-nC-oOY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="chr-04-0La" secondAttribute="trailing" id="G9p-SY-i4f"/>
@@ -98,6 +107,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LeD-DE-fLJ" secondAttribute="trailing" id="p34-26-a4N"/>
                 <constraint firstItem="LeD-DE-fLJ" firstAttribute="top" secondItem="HkQ-fB-gnL" secondAttribute="bottom" constant="16" id="ppx-Yf-tav"/>
                 <constraint firstItem="chr-04-0La" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uKg-x3-YtQ"/>
+                <constraint firstItem="n2p-id-Ibw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xGs-DB-MP9"/>
             </constraints>
             <point key="canvasLocation" x="80.799999999999997" y="33.733133433283363"/>
         </view>

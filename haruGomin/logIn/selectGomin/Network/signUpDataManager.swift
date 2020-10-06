@@ -25,10 +25,19 @@ class signUpDataManager {
                     print(obj)
                     let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                     let getData = try JSONDecoder().decode(Profile.self, from: dataJSON)
+                    
                     UserDefaults.standard.setValue(getData.nickname, forKey: "userName")
                     UserDefaults.standard.setValue(getData.userId, forKey: "userId")
                     let mainVC = tabBarViewController()
-                    selectVC.navigationController?.pushViewController(mainVC, animated: true)
+                    if let window = UIApplication.shared.windows.first {
+                        window.rootViewController = mainVC
+                        UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {}, completion: nil)
+                    } else {
+                        mainVC.modalPresentationStyle = .overFullScreen
+                        selectVC
+                            .present(mainVC, animated: true, completion: nil)
+                    }
+                    
                 }catch {
 //                    print(error.localizedDescription)
                 }

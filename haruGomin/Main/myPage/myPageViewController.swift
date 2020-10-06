@@ -10,6 +10,7 @@ import UIKit
 
 class myPageViewController: UIViewController, UICollectionViewDataSource {
 
+    @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var line1: UILabel!
     @IBOutlet weak var line2: UILabel!
     @IBOutlet weak var myPageTable: UITableView!
@@ -41,13 +42,18 @@ class myPageViewController: UIViewController, UICollectionViewDataSource {
         layout.minimumLineSpacing = 0
         writingCollectionView.collectionViewLayout = layout
         self.writingCollectionView.backgroundColor = ColorPalette.darkBackground
+        
+        
+        let userName : String = UserDefaults.standard.value(forKey: "userName") as! String
+        self.nickName.text = userName
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
         print("UserID:\(userId)")
         myPostingDataManager.shared.getmyPostings(myPageVC: self, userId: userId, pageNum: 0)
-        myPostingDataManager.shared.getmyPostings(myPageVC: self, userId: userId, pageNum: 1)
     }
+    
     func setmyPosting(){
         self.writingCollectionView.reloadData()
     }

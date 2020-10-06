@@ -8,14 +8,17 @@
 
 import UIKit
 
-class addGominViewController: UIViewController, UICollectionViewDataSource, UITextFieldDelegate {
+class addGominViewController: UIViewController, UICollectionViewDataSource, UITextFieldDelegate  {
     
     @IBOutlet weak var registBtn: UIButton!
     @IBOutlet weak var gominTitle: UITextField!
     @IBOutlet weak var gominTagCollection: UICollectionView!
     var keyboardHeight:CGFloat = 0
     @IBOutlet weak var gominContentTextView: UITextView!
+
+    @IBOutlet weak var img: UIImageView!
     var btns:[UIButton] = []
+    let picker = UIImagePickerController()
     
     var btnText:[String] = ["일상","가족","친구","연애","학교","직장","취업","진로","돈","건강","기혼","육아"]
     //MARK: bar Buttons
@@ -57,7 +60,7 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
         self.registBtn.setTitleColor(ColorPalette.hagoRed, for: .normal)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         addToolbar()
-        
+        picker.delegate = self
         
         
         let itemCellNib = UINib(nibName: "CollectionViewCell", bundle: nil)
@@ -122,10 +125,16 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
         
     }
     @objc func addImage(){
-        
+        self.openLibrary()
     }
+    
     @objc func takePicture(){
         
+    }
+    
+    func openLibrary(){
+        picker.sourceType = .photoLibrary
+        present(picker, animated: false, completion: nil)
     }
 }
 extension addGominViewController:UICollectionViewDelegateFlowLayout{
@@ -174,4 +183,21 @@ extension addGominViewController:UICollectionViewDelegateFlowLayout{
         return UIEdgeInsets(top: 10, left: 20, bottom: 10, right: -10)
     }
     
+}
+
+extension addGominViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            let View:UIView = UIView(frame: CGRect(x: 0, y: 180, width: self.view.bounds.width, height: 100))
+            let imgView:UIImageView = UIImageView(frame: CGRect(x:0, y: 0, width: 100, height: 100))
+            imgView.image = selectedImage
+            View.addSubview(imgView)
+            View.backgroundColor = .white
+            self.gominContentTextView.addSubview(View)
+//            self.gominContentTextView.addSubview(imgView)
+//            self.img.image = selectedImage
+            self.textViewAndbottom.constant = self.textViewAndbottom.constant + 600
+        }
+        dismiss(animated: true, completion: nil)
+    }
 }

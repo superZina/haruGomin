@@ -34,7 +34,7 @@ class LoginDataManager {
                         //로그인 성공 , 메인으로 넘어가기
                         let mainVC = tabBarViewController()
                         if let window = UIApplication.shared.windows.first {
-                            window.rootViewController = mainVC
+                            window.rootViewController = UINavigationController(rootViewController:mainVC)
                             UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {}, completion: nil)
                         } else {
                             mainVC.modalPresentationStyle = .overFullScreen

@@ -30,7 +30,7 @@ class signUpDataManager {
                     UserDefaults.standard.setValue(getData.userId, forKey: "userId")
                     let mainVC = tabBarViewController()
                     if let window = UIApplication.shared.windows.first {
-                        window.rootViewController = mainVC
+                        window.rootViewController = UINavigationController(rootViewController:mainVC)
                         UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {}, completion: nil)
                     } else {
                         mainVC.modalPresentationStyle = .overFullScreen

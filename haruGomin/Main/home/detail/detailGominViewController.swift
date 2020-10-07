@@ -15,6 +15,7 @@ class detailGominViewController: UIViewController {
         case collapsed
     }
     
+    @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var commentTextView: UIView!
     var commentVC : commentViewController!  = commentViewController()
     var visualEffectView:UIVisualEffectView!
@@ -38,9 +39,11 @@ class detailGominViewController: UIViewController {
     @IBOutlet weak var line: UILabel!
     @IBOutlet weak var underline: UILabel!
     @IBOutlet weak var commentTextField: UITextField!
+    @IBOutlet weak var commentView: UIView!
+    @IBOutlet weak var commentBtn: UIButton!
     
     override func viewDidLoad() {
-        detailGominDataManager.shared.getGominDetail(self, postId: self.postId, pageNum: 0)
+        
         //MARK: navigation bar
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.isTranslucent = false
@@ -51,7 +54,6 @@ class detailGominViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white ]
         
         super.viewDidLoad()
-        print(UIScreen.main.nativeBounds.height)
         self.navigationController?.isNavigationBarHidden = false
         self.view.backgroundColor = ColorPalette.background
         self.tag.layer.cornerRadius = 8
@@ -62,22 +64,92 @@ class detailGominViewController: UIViewController {
         self.gominTextView.backgroundColor = .none
         self.gominTextView.textColor = .white
         self.commentTextView.backgroundColor = ColorPalette.darkBackground
-        self.commentTextField.layer.cornerRadius = 8
-        self.commentTextField.layer.borderColor = ColorPalette.borderGray.cgColor
-        self.commentTextField.layer.borderWidth = 1
-        self.commentTextField.textColor = ColorPalette.borderGray
+        self.commentView.layer.cornerRadius = 8
+        self.commentView.layer.borderColor = ColorPalette.borderGray.cgColor
+        self.commentView.layer.borderWidth = 1
+        self.commentTextField.textColor = .white
+        self.commentView.backgroundColor = ColorPalette.darkBackground
         
         setupCommend()
         self.line.backgroundColor = ColorPalette.borderGray
         self.underline.backgroundColor = ColorPalette.borderGray
         self.commentTextView.layer.zPosition = 1
         self.underline.layer.zPosition = 1
+        self.commentView.layer.zPosition = 1
+        
         self.commentTextField.isEnabled = true
         self.view.isUserInteractionEnabled = true
         self.commentTextField.attributedPlaceholder = NSAttributedString(string: "   댓글을 입력해 주세요",            attributes: [NSAttributedString.Key.foregroundColor: ColorPalette.borderGray])
+        self.commentTextField.delegate = self
+        self.commentTextField.addLeftPadding()
+        self.commentTextField.addTarget(self, action: #selector(textfieldChanged(_:)), for: .editingChanged)
         self.view.bringSubviewToFront(self.commentTextView)
-        // self.view.bringSubviewToFront(self.commentTextField)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardNotification(notification:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        detailGominDataManager.shared.getGominDetail(self, postId: self.postId, pageNum: 0)
+        self.commentBtn.isEnabled  = false
+    }
+    
+    
+    //MARK: 댓글 입력 API
+    @IBAction func registComment(_ sender: Any) {
+        let userName:String = UserDefaults.standard.value(forKey: "userName") as! String
+        let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
+        let parameters:[String:Any] = [
+            "content": self.commentTextField.text,
+            "nickname": userName,
+            "postId": self.postId,
+            "profileImage": "string",
+            "userId": userId
+        ]
+        registCommentDataManager.shared.registComment(self ,self.commentVC , parameters: parameters)
+        
+    }
+    
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    @objc func textfieldChanged(_ textfield: UITextField) {
+        if(textfield.text != "") {
+            self.commentBtn.setImage(UIImage(named: "sendMessagePurple"), for: .normal)
+            self.commentBtn.isEnabled  = true
+        }else{
+            self.commentBtn.setImage(UIImage(named: "sendMessageGray"), for: .normal)
+            self.commentBtn.isEnabled  = false
+        }
+    }
+    
+    @objc func keyboardNotification(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else { return }
+        
+        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        let endFrameY = endFrame?.origin.y ?? 0
+        let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+        let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+        
+        if endFrameY >= UIScreen.main.bounds.size.height {
+            self.keyboardHeightLayoutConstraint?.constant = 0.0
+        } else {
+            self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 0.0
+        }
+        
+        UIView.animate(
+            withDuration: duration,
+            delay: TimeInterval(0),
+            options: animationCurve,
+            animations: { self.view.layoutIfNeeded() },
+            completion: nil)
+    }
+    
     //MARK: gomin content Settings
     func setGominContent(gomin: gomin) {
         let createdAt:String = gomin.createdDate!
@@ -87,7 +159,7 @@ class detailGominViewController: UIViewController {
         self.tag.setTitle(gomin.tagName, for: .normal)
         self.gominTextView.text = gomin.content
         self.navigationController?.navigationBar.topItem?.title = gomin.title
-//        self.commentCount.text = String(gomin.comments!.count)
+        //        self.commentCount.text = String(gomin.comments!.count)
     }
     
     //MARK: commentVC Settings
@@ -104,8 +176,8 @@ class detailGominViewController: UIViewController {
             break
         case 2436: //pro
             commentHandleArea = 400
-            commentHeight = 700
-            distance = 50
+            commentHeight = 600
+            distance = 100
             break
         case 1792: //1
             commentHandleArea = 300
@@ -132,7 +204,7 @@ class detailGominViewController: UIViewController {
         commentVC.view.frame = CGRect(x: 0, y: self.view.frame.height - commentHandleArea, width: self.view.bounds.width, height: commentVC.view.bounds.height)
         
         print("commentVC Height : ",self.view.frame.height - commentHandleArea)
-
+        
         
         commentVC.view.clipsToBounds = true
         
@@ -238,4 +310,17 @@ class detailGominViewController: UIViewController {
             animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
         }
     }
+}
+
+extension detailGominViewController:UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if(textField.text != "") {
+            self.commentBtn.setImage(UIImage(named: "sendMessagePurple"), for: .normal)
+            self.commentBtn.isEnabled  = true
+        }else{
+            self.commentBtn.setImage(UIImage(named: "sendMessageGray"), for: .normal)
+            self.commentBtn.isEnabled  = false
+        }
+    }
+   
 }

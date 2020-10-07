@@ -10,23 +10,32 @@ import UIKit
 
 class addGominViewController: UIViewController, UICollectionViewDataSource, UITextFieldDelegate  {
     
+    @IBOutlet weak var imageView: UIView!
     @IBOutlet weak var registBtn: UIButton!
     @IBOutlet weak var gominTitle: UITextField!
     @IBOutlet weak var gominTagCollection: UICollectionView!
-    var keyboardHeight:CGFloat = 0
-    @IBOutlet weak var gominContentTextView: UITextView!
 
+    @IBOutlet weak var gominContentTextView: UITextView!
+    @IBOutlet weak var viewHeight: NSLayoutConstraint!
+    @IBOutlet weak var textViewAndbottom: NSLayoutConstraint!
     @IBOutlet weak var img: UIImageView!
     var btns:[UIButton] = []
     let picker = UIImagePickerController()
+    var keyboardHeight:CGFloat = 0
+    var toolbarHeight:CGFloat = 0
     
-    var btnText:[String] = ["일상","가족","친구","연애","학교","직장","취업","진로","돈","건강","기혼","육아"]
+    var btnText:[String] = ["돈","일상","가족","건강","친구사이","직장생활","연애","학교생활","진로","기혼자만 아는","육아"]
     //MARK: bar Buttons
     
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func clearImg(_ sender: Any) {
+        self.imageView.isHidden = true
+        self.img.isHidden = true
+        self.viewHeight.constant = 0
+    }
     @IBAction func regist(_ sender: Any) {
         let content:String = self.gominContentTextView.text
         var tagName:String = ""
@@ -47,7 +56,7 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
         ]
         registGominDataManager.shared.registGomin(self, parameter: parameter)
     }
-    @IBOutlet weak var textViewAndbottom: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
@@ -80,6 +89,8 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
         self.gominTitle.font = .boldSystemFont(ofSize: 16)
         self.gominTitle.backgroundColor = ColorPalette.background
         
+        self.imageView.backgroundColor = ColorPalette.background
+        
         gominTitle.keyboardAppearance = .dark
         
         
@@ -91,6 +102,10 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
     }
     override func viewWillAppear(_ animated: Bool) {
         gominTitle.becomeFirstResponder()
+        self.imageView.isHidden = true
+        self.img.isHidden = true
+        self.viewHeight.constant = 0
+        
     }
     
     @objc func keyboardWillShow(notification:NSNotification) {
@@ -98,6 +113,7 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
         let keyboardFrame:NSValue = userInfo.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
         let keyboardRectangle = keyboardFrame.cgRectValue
         let keyboardHeight = keyboardRectangle.height
+        
         self.keyboardHeight = keyboardHeight
         print("키보드 : \(keyboardHeight)")
         if self.view.bounds.height <= 667 {
@@ -116,13 +132,17 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
         toolbar.barStyle = .black
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolbar.items =  [
-            flexibleSpace,
             UIBarButtonItem( image: UIImage(named: "24"), style: .done, target: self, action: #selector(takePicture)),
-            UIBarButtonItem(image: UIImage(named: "picture"), style: .done, target: self, action: #selector(addImage))]
+            UIBarButtonItem(image: UIImage(named: "picture"), style: .done, target: self, action: #selector(addImage)),flexibleSpace ,
+            UIBarButtonItem(image: UIImage(named: "keyboardHide"), style: .done, target: self, action: #selector(hideKeyboard))]
         
         toolbar.sizeToFit()
+        self.toolbarHeight =  toolbar.bounds.height
         gominContentTextView.inputAccessoryView = toolbar
         
+    }
+    @objc func hideKeyboard(){
+        self.view.endEditing(true)
     }
     @objc func addImage(){
         self.openLibrary()
@@ -177,7 +197,8 @@ extension addGominViewController:UICollectionViewDelegateFlowLayout{
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 72, height: 40)
+        let size = (btnText[indexPath.item] as! NSString).size(withAttributes: nil).width
+        return CGSize(width: size + 40, height: 40)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 20, bottom: 10, right: -10)
@@ -188,15 +209,20 @@ extension addGominViewController:UICollectionViewDelegateFlowLayout{
 extension addGominViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            let View:UIView = UIView(frame: CGRect(x: 0, y: 180, width: self.view.bounds.width, height: 100))
-            let imgView:UIImageView = UIImageView(frame: CGRect(x:0, y: 0, width: 100, height: 100))
-            imgView.image = selectedImage
-            View.addSubview(imgView)
-            View.backgroundColor = .white
-            self.gominContentTextView.addSubview(View)
+//            let View:UIView = UIView(frame: CGRect(x: 0, y: 180, width: self.view.bounds.width, height: 100))
+//            let imgView:UIImageView = UIImageView(frame: CGRect(x:0, y: 0, width: 100, height: 100))
+//            imgView.image = selectedImage
+//            View.addSubview(imgView)
+//            View.backgroundColor = .white
+//            self.gominContentTextView.addSubview(View)
 //            self.gominContentTextView.addSubview(imgView)
 //            self.img.image = selectedImage
-            self.textViewAndbottom.constant = self.textViewAndbottom.constant + 600
+            self.viewHeight.constant = 100
+            self.imageView.isHidden = false
+            self.img.image = selectedImage
+            self.img.isHidden = false
+            self.textViewAndbottom.constant = self.keyboardHeight + self.toolbarHeight
+//            self.textViewAndbottom.constant = self.textViewAndbottom.constant + 600
         }
         dismiss(animated: true, completion: nil)
     }

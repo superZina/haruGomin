@@ -14,7 +14,9 @@
                 <outlet property="gominCategoryCollection" destination="New-jd-cWp" id="cv3-2F-FUC"/>
                 <outlet property="gominStoryCollection" destination="8xl-jl-NLW" id="F7j-3Z-qnY"/>
                 <outlet property="newGominTable" destination="wFC-oT-iZQ" id="s8Y-a3-GgS"/>
+                <outlet property="searchGomin" destination="tOE-5Z-q45" id="DxI-aH-xGh"/>
                 <outlet property="searchGominBar" destination="tOE-5Z-q45" id="Bbz-Pe-8XT"/>
+                <outlet property="searchbarAndRight" destination="nPl-qm-fvA" id="1xp-sY-ybc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,8 +25,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tOE-5Z-q45">
+                <searchBar opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tOE-5Z-q45">
                     <rect key="frame" x="0.0" y="54" width="414" height="56"/>
+                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="New-jd-cWp">

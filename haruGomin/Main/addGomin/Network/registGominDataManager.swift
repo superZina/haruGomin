@@ -16,12 +16,12 @@ class registGominDataManager{
         AF.request(url, method: .post, parameters: parameter , encoding: JSONEncoding.default)
             .validate()
             .responseJSON { (response) in
+                print(parameter)
                 switch response.result {
                 case .success(let obj):
                     do{
                         let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                         let getData = try JSONDecoder().decode(addedGomin.self, from: dataJSON)
-                        
                         print(getData)
                         let alert = UIAlertController(title: "고민등록 완료!", message: "고민이 등록됐어요!", preferredStyle: .alert)
                         let success = UIAlertAction(title: "확인", style: .default) { (action) in
@@ -33,6 +33,7 @@ class registGominDataManager{
                         print(error.localizedDescription)
                     }
                 default:
+                    print(response.error)
                     return
                 }
             }

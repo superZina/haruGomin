@@ -37,7 +37,7 @@ class commentViewController: UIViewController {
             tableAndBottom.constant = 250
             break
         case 2436: //pro
-            tableAndBottom.constant = 270
+            tableAndBottom.constant = 150
             break
         case 1792: //11
             tableAndBottom.constant = 300
@@ -54,12 +54,7 @@ class commentViewController: UIViewController {
         commentDataManager.shared.getGominDetail(self, postId: self.postId, pageNum: 0)
 //        self.view.layoutIfNeeded()
     }
-//    func setComment() {
-//        print(self.comment)
-//
-//        self.view.setNeedsLayout()
-//        self.view.setNeedsDisplay()
-//    }
+
 
 }
 extension commentViewController : UITableViewDelegate , UITableViewDataSource {
@@ -87,7 +82,19 @@ extension commentViewController : UITableViewDelegate , UITableViewDataSource {
         cell.likeCount.text = String((self.comment[indexPath.row]?.commentLikes)!)
         cell.userName.text = self.comment[indexPath.row]?.nickname
 //        cell.comment.text = commnetList[indexPath.row]
+        cell.likeCount.text = String( (self.comment[indexPath.row]?.commentLikes)!)
+        cell.like.tag = (comment[indexPath.row]?.commentId)!
+        cell.like.addTarget(self, action: #selector(likeComment(_:)), for: .touchUpInside)
+        
         return cell
+    }
+    
+    @objc func likeComment(_ sendr:UIButton) {
+        let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
+        print("DEBUG: commentID is \(sendr.tag)")
+        commentLikeDataManager.shared.likeComment(commentVC: self, commentID: sendr.tag, userId: userId)
+        
+        
     }
     
     

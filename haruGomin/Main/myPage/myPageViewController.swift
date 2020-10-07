@@ -52,6 +52,7 @@ class myPageViewController: UIViewController, UICollectionViewDataSource {
         let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
         print("UserID:\(userId)")
         myPostingDataManager.shared.getmyPostings(myPageVC: self, userId: userId, pageNum: 0)
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     func setmyPosting(){

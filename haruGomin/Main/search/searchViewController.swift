@@ -13,11 +13,14 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var gominCategoryCollection: UICollectionView!
     @IBOutlet weak var gominStoryCollection: UICollectionView!
     @IBOutlet weak var newGominTable: UITableView!
+    @IBOutlet weak var searchGomin: UISearchBar!
+    @IBOutlet weak var searchbarAndRight: NSLayoutConstraint!
     var btnText:[tagList] = []
     var btns:[UIButton] = []
     var newGomins:[addedGomin] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         searchGominBar.backgroundColor = ColorPalette.darkBackground
 
         self.view.backgroundColor = ColorPalette.darkBackground
@@ -46,9 +49,18 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
         self.newGominTable.register(newGominCellNib, forCellReuseIdentifier: "newGomin")
         self.newGominTable.delegate = self
         self.newGominTable.dataSource = self
+        
+        self.searchGominBar.delegate = self
+        self.searchGominBar.barTintColor = ColorPalette.darkBackground
+        self.searchGominBar.tintColor = ColorPalette.textGray
+        let textFieldInsideSearchBar = searchGominBar.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = ColorPalette.textGray
+        self.searchGominBar.setImage(UIImage(named: "search"), for: .search, state: .normal)
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
         tagListDataManager.shared.getTagList(self)
+        selectTagDatatManager.shared.getTagGomins(self, tagName: "전체", pageNum: 0)
     }
     func setTagList(){
         self.gominCategoryCollection.reloadData()
@@ -58,6 +70,30 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
     }
 
 }
+extension searchViewController:UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+//        self.searchbarAndRight.constant = -60
+        self.searchGominBar.showsCancelButton = true
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let resultVC = searchResultViewController()
+        if searchBar.text! != ""{
+        resultVC.keyword = searchBar.text!
+        self.navigationController?.pushViewController(resultVC, animated: true)
+        }else {
+            let alert = UIAlertController(title: "잠시만요!", message: "검색어를 입력해주세요! ", preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.view.endEditing(true)
+        self.searchGominBar.text = ""
+        self.searchGominBar.showsCancelButton = false
+    }
+}
+
+
 extension searchViewController: UICollectionViewDelegateFlowLayout , UITableViewDelegate,UITableViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == gominCategoryCollection {

@@ -41,7 +41,7 @@ class selectGominViewController: UIViewController, UICollectionViewDataSource {
     @IBAction func moveNext(_ sender: Any) {
         var ageRange:Int = 0
         var hashTags:[String] = []
-        let id:Int64 = UserDefaults.standard.value(forKey: "id") as! Int64
+        let id:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
         
         switch self.age {
         case "1 ~ 9":

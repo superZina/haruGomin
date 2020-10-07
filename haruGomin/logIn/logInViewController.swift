@@ -45,11 +45,13 @@ class logInViewController: UIViewController{
                         let id = accessTokenInfo.id
                         print("DEBUG: AccessTokenInfo is \(accessTokenInfo)")
                         print("DEBUG: AccessTokenInfo is \(oauthToken?.accessToken)")
-                        if let jwt:String = UserDefaults.standard.value(forKey: "jwt") as! String {
-                            LoginDataManager.shared.alreadyUser(self, jwt: jwt , token: oauthToken!.accessToken , id : id)
-                        }else{ //회원이 아닐 때
+                        guard let jwt:String = UserDefaults.standard.value(forKey: "jwt") as! String else {
                             LoginDataManager.shared.login(self, token: oauthToken!.accessToken, id: id)
                         }
+                            LoginDataManager.shared.alreadyUser(self, jwt: jwt , token: oauthToken!.accessToken , id : id)
+                        //회원이 아닐 때
+                            
+                        
                         
                     }
                 }

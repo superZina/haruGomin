@@ -17,7 +17,7 @@ class tabBarViewController: UITabBarController , UITabBarControllerDelegate{
         // Do any additional setup after loading the view.
         self.tabBar.backgroundColor = ColorPalette.darkBackground
         let homeVC = homeViewController()
-        let searchVC = searchViewController()
+        let searchVC =  searchViewController()
         let addVC = addGominViewController()
         let notice = noticeViewController()
         let myPageVC = myPageViewController()

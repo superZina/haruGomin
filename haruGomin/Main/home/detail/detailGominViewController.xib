@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="detailGominViewController" customModule="haruGomin" customModuleProvider="target">
             <connections>
+                <outlet property="accuseBtn" destination="E1A-Cv-92K" id="OeC-8J-0XM"/>
                 <outlet property="commentBtn" destination="enL-uf-UWY" id="PdS-du-Dq1"/>
                 <outlet property="commentCount" destination="hzT-Dc-Xjz" id="eO3-Dm-cDk"/>
                 <outlet property="commentTextField" destination="IOq-5w-vkO" id="chw-Kf-ZEV"/>
@@ -163,6 +164,17 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E1A-Cv-92K">
+                    <rect key="frame" x="370" y="123.66666666666669" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="2PH-iZ-YFd"/>
+                        <constraint firstAttribute="width" constant="24" id="Uer-fs-5V2"/>
+                    </constraints>
+                    <state key="normal" image="more"/>
+                    <connections>
+                        <action selector="accuseGomin:" destination="-1" eventType="touchUpInside" id="2xk-hA-Mt5"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemGray4Color"/>
@@ -175,6 +187,7 @@
                 <constraint firstItem="ZxL-ze-YXh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="22" id="H8P-9g-bgL"/>
                 <constraint firstItem="ArY-9n-SKH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="HcY-nb-dRK"/>
                 <constraint firstAttribute="bottom" secondItem="qFj-r4-mvI" secondAttribute="bottom" id="ILg-0F-tFu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E1A-Cv-92K" secondAttribute="trailing" constant="20" id="IWB-2V-Kqm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZxL-ze-YXh" secondAttribute="trailing" constant="20" id="NcK-2C-n43"/>
                 <constraint firstItem="Agd-p4-PcU" firstAttribute="top" secondItem="VOU-Xd-wab" secondAttribute="bottom" constant="14.5" id="QAe-8d-imN"/>
                 <constraint firstItem="qFj-r4-mvI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WrI-zf-THi"/>
@@ -191,6 +204,7 @@
                 <constraint firstItem="ZxL-ze-YXh" firstAttribute="leading" relation="lessThanOrEqual" secondItem="C5Z-hv-CWj" secondAttribute="trailing" constant="216" id="qbC-rP-cbG"/>
                 <constraint firstItem="e8D-Dj-W7P" firstAttribute="leading" secondItem="VOU-Xd-wab" secondAttribute="trailing" constant="5" id="qyK-I0-MJG"/>
                 <constraint firstItem="C5Z-hv-CWj" firstAttribute="leading" secondItem="ArY-9n-SKH" secondAttribute="trailing" constant="10" id="rgY-Nk-S5b"/>
+                <constraint firstItem="Agd-p4-PcU" firstAttribute="top" secondItem="E1A-Cv-92K" secondAttribute="bottom" constant="14.67" id="uG2-Tt-7eI"/>
                 <constraint firstItem="2qL-Tl-A94" firstAttribute="leading" secondItem="e8D-Dj-W7P" secondAttribute="trailing" constant="1" id="vOB-em-uin"/>
                 <constraint firstItem="e8D-Dj-W7P" firstAttribute="top" secondItem="ArY-9n-SKH" secondAttribute="bottom" constant="18" id="vgN-jo-iuM"/>
                 <constraint firstItem="qFj-r4-mvI" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="wag-KS-N4L"/>
@@ -209,6 +223,7 @@
     </objects>
     <resources>
         <image name="comment" width="24" height="24"/>
+        <image name="more" width="24" height="24"/>
         <image name="rectangleCopy2-1" width="16" height="16"/>
         <image name="sendMessageGray" width="36" height="36"/>
         <image name="white" width="24" height="24"/>

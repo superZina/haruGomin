@@ -22,7 +22,14 @@ class commentDataManager{
                         do{
                             let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                             let getData = try JSONDecoder().decode([comment].self, from: dataJSON)
-                            commentVC.comment = getData
+                            if pageNum == 0 {
+                                commentVC.pageNum = 0
+                                commentVC.comment = getData
+                                
+                            }else {
+                            commentVC.comment.append(contentsOf: getData)
+                            }
+
                             commentVC.commentTableVeiw.reloadData()
                             commentVC.commentTableVeiw.setNeedsDisplay()
                         }catch {

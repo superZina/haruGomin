@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="myWritingViewController" customModule="haruGomin" customModuleProvider="target">
             <connections>
+                <outlet property="deleteBtn" destination="9ah-VP-mFB" id="rGI-4o-ofE"/>
                 <outlet property="myGominTable" destination="t4q-1a-rsV" id="xQD-cY-5vK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -30,6 +31,9 @@
                     <state key="normal" title="삭제하기">
                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="deleteGomin:" destination="-1" eventType="touchUpInside" id="9g2-up-Ldg"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

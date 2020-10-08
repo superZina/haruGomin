@@ -15,6 +15,8 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var newGominTable: UITableView!
     @IBOutlet weak var searchGomin: UISearchBar!
     @IBOutlet weak var searchbarAndRight: NSLayoutConstraint!
+    var pageNum:Int = 0
+    var tagName:String = "전체"
     var btnText:[tagList] = []
     var btns:[UIButton] = []
     var newGomins:[addedGomin] = []
@@ -58,6 +60,7 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
         self.searchGominBar.setImage(UIImage(named: "search"), for: .search, state: .normal)
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.pageNum = 0
         self.navigationController?.isNavigationBarHidden = true
         tagListDataManager.shared.getTagList(self)
         selectTagDatatManager.shared.getTagGomins(self, tagName: "전체", pageNum: 0)
@@ -141,7 +144,10 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
                     i.setTitleColor(ColorPalette.textGray, for: .normal)
                 }
             }
-            selectTagDatatManager.shared.getTagGomins(self, tagName: sender.title(for: .normal)!, pageNum: 0)
+            self.pageNum = 0
+            self.tagName =  sender.title(for: .normal)!
+            self.newGomins = [] 
+            selectTagDatatManager.shared.getTagGomins(self, tagName: self.tagName, pageNum: self.pageNum)
         }else {
             sender.layer.borderColor = ColorPalette.borderGray.cgColor
             sender.setTitleColor(ColorPalette.textGray, for: .normal)
@@ -176,7 +182,45 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
         let createTime:String = createdAt.components(separatedBy: "T")[1]
         let time:[String] = createTime.components(separatedBy: ":")
         cell.time.text = time[0] + ":" + time[1]
+        cell.accuseBtn.addTarget(self,action: #selector(accuseGomin(_:)), for: .touchUpInside)
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let postId = self.newGomins[indexPath.row].postId
+        let detailVC = detailGominViewController()
+        detailVC.postId = postId!
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+    @objc func accuseGomin(_ sender: UIButton) {
+        let alert = UIAlertController(title: "       ", message: "신중히 생각하셨나요?", preferredStyle: .actionSheet)
+        let accuseAction = UIAlertAction(title: "신고하기", style: .destructive) { (action) in
+            
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
+        }
+        let icon:UIImageView = UIImageView(frame: CGRect(x: alert.view.bounds.width/2 - 18, y: 8, width: 24, height: 24))
+        icon.image = UIImage(named: "siren")
+        alert.addAction(accuseAction)
+        alert.addAction(cancelAction)
+        alert.view.addSubview(icon)
+//        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = ColorPalette.darkBackground
+//        alert.view.tintColor = ColorPalette.textGray
+        
+        self.present(alert, animated: true, completion: nil)
+        print("selected")
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let height:CGFloat = scrollView.frame.size.height
+        let contentYOffset:CGFloat = scrollView.contentOffset.y
+        let scrollViewHeight:CGFloat = scrollView.contentSize.height
+        let distanceFromBottom:CGFloat = scrollViewHeight - contentYOffset
+        
+        if distanceFromBottom < height {
+            self.pageNum = self.pageNum + 1
+            selectTagDatatManager.shared.getTagGomins(self, tagName: self.tagName, pageNum: self.pageNum)
+            print("DEBUG: listCount is \(self.newGomins.count)")
+        }
+        
     }
 //
     

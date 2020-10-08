@@ -51,6 +51,8 @@ class myPageViewController: UIViewController, UICollectionViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
         print("UserID:\(userId)")
+        let jwt:String = UserDefaults.standard.value(forKey: "jwt") as! String
+        print("DEBUG: jwt is \(jwt)")
         myPostingDataManager.shared.getmyPostings(myPageVC: self, userId: userId, pageNum: 0)
         self.navigationController?.isNavigationBarHidden = true
     }
@@ -120,7 +122,15 @@ extension myPageViewController: UICollectionViewDelegateFlowLayout {
         let createTime:String = createdAt.components(separatedBy: "T")[1]
         let time:[String] = createTime.components(separatedBy: ":")
         cell.time.text = time[0] + ":" + time[1]
+        cell.accuseBtn.tag = indexPath.row
+        cell.accuseBtn.addTarget(self,action: #selector(accuseGomin(_:)), for: .touchUpInside)
             return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let postId = self.myPosting[indexPath.item].postId
+        let detailVC = detailGominViewController()
+        detailVC.postId = postId!
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.bounds.width, height: 153)
@@ -128,5 +138,24 @@ extension myPageViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
             return UIEdgeInsets(top: 0, left: 0, bottom:  0, right: 0)
         
+    }
+    @objc func accuseGomin(_ sender: UIButton) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: "삭제하기", style: .destructive) { (action) in
+            
+        }
+        let editAction = UIAlertAction(title: "수정하기", style: .default) { (action) in
+            let postInfo:addedGomin = self.myPosting[sender.tag]
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
+        }
+        let icon:UIImageView = UIImageView(frame: CGRect(x: alert.view.bounds.width/2 - 18, y: 8, width: 24, height: 24))
+        icon.image = UIImage(named: "siren")
+        alert.addAction(deleteAction)
+        alert.addAction(editAction)
+        alert.addAction(cancelAction)
+        alert.view.addSubview(icon)
+        self.present(alert, animated: true, completion: nil)
+        print("selected")
     }
 }

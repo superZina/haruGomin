@@ -16,6 +16,7 @@ class myWritingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var gominContent: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var commentCount: UILabel!
+    @IBOutlet weak var accuseBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

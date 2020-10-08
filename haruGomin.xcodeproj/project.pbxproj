@@ -49,6 +49,8 @@
 		FF993E22250BDDFA00E67251 /* colorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF993E21250BDDFA00E67251 /* colorPalette.swift */; };
 		FF993E26250BE55000E67251 /* setProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF993E24250BE55000E67251 /* setProfileViewController.swift */; };
 		FF993E27250BE55000E67251 /* setProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF993E25250BE55000E67251 /* setProfileViewController.xib */; };
+		FF9A64F4252F3CE600946DA1 /* deleteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A64F3252F3CE600946DA1 /* deleteDataManager.swift */; };
+		FF9A64F7252F446A00946DA1 /* editDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A64F6252F446A00946DA1 /* editDataManager.swift */; };
 		FF9CF26B252CD5AD00BA9265 /* searchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF269252CD5AD00BA9265 /* searchResultViewController.swift */; };
 		FF9CF26C252CD5AD00BA9265 /* searchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9CF26A252CD5AD00BA9265 /* searchResultViewController.xib */; };
 		FF9CF271252CDA4D00BA9265 /* searchDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF270252CDA4D00BA9265 /* searchDataManager.swift */; };
@@ -137,6 +139,8 @@
 		FF993E21250BDDFA00E67251 /* colorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorPalette.swift; sourceTree = "<group>"; };
 		FF993E24250BE55000E67251 /* setProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setProfileViewController.swift; sourceTree = "<group>"; };
 		FF993E25250BE55000E67251 /* setProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = setProfileViewController.xib; sourceTree = "<group>"; };
+		FF9A64F3252F3CE600946DA1 /* deleteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteDataManager.swift; sourceTree = "<group>"; };
+		FF9A64F6252F446A00946DA1 /* editDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editDataManager.swift; sourceTree = "<group>"; };
 		FF9CF269252CD5AD00BA9265 /* searchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchResultViewController.swift; sourceTree = "<group>"; };
 		FF9CF26A252CD5AD00BA9265 /* searchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = searchResultViewController.xib; sourceTree = "<group>"; };
 		FF9CF270252CDA4D00BA9265 /* searchDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchDataManager.swift; sourceTree = "<group>"; };
@@ -250,6 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				FF0D85F8252A30C200512993 /* myPostingDataManager.swift */,
+				FF9A64F3252F3CE600946DA1 /* deleteDataManager.swift */,
+				FF9A64F6252F446A00946DA1 /* editDataManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -719,6 +725,7 @@
 				FFBC733D2528DE1100CF4FA3 /* imgPopUpDelegate.swift in Sources */,
 				FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */,
 				FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */,
+				FF9A64F4252F3CE600946DA1 /* deleteDataManager.swift in Sources */,
 				FF1A7AE2251F83F300B95773 /* storyCollectionViewCell.swift in Sources */,
 				FFBC731C2528870700CF4FA3 /* mainGominDataManager.swift in Sources */,
 				FF94DD0E252DA957005252E4 /* commentLikeDataManager.swift in Sources */,
@@ -745,6 +752,7 @@
 				FF0D85F1252A26A000512993 /* selectTagDatatManager.swift in Sources */,
 				FFFA76762518AE530008101C /* detailGominViewController.swift in Sources */,
 				FF0D85D02529F93100512993 /* myWritingCollectionViewCell.swift in Sources */,
+				FF9A64F7252F446A00946DA1 /* editDataManager.swift in Sources */,
 				FF0D85EA252A1E6300512993 /* tagListDataManager.swift in Sources */,
 				FF52587F2524BD380076C7EB /* signUpDataManager.swift in Sources */,
 				FFFA769625190F490008101C /* noticeViewController.swift in Sources */,

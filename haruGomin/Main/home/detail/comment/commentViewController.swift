@@ -16,6 +16,7 @@ class commentViewController: UIViewController {
     @IBOutlet weak var tableAndBottom: NSLayoutConstraint!
     var commnetList:[String] = []
     var comment:[comment?] = []
+    var pageNum:Int = 0
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -51,7 +52,8 @@ class commentViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        commentDataManager.shared.getGominDetail(self, postId: self.postId, pageNum: 0)
+        self.pageNum = 0
+        commentDataManager.shared.getGominDetail(self, postId: self.postId, pageNum: self.pageNum)
 //        self.view.layoutIfNeeded()
     }
 
@@ -89,11 +91,25 @@ extension commentViewController : UITableViewDelegate , UITableViewDataSource {
         return cell
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let height:CGFloat = scrollView.frame.size.height
+        let contentYOffset:CGFloat = scrollView.contentOffset.y
+        let scrollViewHeight:CGFloat = scrollView.contentSize.height
+        let distanceFromBottom:CGFloat = scrollViewHeight - contentYOffset
+        
+        if distanceFromBottom < height {
+            self.pageNum = self.pageNum + 1
+            commentDataManager.shared.getGominDetail(self, postId: self.postId, pageNum: self.pageNum)
+            print("DEBUG: listCount is \(self.comment.count)")
+        }
+        
+    }
+    
     @objc func likeComment(_ sendr:UIButton) {
         let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
         print("DEBUG: commentID is \(sendr.tag)")
         commentLikeDataManager.shared.likeComment(commentVC: self, commentID: sendr.tag, userId: userId)
-        
+        commentDataManager.shared.getGominDetail(self, postId: self.postId, pageNum: self.pageNum)
         
     }
     

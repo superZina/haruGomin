@@ -99,6 +99,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="accuseBtn" destination="cjd-8T-WN4" id="hed-9o-2ga"/>
                 <outlet property="comment" destination="yoE-kf-jCq" id="nFQ-J8-Tah"/>
                 <outlet property="gominContent" destination="l2u-V1-ISt" id="hj6-9Y-Xng"/>
                 <outlet property="gominTitle" destination="ihH-Di-hyj" id="RHo-lO-iE3"/>

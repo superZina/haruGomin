@@ -1,36 +1,33 @@
 //
-//  selectTagDatatManager.swift
+//  deleteDataManager.swift
 //  haruGomin
 //
-//  Created by 이진하 on 2020/10/05.
+//  Created by 이진하 on 2020/10/08.
 //  Copyright © 2020 이진하. All rights reserved.
 //
 
 import Alamofire
 
-class selectTagDatatManager{
-    static let shared = selectTagDatatManager()
+class deleteDataManager{
+    static let shared = deleteDataManager()
     private init() {}
-    func getTagGomins(_ searchVC: searchViewController , tagName:String , pageNum:Int) {
-        let url = "http://52.78.127.67:8080/api/v1/posts/home/\(tagName)?pageNum=\(pageNum)"
+    func deletePost(_ myPageVC:myPageViewController , postId:Int) {
+        let url = "http://52.78.127.67:8080/api/v1/users/posts/\(postId)"
         let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        print(url)
-        print(tagName)
-        print(pageNum)
-        AF.request(encodedUrl as! URLConvertible , method: .get )
+        let jwt:String = UserDefaults.standard.value(forKey: "jwt") as! String
+        print("DEBUG: jwt is \(jwt)")
+        let headers = HTTPHeader(name: "jwt", value: jwt)
+        AF.request(url, method: .delete)
             .validate()
             .responseJSON { (response) in
-//                print(response)
                 switch response.result {
                 case .success(let obj):
-                    print(obj)
                     do{
                         let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                         let getData = try JSONDecoder().decode([addedGomin].self, from: dataJSON)
-                        searchVC.newGomins.append(contentsOf: getData)
-//                        print(getData)
-                        searchVC.refreshGominTable()
-                        
+                        myPageVC.myPosting.append(contentsOf: getData)
+                        print(getData)
+                        myPageVC.setmyPosting()
                     }catch {
                         print(error.localizedDescription)
                     }

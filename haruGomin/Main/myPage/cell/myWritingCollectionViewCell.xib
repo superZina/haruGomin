@@ -113,6 +113,7 @@
             </constraints>
             <size key="customSize" width="357" height="278"/>
             <connections>
+                <outlet property="accuseBtn" destination="iLX-0e-HM8" id="1aU-r4-23v"/>
                 <outlet property="commentCount" destination="tvV-76-bP3" id="674-E0-EOH"/>
                 <outlet property="content" destination="YU1-mm-6yW" id="t9G-au-aOy"/>
                 <outlet property="gominContent" destination="DqL-c8-peA" id="SHQ-fv-ATs"/>

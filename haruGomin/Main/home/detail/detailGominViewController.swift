@@ -41,6 +41,7 @@ class detailGominViewController: UIViewController {
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var commentView: UIView!
     @IBOutlet weak var commentBtn: UIButton!
+    @IBOutlet weak var accuseBtn: UIButton!
     
     override func viewDidLoad() {
         
@@ -70,12 +71,14 @@ class detailGominViewController: UIViewController {
         self.commentTextField.textColor = .white
         self.commentView.backgroundColor = ColorPalette.darkBackground
         
+        
         setupCommend()
         self.line.backgroundColor = ColorPalette.borderGray
         self.underline.backgroundColor = ColorPalette.borderGray
         self.commentTextView.layer.zPosition = 1
         self.underline.layer.zPosition = 1
         self.commentView.layer.zPosition = 1
+        self.accuseBtn.layer.zPosition = .infinity
         
         self.commentTextField.isEnabled = true
         self.view.isUserInteractionEnabled = true
@@ -96,6 +99,19 @@ class detailGominViewController: UIViewController {
         self.commentBtn.isEnabled  = false
     }
     
+    
+    @IBAction func accuseGomin(_ sender: Any) {
+        let alert = UIAlertController(title: "신고하기", message: "신중히 생각하셨나요?", preferredStyle: .alert)
+        let accuseAction = UIAlertAction(title: "신고하기", style: .destructive) { (action) in
+            
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
+        }
+        alert.addAction(accuseAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+        print("selected")
+    }
     
     //MARK: 댓글 입력 API
     @IBAction func registComment(_ sender: Any) {
@@ -160,6 +176,7 @@ class detailGominViewController: UIViewController {
         self.gominTextView.text = gomin.content
         self.navigationController?.navigationBar.topItem?.title = gomin.title
         //        self.commentCount.text = String(gomin.comments!.count)
+        
     }
     
     //MARK: commentVC Settings

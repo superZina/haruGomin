@@ -13,6 +13,7 @@ class myWritingViewController: UIViewController {
     
     @IBOutlet weak var myGominTable: UITableView!
     var cells:[myGominTableViewCell] = []
+    @IBOutlet weak var deleteBtn: UIButton!
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -28,6 +29,17 @@ class myWritingViewController: UIViewController {
         let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
         myGominDataManager.shared.getmyGomins(myWritngVC: self, userId: userId, pageNum: 0)
         self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    @IBAction func deleteGomin(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+        
+            self.myGominTable.isUserInteractionEnabled = true
+        }else {
+        
+            self.myGominTable.isUserInteractionEnabled = false
+        }
     }
 }
 extension myWritingViewController:UITableViewDelegate ,UITableViewDataSource {

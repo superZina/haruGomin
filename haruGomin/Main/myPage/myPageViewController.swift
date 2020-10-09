@@ -7,20 +7,37 @@
 //
 
 import UIKit
+import KakaoSDKAuth
+import KakaoSDKCommon
+import KakaoSDKUser
 
 class myPageViewController: UIViewController, UICollectionViewDataSource {
 
+    @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var line1: UILabel!
     @IBOutlet weak var line2: UILabel!
     @IBOutlet weak var myPageTable: UITableView!
     @IBOutlet weak var writingCollectionView: UICollectionView!
+    @IBOutlet weak var loginTypeImg: UIImageView!
+    @IBOutlet weak var haruGomin: UILabel!
+    
     var myPosting:[addedGomin] = []
+    var pageNum:Int = 0
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        let imageNum:String = UserDefaults.standard.value( forKey: "profileImage") as! String
+        let loginType:String = UserDefaults.standard.value( forKey:  "loginType") as! String
+        
+        self.loginTypeImg.image = UIImage(named: loginType)
+        self.profileImg.layer.cornerRadius = 16
+        self.profileImg.image = UIImage(named: imageNum)
+        
         self.view.backgroundColor = ColorPalette.darkBackground
         self.line1.backgroundColor = ColorPalette.background
         self.line2.backgroundColor = ColorPalette.background
+        self.haruGomin.textColor = ColorPalette.textGray
         
         
         let menuCellNib = UINib(nibName: "myWrittenTableViewCell", bundle: nil)
@@ -53,14 +70,18 @@ class myPageViewController: UIViewController, UICollectionViewDataSource {
         print("UserID:\(userId)")
         let jwt:String = UserDefaults.standard.value(forKey: "jwt") as! String
         print("DEBUG: jwt is \(jwt)")
-        myPostingDataManager.shared.getmyPostings(myPageVC: self, userId: userId, pageNum: 0)
+        myPostingDataManager.shared.getmyPostings(myPageVC: self, userId: userId, pageNum: pageNum)
         self.navigationController?.isNavigationBarHidden = true
     }
     
     func setmyPosting(){
         self.writingCollectionView.reloadData()
     }
-
+    @IBAction func editProfile(_ sender: Any) {
+        let editProfileVC = editProfileViewController()
+        self.navigationController?.pushViewController(editProfileVC, animated: true)
+    }
+    
 
 }
 extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
@@ -101,9 +122,48 @@ extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
         }else if indexPath.row == 1 {
             //푸시알림 설정
         }else if indexPath.row == 2 {
-            //로그아웃
+            let alert = UIAlertController(title: "로그아웃", message: nil, preferredStyle: .actionSheet)
+            let logOutAction = UIAlertAction(title: "로그아웃하기", style: .default) { (action) in
+                UserApi.shared.logout {(error) in
+                    if let error = error {
+                        print(error)
+                    }
+                    else {
+                        let loginVC = logInViewController()
+                        if let window = UIApplication.shared.windows.first {
+                            window.rootViewController = UINavigationController(rootViewController:loginVC)
+                            UIView.transition(with: window, duration: 0.5, options: .beginFromCurrentState, animations: {}, completion: nil)
+                        } else {
+                            loginVC.modalPresentationStyle = .overFullScreen
+                            self
+                                .present(loginVC, animated: true, completion: nil)
+                        }
+                    }
+                }
+            }
+            let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+            alert.addAction(logOutAction)
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
         }else{
-            //계정삭제
+            let alert = UIAlertController(title: "계정탈퇴", message: nil, preferredStyle: .actionSheet)
+            let logOutAction = UIAlertAction(title: "계정탈퇴하기", style: .default) { (action) in
+                UserApi.shared.unlink {(error) in
+                    if let error = error {
+                        print(error)
+                    }
+                    else {
+                        print("unlink success")
+                        let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
+                        deleteUserDataManager.shared.deleteUser(self, userId: userId)
+                        
+                    }
+                }
+            }
+            let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+            alert.addAction(logOutAction)
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
             }
         }
         
@@ -122,7 +182,8 @@ extension myPageViewController: UICollectionViewDelegateFlowLayout {
         let createTime:String = createdAt.components(separatedBy: "T")[1]
         let time:[String] = createTime.components(separatedBy: ":")
         cell.time.text = time[0] + ":" + time[1]
-        cell.accuseBtn.tag = indexPath.row
+        cell.commentCount.text = String(self.myPosting[indexPath.row].commentNum!)
+        cell.accuseBtn.tag = self.myPosting[indexPath.row].postId!
         cell.accuseBtn.addTarget(self,action: #selector(accuseGomin(_:)), for: .touchUpInside)
             return cell
     }
@@ -139,22 +200,41 @@ extension myPageViewController: UICollectionViewDelegateFlowLayout {
             return UIEdgeInsets(top: 0, left: 0, bottom:  0, right: 0)
         
     }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let height:CGFloat = scrollView.frame.size.width
+        let contentYOffset:CGFloat = scrollView.contentOffset.x
+        let scrollViewHeight:CGFloat = scrollView.contentSize.width
+        let distanceFromBottom:CGFloat = scrollViewHeight - contentYOffset
+        let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
+        if distanceFromBottom < height {
+            self.pageNum = self.pageNum + 1
+            myPostingDataManager.shared.getmyPostings(myPageVC: self, userId: userId, pageNum: self.pageNum)
+            print("DEBUG: listCount is \(self.myPosting.count)")
+        }
+        
+    }
+    
     @objc func accuseGomin(_ sender: UIButton) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let deleteAction = UIAlertAction(title: "삭제하기", style: .destructive) { (action) in
-            
+            deleteDataManager.shared.deletePost(self, postId: sender.tag)
         }
         let editAction = UIAlertAction(title: "수정하기", style: .default) { (action) in
             let postInfo:addedGomin = self.myPosting[sender.tag]
+            
+            let addGominVC = addGominViewController()
+            addGominVC.Title = postInfo.title!
+            addGominVC.Content = postInfo.content!
+            addGominVC.postId = postInfo.postId!
+            addGominVC.modalPresentationStyle = .overFullScreen
+            self.present(addGominVC, animated: true)
         }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
         }
-        let icon:UIImageView = UIImageView(frame: CGRect(x: alert.view.bounds.width/2 - 18, y: 8, width: 24, height: 24))
-        icon.image = UIImage(named: "siren")
+        
         alert.addAction(deleteAction)
         alert.addAction(editAction)
         alert.addAction(cancelAction)
-        alert.view.addSubview(icon)
         self.present(alert, animated: true, completion: nil)
         print("selected")
     }

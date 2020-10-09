@@ -16,9 +16,10 @@ import Alamofire
 class checkNameDataManager {
     //    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     //    let SceneDelegate = UIApplication.shared.delegate as! SceneDelegate
-    func check(_ profileVC: setProfileViewController, name: String , age:String) {
+    func check(_ profileVC: setProfileViewController, name: String , age:String , imageNum:String) {
         let url = "http://52.78.127.67:8080/api/v1/users/check/\(name)"
-        let request = AF.request(url, method: .get , encoding: JSONEncoding.default).validate()
+        let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let request = AF.request(encodedUrl as! URLConvertible, method: .get , encoding: JSONEncoding.default).validate()
         request.responseJSON { (response) in
             print("DEBUG: response is \(response)")
             switch response.result {
@@ -33,6 +34,7 @@ class checkNameDataManager {
                         let selectVC = selectGominViewController()
                         selectVC.age = age
                         selectVC.nickName = name
+                        selectVC.Img = imageNum
                         profileVC.navigationController?.pushViewController(selectVC, animated: true)
                     }
                     

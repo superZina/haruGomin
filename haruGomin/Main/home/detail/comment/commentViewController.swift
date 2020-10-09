@@ -18,10 +18,8 @@ class commentViewController: UIViewController {
     var comment:[comment?] = []
     var pageNum:Int = 0
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         self.view.layer.cornerRadius = 8
-        commnetList = ["asdfasdf","dfsfllflelfllflflflflflflflflflflflflflflflfllfflfllfflflfllflflflflflfl","kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk","저도 얼마 전에 비슷한 상황이었어요. 힘들다는 생각말고 그냥 지금 할 수 있는 걸 하다보면 자신감도 생기고 길이 보이더라고요! 분명 원하는 일 하실 수 있을거에요! 모두 화이팅이요 :)"]
         self.handleArea.backgroundColor = ColorPalette.darkBackground
         self.view.backgroundColor = ColorPalette.darkBackground
         let cellNib = UINib(nibName: "commentTableViewCell", bundle: nil)
@@ -68,6 +66,21 @@ extension commentViewController : UITableViewDelegate , UITableViewDataSource {
         guard  let cell = commentTableVeiw.dequeueReusableCell(withIdentifier: "comment") as? commentTableViewCell else {
             return UITableViewCell()
         }
+        //베스트 댓글일 떄
+        if (self.comment[indexPath.row]?.commentLikes)! >= 10 {
+            cell.isBest = true
+            cell.additionLabel.isHidden = false
+        // TODO: postId -> userId로 바꿔줘야함
+        }else if (self.comment[indexPath.row]?.userId)! == postId {
+            cell.additionLabel.isHidden = true
+            let label = UILabel(frame: CGRect(x: 12, y: 10, width: 64, height: 24))
+            label.textColor = ColorPalette.hagoRed
+            label.text = "작성자"
+            label.font = .boldSystemFont(ofSize: 14)
+            label.layer.borderWidth = 1
+            label.layer.borderColor = ColorPalette.hagoRed.cgColor
+            cell.innerView.addSubview(label)
+        }
         let createdAt:String = (self.comment[indexPath.row]?.createdDate)!
         let createTime:String = createdAt.components(separatedBy: "T")[1]
         let time:[String] = createTime.components(separatedBy: ":")
@@ -83,11 +96,11 @@ extension commentViewController : UITableViewDelegate , UITableViewDataSource {
         cell.comment.text = self.comment[indexPath.row]?.content
         cell.likeCount.text = String((self.comment[indexPath.row]?.commentLikes)!)
         cell.userName.text = self.comment[indexPath.row]?.nickname
-//        cell.comment.text = commnetList[indexPath.row]
         cell.likeCount.text = String( (self.comment[indexPath.row]?.commentLikes)!)
+        
         cell.like.tag = (comment[indexPath.row]?.commentId)!
         cell.like.addTarget(self, action: #selector(likeComment(_:)), for: .touchUpInside)
-        
+        cell.profileImg.image = UIImage(named:(self.comment[indexPath.row]?.profileImage)! )
         return cell
     }
     

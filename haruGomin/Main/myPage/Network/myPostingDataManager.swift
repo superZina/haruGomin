@@ -22,7 +22,12 @@ class myPostingDataManager{
                     do{
                         let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                         let getData = try JSONDecoder().decode([addedGomin].self, from: dataJSON)
+                        if pageNum != 0 {
                         myPageVC.myPosting.append(contentsOf: getData)
+                        }else{
+                            myPageVC.pageNum = 0
+                            myPageVC.myPosting = getData
+                        }
                         print(getData)
                         myPageVC.setmyPosting()
                     }catch {

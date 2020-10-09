@@ -23,6 +23,9 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
     let picker = UIImagePickerController()
     var keyboardHeight:CGFloat = 0
     var toolbarHeight:CGFloat = 0
+    var postId:Int = -1
+    var Title:String = ""
+    var Content:String = ""
     
     var btnText:[String] = ["돈","일상","가족","건강","친구사이","직장생활","연애","학교생활","진로","기혼자만 아는","육아"]
     //MARK: bar Buttons
@@ -44,12 +47,13 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
                 tagName = i.title(for: .normal)!
             }
         }
+        let profileImg:String = UserDefaults.standard.value(forKey: "profileImage") as! String
         let Title:String = self.gominTitle.text!
         let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
         let parameter:[String:Any] = [
             "content": content,
-            "postId": -1,
-            "postImage": "string",
+            "postId": self.postId,
+            "postImage": profileImg,
             "tagName": tagName,
             "title": Title,
             "userId": userId
@@ -105,6 +109,8 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
         self.imageView.isHidden = true
         self.img.isHidden = true
         self.viewHeight.constant = 0
+        self.gominTitle.text = self.Title
+        self.gominContentTextView.text = self.Content
         
     }
     

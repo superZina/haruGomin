@@ -16,7 +16,7 @@ class imgPopUp: UIViewController, UICollectionViewDataSource{
     @IBOutlet weak var imgCollectionView: UICollectionView!
     var selectedImg:Int = 0
     var buttons:[UIButton] = []
-    var imgs:[String] = ["invalidName-1","copy","copy2","invalidName-1","copy","copy2"]
+    var imgs:[String] = ["default01","default02","default03","default04"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.popupView.layer.cornerRadius = 16

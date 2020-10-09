@@ -14,10 +14,12 @@ class setProfileViewController: UIViewController,imgPopUpDelegate {
 
     var ages:[String] = ["1 ~ 9" , "10 ~ 19", "20 ~ 29", "30 ~ 39", "40 ~ 49"]
     var selectedAge:String = "1 ~ 9"
+    var selectedImg:String = "default01"
     @IBOutlet weak var profileImg: UIButton!
     @IBOutlet weak var nickName: UITextField!
     @IBOutlet weak var age: UITextField!
     @IBOutlet weak var nextBtn: UIButton!
+    
     
     var agePicker:UIPickerView! = UIPickerView()
     override func viewDidLoad() {
@@ -35,6 +37,7 @@ class setProfileViewController: UIViewController,imgPopUpDelegate {
         
         self.profileImg.backgroundColor = ColorPalette.darkBackground
         self.profileImg.layer.cornerRadius = 24
+        self.profileImg.imageView?.layer.cornerRadius = 24
         
         self.nickName.layer.cornerRadius = 9
         self.nickName.layer.borderWidth = 1
@@ -84,10 +87,13 @@ class setProfileViewController: UIViewController,imgPopUpDelegate {
         self.present(imgPopup, animated: true, completion: nil)
     }
     func pressDismissBtn(imgName:String) {
+        self.selectedImg = imgName
         self.profileImg.setImage(UIImage(named: imgName), for: .normal)
+        
+        
     }
     @IBAction func moveNext(_ sender: Any) {
-        checkNameDataManager().check(self, name: nickName.text! , age: self.age.text!)
+        checkNameDataManager().check(self, name: nickName.text! , age: self.age.text! , imageNum: self.selectedImg)
 //        let selectVC = selectGominViewController()
 //        self.navigationController?.pushViewController(selectVC, animated: true)
     }

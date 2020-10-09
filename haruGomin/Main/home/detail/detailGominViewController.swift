@@ -55,7 +55,6 @@ class detailGominViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white ]
         
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = false
         self.view.backgroundColor = ColorPalette.background
         self.tag.layer.cornerRadius = 8
         self.tag.setTitleColor(ColorPalette.hagoRed, for: .normal)
@@ -70,7 +69,7 @@ class detailGominViewController: UIViewController {
         self.commentView.layer.borderWidth = 1
         self.commentTextField.textColor = .white
         self.commentView.backgroundColor = ColorPalette.darkBackground
-        
+        self.profileImg.layer.cornerRadius = 12
         
         setupCommend()
         self.line.backgroundColor = ColorPalette.borderGray
@@ -116,12 +115,13 @@ class detailGominViewController: UIViewController {
     //MARK: 댓글 입력 API
     @IBAction func registComment(_ sender: Any) {
         let userName:String = UserDefaults.standard.value(forKey: "userName") as! String
+        let profileImg:String = UserDefaults.standard.value(forKey: "profileImage") as! String
         let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
         let parameters:[String:Any] = [
             "content": self.commentTextField.text,
             "nickname": userName,
             "postId": self.postId,
-            "profileImage": "string",
+            "profileImage": profileImg,
             "userId": userId
         ]
         registCommentDataManager.shared.registComment(self ,self.commentVC , parameters: parameters)
@@ -175,7 +175,10 @@ class detailGominViewController: UIViewController {
         self.tag.setTitle(gomin.tagName, for: .normal)
         self.gominTextView.text = gomin.content
         self.navigationController?.navigationBar.topItem?.title = gomin.title
-        //        self.commentCount.text = String(gomin.comments!.count)
+        self.profileImg.image = UIImage(named: gomin.userProfileImage!)
+        self.username.text = gomin.userNickname
+        
+        self.commentCount.text = String(gomin.commentNum!)
         
     }
     
@@ -183,8 +186,9 @@ class detailGominViewController: UIViewController {
     func setupCommend(){
         switch(UIScreen.main.nativeBounds.height) {
         case 1334: //se2 , 8
-            commentHandleArea = 400
-            distance = 64
+            commentHandleArea = 500
+            commentHeight = 500
+            distance = 270
             break
         case 2688: //promax
             commentHandleArea = 250
@@ -339,5 +343,12 @@ extension detailGominViewController:UITextFieldDelegate {
             self.commentBtn.isEnabled  = false
         }
     }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            if(string == "\n"){
+                textField.resignFirstResponder()
+            }
+           return true
+       
+        }
    
 }

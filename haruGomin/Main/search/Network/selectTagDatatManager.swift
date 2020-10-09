@@ -28,7 +28,6 @@ class selectTagDatatManager{
                         let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                         let getData = try JSONDecoder().decode([addedGomin].self, from: dataJSON)
                         searchVC.newGomins.append(contentsOf: getData)
-//                        print(getData)
                         searchVC.refreshGominTable()
                         
                     }catch {

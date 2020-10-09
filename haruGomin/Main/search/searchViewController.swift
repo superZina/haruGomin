@@ -61,9 +61,11 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
     }
     override func viewWillAppear(_ animated: Bool) {
         self.pageNum = 0
+        self.tagName = "전체"
         self.navigationController?.isNavigationBarHidden = true
         tagListDataManager.shared.getTagList(self)
-        selectTagDatatManager.shared.getTagGomins(self, tagName: "전체", pageNum: 0)
+        self.newGomins = []
+        selectTagDatatManager.shared.getTagGomins(self, tagName: tagName, pageNum: 0)
     }
     func setTagList(){
         self.gominCategoryCollection.reloadData()
@@ -104,7 +106,6 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
         }else {
             return 10
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -182,6 +183,7 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
         let createTime:String = createdAt.components(separatedBy: "T")[1]
         let time:[String] = createTime.components(separatedBy: ":")
         cell.time.text = time[0] + ":" + time[1]
+        cell.comment.text = String(self.newGomins[indexPath.row].commentNum!)
         cell.accuseBtn.addTarget(self,action: #selector(accuseGomin(_:)), for: .touchUpInside)
         return cell
     }
@@ -194,7 +196,6 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
     @objc func accuseGomin(_ sender: UIButton) {
         let alert = UIAlertController(title: "       ", message: "신중히 생각하셨나요?", preferredStyle: .actionSheet)
         let accuseAction = UIAlertAction(title: "신고하기", style: .destructive) { (action) in
-            
         }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
         }

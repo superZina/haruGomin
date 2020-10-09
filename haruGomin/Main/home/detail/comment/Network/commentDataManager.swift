@@ -13,7 +13,7 @@ class commentDataManager{
         static let shared = commentDataManager()
         private init() {}
         func getGominDetail(_ commentVC:commentViewController , postId:Int , pageNum:Int ) {
-            let url = "http://52.78.127.67:8080/api/v1/comment/\(postId)?pageNum=\(pageNum)"
+            let url = "http://52.78.127.67:8080/api/v1/comments/\(postId)?pageNum=\(pageNum)"
             AF.request(url, method: .get)
                 .responseJSON { (response) in
                     switch response.result {

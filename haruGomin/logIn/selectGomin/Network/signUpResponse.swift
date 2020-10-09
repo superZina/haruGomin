@@ -12,7 +12,7 @@ struct Profile:Codable {
     let profileImage:String?
     let ageRange:Int?
     let userHashtags:[Hashtag?]?
-    let point:Int?
+
 }
 struct Hashtag:Codable {
     let userHashtagId:Int?

@@ -11,10 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="myPageViewController" customModule="haruGomin" customModuleProvider="target">
             <connections>
+                <outlet property="haruGomin" destination="xCZ-jJ-AO1" id="EEg-GV-ye2"/>
                 <outlet property="line1" destination="WWv-xW-wuE" id="IZb-vd-WDb"/>
                 <outlet property="line2" destination="IS3-io-jaO" id="ln9-SL-wgf"/>
+                <outlet property="loginTypeImg" destination="yjv-7K-hMP" id="zX4-tf-I8X"/>
                 <outlet property="myPageTable" destination="4Dp-zo-RW5" id="5kE-Ww-L3F"/>
                 <outlet property="nickName" destination="rFb-i3-ev3" id="5bR-FZ-kGy"/>
+                <outlet property="profileImg" destination="VfG-ff-wRE" id="Hue-pe-ql5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="writingCollectionView" destination="s3h-KG-NJv" id="akf-lz-qwc"/>
             </connections>
@@ -37,8 +40,8 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCZ-jJ-AO1">
-                    <rect key="frame" x="128" y="127" width="39" height="15"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="haruGomin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCZ-jJ-AO1">
+                    <rect key="frame" x="128" y="127" width="62" height="15"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -70,6 +73,9 @@
                     <rect key="frame" x="349" y="84" width="45" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="편집" image="edit"/>
+                    <connections>
+                        <action selector="editProfile:" destination="-1" eventType="touchUpInside" id="4Qq-QY-FoL"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IS3-io-jaO">
                     <rect key="frame" x="0.0" y="403.5" width="414" height="6"/>
@@ -82,7 +88,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Dp-zo-RW5">
-                    <rect key="frame" x="0.0" y="409.5" width="414" height="486.5"/>
+                    <rect key="frame" x="0.0" y="409.5" width="414" height="452.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="s3h-KG-NJv">
@@ -104,12 +110,12 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4Dp-zo-RW5" secondAttribute="trailing" id="27D-Do-TP8"/>
                 <constraint firstItem="MGJ-RB-56D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="47N-D7-4Ku"/>
-                <constraint firstAttribute="bottom" secondItem="4Dp-zo-RW5" secondAttribute="bottom" id="6OL-wY-LUE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s7g-Rs-itu" secondAttribute="trailing" constant="20" id="7cl-6g-2bE"/>
                 <constraint firstItem="4Dp-zo-RW5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="EmM-Ma-1rH"/>
                 <constraint firstAttribute="trailing" secondItem="WWv-xW-wuE" secondAttribute="trailing" id="FgP-8q-ug2"/>
                 <constraint firstItem="s3h-KG-NJv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HdZ-wS-fCT"/>
                 <constraint firstItem="IS3-io-jaO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JCL-4b-kmx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4Dp-zo-RW5" secondAttribute="bottom" id="LdO-zB-EWY"/>
                 <constraint firstItem="4Dp-zo-RW5" firstAttribute="top" secondItem="IS3-io-jaO" secondAttribute="bottom" id="MuL-pN-mfg"/>
                 <constraint firstItem="s3h-KG-NJv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Uf6-Ae-3pK"/>
                 <constraint firstItem="WWv-xW-wuE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="W6B-0a-Ard"/>

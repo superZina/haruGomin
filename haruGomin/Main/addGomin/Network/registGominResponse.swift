@@ -17,5 +17,8 @@ struct addedGomin:Codable {
     let hits:Int?
     let postLikes:Int?
     let userId:Int64?
+    let commentNum:Int?
+    let userNickname:String?
+    let userProfileImage:String?
 }
 

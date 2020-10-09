@@ -1,0 +1,42 @@
+//
+//  splashViewController.swift
+//  haruGomin
+//
+//  Created by 이진하 on 2020/10/10.
+//  Copyright © 2020 이진하. All rights reserved.
+//
+
+import UIKit
+
+class splashViewController: UIViewController{
+
+    @IBOutlet weak var text1: UILabel!
+    @IBOutlet weak var text2: UILabel!
+    @IBOutlet weak var text3: UILabel!
+    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var img: UIImageView!
+    var imgs:[String] = ["illu22", "illu3" , "illu4"]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = ColorPalette.background
+        self.nextBtn.backgroundColor = ColorPalette.hagoRed
+        self.nextBtn.setTitleColor(ColorPalette.darkBackground, for: .normal)
+        self.nextBtn.layer.cornerRadius = 8
+        self.img.image = UIImage(named: "illu22")
+        self.img.contentMode = .scaleAspectFit
+        self.text1.text = "누구나 공감받을 수 있도록"
+        self.text2.text = "비슷한 고민을 가진 이들에게"
+        self.text3.text = "고민을 나눌 수 있어요"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    @IBAction func skip(_ sender: Any) {
+    }
+    @IBAction func next(_ sender: Any) {
+        let next = splash2ViewController()
+        self.navigationController?.pushViewController(next, animated: true)
+    }
+}

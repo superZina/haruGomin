@@ -66,6 +66,7 @@ extension homeViewController:UICollectionViewDelegateFlowLayout,UIScrollViewDele
             cell.createTime.text = time[0] + ":" + time[1]
             cell.detailBtn.tag = self.gomins[indexPath.row].postId!
             cell.detailBtn.addTarget(self, action: #selector(goDetailVC(sender:)), for: .touchUpInside)
+            cell.commentCount.text = String(self.gomins[indexPath.row].commentNum!)
             return cell
         }else{
             let cell = gominCollection.dequeueReusableCell(withReuseIdentifier: "gominView", for: indexPath) as! gominCollectionViewCell

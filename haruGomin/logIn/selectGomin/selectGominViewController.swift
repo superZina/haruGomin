@@ -11,10 +11,11 @@ import UIKit
 class selectGominViewController: UIViewController, UICollectionViewDataSource {
     var nickName:String = ""
     var age:String = ""
+    var Img:String = ""
     @IBOutlet weak var gominCollection: UICollectionView!
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var nextBtn: UIButton!
-    var btnText:[String] = ["일상","가족","친구","연애","학교","직장","취업","진로","돈","건강","기혼","육아"]
+    var btnText:[String] = ["돈","일상","가족","건강","친구사이","직장생활","연애","학교생활","진로","기혼자만 아는","육아"]
     var buttons:[UIButton] = []
     override func viewDidLoad() {
         self.view.backgroundColor = ColorPalette.background
@@ -64,13 +65,11 @@ class selectGominViewController: UIViewController, UICollectionViewDataSource {
         let parameters:[String:Any] = [
             "ageRange" : ageRange,
             "nickname" : self.nickName,
-            "profileImage" : "image",
+            "profileImage" : self.Img,
             "userHashtags" : hashTags ,
             "userId" : id
         ]
         signUpDataManager().signUp(self, parameter: parameters)
-//        let mainVC = tabBarViewController()
-//        self.navigationController?.pushViewController(mainVC,animated: true)
     }
     
     
@@ -119,7 +118,8 @@ extension selectGominViewController:UICollectionViewDelegateFlowLayout{
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 72, height: 40)
+        let size = (btnText[indexPath.item] as! NSString).size(withAttributes: nil).width
+        return CGSize(width: size + 40, height: 40)
     }
     
     

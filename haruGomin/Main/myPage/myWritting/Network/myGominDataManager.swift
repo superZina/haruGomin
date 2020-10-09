@@ -23,7 +23,8 @@ class myGominDataManager{
                     do{
                         let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                         let getData = try JSONDecoder().decode([addedGomin].self, from: dataJSON)
-                        
+                        myWritngVC.writings = getData
+                        myWritngVC.reloadgomins()
                     }catch {
                         print(error.localizedDescription)
                     }

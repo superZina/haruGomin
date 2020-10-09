@@ -71,10 +71,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWn-M3-bWR">
-                                <rect key="frame" x="144" y="183" width="48" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="GH6-k8-auj"/>
-                                </constraints>
+                                <rect key="frame" x="144" y="183" width="20" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -111,7 +108,6 @@
                             <constraint firstAttribute="trailing" secondItem="U80-Bp-zMg" secondAttribute="trailing" id="51y-bY-lb2"/>
                             <constraint firstItem="wEM-2E-nLu" firstAttribute="top" secondItem="ZWH-Z9-oLS" secondAttribute="top" constant="144" id="54k-db-jbh"/>
                             <constraint firstItem="l2A-fP-FCc" firstAttribute="leading" secondItem="ZWH-Z9-oLS" secondAttribute="leading" constant="20" id="6E9-Oe-biU"/>
-                            <constraint firstAttribute="trailing" secondItem="xWn-M3-bWR" secondAttribute="trailing" constant="222" id="AJl-VF-UOs"/>
                             <constraint firstItem="wEM-2E-nLu" firstAttribute="leading" secondItem="ZWH-Z9-oLS" secondAttribute="leading" constant="20" id="ECz-na-GJQ"/>
                             <constraint firstItem="hNM-dd-uO3" firstAttribute="leading" secondItem="ZWH-Z9-oLS" secondAttribute="leading" id="Fam-bO-hS2"/>
                             <constraint firstItem="hNM-dd-uO3" firstAttribute="top" secondItem="ZWH-Z9-oLS" secondAttribute="top" id="Hdg-ZH-hGx"/>

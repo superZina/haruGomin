@@ -15,6 +15,7 @@ class myGominTableViewCell: UITableViewCell {
     @IBOutlet weak var gominContent: UILabel!
     @IBOutlet weak var commentCount: UILabel!
     @IBOutlet weak var selectBtn: UIButton!
+    var postId:Int = 0
     override func awakeFromNib() {
         super.awakeFromNib()
         self.contentView.backgroundColor = ColorPalette.darkBackground

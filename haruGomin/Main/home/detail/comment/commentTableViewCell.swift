@@ -33,19 +33,21 @@ class commentTableViewCell: UITableViewCell {
         additionLabel.layer.cornerRadius = 4
         additionLabel.backgroundColor = UIColor(red: 90/255, green: 219/255, blue: 235/255, alpha: 1)
         additionLabel.setTitleColor(ColorPalette.background, for: .normal)
-        if isBest {
-            labelHeight.constant = 0
-            labelAndComment.constant = 0
-        }
-        if isWriter {
-            additionLabel.isHidden = true
-            let label = UILabel(frame: CGRect(x: 12, y: 10, width: 64, height: 24))
-            label.textColor = ColorPalette.hagoRed
-            label.text = "* 글쓴이"
-            label.font = .boldSystemFont(ofSize: 14)
-            innerView.addSubview(label)
-        }
-        self.profileImg.image = UIImage(named: "rectangleCopy2-1")
+        self.additionLabel.isHidden = true
+//        if !isBest {
+//            additionLabel.isHidden = true
+//            labelHeight.constant = 0
+//            labelAndComment.constant = 0
+//        }else if !isWriter {
+//            additionLabel.isHidden = true
+//            let label = UILabel(frame: CGRect(x: 12, y: 10, width: 64, height: 24))
+//            label.textColor = ColorPalette.hagoRed
+//            label.text = "작성자"
+//            label.font = .boldSystemFont(ofSize: 14)
+//            innerView.addSubview(label)
+//        }
+
+        self.profileImg.layer.cornerRadius = 8
         self.userName.textColor = .white
         self.ampm.textColor = ColorPalette.textGray
         

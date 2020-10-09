@@ -79,7 +79,7 @@
                                     <constraint firstAttribute="height" constant="24" id="udn-kU-CkK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Best2"/>
+                                <state key="normal" title="Best"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

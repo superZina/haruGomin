@@ -21,14 +21,17 @@ struct gomin:Codable {
     let tagName:String?
     let postImage:String?
     let hits:Int?
-    let postLikes:Int?
+    let userProfileImage:String?
+    let userNickname:String?
+    let userId:Int64?
+    let commentNum:Int?
 }
 
 struct comment:Codable {
     let createdDate:String?
     let modifiedDate:String?
     let commentId:Int?
-    let userId:Int?
+    let userId:Int64?
     let nickname:String?
     let profileImage:String?
     let content:String?

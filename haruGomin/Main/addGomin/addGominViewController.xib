@@ -51,7 +51,7 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chr-04-0La">
                     <rect key="frame" x="0.0" y="184" width="375" height="144"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" keyboardAppearance="alert"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkQ-fB-gnL">
@@ -137,7 +137,7 @@
                 <constraint firstItem="LeD-DE-fLJ" firstAttribute="top" secondItem="HkQ-fB-gnL" secondAttribute="bottom" constant="16" id="ppx-Yf-tav"/>
                 <constraint firstItem="chr-04-0La" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uKg-x3-YtQ"/>
             </constraints>
-            <point key="canvasLocation" x="80.799999999999997" y="33.733133433283363"/>
+            <point key="canvasLocation" x="151" y="33"/>
         </view>
     </objects>
     <resources>

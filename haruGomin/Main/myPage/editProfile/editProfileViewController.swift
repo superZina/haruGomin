@@ -17,6 +17,10 @@ class editProfileViewController: UIViewController, UICollectionViewDataSource, i
     @IBOutlet weak var age: UITextField!
     @IBOutlet weak var gominCollection: UICollectionView!
     @IBOutlet weak var editBtn: UIButton!
+    @IBOutlet weak var editBtn2: UIButton!
+    @IBOutlet weak var text1: UILabel!
+    @IBOutlet weak var text2: UILabel!
+    @IBOutlet weak var text3: UILabel!
     
     var agePicker:UIPickerView! = UIPickerView()
     var btnText:[String] = ["돈","일상","가족","건강","친구사이","직장생활","연애","학교생활","진로","기혼자만 아는","육아"]
@@ -66,9 +70,17 @@ class editProfileViewController: UIViewController, UICollectionViewDataSource, i
         self.age.textColor = ColorPalette.textGray
         self.age.attributedPlaceholder = NSAttributedString(string: "연령을 선택해주세요.",attributes: [NSAttributedString.Key.foregroundColor: ColorPalette.borderGray])
         
+        // MARK: font
+        self.editBtn2.titleLabel?.font = UIFont(name: "NotoSansCJKkr-Regular", size: 14)
+        self.text1.font = UIFont(name: "NotoSansCJKkr-Medium", size: 20)
+        self.text2.font = UIFont(name: "NotoSansCJKkr-Medium", size: 20)
+        self.text3.font = UIFont(name: "NotoSansCJKkr-Medium", size: 20)
+        self.nickName.font = UIFont(name: "NotoSansCJKkr-Regular", size: 16)
+        self.age.font = UIFont(name: "NotoSansCJKkr-Regular", size: 16)
+        self.editBtn.titleLabel?.font = UIFont(name: "NotoSansCJKkr-Bold", size: 18)
+        
         self.age.delegate = self
         self.nickName.delegate = self
-        
         agePicker.delegate = self
         agePicker.dataSource = self
         self.nickName.addLeftPadding()

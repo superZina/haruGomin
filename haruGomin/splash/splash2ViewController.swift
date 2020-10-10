@@ -29,6 +29,17 @@ class splash2ViewController: UIViewController {
         self.text3.text = "새어나가지 않도록 비밀을 지켜드릴게요"
     }
     
+    @IBAction func skip(_ sender: Any) {
+        let loginVC = logInViewController()
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = UINavigationController(rootViewController:loginVC)
+            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {}, completion: nil)
+        } else {
+            loginVC.modalPresentationStyle = .overFullScreen
+            self
+                .present(loginVC, animated: true, completion: nil)
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }

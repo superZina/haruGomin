@@ -15,6 +15,8 @@ class homeViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var gominPageControll: UIPageControl!
     @IBOutlet weak var upperView: UIView!
+    @IBOutlet weak var text2: UILabel!
+    @IBOutlet weak var text1: UILabel!
     var gomins:[gomin] = []
     override func viewDidLoad() {
         guard let username:String = UserDefaults.standard.value(forKey: "userName") as? String else {return}
@@ -35,6 +37,11 @@ class homeViewController: UIViewController, UICollectionViewDataSource {
         self.gominCollection.register(itemCellNib, forCellWithReuseIdentifier: "gominView")
         let imgCellNib = UINib(nibName: "gominImgCollectionViewCell", bundle: nil)
         self.gominCollection.register(imgCellNib, forCellWithReuseIdentifier: "gominImgView")
+        
+        // MARK: font
+        self.userName.font = UIFont(name: "NotoSansCJKkr-Bold", size: 24)
+        self.text1.font = UIFont(name: "NotoSansCJKkr-Bold", size: 24)
+        self.text2.font = UIFont(name: "NotoSansCJKkr-Bold", size: 24)
     }
     func setGomin(){
         self.gominCollection.reloadData()

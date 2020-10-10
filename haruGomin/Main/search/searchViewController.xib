@@ -17,6 +17,7 @@
                 <outlet property="searchGomin" destination="tOE-5Z-q45" id="DxI-aH-xGh"/>
                 <outlet property="searchGominBar" destination="tOE-5Z-q45" id="Bbz-Pe-8XT"/>
                 <outlet property="searchbarAndRight" destination="nPl-qm-fvA" id="1xp-sY-ybc"/>
+                <outlet property="text1" destination="X0N-jx-gWN" id="dhe-IH-k4j"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

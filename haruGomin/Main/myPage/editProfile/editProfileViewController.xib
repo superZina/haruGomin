@@ -13,9 +13,13 @@
             <connections>
                 <outlet property="age" destination="7lu-tK-PMh" id="bgR-Kb-zwe"/>
                 <outlet property="editBtn" destination="IQv-0F-KFU" id="z9j-Wi-X1q"/>
+                <outlet property="editBtn2" destination="5Yk-if-dzw" id="cAZ-po-plb"/>
                 <outlet property="gominCollection" destination="BuP-Mb-Wfg" id="7ym-Xs-7ZJ"/>
                 <outlet property="nickName" destination="e7E-In-IzD" id="8r2-tz-0er"/>
                 <outlet property="profileImg" destination="3dg-gR-jdO" id="peT-Os-QIk"/>
+                <outlet property="text1" destination="XgP-GB-O45" id="DYN-3t-9Ry"/>
+                <outlet property="text2" destination="fiz-dn-BH6" id="LF7-Pa-nnS"/>
+                <outlet property="text3" destination="qth-Vw-W9X" id="ndj-mG-ABG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

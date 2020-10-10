@@ -13,6 +13,7 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var btn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
+        btn.titleLabel?.font = UIFont(name: "NotoSansCJKkr-Regular", size: 16)
         // Initialization code
     }
 

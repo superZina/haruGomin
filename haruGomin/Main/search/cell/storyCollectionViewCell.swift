@@ -18,7 +18,7 @@ class storyCollectionViewCell: UICollectionViewCell {
         self.innerView.backgroundColor = ColorPalette.background
         self.storyBtn.layer.cornerRadius = 16
         self.storyBtn.backgroundColor = ColorPalette.hagoRed
-
+        self.time.font = UIFont(name: "Montserrat-Regular", size: 16)
     }
 
 }

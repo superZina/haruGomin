@@ -87,6 +87,15 @@ class detailGominViewController: UIViewController {
         self.commentTextField.addTarget(self, action: #selector(textfieldChanged(_:)), for: .editingChanged)
         self.view.bringSubviewToFront(self.commentTextView)
         
+        // MARK: font
+        self.username.font = UIFont(name: "NotoSansCJKkr-Regular", size: 16)
+        self.tag.titleLabel?.font = UIFont(name: "NotoSansCJKkr-Medium", size: 15)
+        self.createTime.font = UIFont(name: "Montserrat-Regular", size: 16)
+        self.commentCount.font = UIFont(name: "Montserrat-Regular", size: 16)
+        self.gominTextView.font = UIFont(name: "NotoSansCJKkr-Regular", size: 16)
+        
+        
+        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.keyboardNotification(notification:)),
                                                name: UIResponder.keyboardWillChangeFrameNotification,

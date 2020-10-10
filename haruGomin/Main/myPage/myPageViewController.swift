@@ -10,9 +10,10 @@ import UIKit
 import KakaoSDKAuth
 import KakaoSDKCommon
 import KakaoSDKUser
+import NaverThirdPartyLogin
 
 class myPageViewController: UIViewController, UICollectionViewDataSource {
-
+    
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var line1: UILabel!
@@ -21,6 +22,8 @@ class myPageViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var writingCollectionView: UICollectionView!
     @IBOutlet weak var loginTypeImg: UIImageView!
     @IBOutlet weak var haruGomin: UILabel!
+    @IBOutlet weak var text1: UILabel!
+    @IBOutlet weak var editBtn: UIButton!
     
     var myPosting:[addedGomin] = []
     var pageNum:Int = 0
@@ -39,6 +42,11 @@ class myPageViewController: UIViewController, UICollectionViewDataSource {
         self.line2.backgroundColor = ColorPalette.background
         self.haruGomin.textColor = ColorPalette.textGray
         
+        // MARK: font
+        self.nickName.font = UIFont.textStyle2
+        self.haruGomin.font = UIFont.textStyle3
+        self.text1.font = UIFont(name: "NotoSansCJKkr-Bold", size: 16)
+        self.editBtn.titleLabel?.font = UIFont(name: "NotoSansCJKkr-Regular", size: 12)
         
         let menuCellNib = UINib(nibName: "myWrittenTableViewCell", bundle: nil)
         self.myPageTable.register(menuCellNib, forCellReuseIdentifier: "menuCell")
@@ -82,7 +90,7 @@ class myPageViewController: UIViewController, UICollectionViewDataSource {
         self.navigationController?.pushViewController(editProfileVC, animated: true)
     }
     
-
+    
 }
 extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -110,7 +118,9 @@ extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
             return cell
         }else{
             guard let cell = myPageTable.dequeueReusableCell(withIdentifier: "deleteCell", for: indexPath) as? deleteTableViewCell else {return UITableViewCell()}
+            cell.menuText.font = UIFont(name: "NotoSansCJKkr-Regular", size: 16)
             cell.additionText.textColor = ColorPalette.textGray
+            cell.additionText.font = UIFont(name: "NotoSansCJKkr-Regular", size: 14)
             cell.menuText.textColor = UIColor(red: 255/255, green: 77/255, blue: 77/255, alpha: 1)
             return cell
         }
@@ -124,21 +134,27 @@ extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
         }else if indexPath.row == 2 {
             let alert = UIAlertController(title: "로그아웃", message: nil, preferredStyle: .actionSheet)
             let logOutAction = UIAlertAction(title: "로그아웃하기", style: .default) { (action) in
-                UserApi.shared.logout {(error) in
-                    if let error = error {
-                        print(error)
-                    }
-                    else {
-                        let loginVC = logInViewController()
-                        if let window = UIApplication.shared.windows.first {
-                            window.rootViewController = UINavigationController(rootViewController:loginVC)
-                            UIView.transition(with: window, duration: 0.5, options: .beginFromCurrentState, animations: {}, completion: nil)
-                        } else {
-                            loginVC.modalPresentationStyle = .overFullScreen
-                            self
-                                .present(loginVC, animated: true, completion: nil)
+                let loginType:String = UserDefaults.standard.value(forKey: "loginType") as! String
+                if loginType == "kakao" {
+                    UserApi.shared.logout {(error) in
+                        if let error = error {
+                            print(error)
+                        }
+                        else {
+                            UserDefaults.standard.setValue(false, forKey: "isLogin")
+                            let loginVC = logInViewController()
+                            if let window = UIApplication.shared.windows.first {
+                                window.rootViewController = UINavigationController(rootViewController:loginVC)
+                                UIView.transition(with: window, duration: 0.5, options: .beginFromCurrentState, animations: {}, completion: nil)
+                            } else {
+                                loginVC.modalPresentationStyle = .overFullScreen
+                                self
+                                    .present(loginVC, animated: true, completion: nil)
+                            }
                         }
                     }
+                }else if loginType == "naver" {
+                    NaverThirdPartyLoginConnection.getSharedInstance()?.requestDeleteToken()
                 }
             }
             let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
@@ -153,6 +169,8 @@ extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
                         print(error)
                     }
                     else {
+                        UserDefaults.standard.setValue(false, forKey: "isLogin")
+                        
                         print("unlink success")
                         let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
                         deleteUserDataManager.shared.deleteUser(self, userId: userId)
@@ -164,18 +182,18 @@ extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
             alert.addAction(logOutAction)
             alert.addAction(cancel)
             self.present(alert, animated: true, completion: nil)
-            }
         }
-        
     }
     
+}
+
 
 extension myPageViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.myPosting.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = writingCollectionView.dequeueReusableCell(withReuseIdentifier: "myGomin", for: indexPath) as! myWritingCollectionViewCell
+        let cell = writingCollectionView.dequeueReusableCell(withReuseIdentifier: "myGomin", for: indexPath) as! myWritingCollectionViewCell
         cell.gominTitle.text = self.myPosting[indexPath.row].title
         cell.gominContent.text = self.myPosting[indexPath.row].content
         let createdAt:String = self.myPosting[indexPath.row].createdDate!
@@ -185,7 +203,13 @@ extension myPageViewController: UICollectionViewDelegateFlowLayout {
         cell.commentCount.text = String(self.myPosting[indexPath.row].commentNum!)
         cell.accuseBtn.tag = self.myPosting[indexPath.row].postId!
         cell.accuseBtn.addTarget(self,action: #selector(accuseGomin(_:)), for: .touchUpInside)
-            return cell
+        
+        // MARK: font
+        cell.gominTitle.font = UIFont(name: "NotoSansCJKkr-Bold", size: 16)
+        cell.gominContent.font = UIFont(name: "NotoSansCJKkr-Regular", size: 15)
+        cell.time.font = UIFont(name: "Montserrat-Regular", size: 16)
+        cell.commentCount.font = UIFont(name: "Montserrat-Regular", size: 16)
+        return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let postId = self.myPosting[indexPath.item].postId
@@ -197,7 +221,7 @@ extension myPageViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: self.view.bounds.width, height: 153)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-            return UIEdgeInsets(top: 0, left: 0, bottom:  0, right: 0)
+        return UIEdgeInsets(top: 0, left: 0, bottom:  0, right: 0)
         
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="myPageViewController" customModule="haruGomin" customModuleProvider="target">
             <connections>
+                <outlet property="editBtn" destination="s7g-Rs-itu" id="bXK-6R-aMf"/>
                 <outlet property="haruGomin" destination="xCZ-jJ-AO1" id="EEg-GV-ye2"/>
                 <outlet property="line1" destination="WWv-xW-wuE" id="IZb-vd-WDb"/>
                 <outlet property="line2" destination="IS3-io-jaO" id="ln9-SL-wgf"/>
@@ -18,6 +19,7 @@
                 <outlet property="myPageTable" destination="4Dp-zo-RW5" id="5kE-Ww-L3F"/>
                 <outlet property="nickName" destination="rFb-i3-ev3" id="5bR-FZ-kGy"/>
                 <outlet property="profileImg" destination="VfG-ff-wRE" id="Hue-pe-ql5"/>
+                <outlet property="text1" destination="MGJ-RB-56D" id="5hf-PP-l7c"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="writingCollectionView" destination="s3h-KG-NJv" id="akf-lz-qwc"/>
             </connections>
@@ -35,13 +37,13 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFb-i3-ev3">
-                    <rect key="frame" x="104" y="84" width="84" height="29"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <rect key="frame" x="104" y="84" width="84" height="24.5"/>
+                    <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="haruGomin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCZ-jJ-AO1">
-                    <rect key="frame" x="128" y="127" width="62" height="15"/>
+                    <rect key="frame" x="128" y="122.5" width="62" height="15"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -63,7 +65,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yjv-7K-hMP">
-                    <rect key="frame" x="104" y="123" width="20" height="20"/>
+                    <rect key="frame" x="104" y="118.5" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="HTx-04-Ut4"/>
                         <constraint firstAttribute="width" constant="20" id="gnx-xp-E8y"/>

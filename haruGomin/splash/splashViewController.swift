@@ -18,6 +18,7 @@ class splashViewController: UIViewController{
     var imgs:[String] = ["illu22", "illu3" , "illu4"]
     
     override func viewDidLoad() {
+        UserDefaults.standard.setValue(true, forKey: "second")
         super.viewDidLoad()
         self.view.backgroundColor = ColorPalette.background
         self.nextBtn.backgroundColor = ColorPalette.hagoRed
@@ -34,6 +35,15 @@ class splashViewController: UIViewController{
         self.navigationController?.isNavigationBarHidden = true
     }
     @IBAction func skip(_ sender: Any) {
+        let loginVC = logInViewController()
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = UINavigationController(rootViewController:loginVC)
+            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {}, completion: nil)
+        } else {
+            loginVC.modalPresentationStyle = .overFullScreen
+            self
+                .present(loginVC, animated: true, completion: nil)
+        }
     }
     @IBAction func next(_ sender: Any) {
         let next = splash2ViewController()

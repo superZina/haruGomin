@@ -35,5 +35,32 @@ class splash3ViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-
+    @IBAction func start(_ sender: Any) {
+        if let isLogin:Bool = UserDefaults.standard.value( forKey: "isLogin") as? Bool {
+            print(isLogin)
+            if isLogin {
+                let mainVC = tabBarViewController()
+                if let window = UIApplication.shared.windows.first {
+                    window.rootViewController = UINavigationController(rootViewController:mainVC)
+                    UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {}, completion: nil)
+                } else {
+                    mainVC.modalPresentationStyle = .overFullScreen
+                    self
+                        .present(mainVC, animated: true, completion: nil)
+                }
+            }
+        }else {
+            let loginVC = logInViewController()
+            if let window = UIApplication.shared.windows.first {
+                window.rootViewController = UINavigationController(rootViewController:loginVC)
+                UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {}, completion: nil)
+            } else {
+                loginVC.modalPresentationStyle = .overFullScreen
+                self
+                    .present(loginVC, animated: true, completion: nil)
+            }
+        }
+        
+    }
+    
 }

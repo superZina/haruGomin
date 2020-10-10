@@ -13,6 +13,8 @@
             <connections>
                 <outlet property="gominCollection" destination="Zgh-7Q-hrr" id="9qb-mh-wmR"/>
                 <outlet property="gominPageControll" destination="trG-h5-508" id="buM-iT-rv3"/>
+                <outlet property="text1" destination="QKf-nq-71G" id="xlZ-Ik-DaJ"/>
+                <outlet property="text2" destination="oua-I7-nG9" id="plC-F9-LKJ"/>
                 <outlet property="upperView" destination="lyO-K5-FNj" id="UJt-ND-UWR"/>
                 <outlet property="userName" destination="XAx-8j-ZG2" id="FbK-HH-iCL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

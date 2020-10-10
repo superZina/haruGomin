@@ -34,6 +34,7 @@ class checkUserDataManager{
                         //로그인 성공 , 메인으로 넘어가기
                         
                         if getData.ageRange != 0 { //회원가입일때
+                            UserDefaults.standard.setValue(true, forKey: "isLogin")
                             let profileVC = setProfileViewController()
                             let mainVC = tabBarViewController()
                             if let window = UIApplication.shared.windows.first {
@@ -45,6 +46,7 @@ class checkUserDataManager{
                                     .present(mainVC, animated: true, completion: nil)
                             }
                         }else{ //이미 가입된 유저일때
+                            
                             let profileVC = setProfileViewController()
                             
                             if let window = UIApplication.shared.windows.first {

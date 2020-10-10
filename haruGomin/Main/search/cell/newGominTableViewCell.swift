@@ -22,6 +22,10 @@ class newGominTableViewCell: UITableViewCell {
         innerView.backgroundColor = ColorPalette.background
         innerView.layer.cornerRadius = 16
         self.contentView.backgroundColor = ColorPalette.darkBackground
+        self.gominTitle.font = UIFont(name: "NotoSansCJKkr-Bold", size: 16)
+        self.gominContent.font = UIFont(name: "NotoSansCJKkr-Regular", size: 15)
+        self.time.font = UIFont(name: "Montserrat-Regular", size: 16)
+        self.comment.font =  UIFont(name: "Montserrat-Regular", size: 16)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

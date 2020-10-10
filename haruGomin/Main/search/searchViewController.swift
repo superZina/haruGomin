@@ -15,6 +15,7 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var newGominTable: UITableView!
     @IBOutlet weak var searchGomin: UISearchBar!
     @IBOutlet weak var searchbarAndRight: NSLayoutConstraint!
+    @IBOutlet weak var text1: UILabel!
     var pageNum:Int = 0
     var tagName:String = "전체"
     var btnText:[tagList] = []
@@ -57,6 +58,7 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
         self.searchGominBar.tintColor = ColorPalette.textGray
         let textFieldInsideSearchBar = searchGominBar.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.textColor = ColorPalette.textGray
+        self.text1.font = UIFont(name: "NotoSansCJKkr-Medium", size: 20)
         self.searchGominBar.setImage(UIImage(named: "search"), for: .search, state: .normal)
     }
     override func viewWillAppear(_ animated: Bool) {

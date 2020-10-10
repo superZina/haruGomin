@@ -34,6 +34,15 @@ class gominCollectionViewCell: UICollectionViewCell {
         self.dailyBtn.setTitleColor(ColorPalette.hagoRed, for: .normal)
         self.detailBtn.setTitleColor(ColorPalette.darkBackground, for: .normal)
         gominContent.textColor = ColorPalette.textGray
+        
+        // MARK: font
+        self.gominTitle.font = UIFont(name: "NotoSansCJKkr-Bold", size: 20)
+        self.createTime.font = UIFont(name: "Montserrat-Regular", size: 16)
+        self.commentCount.font = UIFont(name: "Montserrat-Regular", size: 16)
+        self.gominContent.font = UIFont(name: "NotoSansCJKkr-Regular", size: 16)
+        self.dailyBtn.titleLabel?.font = UIFont(name: "NotoSansCJKkr-Regular", size: 16)
+        self.detailBtn.titleLabel?.font = UIFont(name: "NotoSansCJKkr-Bold", size: 16)
+        
         line.backgroundColor = UIColor(red: 83/255, green: 89/255, blue: 116/255, alpha: 1)
     }
 

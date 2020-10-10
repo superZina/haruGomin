@@ -51,6 +51,15 @@ class commentTableViewCell: UITableViewCell {
         self.userName.textColor = .white
         self.ampm.textColor = ColorPalette.textGray
         
+        // MARK: font
+        self.userName.font = UIFont(name: "NotoSansCJKkr-Regular", size: 14)
+        self.additionLabel.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 14)
+        self.comment.font = UIFont(name: "NotoSansCJKkr-Regular", size: 15)
+        self.ampm.font = UIFont(name: "Montserrat-Regular", size: 14)
+        self.time.font = UIFont(name: "Montserrat-Regular", size: 14)
+        self.likeCount.font = UIFont(name: "Montserrat-Regular", size: 14)
+        
+        
     }
 
     @IBOutlet weak var comment: UILabel!

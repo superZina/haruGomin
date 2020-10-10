@@ -21,6 +21,9 @@ class noticeTableViewCell: UITableViewCell {
         time.textColor = ColorPalette.textGray
         self.contentView.backgroundColor = ColorPalette.background
         self.underline.backgroundColor = UIColor(red: 83/255, green: 89/255, blue: 116/255, alpha: 1)
+        self.noticeComment.font = UIFont(name: "NotoSansCJKkr-Regular", size: 16)
+        self.time.font = UIFont(name: "Montserrat-Regular", size: 14)
+        self.days.font = UIFont(name: "Montserrat-Regular", size: 14)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

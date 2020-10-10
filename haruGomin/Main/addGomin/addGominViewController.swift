@@ -58,7 +58,22 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
             "title": Title,
             "userId": userId
         ]
+        if tagName == "" || content == "" || Title == "" {
+            var message:String = ""
+            if Title == "" {
+                message = "제목을 입력해주세요!"
+            }else if content == "" {
+                message = "고민 내용을 입력해주세요!"
+            }else if tagName == "" {
+                message = "고민 종류를 선택해주세요!"
+            }
+            let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
+        }else {
         registGominDataManager.shared.registGomin(self, parameter: parameter)
+        }
     }
     
     override func viewDidLoad() {
@@ -89,7 +104,7 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
         // 제목 디자인 수정
         self.gominTitle.addLeftPadding()
         self.gominTitle.attributedPlaceholder = NSAttributedString(string: "제목을 적어주세요",            attributes: [NSAttributedString.Key.foregroundColor: ColorPalette.textGray , NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)])
-        self.gominTitle.textColor = ColorPalette.textGray
+        self.gominTitle.textColor = .white
         self.gominTitle.font = .boldSystemFont(ofSize: 16)
         self.gominTitle.backgroundColor = ColorPalette.background
         
@@ -97,10 +112,13 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
         
         gominTitle.keyboardAppearance = .dark
         
-        
+        // MARK: font
+        self.gominTitle.font = UIFont(name: "NotoSansCJKkr-Regular", size: 20)
+        self.gominContentTextView.font = UIFont(name: "NotoSansCJKkr-Regular", size: 16)
+        self.registBtn.titleLabel?.font = UIFont(name: "NotoSansCJKkr-Regular", size: 16)
         
         self.gominContentTextView.backgroundColor = ColorPalette.background
-        self.gominContentTextView.textColor = ColorPalette.textGray
+        self.gominContentTextView.textColor = .white
         
         
     }

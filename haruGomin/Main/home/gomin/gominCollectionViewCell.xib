@@ -71,10 +71,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3na-iC-TVU">
-                                <rect key="frame" x="144" y="58" width="48" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="unW-ar-6d2"/>
-                                </constraints>
+                                <rect key="frame" x="144" y="58" width="20" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -120,7 +117,6 @@
                             <constraint firstAttribute="trailing" secondItem="xwu-Vk-TnD" secondAttribute="trailing" constant="20" id="WcA-Dq-jZm"/>
                             <constraint firstItem="wTq-lK-Tqp" firstAttribute="leading" secondItem="5yl-KL-mNT" secondAttribute="leading" constant="20" id="Wmy-Up-wzY"/>
                             <constraint firstAttribute="bottom" secondItem="8mX-pF-U02" secondAttribute="bottom" constant="20" id="aqq-D0-M4M"/>
-                            <constraint firstAttribute="trailing" secondItem="3na-iC-TVU" secondAttribute="trailing" constant="222" id="e9H-GH-hVx"/>
                             <constraint firstItem="i0T-om-dHS" firstAttribute="top" secondItem="mPj-L8-7Ek" secondAttribute="bottom" constant="14" id="fWM-so-LFv"/>
                             <constraint firstItem="aQL-jS-TbJ" firstAttribute="leading" secondItem="8mX-pF-U02" secondAttribute="trailing" constant="12" id="g56-qr-X0g"/>
                             <constraint firstItem="xwu-Vk-TnD" firstAttribute="leading" secondItem="5yl-KL-mNT" secondAttribute="leading" constant="20" id="gOF-Sh-vVz"/>

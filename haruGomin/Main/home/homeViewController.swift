@@ -61,7 +61,7 @@ extension homeViewController:UICollectionViewDelegateFlowLayout,UIScrollViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if self.gomins[indexPath.row].postImage != "default.png" {
+        if self.gomins[indexPath.row].postImage != "" {
             
             let cell = gominCollection.dequeueReusableCell(withReuseIdentifier: "gominImgView", for: indexPath) as! gominImgCollectionViewCell
             cell.dailyBtn.setTitle(self.gomins[indexPath.row].tagName, for: .normal)
@@ -86,6 +86,7 @@ extension homeViewController:UICollectionViewDelegateFlowLayout,UIScrollViewDele
             cell.createTime.text = time[0] + ":" + time[1]
             cell.detailBtn.tag = self.gomins[indexPath.row].postId!
             cell.detailBtn.addTarget(self, action: #selector(goDetailVC(sender:)), for: .touchUpInside)
+            cell.commentCount.text = String(self.gomins[indexPath.row].commentNum!)
             return cell
         }
     }

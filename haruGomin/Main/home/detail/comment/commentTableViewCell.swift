@@ -22,6 +22,12 @@ class commentTableViewCell: UITableViewCell {
     @IBOutlet weak var ampm: UILabel!
     var isBest:Bool = false
     var isWriter:Bool = false
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    // 초기화 할 코드 예시
+        self.additionLabel.isHidden = true
+        
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         self.contentView.backgroundColor = ColorPalette.darkBackground
@@ -29,23 +35,13 @@ class commentTableViewCell: UITableViewCell {
         self.innerView.backgroundColor = ColorPalette.background
         self.comment.textColor = .white
         self.time.textColor = ColorPalette.textGray
-        self.likeCount.textColor = ColorPalette.textGray
+        self.like.setTitleColor(ColorPalette.textGray, for: .normal)
         additionLabel.layer.cornerRadius = 4
         additionLabel.backgroundColor = UIColor(red: 90/255, green: 219/255, blue: 235/255, alpha: 1)
         additionLabel.setTitleColor(ColorPalette.background, for: .normal)
         self.additionLabel.isHidden = true
-//        if !isBest {
-//            additionLabel.isHidden = true
-//            labelHeight.constant = 0
-//            labelAndComment.constant = 0
-//        }else if !isWriter {
-//            additionLabel.isHidden = true
-//            let label = UILabel(frame: CGRect(x: 12, y: 10, width: 64, height: 24))
-//            label.textColor = ColorPalette.hagoRed
-//            label.text = "작성자"
-//            label.font = .boldSystemFont(ofSize: 14)
-//            innerView.addSubview(label)
-//        }
+        
+
 
         self.profileImg.layer.cornerRadius = 8
         self.userName.textColor = .white
@@ -57,21 +53,14 @@ class commentTableViewCell: UITableViewCell {
         self.comment.font = UIFont(name: "NotoSansCJKkr-Regular", size: 15)
         self.ampm.font = UIFont(name: "Montserrat-Regular", size: 14)
         self.time.font = UIFont(name: "Montserrat-Regular", size: 14)
-        self.likeCount.font = UIFont(name: "Montserrat-Regular", size: 14)
+//        self.likeCount.font = UIFont(name: "Montserrat-Regular", size: 14)
         
         
     }
 
     @IBOutlet weak var comment: UILabel!
     
-    @IBAction func isLiked(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected {
-            sender.setImage(UIImage(named: "likePressed"), for: .normal)
-        }else{
-            sender.setImage(UIImage(named: "like"), for: .normal)
-        }
-    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

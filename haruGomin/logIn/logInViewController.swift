@@ -39,10 +39,22 @@ class logInViewController: UIViewController {
         loginInstance?.requestThirdPartyLogin()
     }
     func setupProviderLoginView() {
-        let authorizationButton = ASAuthorizationAppleIDButton()
-        authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
+       
         
-        self.appleLoginBtn.addSubview(authorizationButton)
+//        self.appleLoginBtn.addSubview(authorizationButton)
+    }
+    @IBAction func appleLogin(_ sender: Any) {
+        let authorizationButton = ASAuthorizationAppleIDButton()
+//        authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
+        UserDefaults.standard.setValue("apple", forKey: "loginType")
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
     }
     @objc
     func handleAuthorizationAppleIDButtonPress() {
@@ -89,11 +101,25 @@ class logInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        let kakaoIcon:UIImageView = UIImageView(frame: CGRect(x: 25, y: 15, width: 22, height: 21))
+        kakaoIcon.image = UIImage(named: "shape2")
+        kakaoBtn.addSubview(kakaoIcon)
+        let naverIcon:UIImageView = UIImageView(frame: CGRect(x: 25, y: 16, width: 21, height: 19.2))
+        naverIcon.image = UIImage(named: "fill1")
+        naverBtn.addSubview(naverIcon)
+        
+        let appleIcon:UIImageView = UIImageView(frame: CGRect(x: 18, y: 0, width: 37, height: 52))
+        appleIcon.image = UIImage(named: "leftBlackLogoMedium")
+        appleLoginBtn.addSubview(appleIcon)
         
         self.view.backgroundColor = ColorPalette.background
-        kakaoBtn.backgroundColor = ColorPalette.hagoRed
-        naverBtn.backgroundColor = ColorPalette.darkBackground
+        kakaoBtn.backgroundColor = UIColor(red: 254/255, green: 229/255, blue: 0, alpha: 1)
+        naverBtn.backgroundColor = UIColor(red: 30/255, green: 200/255, blue: 0, alpha: 1)
         
+        kakaoBtn.setTitleColor(UIColor(red: 24/255, green: 22/255, blue: 0, alpha: 1), for: .normal)
+        appleLoginBtn.setTitleColor(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1), for: .normal)
+        
+        appleLoginBtn.layer.cornerRadius = 8
         kakaoBtn.layer.cornerRadius = 8
         naverBtn.layer.cornerRadius = 8
         
@@ -161,7 +187,33 @@ extension logInViewController:ASAuthorizationControllerDelegate, ASAuthorization
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let credenctial = authorization.credential as? ASAuthorizationAppleIDCredential {
             
-            print("DEBUG: token is \(credenctial.identityToken)")
+            print( "DEBUG: authorisation info is \(credenctial) ")
+            print("DEBUG: token is \(String(describing: credenctial.identityToken))")
+            print("DEBUG: user is \(credenctial.user)")
+            print("DEBUG: userUTF8 is \(credenctial.user.utf8)")
+            print("DEBUG: email is \(credenctial.email)")
+            print("DEBUG: authorizationCode is \(String(data: credenctial.authorizationCode! , encoding: .utf8))")
+            print("DEBUG: token is \(String(data: credenctial.identityToken!, encoding: .utf8))")
+            print("DEBUG: state is \(credenctial.state)")
+            
+            
+            let provider = ASAuthorizationAppleIDProvider()
+            provider.getCredentialState(forUserID: credenctial.user) { state, error in
+                switch state {
+                case .authorized:
+                print("authorized")
+                
+                case .revoked:
+                    print("revoked")
+                case .notFound:
+                    print("notFound")
+                case .transferred:
+                    print("transferred")
+                @unknown default:
+                    return
+                }
+                
+            }
         }
     }
 }

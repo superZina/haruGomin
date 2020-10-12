@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="default" reuseIdentifier="default" id="gTV-IL-0wX" customClass="defaultCollectionViewCell" customModule="haruGomin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPW-EM-ZsL">
+                        <rect key="frame" x="20" y="0.0" width="374" height="75"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 게시중인 글이 없어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBu-f3-08O">
+                                <rect key="frame" x="112.5" y="12" width="149" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고민을 나눠보세요 :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcd-Qg-oQt">
+                                <rect key="frame" x="130" y="46" width="114" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="kcd-Qg-oQt" secondAttribute="bottom" constant="12" id="Jwt-L4-WIT"/>
+                            <constraint firstItem="MBu-f3-08O" firstAttribute="top" secondItem="TPW-EM-ZsL" secondAttribute="top" constant="12" id="KoJ-Hj-4ZK"/>
+                            <constraint firstItem="MBu-f3-08O" firstAttribute="centerX" secondItem="TPW-EM-ZsL" secondAttribute="centerX" id="ZlZ-w3-nit"/>
+                            <constraint firstItem="kcd-Qg-oQt" firstAttribute="centerX" secondItem="TPW-EM-ZsL" secondAttribute="centerX" id="uaq-bo-ReE"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="TPW-EM-ZsL" secondAttribute="bottom" id="PD3-Yq-SZ8"/>
+                <constraint firstItem="TPW-EM-ZsL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VfH-Mj-1tU"/>
+                <constraint firstAttribute="trailing" secondItem="TPW-EM-ZsL" secondAttribute="trailing" constant="20" id="WVW-OO-ZvQ"/>
+                <constraint firstItem="TPW-EM-ZsL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="xRm-Tm-BQx"/>
+            </constraints>
+            <connections>
+                <outlet property="innerView" destination="TPW-EM-ZsL" id="dxh-ZZ-CWX"/>
+                <outlet property="text1" destination="MBu-f3-08O" id="mn8-vk-ddG"/>
+                <outlet property="text2" destination="kcd-Qg-oQt" id="2We-mX-rgV"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="107.47767857142857"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

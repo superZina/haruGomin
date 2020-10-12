@@ -42,17 +42,10 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lD-Sd-6O6">
                                 <rect key="frame" x="83" y="85" width="24" height="24"/>
-                                <state key="normal" image="like"/>
-                                <connections>
-                                    <action selector="isLiked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xeD-A9-lHo"/>
-                                </connections>
+                                <state key="normal" image="like">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="567" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meA-kx-0Dr">
-                                <rect key="frame" x="112" y="87" width="26" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0g-E2-c7l">
                                 <rect key="frame" x="12" y="87" width="21" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -87,13 +80,11 @@
                             <constraint firstItem="gCk-0i-jEN" firstAttribute="leading" secondItem="a0g-E2-c7l" secondAttribute="trailing" constant="2" id="1au-rD-8xs"/>
                             <constraint firstItem="1lD-Sd-6O6" firstAttribute="top" secondItem="TYc-eS-bDw" secondAttribute="bottom" constant="12.5" id="24S-Vd-eK7"/>
                             <constraint firstItem="1lD-Sd-6O6" firstAttribute="leading" secondItem="gCk-0i-jEN" secondAttribute="trailing" constant="10" id="Afn-gn-BQ1"/>
-                            <constraint firstAttribute="bottom" secondItem="meA-kx-0Dr" secondAttribute="bottom" constant="15" id="AnN-oj-m0q"/>
                             <constraint firstItem="6pn-xX-Nkw" firstAttribute="leading" secondItem="wbi-yx-eTf" secondAttribute="leading" constant="12" id="ENG-pp-fS6"/>
                             <constraint firstItem="6pn-xX-Nkw" firstAttribute="top" secondItem="wbi-yx-eTf" secondAttribute="top" constant="12" id="LH3-yo-cLY"/>
                             <constraint firstItem="TYc-eS-bDw" firstAttribute="leading" secondItem="wbi-yx-eTf" secondAttribute="leading" constant="12" id="Nxq-SB-eQp"/>
                             <constraint firstAttribute="trailing" secondItem="TYc-eS-bDw" secondAttribute="trailing" constant="12" id="Q1w-l5-t9J"/>
                             <constraint firstAttribute="bottom" secondItem="a0g-E2-c7l" secondAttribute="bottom" constant="15" id="SQy-VZ-WkP"/>
-                            <constraint firstItem="meA-kx-0Dr" firstAttribute="leading" secondItem="1lD-Sd-6O6" secondAttribute="trailing" constant="5" id="Yhz-xo-67T"/>
                             <constraint firstItem="TYc-eS-bDw" firstAttribute="top" secondItem="GCk-rA-TUp" secondAttribute="bottom" constant="12" id="ZGC-UQ-e7c"/>
                             <constraint firstItem="GCk-rA-TUp" firstAttribute="leading" secondItem="CQD-Dv-h6E" secondAttribute="trailing" constant="8" id="crs-mf-8rw"/>
                             <constraint firstAttribute="bottom" secondItem="1lD-Sd-6O6" secondAttribute="bottom" constant="10" id="e8l-RR-cb2"/>
@@ -123,7 +114,6 @@
                 <outlet property="innerView" destination="wbi-yx-eTf" id="hJv-HT-hPc"/>
                 <outlet property="labelHeight" destination="udn-kU-CkK" id="sJb-0L-9XV"/>
                 <outlet property="like" destination="1lD-Sd-6O6" id="OKP-ke-erB"/>
-                <outlet property="likeCount" destination="meA-kx-0Dr" id="ce6-sO-alh"/>
                 <outlet property="profileImg" destination="6pn-xX-Nkw" id="jvs-UK-KH4"/>
                 <outlet property="time" destination="gCk-0i-jEN" id="m96-VQ-RRw"/>
                 <outlet property="userName" destination="CQD-Dv-h6E" id="uL2-Q9-OrO"/>

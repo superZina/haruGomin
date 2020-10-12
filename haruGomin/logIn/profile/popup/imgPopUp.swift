@@ -16,7 +16,8 @@ class imgPopUp: UIViewController, UICollectionViewDataSource{
     @IBOutlet weak var imgCollectionView: UICollectionView!
     var selectedImg:Int = 0
     var buttons:[UIButton] = []
-    var imgs:[String] = ["default01","default02","default03","default04"]
+    var images:[UIImage] = []
+    var imgs:[String] = ["https://hago-storage-bucket.s3.ap-northeast-2.amazonaws.com/default_01.jpg","https://hago-storage-bucket.s3.ap-northeast-2.amazonaws.com/default_02.jpg","https://hago-storage-bucket.s3.ap-northeast-2.amazonaws.com/default_03.jpg","https://hago-storage-bucket.s3.ap-northeast-2.amazonaws.com/default_04.jpg"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.popupView.layer.cornerRadius = 16
@@ -41,7 +42,7 @@ class imgPopUp: UIViewController, UICollectionViewDataSource{
     
     @IBAction func done(_ sender: Any) {
         self.dismiss(animated: true) { [self] in
-            self.imgPopupDelegate.pressDismissBtn(imgName: imgs[selectedImg])
+            self.imgPopupDelegate.pressDismissBtn(imgName: self.imgs[selectedImg])
         }
     }
     
@@ -53,11 +54,16 @@ extension imgPopUp: UICollectionViewDelegateFlowLayout{
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = imgCollectionView.dequeueReusableCell(withReuseIdentifier: "imgCell", for: indexPath) as! profileImgCollectionViewCell
-        cell.img.image = UIImage(named: imgs[indexPath.item])
+        let urlString = imgs[indexPath.item]
+        if let enc_url = urlString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) {
+            let url = URL(string: enc_url)
+            cell.img.kf.setImage(with: url)
+        }
         
         self.buttons.append(cell.selectBtn)
         cell.selectBtn.tag = indexPath.item
         cell.selectBtn.addTarget(self, action: #selector(selectImg(sender:)), for: .touchUpInside)
+//        self.images.append(cell.img.image!)
         return cell
     }
     @objc func selectImg(sender: UIButton) {

@@ -15,7 +15,7 @@ class deleteUserDataManager{
         let url = "http://52.78.127.67:8080/api/v1/users/\(userId)"
         let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         print(url)
-        AF.request(encodedUrl as! URLConvertible , method: .delete)
+        AF.request(url , method: .delete)
             .validate()
             .response { (response) in
                 print(response.result)

@@ -7,96 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "40183AB3-783E-4FBA-8446-7BAD0C9F37CA"
+            uuid = "C3832CCC-045A-4F21-9F63-EA5C02864C8A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "haruGomin/Main/myPage/editProfile/Network/editProfileDataManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "editProfile(_:parameter:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7DC6DB26-7426-48C8-8111-25BFDC1ACE3F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "haruGomin/Main/myPage/Network/deleteDataManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "deletePost(_:postId:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7DC6DB26-7426-48C8-8111-25BFDC1ACE3F - ed11a779ac504fc3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in haruGomin.deleteDataManager.deletePost(_: haruGomin.myPageViewController, postId: Swift.Int) -&gt; ()"
-                  moduleName = "haruGomin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ijinha/Desktop/haruGomin/haruGomin/Main/myPage/Network/deleteDataManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "123">
-               </Location>
-               <Location
-                  uuid = "7DC6DB26-7426-48C8-8111-25BFDC1ACE3F - ed11a779ac504fc3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in haruGomin.deleteDataManager.deletePost(_: haruGomin.myPageViewController, postId: Swift.Int) -&gt; ()"
-                  moduleName = "haruGomin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ijinha/Desktop/haruGomin/haruGomin/Main/myPage/Network/deleteDataManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "152">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5BD0B6B8-DBBD-414F-8BA0-73AF0750D606"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "haruGomin/Main/myPage/Network/deleteDataManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "deletePost(_:postId:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "18B9E132-DB2F-4E0C-AEF9-47E55650E251"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "haruGomin/Main/myPage/Network/deleteDataManager.swift"
+            filePath = "haruGomin/Main/myPage/Network/deleteUserDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "deletePost(_:postId:)"
+            landmarkName = "deleteUser(_:userId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

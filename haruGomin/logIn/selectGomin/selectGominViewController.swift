@@ -29,6 +29,8 @@ class selectGominViewController: UIViewController, UICollectionViewDataSource {
         
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         gominCollection.collectionViewLayout = layout
+        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = 10
         self.gominCollection.delegate = self
         self.gominCollection.dataSource = self
         
@@ -46,7 +48,7 @@ class selectGominViewController: UIViewController, UICollectionViewDataSource {
         
         switch self.age {
         case "1 ~ 9":
-            ageRange = 0
+            ageRange = 1
         case "10 ~ 19":
             ageRange = 10
         case "20 ~ 29":

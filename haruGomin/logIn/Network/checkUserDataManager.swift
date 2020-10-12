@@ -38,12 +38,12 @@ class checkUserDataManager{
                             let profileVC = setProfileViewController()
                             let mainVC = tabBarViewController()
                             if let window = UIApplication.shared.windows.first {
-                                window.rootViewController = UINavigationController(rootViewController:mainVC)
+                                window.rootViewController = UINavigationController(rootViewController:profileVC)
                                 UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {}, completion: nil)
                             } else {
                                 mainVC.modalPresentationStyle = .overFullScreen
                                 loginVC
-                                    .present(mainVC, animated: true, completion: nil)
+                                    .present(profileVC, animated: true, completion: nil)
                             }
                         }else{ //이미 가입된 유저일때
                             

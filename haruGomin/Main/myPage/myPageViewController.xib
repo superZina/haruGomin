@@ -16,6 +16,7 @@
                 <outlet property="line1" destination="WWv-xW-wuE" id="IZb-vd-WDb"/>
                 <outlet property="line2" destination="IS3-io-jaO" id="ln9-SL-wgf"/>
                 <outlet property="loginTypeImg" destination="yjv-7K-hMP" id="zX4-tf-I8X"/>
+                <outlet property="myGominCollectionHeight" destination="5Y1-JL-bne" id="b13-PW-odh"/>
                 <outlet property="myPageTable" destination="4Dp-zo-RW5" id="5kE-Ww-L3F"/>
                 <outlet property="nickName" destination="rFb-i3-ev3" id="5bR-FZ-kGy"/>
                 <outlet property="profileImg" destination="VfG-ff-wRE" id="Hue-pe-ql5"/>
@@ -89,7 +90,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Dp-zo-RW5">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Dp-zo-RW5">
                     <rect key="frame" x="0.0" y="409.5" width="414" height="452.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
@@ -97,7 +98,7 @@
                     <rect key="frame" x="0.0" y="234" width="414" height="153"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="153" id="sWZ-Ek-4lT"/>
+                        <constraint firstAttribute="height" constant="153" id="5Y1-JL-bne"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gJb-iE-sW9">
                         <size key="itemSize" width="128" height="128"/>

@@ -104,6 +104,7 @@ class detailGominViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         detailGominDataManager.shared.getGominDetail(self, postId: self.postId, pageNum: 0)
+        
         self.commentBtn.isEnabled  = false
     }
     
@@ -133,7 +134,7 @@ class detailGominViewController: UIViewController {
             "profileImage": profileImg,
             "userId": userId
         ]
-        registCommentDataManager.shared.registComment(self ,self.commentVC , parameters: parameters)
+        registCommentDataManager.shared.registComment(self ,self.commentVC , parameters: parameters , userId: userId)
         
     }
     
@@ -188,7 +189,12 @@ class detailGominViewController: UIViewController {
         self.username.text = gomin.userNickname
         
         self.commentCount.text = String(gomin.commentNum!)
-        
+        let urlString = gomin.userProfileImage
+        if let enc_url = urlString?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) {
+            let url = URL(string: enc_url)
+            self.profileImg.kf.setImage(with: url)
+            self.profileImg.contentMode = .scaleAspectFit
+        }
     }
     
     //MARK: commentVC Settings
@@ -227,6 +233,7 @@ class detailGominViewController: UIViewController {
         self.view.addSubview(visualEffectView)
         
         commentVC.postId = self.postId
+        
         self.addChild(commentVC)
         self.view.addSubview(commentVC.view)
         

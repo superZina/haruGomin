@@ -12,9 +12,11 @@ class commentDataManager{
     
         static let shared = commentDataManager()
         private init() {}
-        func getGominDetail(_ commentVC:commentViewController , postId:Int , pageNum:Int ) {
-            let url = "http://52.78.127.67:8080/api/v1/comments/\(postId)?pageNum=\(pageNum)"
-            AF.request(url, method: .get)
+    func getGominDetail(_ commentVC:commentViewController , postId:Int , pageNum:Int , userId : Int64 ) {
+            let url = "http://52.78.127.67:8080/api/v1/comments/\(postId)?pageNum=\(pageNum)&userId=\(userId)"
+        let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        print("DEBUG: uri is \(url)")
+            AF.request(encodedUrl as! URLConvertible, method: .get)
                 .responseJSON { (response) in
                     switch response.result {
                     case .success(let obj):
@@ -29,7 +31,7 @@ class commentDataManager{
                             }else {
                             commentVC.comment.append(contentsOf: getData)
                             }
-
+                        
                             commentVC.commentTableVeiw.reloadData()
                             commentVC.commentTableVeiw.setNeedsDisplay()
                         }catch {

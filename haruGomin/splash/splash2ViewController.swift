@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class splash2ViewController: UIViewController {
 
@@ -15,15 +16,15 @@ class splash2ViewController: UIViewController {
     @IBOutlet weak var text2: UILabel!
     @IBOutlet weak var text3: UILabel!
     @IBOutlet weak var nextBtn: UIButton!
-    
+    let animationView = AnimationView(name: "2page")
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = ColorPalette.background
         self.nextBtn.backgroundColor = ColorPalette.hagoRed
         self.nextBtn.setTitleColor(ColorPalette.darkBackground, for: .normal)
         self.nextBtn.layer.cornerRadius = 8
-        self.img.image = UIImage(named: "illu3")
-        self.img.contentMode = .scaleAspectFit
+        self.img.addSubview(animationView)
+        self.img.contentMode = .scaleAspectFill
         self.text1.text = "걱정마세요!"
         self.text2.text = "24시간 후 글 자동 삭제로 고민이"
         self.text3.text = "새어나가지 않도록 비밀을 지켜드릴게요"
@@ -42,6 +43,8 @@ class splash2ViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+        animationView.play()
+        animationView.loopMode = .loop
     }
 
     @IBAction func prev(_ sender: Any) {

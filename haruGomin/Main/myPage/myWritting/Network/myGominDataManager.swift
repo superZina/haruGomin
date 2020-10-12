@@ -19,7 +19,6 @@ class myGominDataManager{
             .responseJSON { (response) in
                 switch response.result {
                 case .success(let obj):
-                    print("DEBUG: success")
                     do{
                         let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                         let getData = try JSONDecoder().decode([addedGomin].self, from: dataJSON)

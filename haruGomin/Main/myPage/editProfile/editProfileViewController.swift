@@ -9,9 +9,6 @@
 import UIKit
 
 class editProfileViewController: UIViewController, UICollectionViewDataSource, imgPopUpDelegate {
-    
-    
-
     @IBOutlet weak var profileImg: UIButton!
     @IBOutlet weak var nickName: UITextField!
     @IBOutlet weak var age: UITextField!
@@ -21,6 +18,7 @@ class editProfileViewController: UIViewController, UICollectionViewDataSource, i
     @IBOutlet weak var text1: UILabel!
     @IBOutlet weak var text2: UILabel!
     @IBOutlet weak var text3: UILabel!
+    @IBOutlet weak var innerView: UIView!
     
     var agePicker:UIPickerView! = UIPickerView()
     var btnText:[String] = ["돈","일상","가족","건강","친구사이","직장생활","연애","학교생활","진로","기혼자만 아는","육아"]
@@ -43,18 +41,23 @@ class editProfileViewController: UIViewController, UICollectionViewDataSource, i
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white ]
         
         let imageNum:String = UserDefaults.standard.value( forKey: "profileImage") as! String
-        self.profileImg.setImage(UIImage(named: imageNum), for: .normal)
+        
+        if let enc_url = imageNum.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) {
+            let url = URL(string: enc_url)
+            self.profileImg.kf.setImage(with: url, for: .normal)
+        }
+        
         self.profileImg.imageView?.layer.cornerRadius = 24
         
         self.view.backgroundColor = ColorPalette.background
+        self.innerView.backgroundColor = ColorPalette.background
         self.gominCollection.backgroundColor = ColorPalette.background
         self.editBtn.layer.cornerRadius = 8
         self.editBtn.setTitleColor(ColorPalette.darkBackground, for: .normal)
-        
         self.userName = UserDefaults.standard.value(forKey: "userName") as! String
         self.ageRange = UserDefaults.standard.value(forKey: "ageRange") as! Int
         self.ImgNum =  UserDefaults.standard.value(forKey: "profileImage") as! String
-
+        
         
         self.nickName.text = self.userName
         self.nickName.layer.cornerRadius = 9
@@ -63,7 +66,23 @@ class editProfileViewController: UIViewController, UICollectionViewDataSource, i
         self.nickName.textColor = ColorPalette.textGray
         self.nickName.attributedPlaceholder = NSAttributedString(string: "닉네임을 입력해주세요.",attributes: [NSAttributedString.Key.foregroundColor: ColorPalette.borderGray])
         
-        self.age.text = String(self.ageRange)
+        print("DEBUG: ageRange is \(self.ageRange)")
+        switch self.ageRange {
+        case 1:
+            self.age.text = "1 ~ 9"
+        case 10:
+            self.age.text = "10 ~ 19"
+        case 20:
+            self.age.text = "20 ~ 29"
+        case 30:
+            self.age.text = "30 ~ 39"
+        case 40:
+            self.age.text = "40 ~ 49"
+        default:
+            break
+        }
+        
+        
         self.age.layer.cornerRadius = 9
         self.age.layer.borderWidth = 1
         self.age.layer.borderColor = ColorPalette.borderGray.cgColor
@@ -90,6 +109,8 @@ class editProfileViewController: UIViewController, UICollectionViewDataSource, i
         let itemCellNib = UINib(nibName: "CollectionViewCell", bundle: nil)
         self.gominCollection.register(itemCellNib, forCellWithReuseIdentifier: "gomin")
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = 10
         gominCollection.collectionViewLayout = layout
         self.gominCollection.delegate = self
         self.gominCollection.dataSource = self
@@ -110,8 +131,24 @@ class editProfileViewController: UIViewController, UICollectionViewDataSource, i
             hashTags.append(i.title(for: .normal)!)
         }
         let id:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
+        var changedAge:Int = 0
+        switch self.age.text {
+        case "1 ~ 9":
+            changedAge = 1
+        case "10 ~ 19":
+            changedAge = 10
+        case "20 ~ 29":
+            changedAge = 20
+        case "30 ~ 39":
+            changedAge = 30
+        case "40 ~ 49":
+            changedAge = 40
+        default:
+            break
+        }
+        
         let parameters:[String:Any] = [
-            "ageRange" : self.age.text,
+            "ageRange" : changedAge,
             "nickname" : self.nickName.text,
             "profileImage" : self.ImgNum,
             "userHashtags" : hashTags ,
@@ -132,7 +169,12 @@ class editProfileViewController: UIViewController, UICollectionViewDataSource, i
     }
     func pressDismissBtn(imgName: String) {
         self.ImgNum = imgName
-        self.profileImg.setImage(UIImage(named: imgName), for: .normal)
+        if let enc_url = self.ImgNum.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) {
+            let url = URL(string: enc_url)
+            self.profileImg.kf.setImage(with: url , for: .normal)
+        }
+//        self.profileImg.kf.setImage(with: imgName, for: .normal)
+//        self.profileImg.setImage(UIImage(named: imgName), for: .normal)
     }
     func createAgePicker() {
         let toolbar = UIToolbar()
@@ -163,13 +205,23 @@ extension editProfileViewController:UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = gominCollection.dequeueReusableCell(withReuseIdentifier: "gomin", for: indexPath) as! CollectionViewCell
+//        let userHashtags:[String] = UserDefaults.standard.stringArray(forKey: "hashtags") ?? [String]()
         cell.contentView.backgroundColor = .none
         cell.btn.layer.cornerRadius = 8
-        cell.btn.layer.borderWidth = 1
-        cell.btn.layer.borderColor = ColorPalette.borderGray.cgColor
+        
         cell.btn.setTitle(btnText[indexPath.item], for: .normal)
         cell.btn.setTitleColor(ColorPalette.textGray, for: .normal)
-        
+//        for i in userHashtags {
+//            if i == btnText[indexPath.item] {
+//                cell.btn.layer.borderWidth = 1
+//                cell.btn.layer.borderColor = ColorPalette.hagoRed.cgColor
+//                cell.btn.isSelected = true
+//            }else{
+                cell.btn.layer.borderWidth = 1
+                cell.btn.layer.borderColor = ColorPalette.borderGray.cgColor
+//                cell.btn.isSelected = false
+//            }
+//        }
         cell.btn.addTarget(self, action: #selector(selected(sender:)), for: .touchUpInside)
         return cell
     }

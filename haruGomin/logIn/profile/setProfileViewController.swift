@@ -5,7 +5,7 @@
 //  Created by 이진하 on 2020/09/12.
 //  Copyright © 2020 이진하. All rights reserved.
 //
-
+import Kingfisher
 import UIKit
 
 class setProfileViewController: UIViewController,imgPopUpDelegate {
@@ -88,7 +88,14 @@ class setProfileViewController: UIViewController,imgPopUpDelegate {
     }
     func pressDismissBtn(imgName:String) {
         self.selectedImg = imgName
-        self.profileImg.setImage(UIImage(named: imgName), for: .normal)
+        
+        
+        if let enc_url = imgName.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) {
+            let url = URL(string: enc_url)
+            let img = UIImageView()
+//            img.kf.setImage(with: <#T##Source?#>)
+            self.profileImg.kf.setImage(with: url, for: .normal)
+        }
         
         
     }

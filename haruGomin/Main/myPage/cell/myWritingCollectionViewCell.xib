@@ -121,7 +121,7 @@
                 <outlet property="innerView" destination="vGJ-Ws-zZR" id="eQ3-A5-gtd"/>
                 <outlet property="time" destination="Ea8-Zm-o97" id="h2y-pc-2Ia"/>
             </connections>
-            <point key="canvasLocation" x="359.4202898550725" y="181.80803571428569"/>
+            <point key="canvasLocation" x="-83" y="178"/>
         </collectionViewCell>
     </objects>
     <resources>

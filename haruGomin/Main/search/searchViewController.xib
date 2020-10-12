@@ -58,11 +58,11 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wFC-oT-iZQ">
-                    <rect key="frame" x="0.0" y="335" width="414" height="527"/>
+                    <rect key="frame" x="0.0" y="329" width="414" height="533"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 고민" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0N-jx-gWN">
-                    <rect key="frame" x="20" y="311" width="100" height="24"/>
+                    <rect key="frame" x="20" y="305" width="100" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="iPr-jO-xgT"/>
                     </constraints>
@@ -83,11 +83,11 @@
                 <constraint firstItem="8xl-jl-NLW" firstAttribute="top" secondItem="New-jd-cWp" secondAttribute="bottom" id="bC9-UN-Ilc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wFC-oT-iZQ" secondAttribute="bottom" id="bjT-s2-boT"/>
                 <constraint firstItem="tOE-5Z-q45" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eDN-p8-69R"/>
+                <constraint firstItem="X0N-jx-gWN" firstAttribute="top" secondItem="8xl-jl-NLW" secondAttribute="bottom" constant="12" id="geb-4a-OmM"/>
                 <constraint firstItem="8xl-jl-NLW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="k4z-QE-I5o"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8xl-jl-NLW" secondAttribute="trailing" id="n0p-kq-DBg"/>
                 <constraint firstItem="tOE-5Z-q45" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="nPl-qm-fvA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wFC-oT-iZQ" secondAttribute="trailing" id="ou0-n6-Bkr"/>
-                <constraint firstItem="X0N-jx-gWN" firstAttribute="top" secondItem="8xl-jl-NLW" secondAttribute="bottom" constant="18" id="pLb-UU-YNl"/>
                 <constraint firstItem="New-jd-cWp" firstAttribute="top" secondItem="tOE-5Z-q45" secondAttribute="bottom" id="rGE-GC-3Ko"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="88.392857142857139"/>

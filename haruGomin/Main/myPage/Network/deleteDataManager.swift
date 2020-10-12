@@ -12,18 +12,20 @@ class deleteDataManager{
     static let shared = deleteDataManager()
     private init() {}
     func deletePost(_ myPageVC:myPageViewController , postId:Int) {
-        let url = "http://52.78.127.67:8080/api/v1/users/posts/\(postId)"
+        let url = "http://52.78.127.67:8080/api/v1/posts/\(postId)"
+        print("DEBUG: url is \(url)")
         let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        AF.request(url, method: .delete)
+        AF.request(encodedUrl as! URLConvertible, method: .delete)
             .validate()
             .responseJSON { (response) in
-                switch response.result {
-                case .success(let obj):
-                    print("delete success")
+                let alert = UIAlertController(title: nil, message: "고민 삭제 완료!", preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "확인", style: .cancel) { (action) in
+                    myPageVC.writingCollectionView.reloadData()
+                    myPageVC.viewWillAppear(true)
                     
-                default:
-                    return
                 }
+                alert.addAction(cancel)
+                myPageVC.present(alert, animated: true, completion: nil)
             }
     }
 }

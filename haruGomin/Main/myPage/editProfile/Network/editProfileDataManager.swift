@@ -30,11 +30,14 @@ class editProfileDataManager {
                     UserDefaults.standard.setValue(getData.nickname, forKey: "userName")
                     UserDefaults.standard.setValue(getData.userId, forKey: "userId")
                     UserDefaults.standard.setValue(getData.profileImage, forKey: "profileImage")
+                    UserDefaults.standard.setValue(getData.ageRange, forKey: "ageRange")
+                    
                     let alert = UIAlertController(title: nil, message: "프로필 수정이 완료 됐어요!", preferredStyle: .alert)
-                    let cancel = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+                    let cancel = UIAlertAction(title: "확인", style: .cancel) { (action) in
+                        editVC.navigationController?.popViewController(animated: true)
+                    }
                     alert.addAction(cancel)
                     editVC.present(alert, animated: true) {
-                        editVC.navigationController?.popViewController(animated: true)
                     }
                     
                 }catch {

@@ -41,9 +41,12 @@
 		FF6FCEC124F6BF2200451815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6FCEBF24F6BF2200451815 /* LaunchScreen.storyboard */; };
 		FF6FCECB24F6BF3D00451815 /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEC924F6BF3D00451815 /* logInViewController.swift */; };
 		FF6FCECC24F6BF3D00451815 /* logInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF6FCECA24F6BF3D00451815 /* logInViewController.xib */; };
+		FF70918E25335B3E00B42B26 /* storyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70918D25335B3E00B42B26 /* storyDataManager.swift */; };
 		FF8E27392513A8BC00531E40 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E27382513A8BC00531E40 /* UITextField.swift */; };
 		FF94DD0B252D9E7E005252E4 /* registCommentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF94DD0A252D9E7E005252E4 /* registCommentDataManager.swift */; };
 		FF94DD0E252DA957005252E4 /* commentLikeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF94DD0D252DA957005252E4 /* commentLikeDataManager.swift */; };
+		FF951C762533F5C80059C999 /* defaultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF951C742533F5C80059C999 /* defaultCollectionViewCell.swift */; };
+		FF951C772533F5C80059C999 /* defaultCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF951C752533F5C80059C999 /* defaultCollectionViewCell.xib */; };
 		FF960710252C86AC00C4D704 /* myGominDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF96070F252C86AC00C4D704 /* myGominDataManager.swift */; };
 		FF960714252C9AB900C4D704 /* userInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF960713252C9AB900C4D704 /* userInfoResponse.swift */; };
 		FF993E22250BDDFA00E67251 /* colorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF993E21250BDDFA00E67251 /* colorPalette.swift */; };
@@ -181,6 +184,9 @@
 		FFD09E042530DED80040FEEF /* splash3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD09E022530DED80040FEEF /* splash3ViewController.xib */; };
 		FFE05F28251660600048B56F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE05F26251660600048B56F /* CollectionViewCell.swift */; };
 		FFE05F29251660600048B56F /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFE05F27251660600048B56F /* CollectionViewCell.xib */; };
+		FFE15C792534483500E6A3A6 /* 1page.json in Resources */ = {isa = PBXBuildFile; fileRef = FFE15C762534483500E6A3A6 /* 1page.json */; };
+		FFE15C7F25344A9200E6A3A6 /* 3page.json in Resources */ = {isa = PBXBuildFile; fileRef = FFE15C7E25344A9200E6A3A6 /* 3page.json */; };
+		FFE15C8325344B5500E6A3A6 /* 2page.json in Resources */ = {isa = PBXBuildFile; fileRef = FFE15C8225344B5500E6A3A6 /* 2page.json */; };
 		FFFA763225185C100008101C /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA763025185C100008101C /* homeViewController.swift */; };
 		FFFA763325185C100008101C /* homeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA763125185C100008101C /* homeViewController.xib */; };
 		FFFA766325188CD70008101C /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA766125188CD70008101C /* tabBarViewController.swift */; };
@@ -244,9 +250,12 @@
 		FF6FCEC224F6BF2200451815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF6FCEC924F6BF3D00451815 /* logInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		FF6FCECA24F6BF3D00451815 /* logInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = logInViewController.xib; sourceTree = "<group>"; };
+		FF70918D25335B3E00B42B26 /* storyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storyDataManager.swift; sourceTree = "<group>"; };
 		FF8E27382513A8BC00531E40 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		FF94DD0A252D9E7E005252E4 /* registCommentDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registCommentDataManager.swift; sourceTree = "<group>"; };
 		FF94DD0D252DA957005252E4 /* commentLikeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentLikeDataManager.swift; sourceTree = "<group>"; };
+		FF951C742533F5C80059C999 /* defaultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaultCollectionViewCell.swift; sourceTree = "<group>"; };
+		FF951C752533F5C80059C999 /* defaultCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = defaultCollectionViewCell.xib; sourceTree = "<group>"; };
 		FF96070F252C86AC00C4D704 /* myGominDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myGominDataManager.swift; sourceTree = "<group>"; };
 		FF960713252C9AB900C4D704 /* userInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userInfoResponse.swift; sourceTree = "<group>"; };
 		FF993E21250BDDFA00E67251 /* colorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorPalette.swift; sourceTree = "<group>"; };
@@ -385,6 +394,9 @@
 		FFD09E022530DED80040FEEF /* splash3ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = splash3ViewController.xib; sourceTree = "<group>"; };
 		FFE05F26251660600048B56F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FFE05F27251660600048B56F /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		FFE15C762534483500E6A3A6 /* 1page.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1page.json; sourceTree = "<group>"; };
+		FFE15C7E25344A9200E6A3A6 /* 3page.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 3page.json; sourceTree = "<group>"; };
+		FFE15C8225344B5500E6A3A6 /* 2page.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2page.json; sourceTree = "<group>"; };
 		FFFA763025185C100008101C /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
 		FFFA763125185C100008101C /* homeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = homeViewController.xib; sourceTree = "<group>"; };
 		FFFA766125188CD70008101C /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
@@ -475,6 +487,7 @@
 				FF0D85E9252A1E6300512993 /* tagListDataManager.swift */,
 				FF0D85ED252A1F4700512993 /* tagResponse.swift */,
 				FF0D85F0252A26A000512993 /* selectTagDatatManager.swift */,
+				FF70918D25335B3E00B42B26 /* storyDataManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -517,6 +530,8 @@
 				FF5257F42524351C0076C7EB /* deleteTableViewCell.xib */,
 				FF0D85CE2529F93100512993 /* myWritingCollectionViewCell.swift */,
 				FF0D85CF2529F93100512993 /* myWritingCollectionViewCell.xib */,
+				FF951C742533F5C80059C999 /* defaultCollectionViewCell.swift */,
+				FF951C752533F5C80059C999 /* defaultCollectionViewCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -608,6 +623,7 @@
 		FF993E20250BDDE300E67251 /* config */ = {
 			isa = PBXGroup;
 			children = (
+				FFE15C75253447C800E6A3A6 /* motion */,
 				FFB8880625320D7800332FCC /* font */,
 				FF311C20251D0A2A0034208B /* tabBarItem */,
 				FF993E21250BDDFA00E67251 /* colorPalette.swift */,
@@ -870,6 +886,16 @@
 			path = splash;
 			sourceTree = "<group>";
 		};
+		FFE15C75253447C800E6A3A6 /* motion */ = {
+			isa = PBXGroup;
+			children = (
+				FFE15C762534483500E6A3A6 /* 1page.json */,
+				FFE15C8225344B5500E6A3A6 /* 2page.json */,
+				FFE15C7E25344A9200E6A3A6 /* 3page.json */,
+			);
+			path = motion;
+			sourceTree = "<group>";
+		};
 		FFFA762F25185BEF0008101C /* home */ = {
 			isa = PBXGroup;
 			children = (
@@ -1066,6 +1092,7 @@
 				FFFA766425188CD70008101C /* tabBarViewController.xib in Resources */,
 				FFB888C525320D8800332FCC /* NotoSans-ExtraLightItalic.ttf in Resources */,
 				FFB888D025320D8800332FCC /* NotoSansMonoCJKkr-Regular.otf in Resources */,
+				FFE15C792534483500E6A3A6 /* 1page.json in Resources */,
 				FFFA769C25190F590008101C /* myPageViewController.xib in Resources */,
 				FFB8887425320D8800332FCC /* Montserrat-BoldItalic.ttf in Resources */,
 				FFB8888425320D8800332FCC /* Montserrat-ExtraBoldItalic.ttf in Resources */,
@@ -1077,6 +1104,7 @@
 				FFB888BE25320D8800332FCC /* NotoSans-BlackItalic.ttf in Resources */,
 				FFB8888525320D8800332FCC /* NotoSans-SemiCondensedItalic.ttf in Resources */,
 				FFFA76712518A5230008101C /* gominImgCollectionViewCell.xib in Resources */,
+				FFE15C7F25344A9200E6A3A6 /* 3page.json in Resources */,
 				FFB8888625320D8800332FCC /* NotoSans-Regular.ttf in Resources */,
 				FFB8889D25320D8800332FCC /* NotoSans-ExtraCondensedThinItalic.ttf in Resources */,
 				FFB888AA25320D8800332FCC /* NotoSans-ExtraCondensedItalic.ttf in Resources */,
@@ -1147,6 +1175,7 @@
 				FFB888C825320D8800332FCC /* NotoSans-SemiCondensedExtraBoldItalic.ttf in Resources */,
 				FFB888D525320D8800332FCC /* NotoSansCJKkr-Light.otf in Resources */,
 				FFBC734A2528E1FB00CF4FA3 /* profileImgCollectionViewCell.xib in Resources */,
+				FFE15C8325344B5500E6A3A6 /* 2page.json in Resources */,
 				FFB888CA25320D8800332FCC /* LICENSE_OFL.txt in Resources */,
 				FFB8889925320D8800332FCC /* NotoSans-MediumItalic.ttf in Resources */,
 				FFB888B425320D8800332FCC /* NotoSans-CondensedBlack.ttf in Resources */,
@@ -1159,6 +1188,7 @@
 				FFB8888E25320D8800332FCC /* NotoSans-Medium.ttf in Resources */,
 				FFB888D625320D8800332FCC /* NotoSansCJKkr-Thin.otf in Resources */,
 				FFB8888D25320D8800332FCC /* NotoSans-ExtraCondensedMediumItalic.ttf in Resources */,
+				FF951C772533F5C80059C999 /* defaultCollectionViewCell.xib in Resources */,
 				FFB888C625320D8800332FCC /* NotoSans-CondensedExtraLight.ttf in Resources */,
 				FFFA76772518AE530008101C /* detailGominViewController.xib in Resources */,
 				FFB888B325320D8800332FCC /* NotoSans-LightItalic.ttf in Resources */,
@@ -1226,6 +1256,7 @@
 				FFE05F28251660600048B56F /* CollectionViewCell.swift in Sources */,
 				FF1A7AEE251FA11700B95773 /* noticeTableViewCell.swift in Sources */,
 				FF6FCEBC24F6BF2100451815 /* haruGomin.xcdatamodeld in Sources */,
+				FF951C762533F5C80059C999 /* defaultCollectionViewCell.swift in Sources */,
 				FFD09E032530DED80040FEEF /* splash3ViewController.swift in Sources */,
 				FFD09DEF2530D3E70040FEEF /* splashViewController.swift in Sources */,
 				FF0D85CA2529F25700512993 /* myWritingViewController.swift in Sources */,
@@ -1265,6 +1296,7 @@
 				FF9A64F7252F446A00946DA1 /* editDataManager.swift in Sources */,
 				FF9A64FD252F826F00946DA1 /* checkUserDataManager.swift in Sources */,
 				FF0D85EA252A1E6300512993 /* tagListDataManager.swift in Sources */,
+				FF70918E25335B3E00B42B26 /* storyDataManager.swift in Sources */,
 				FF52587F2524BD380076C7EB /* signUpDataManager.swift in Sources */,
 				FFB88804253209D300332FCC /* UIFont.swift in Sources */,
 				FFFA769625190F490008101C /* noticeViewController.swift in Sources */,

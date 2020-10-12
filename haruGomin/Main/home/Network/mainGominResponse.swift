@@ -36,4 +36,5 @@ struct comment:Codable {
     let profileImage:String?
     let content:String?
     let commentLikes:Int?
+    let like:Bool?
 }

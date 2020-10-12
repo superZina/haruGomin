@@ -7,6 +7,10 @@ PODS:
   - KakaoSDKUser (2.0.2):
     - KakaoSDKAuth (= 2.0.2)
     - KakaoSDKCommon (= 2.0.2)
+  - Kingfisher (5.15.5):
+    - Kingfisher/Core (= 5.15.5)
+  - Kingfisher/Core (5.15.5)
+  - lottie-ios (3.1.8)
   - naveridlogin-sdk-ios (4.1.2)
   - Pageboy (3.6.1)
   - Tabman (2.9.1):
@@ -15,6 +19,8 @@ PODS:
 DEPENDENCIES:
   - KakaoSDKAuth
   - KakaoSDKUser
+  - Kingfisher
+  - lottie-ios
   - naveridlogin-sdk-ios
   - Tabman (~> 2.9)
 
@@ -24,6 +30,8 @@ SPEC REPOS:
     - KakaoSDKAuth
     - KakaoSDKCommon
     - KakaoSDKUser
+    - Kingfisher
+    - lottie-ios
     - naveridlogin-sdk-ios
     - Pageboy
     - Tabman
@@ -33,10 +41,12 @@ SPEC CHECKSUMS:
   KakaoSDKAuth: 69698a4a6726f2b43fb43246891a1a747343935e
   KakaoSDKCommon: 2226e13fbbd4a875826c7a348cf4f535392a4b8f
   KakaoSDKUser: a4a82ba374e0b3478be3f66307943e85542149ee
+  Kingfisher: e3ec347a5ab8817b7585ef46923a2d2b9a7d8fbe
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   naveridlogin-sdk-ios: cf8afccdb1793d4ecfcd5d46aa8729d8b5058c70
   Pageboy: 29a2d474ad99404b4d77f325e0ab6d705930a4fb
   Tabman: 085d89c65be9e883629bdaf5b1453a6397e57846
 
-PODFILE CHECKSUM: f28957549990be9d1e219cecb7fa2fb56f380f31
+PODFILE CHECKSUM: 4c01c0882e3ac47ce5352e054fc826e44b10d283
 
 COCOAPODS: 1.9.1

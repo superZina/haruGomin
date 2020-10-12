@@ -18,17 +18,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         var startVC:UIViewController = UIViewController()
         if let isFirst:Bool  = UserDefaults.standard.value( forKey: "second") as? Bool {
-            print(isFirst)
-            if isFirst { //처음 앱을 깐것이 아니라면
-                if let isLogin:Bool = UserDefaults.standard.value(forKey: "isLogin") as? Bool {
-                    if isLogin {
-                        startVC = tabBarViewController()
-                    }else{
-                        startVC = logInViewController()
-                    }
-                }
-            }
-        }else{
+            print("is first: \(isFirst)")
+//            if isFirst { //처음 앱을 깐것이 아니라면
+//                if let isLogin:Bool = UserDefaults.standard.value(forKey: "isLogin") as? Bool {
+//                    print("is login: \(isLogin)")
+//                    if isLogin {
+//                        startVC = tabBarViewController()
+//                    }else{
+//                        startVC = splashViewController()
+//                    }
+//                }else{
+//                    startVC = splashViewController()
+//                }
+//            }
+//        }else{
             startVC = splashViewController()
         }
         

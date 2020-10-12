@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class searchViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var searchGominBar: UISearchBar!
@@ -21,6 +22,7 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
     var btnText:[tagList] = []
     var btns:[UIButton] = []
     var newGomins:[addedGomin] = []
+    var storys:[addedGomin] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
@@ -60,6 +62,7 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
         textFieldInsideSearchBar?.textColor = ColorPalette.textGray
         self.text1.font = UIFont(name: "NotoSansCJKkr-Medium", size: 20)
         self.searchGominBar.setImage(UIImage(named: "search"), for: .search, state: .normal)
+        storyDataManager.shared.getStoryList(self)
     }
     override func viewWillAppear(_ animated: Bool) {
         self.pageNum = 0
@@ -67,10 +70,15 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
         self.navigationController?.isNavigationBarHidden = true
         tagListDataManager.shared.getTagList(self)
         self.newGomins = []
+        self.storys = []
         selectTagDatatManager.shared.getTagGomins(self, tagName: tagName, pageNum: 0)
+        storyDataManager.shared.getStoryList(self)
     }
     func setTagList(){
         self.gominCategoryCollection.reloadData()
+    }
+    func setStorys(){
+        self.gominStoryCollection.reloadData()
     }
     func refreshGominTable(){
         self.newGominTable.reloadData()
@@ -106,7 +114,7 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
         if collectionView == gominCategoryCollection {
             return self.btnText.count
         }else {
-            return 10
+            return self.storys.count
         }
     }
     
@@ -130,7 +138,36 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
         }else {
             //MARK: 스토리 Cell
             let storyCell = gominStoryCollection.dequeueReusableCell(withReuseIdentifier: "story", for: indexPath) as! storyCollectionViewCell
+            
+            // MARK: TIME SETTING
+            var createdAt:String = self.storys[indexPath.row].createdDate!
+            createdAt = createdAt.replacingOccurrences(of: "T", with: " ") //date String 형식 맞춰주기
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let date = Date()
+            let currnetTimeStr = formatter.string(from: date) //현재시간 String
+                    
+            let dates = formatter.date(from: createdAt) // 작성시간 date
+            let currentDate = formatter.date(from: currnetTimeStr) //현재시간 date
+            print("DEBUG: 작성시간 \(dates)")
+            print("DEBUG: 현재시간 \(currentDate)")
+            //differTime이 0이면 게시물 삭제
+            let differTime = dates?.timeIntervalSince(currentDate!)
+            print("DEBUG: 지난 시간 \(differTime)")
+            let restTime = (60 * 60 * 24) + differTime!
+            let differHour = Int(restTime / (60 * 60)) //남은 시간
+            let differMinute = Int((Int(restTime) - differHour * ( 60 * 60)) / 60 ) //남은 분
 
+            storyCell.time.text = String(differHour) + ":" + String(differMinute) //남은시간
+            
+            // MARK: IMG SETTING
+            let urlString = self.storys[indexPath.row].userProfileImage
+            if let enc_url = urlString?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) {
+                let url = URL(string: enc_url)
+                storyCell.profileImg.kf.setImage(with: url)
+                storyCell.profileImg.contentMode = .scaleAspectFill
+                storyCell.profileImg.layer.cornerRadius = 12
+            }
             return storyCell
         }
     }
@@ -155,6 +192,13 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
             sender.layer.borderColor = ColorPalette.borderGray.cgColor
             sender.setTitleColor(ColorPalette.textGray, for: .normal)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let postId = self.storys[indexPath.row].postId
+        let detailVC = detailGominViewController()
+        detailVC.postId = postId!
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == gominStoryCollection {

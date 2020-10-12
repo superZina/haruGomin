@@ -10,4 +10,6 @@ target 'haruGomin' do
   pod 'KakaoSDKAuth'
   pod 'naveridlogin-sdk-ios'
   pod 'Tabman', '~> 2.9'
+  pod 'Kingfisher'
+  pod 'lottie-ios'
 end

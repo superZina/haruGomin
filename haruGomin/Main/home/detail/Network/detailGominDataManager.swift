@@ -22,6 +22,7 @@ class detailGominDataManager{
                         let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                         let getData = try JSONDecoder().decode(gomin.self, from: dataJSON)
                         detailVC.setGominContent(gomin: getData)
+                        detailVC.commentVC.userId = getData.userId!
                     }catch {
                         print(error.localizedDescription)
                     }

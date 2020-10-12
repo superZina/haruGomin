@@ -11,6 +11,7 @@ import KakaoSDKAuth
 import KakaoSDKCommon
 import KakaoSDKUser
 import NaverThirdPartyLogin
+import Kingfisher
 
 class myPageViewController: UIViewController, UICollectionViewDataSource {
     
@@ -24,6 +25,7 @@ class myPageViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var haruGomin: UILabel!
     @IBOutlet weak var text1: UILabel!
     @IBOutlet weak var editBtn: UIButton!
+    @IBOutlet weak var myGominCollectionHeight: NSLayoutConstraint!
     
     var myPosting:[addedGomin] = []
     var pageNum:Int = 0
@@ -58,6 +60,8 @@ class myPageViewController: UIViewController, UICollectionViewDataSource {
         
         let mygominNib = UINib(nibName: "myWritingCollectionViewCell", bundle: nil)
         self.writingCollectionView.register(mygominNib, forCellWithReuseIdentifier: "myGomin")
+        let defaultCellNib = UINib(nibName: "defaultCollectionViewCell", bundle: nil)
+        self.writingCollectionView.register(defaultCellNib, forCellWithReuseIdentifier: "default")
         self.writingCollectionView.delegate = self
         self.writingCollectionView.dataSource = self
         
@@ -69,7 +73,8 @@ class myPageViewController: UIViewController, UICollectionViewDataSource {
         self.writingCollectionView.backgroundColor = ColorPalette.darkBackground
         
         
-        let userName : String = UserDefaults.standard.value(forKey: "userName") as! String
+        let userName : String = UserDefaults
+            .standard.value(forKey: "userName") as! String
         self.nickName.text = userName
     }
     
@@ -78,6 +83,11 @@ class myPageViewController: UIViewController, UICollectionViewDataSource {
         print("UserID:\(userId)")
         let jwt:String = UserDefaults.standard.value(forKey: "jwt") as! String
         print("DEBUG: jwt is \(jwt)")
+        let urlString:String = UserDefaults.standard.value(forKey: "profileImage") as! String
+        if let enc_url = urlString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) {
+            let url = URL(string: enc_url)
+            self.profileImg.kf.setImage(with: url)
+        }
         myPostingDataManager.shared.getmyPostings(myPageVC: self, userId: userId, pageNum: pageNum)
         self.navigationController?.isNavigationBarHidden = true
     }
@@ -135,12 +145,12 @@ extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
             let alert = UIAlertController(title: "로그아웃", message: nil, preferredStyle: .actionSheet)
             let logOutAction = UIAlertAction(title: "로그아웃하기", style: .default) { (action) in
                 let loginType:String = UserDefaults.standard.value(forKey: "loginType") as! String
-                if loginType == "kakao" {
-                    UserApi.shared.logout {(error) in
-                        if let error = error {
-                            print(error)
-                        }
-                        else {
+//                if loginType == "kakao" {
+//                    UserApi.shared.logout {(error) in
+//                        if let error = error {
+//                            print(error)
+//                        }
+//                        else {
                             UserDefaults.standard.setValue(false, forKey: "isLogin")
                             let loginVC = logInViewController()
                             if let window = UIApplication.shared.windows.first {
@@ -152,11 +162,21 @@ extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
                                     .present(loginVC, animated: true, completion: nil)
                             }
                         }
-                    }
-                }else if loginType == "naver" {
-                    NaverThirdPartyLoginConnection.getSharedInstance()?.requestDeleteToken()
-                }
-            }
+//                    }
+//                }else if loginType == "naver" {
+//                    UserDefaults.standard.setValue(false, forKey: "isLogin")
+//                    NaverThirdPartyLoginConnection.getSharedInstance()?.requestDeleteToken()
+//                    let loginVC = logInViewController()
+//                    if let window = UIApplication.shared.windows.first {
+//                        window.rootViewController = UINavigationController(rootViewController:loginVC)
+//                        UIView.transition(with: window, duration: 0.5, options: .beginFromCurrentState, animations: {}, completion: nil)
+//                    } else {
+//                        loginVC.modalPresentationStyle = .overFullScreen
+//                        self
+//                            .present(loginVC, animated: true, completion: nil)
+//                    }
+//                }
+//            }
             let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
             alert.addAction(logOutAction)
             alert.addAction(cancel)
@@ -164,18 +184,26 @@ extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
         }else{
             let alert = UIAlertController(title: "계정탈퇴", message: nil, preferredStyle: .actionSheet)
             let logOutAction = UIAlertAction(title: "계정탈퇴하기", style: .default) { (action) in
-                UserApi.shared.unlink {(error) in
-                    if let error = error {
-                        print(error)
+                let loginType:String = UserDefaults.standard.value(forKey: "loginType") as! String
+                if loginType == "kakao" {
+                    UserApi.shared.unlink {(error) in
+                        if let error = error {
+                            print(error)
+                        }
+                        else {
+                            UserDefaults.standard.setValue(false, forKey: "isLogin")
+                            
+                            print("unlink success")
+                            let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
+                            deleteUserDataManager.shared.deleteUser(self, userId: userId)
+                            
+                        }
                     }
-                    else {
-                        UserDefaults.standard.setValue(false, forKey: "isLogin")
-                        
-                        print("unlink success")
-                        let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
-                        deleteUserDataManager.shared.deleteUser(self, userId: userId)
-                        
-                    }
+                }else if loginType == "naver" {
+                    UserDefaults.standard.setValue(false, forKey: "isLogin")
+                    NaverThirdPartyLoginConnection.getSharedInstance()?.requestDeleteToken()
+                    let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
+                    deleteUserDataManager.shared.deleteUser(self, userId: userId)
                 }
             }
             let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
@@ -190,35 +218,68 @@ extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
 
 extension myPageViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.myPosting.count
+        if self.myPosting.count == 0{
+            return 1
+        }else{
+            return self.myPosting.count
+        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = writingCollectionView.dequeueReusableCell(withReuseIdentifier: "myGomin", for: indexPath) as! myWritingCollectionViewCell
-        cell.gominTitle.text = self.myPosting[indexPath.row].title
-        cell.gominContent.text = self.myPosting[indexPath.row].content
-        let createdAt:String = self.myPosting[indexPath.row].createdDate!
-        let createTime:String = createdAt.components(separatedBy: "T")[1]
-        let time:[String] = createTime.components(separatedBy: ":")
-        cell.time.text = time[0] + ":" + time[1]
-        cell.commentCount.text = String(self.myPosting[indexPath.row].commentNum!)
-        cell.accuseBtn.tag = self.myPosting[indexPath.row].postId!
-        cell.accuseBtn.addTarget(self,action: #selector(accuseGomin(_:)), for: .touchUpInside)
-        
-        // MARK: font
-        cell.gominTitle.font = UIFont(name: "NotoSansCJKkr-Bold", size: 16)
-        cell.gominContent.font = UIFont(name: "NotoSansCJKkr-Regular", size: 15)
-        cell.time.font = UIFont(name: "Montserrat-Regular", size: 16)
-        cell.commentCount.font = UIFont(name: "Montserrat-Regular", size: 16)
-        return cell
+        if myPosting.count != 0 {
+            self.writingCollectionView.isScrollEnabled = true
+            let cell = writingCollectionView.dequeueReusableCell(withReuseIdentifier: "myGomin", for: indexPath) as! myWritingCollectionViewCell
+            cell.gominTitle.text = self.myPosting[indexPath.row].title
+            cell.gominContent.text = self.myPosting[indexPath.row].content
+            
+            cell.commentCount.text = String(self.myPosting[indexPath.row].commentNum!)
+            cell.accuseBtn.tag = self.myPosting[indexPath.row].postId!
+            cell.accuseBtn.addTarget(self,action: #selector(accuseGomin(_:)), for: .touchUpInside)
+            
+            // MARK: font
+            cell.gominTitle.font = UIFont(name: "NotoSansCJKkr-Bold", size: 16)
+            cell.gominContent.font = UIFont(name: "NotoSansCJKkr-Regular", size: 15)
+            cell.time.font = UIFont(name: "Montserrat-Regular", size: 16)
+            cell.commentCount.font = UIFont(name: "Montserrat-Regular", size: 16)
+            
+            // MARK: TIME SETTING
+            var createdAt:String = self.myPosting[indexPath.row].createdDate!
+            let createTime:String = createdAt.components(separatedBy: "T")[1]
+            let time:[String] = createTime.components(separatedBy: ":")
+            cell.time.text = time[0] + ":" + time[1]
+            createdAt = createdAt.replacingOccurrences(of: "T", with: " ") //date String 형식 맞춰주기
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let date = Date()
+            let currnetTimeStr = formatter.string(from: date) //현재시간 String
+                    
+            let dates = formatter.date(from: createdAt) // 작성시간 date
+            let currentDate = formatter.date(from: currnetTimeStr) //현재시간 date
+            
+          
+            
+            return cell
+        }else{
+            let cell = writingCollectionView.dequeueReusableCell(withReuseIdentifier: "default", for: indexPath) as! defaultCollectionViewCell
+            self.writingCollectionView.isScrollEnabled = false
+            return cell
+        }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let postId = self.myPosting[indexPath.item].postId
-        let detailVC = detailGominViewController()
-        detailVC.postId = postId!
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        if self.myPosting.count != 0 {
+            let postId = self.myPosting[indexPath.item].postId
+            let detailVC = detailGominViewController()
+            detailVC.postId = postId!
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.bounds.width, height: 153)
+        if myPosting.count == 0 {
+            self.myGominCollectionHeight.constant = 72
+            return CGSize(width: self.view.bounds.width, height: 72)
+        }else{
+            self.myGominCollectionHeight.constant = 153
+            return CGSize(width: self.view.bounds.width, height: 153)
+        }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom:  0, right: 0)

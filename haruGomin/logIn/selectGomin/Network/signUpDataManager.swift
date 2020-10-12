@@ -30,6 +30,9 @@ class signUpDataManager {
                     UserDefaults.standard.setValue(getData.userId, forKey: "userId")
                     UserDefaults.standard.setValue(getData.profileImage, forKey: "profileImage")
                     UserDefaults.standard.setValue(true, forKey: "isLogin")
+                    UserDefaults.standard.setValue(getData.ageRange, forKey: "ageRange")
+                    
+//                    UserDefaults.standard.set(getData.userHashtags, forKey: "hashtags")
                     let mainVC = tabBarViewController()
                     if let window = UIApplication.shared.windows.first {
                         window.rootViewController = UINavigationController(rootViewController:mainVC)

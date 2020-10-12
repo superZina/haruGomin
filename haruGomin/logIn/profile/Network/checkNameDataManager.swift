@@ -21,7 +21,7 @@ class checkNameDataManager {
         let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let request = AF.request(encodedUrl as! URLConvertible, method: .get , encoding: JSONEncoding.default).validate()
         request.responseJSON { (response) in
-            print("DEBUG: response is \(response)")
+            print("DEBUG: ageRange is \(age)")
             switch response.result {
             case .success(let obj):
                 print(obj)
@@ -36,6 +36,11 @@ class checkNameDataManager {
                         selectVC.nickName = name
                         selectVC.Img = imageNum
                         profileVC.navigationController?.pushViewController(selectVC, animated: true)
+                    }else{
+                        let alert = UIAlertController(title: "닉네임 중복", message: "중복된 닉네임 입니다!", preferredStyle: .alert)
+                        let cancel = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+                        alert.addAction(cancel)
+                        profileVC.present(alert, animated: true, completion: nil)
                     }
                     
                 } catch {

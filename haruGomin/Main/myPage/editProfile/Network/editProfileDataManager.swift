@@ -23,7 +23,6 @@ class editProfileDataManager {
             case .success(let obj):
                 print(obj)
                 do {
-                    print(obj)
                     let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                     let getData = try JSONDecoder().decode(Profile.self, from: dataJSON)
                     
@@ -41,7 +40,7 @@ class editProfileDataManager {
                     }
                     
                 }catch {
-//                    print(error.localizedDescription)
+                    print(error.localizedDescription)
                 }
             default:
                 return

@@ -149,11 +149,8 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
                     
             let dates = formatter.date(from: createdAt) // 작성시간 date
             let currentDate = formatter.date(from: currnetTimeStr) //현재시간 date
-            print("DEBUG: 작성시간 \(dates)")
-            print("DEBUG: 현재시간 \(currentDate)")
             //differTime이 0이면 게시물 삭제
             let differTime = dates?.timeIntervalSince(currentDate!)
-            print("DEBUG: 지난 시간 \(differTime)")
             let restTime = (60 * 60 * 24) + differTime!
             let differHour = Int(restTime / (60 * 60)) //남은 시간
             let differMinute = Int((Int(restTime) - differHour * ( 60 * 60)) / 60 ) //남은 분

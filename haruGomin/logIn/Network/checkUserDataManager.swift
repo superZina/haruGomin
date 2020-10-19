@@ -21,7 +21,7 @@ class checkUserDataManager{
             .responseJSON { (response) in
                 switch response.result {
                 case .success(let obj):
-                    print("already user")
+                    
                     do{
                         let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                         let getData = try JSONDecoder().decode(userInfo.self, from: dataJSON)
@@ -33,7 +33,7 @@ class checkUserDataManager{
                         
                         //로그인 성공 , 메인으로 넘어가기
                         
-                        if getData.ageRange != 0 { //회원가입일때
+                        if getData.ageRange == 0 { //회원가입일때
                             UserDefaults.standard.setValue(true, forKey: "isLogin")
                             let profileVC = setProfileViewController()
                             let mainVC = tabBarViewController()
@@ -47,15 +47,15 @@ class checkUserDataManager{
                             }
                         }else{ //이미 가입된 유저일때
                             
-                            let profileVC = setProfileViewController()
+                            let mainVC = tabBarViewController()
                             
                             if let window = UIApplication.shared.windows.first {
-                                window.rootViewController = UINavigationController(rootViewController:profileVC)
+                                window.rootViewController = UINavigationController(rootViewController:mainVC)
                                 UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {}, completion: nil)
                             } else {
-                                profileVC.modalPresentationStyle = .overFullScreen
+                                mainVC.modalPresentationStyle = .overFullScreen
                                 loginVC
-                                    .present(profileVC, animated: true, completion: nil)
+                                    .present(mainVC, animated: true, completion: nil)
                             }
                         }
                         

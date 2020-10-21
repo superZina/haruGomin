@@ -32,10 +32,9 @@ class logInViewController: UIViewController {
     }
     @IBAction func naverLogin(_ sender: Any) {
         //        oauth20ConnectionDidFinishDeleteToken()
-        
+//        loginInstance?.requestDeleteToken()
         UserDefaults.standard.setValue("naver", forKey: "loginType")
         loginInstance?.delegate = self
-        //        loginInstance?.requestDeleteToken()
         loginInstance?.requestThirdPartyLogin()
     }
     func setupProviderLoginView() {
@@ -123,7 +122,7 @@ class logInViewController: UIViewController {
         kakaoBtn.layer.cornerRadius = 8
         naverBtn.layer.cornerRadius = 8
         
-        text1.textColor = ColorPalette.textGray
+//        text1.textColor = ColorPalette.textGray
         setupProviderLoginView()
     }
     
@@ -131,6 +130,7 @@ class logInViewController: UIViewController {
     fileprivate func getNaverLoginInfo(tokenType: String, accessToken: String) {
         guard let _ = loginInstance?.isValidAccessTokenExpireTimeNow() else { return }
         let infoUrl = "https://openapi.naver.com/v1/nid/me"
+        
         
         let headers: HTTPHeaders = [
             HTTPHeader(name: "Authorization", value: "\(tokenType) \(accessToken)")
@@ -158,6 +158,7 @@ extension logInViewController: NaverThirdPartyLoginConnectionDelegate {
     // 로그인에 성공했을 경우 호출
     func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
         print("[Success] : Success Naver Login")
+        
         print(loginInstance?.accessToken)
         if let token = loginInstance?.accessToken, let type = loginInstance?.tokenType {
             getNaverLoginInfo(tokenType: type, accessToken: token)
@@ -186,12 +187,11 @@ extension logInViewController:ASAuthorizationControllerDelegate, ASAuthorization
     }
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let credenctial = authorization.credential as? ASAuthorizationAppleIDCredential {
+            appleLoginDataManager.shared.appleLogin(self, id_token: String(data: credenctial.identityToken!, encoding: .utf8)! , id: 22, state: "authorized", user: credenctial.user, code: String(data: credenctial.authorizationCode! , encoding: .utf8)!)
             
-            print( "DEBUG: authorisation info is \(credenctial) ")
-            print("DEBUG: token is \(String(describing: credenctial.identityToken))")
+            
+
             print("DEBUG: user is \(credenctial.user)")
-            print("DEBUG: userUTF8 is \(credenctial.user.utf8)")
-            print("DEBUG: email is \(credenctial.email)")
             print("DEBUG: authorizationCode is \(String(data: credenctial.authorizationCode! , encoding: .utf8))")
             print("DEBUG: token is \(String(data: credenctial.identityToken!, encoding: .utf8))")
             print("DEBUG: state is \(credenctial.state)")

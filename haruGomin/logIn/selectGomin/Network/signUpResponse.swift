@@ -7,7 +7,7 @@
 //
 
 struct Profile:Codable {
-    let userId:Int?
+    let userId:Int64?
     let nickname:String?
     let profileImage:String?
     let ageRange:Int?

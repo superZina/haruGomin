@@ -42,6 +42,7 @@
 		FF6FCECB24F6BF3D00451815 /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEC924F6BF3D00451815 /* logInViewController.swift */; };
 		FF6FCECC24F6BF3D00451815 /* logInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF6FCECA24F6BF3D00451815 /* logInViewController.xib */; };
 		FF70918E25335B3E00B42B26 /* storyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70918D25335B3E00B42B26 /* storyDataManager.swift */; };
+		FF84D69C253F525E00D16443 /* appleLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF84D69B253F525E00D16443 /* appleLoginDataManager.swift */; };
 		FF8E27392513A8BC00531E40 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E27382513A8BC00531E40 /* UITextField.swift */; };
 		FF94DD0B252D9E7E005252E4 /* registCommentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF94DD0A252D9E7E005252E4 /* registCommentDataManager.swift */; };
 		FF94DD0E252DA957005252E4 /* commentLikeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF94DD0D252DA957005252E4 /* commentLikeDataManager.swift */; };
@@ -181,6 +182,7 @@
 		FF6FCEC924F6BF3D00451815 /* logInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		FF6FCECA24F6BF3D00451815 /* logInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = logInViewController.xib; sourceTree = "<group>"; };
 		FF70918D25335B3E00B42B26 /* storyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storyDataManager.swift; sourceTree = "<group>"; };
+		FF84D69B253F525E00D16443 /* appleLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appleLoginDataManager.swift; sourceTree = "<group>"; };
 		FF8E27382513A8BC00531E40 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		FF94DD0A252D9E7E005252E4 /* registCommentDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registCommentDataManager.swift; sourceTree = "<group>"; };
 		FF94DD0D252DA957005252E4 /* commentLikeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentLikeDataManager.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				FF5257F925245B9A0076C7EB /* loginDataManger.swift */,
 				FF960713252C9AB900C4D704 /* userInfoResponse.swift */,
 				FF9A64FC252F826F00946DA1 /* checkUserDataManager.swift */,
+				FF84D69B253F525E00D16443 /* appleLoginDataManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1003,6 +1006,7 @@
 				FF0D85F1252A26A000512993 /* selectTagDatatManager.swift in Sources */,
 				FFFA76762518AE530008101C /* detailGominViewController.swift in Sources */,
 				FF0D85D02529F93100512993 /* myWritingCollectionViewCell.swift in Sources */,
+				FF84D69C253F525E00D16443 /* appleLoginDataManager.swift in Sources */,
 				FFD09DD1253064C80040FEEF /* editProfileDataManager.swift in Sources */,
 				FF9A64F7252F446A00946DA1 /* editDataManager.swift in Sources */,
 				FF9A64FD252F826F00946DA1 /* checkUserDataManager.swift in Sources */,

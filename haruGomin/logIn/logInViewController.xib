@@ -14,7 +14,6 @@
                 <outlet property="appleLoginBtn" destination="y2R-F4-Vui" id="tFp-K2-QZO"/>
                 <outlet property="kakaoBtn" destination="6PZ-NR-jw3" id="IVO-u3-ZGI"/>
                 <outlet property="naverBtn" destination="jnl-VK-sNu" id="cLL-Lh-5yY"/>
-                <outlet property="text1" destination="pJv-ek-pqP" id="GSs-nY-T1k"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -50,12 +49,6 @@
                         <action selector="naverLogin:" destination="-1" eventType="touchUpInside" id="mj3-GB-RQy"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다음에 할래요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJv-ek-pqP">
-                    <rect key="frame" x="149" y="466" width="77" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gub-uS-edt">
                     <rect key="frame" x="20" y="214" width="47" height="22"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -83,7 +76,6 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="pJv-ek-pqP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1Hr-sg-yY0"/>
                 <constraint firstItem="cOt-DP-mCf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="1MV-p3-QtQ"/>
                 <constraint firstItem="y2R-F4-Vui" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2ow-lQ-Tyz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y2R-F4-Vui" secondAttribute="trailing" constant="20" id="4zI-eD-91A"/>
@@ -94,7 +86,6 @@
                 <constraint firstItem="cOt-DP-mCf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TyW-hV-139"/>
                 <constraint firstItem="gub-uS-edt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Vfv-mm-ZCS"/>
                 <constraint firstItem="jnl-VK-sNu" firstAttribute="top" secondItem="6PZ-NR-jw3" secondAttribute="bottom" constant="12" id="gQr-8k-kUo"/>
-                <constraint firstItem="pJv-ek-pqP" firstAttribute="top" secondItem="y2R-F4-Vui" secondAttribute="bottom" constant="32" id="oi7-1e-7VV"/>
                 <constraint firstItem="y2R-F4-Vui" firstAttribute="top" secondItem="jnl-VK-sNu" secondAttribute="bottom" constant="12" id="sAu-I1-PnA"/>
                 <constraint firstItem="6PZ-NR-jw3" firstAttribute="top" secondItem="cOt-DP-mCf" secondAttribute="bottom" constant="123" id="t3L-7u-XKp"/>
                 <constraint firstItem="6PZ-NR-jw3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="tK9-2X-2kE"/>

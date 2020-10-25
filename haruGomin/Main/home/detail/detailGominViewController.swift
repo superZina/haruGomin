@@ -15,6 +15,7 @@ class detailGominViewController: UIViewController {
         case collapsed
     }
     
+    @IBOutlet weak var moreView: UIView!
     @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var commentTextView: UIView!
     var commentVC : commentViewController!  = commentViewController()
@@ -77,7 +78,7 @@ class detailGominViewController: UIViewController {
         self.commentTextView.layer.zPosition = 1
         self.underline.layer.zPosition = 1
         self.commentView.layer.zPosition = 1
-        self.accuseBtn.layer.zPosition = .infinity
+//        self.accuseBtn.layer.zPosition = .infinity
         
         self.commentTextField.isEnabled = true
         self.view.isUserInteractionEnabled = true
@@ -87,6 +88,9 @@ class detailGominViewController: UIViewController {
         self.commentTextField.addTarget(self, action: #selector(textfieldChanged(_:)), for: .editingChanged)
         self.view.bringSubviewToFront(self.commentTextView)
         
+        
+        let accuseBarButton = UIBarButtonItem(image: UIImage(named: "more"), style: .plain, target: self, action: #selector(accuseGomin))
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = accuseBarButton
         // MARK: font
         self.username.font = UIFont(name: "NotoSansCJKkr-Regular", size: 16)
         self.tag.titleLabel?.font = UIFont(name: "NotoSansCJKkr-Medium", size: 15)
@@ -109,12 +113,16 @@ class detailGominViewController: UIViewController {
     }
     
     
-    @IBAction func accuseGomin(_ sender: Any) {
+    @objc func accuseGomin() {
         let alert = UIAlertController(title: "신고하기", message: "신중히 생각하셨나요?", preferredStyle: .alert)
         let accuseAction = UIAlertAction(title: "신고하기", style: .destructive) { (action) in
-            
+            let okAlert = UIAlertController(title: "신고완료", message: "신고가 완료되었어요!", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+            okAlert.addAction(ok)
+            self.present(okAlert, animated: true, completion: nil)
         }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
+            alert.dismiss(animated: true, completion: nil)
         }
         alert.addAction(accuseAction)
         alert.addAction(cancelAction)

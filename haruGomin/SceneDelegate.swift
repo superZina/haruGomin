@@ -17,28 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         var startVC:UIViewController = UIViewController()
-        if let isFirst:Bool  = UserDefaults.standard.value( forKey: "second") as? Bool {
-            print("is first: \(isFirst)")
-//            if isFirst { //처음 앱을 깐것이 아니라면
-//                if let isLogin:Bool = UserDefaults.standard.value(forKey: "isLogin") as? Bool {
-//                    print("is login: \(isLogin)")
-//                    if isLogin {
-//                        startVC = tabBarViewController()
-//                    }else{
-//                        startVC = splashViewController()
-//                    }
-//                }else{
-//                    startVC = splashViewController()
-//                }
-//            }
-//        }else{
-            startVC = splashViewController()
-        }
-        
+        startVC = splashViewController()
         //        guard let _ = (scene as? UIWindowScene) else { return }
-        let loginVC = logInViewController()
-        let tabbarVC = tabBarViewController()
-        let splashVC = splashViewController()
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UINavigationController(rootViewController: startVC)
@@ -52,7 +32,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
-        
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

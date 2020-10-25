@@ -104,7 +104,7 @@ class myPageViewController: UIViewController, UICollectionViewDataSource {
 }
 extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -113,13 +113,13 @@ extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
             cell.alarmVal.isHidden = true
             return cell
             
-        }else if indexPath.row == 1 {
-            guard let cell = myPageTable.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as? myWrittenTableViewCell else {return UITableViewCell()}
-            cell.alarmVal.isHidden = false
-            cell.alarmVal.textColor = ColorPalette.background
-            cell.icon.setImage(UIImage(named: "whiteCopy"), for: .normal)
-            cell.menuText.text = "푸시 알림"
-            return cell
+//        }else if indexPath.row == 1 {
+//            guard let cell = myPageTable.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as? myWrittenTableViewCell else {return UITableViewCell()}
+//            cell.alarmVal.isHidden = false
+//            cell.alarmVal.textColor = ColorPalette.background
+//            cell.icon.setImage(UIImage(named: "whiteCopy"), for: .normal)
+//            cell.menuText.text = "푸시 알림"
+//            return cell
         }else if indexPath.row == 2 {
             guard let cell = myPageTable.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as? myWrittenTableViewCell else {return UITableViewCell()}
             cell.icon.setImage(UIImage(named: "logout"), for: .normal)
@@ -140,48 +140,6 @@ extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
             let myWriting = myWritingViewController()
             self.navigationController?.pushViewController(myWriting, animated: true)
         }else if indexPath.row == 1 {
-            //푸시알림 설정
-        }else if indexPath.row == 2 {
-            let alert = UIAlertController(title: "로그아웃", message: nil, preferredStyle: .actionSheet)
-            let logOutAction = UIAlertAction(title: "로그아웃하기", style: .default) { (action) in
-                let loginType:String = UserDefaults.standard.value(forKey: "loginType") as! String
-//                if loginType == "kakao" {
-//                    UserApi.shared.logout {(error) in
-//                        if let error = error {
-//                            print(error)
-//                        }
-//                        else {
-                            UserDefaults.standard.setValue(false, forKey: "isLogin")
-                            let loginVC = logInViewController()
-                            if let window = UIApplication.shared.windows.first {
-                                window.rootViewController = UINavigationController(rootViewController:loginVC)
-                                UIView.transition(with: window, duration: 0.5, options: .beginFromCurrentState, animations: {}, completion: nil)
-                            } else {
-                                loginVC.modalPresentationStyle = .overFullScreen
-                                self
-                                    .present(loginVC, animated: true, completion: nil)
-                            }
-                        }
-//                    }
-//                }else if loginType == "naver" {
-//                    UserDefaults.standard.setValue(false, forKey: "isLogin")
-//                    NaverThirdPartyLoginConnection.getSharedInstance()?.requestDeleteToken()
-//                    let loginVC = logInViewController()
-//                    if let window = UIApplication.shared.windows.first {
-//                        window.rootViewController = UINavigationController(rootViewController:loginVC)
-//                        UIView.transition(with: window, duration: 0.5, options: .beginFromCurrentState, animations: {}, completion: nil)
-//                    } else {
-//                        loginVC.modalPresentationStyle = .overFullScreen
-//                        self
-//                            .present(loginVC, animated: true, completion: nil)
-//                    }
-//                }
-//            }
-            let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-            alert.addAction(logOutAction)
-            alert.addAction(cancel)
-            self.present(alert, animated: true, completion: nil)
-        }else{
             let alert = UIAlertController(title: "계정탈퇴", message: nil, preferredStyle: .actionSheet)
             let logOutAction = UIAlertAction(title: "계정탈퇴하기", style: .default) { (action) in
                 let loginType:String = UserDefaults.standard.value(forKey: "loginType") as! String
@@ -204,12 +162,77 @@ extension myPageViewController: UITableViewDelegate,UITableViewDataSource{
                     NaverThirdPartyLoginConnection.getSharedInstance()?.requestDeleteToken()
                     let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
                     deleteUserDataManager.shared.deleteUser(self, userId: userId)
+                }else if loginType == "apple" {
+                    let loginVC = logInViewController()
+                    if let window = UIApplication.shared.windows.first {
+                        window.rootViewController = UINavigationController(rootViewController:loginVC)
+                        UIView.transition(with: window, duration: 0.5, options: .beginFromCurrentState, animations: {}, completion: nil)
+                    } else {
+                        loginVC.modalPresentationStyle = .overFullScreen
+                        self
+                            .present(loginVC, animated: true, completion: nil)
+                    }
+                    
                 }
             }
             let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
             alert.addAction(logOutAction)
             alert.addAction(cancel)
             self.present(alert, animated: true, completion: nil)
+        }else if indexPath.row == 2 {
+            let alert = UIAlertController(title: "로그아웃", message: nil, preferredStyle: .actionSheet)
+            let logOutAction = UIAlertAction(title: "로그아웃하기", style: .default) { (action) in
+                let loginType:String = UserDefaults.standard.value(forKey: "loginType") as! String
+                if loginType == "kakao" {
+                    UserApi.shared.logout {(error) in
+                        if let error = error {
+                            print(error)
+                        }
+                        else {
+                            UserDefaults.standard.setValue(false, forKey: "isLogin")
+                            let loginVC = logInViewController()
+                            if let window = UIApplication.shared.windows.first {
+                                window.rootViewController = UINavigationController(rootViewController:loginVC)
+                                UIView.transition(with: window, duration: 0.5, options: .beginFromCurrentState, animations: {}, completion: nil)
+                            } else {
+                                loginVC.modalPresentationStyle = .overFullScreen
+                                self
+                                    .present(loginVC, animated: true, completion: nil)
+                            }
+                        }
+                    }
+                }else if loginType == "naver" {
+                    UserDefaults.standard.setValue(false, forKey: "isLogin")
+                    NaverThirdPartyLoginConnection.getSharedInstance()?.requestDeleteToken()
+                    let loginVC = logInViewController()
+                    if let window = UIApplication.shared.windows.first {
+                        window.rootViewController = UINavigationController(rootViewController:loginVC)
+                        UIView.transition(with: window, duration: 0.5, options: .beginFromCurrentState, animations: {}, completion: nil)
+                    } else {
+                        loginVC.modalPresentationStyle = .overFullScreen
+                        self
+                            .present(loginVC, animated: true, completion: nil)
+                    }
+                }else if loginType == "apple" {
+                    let loginVC = logInViewController()
+                    if let window = UIApplication.shared.windows.first {
+                        window.rootViewController = UINavigationController(rootViewController:loginVC)
+                        UIView.transition(with: window, duration: 0.5, options: .beginFromCurrentState, animations: {}, completion: nil)
+                    } else {
+                        loginVC.modalPresentationStyle = .overFullScreen
+                        self
+                            .present(loginVC, animated: true, completion: nil)
+                    }
+                    
+                }
+            }
+                
+            let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+            alert.addAction(logOutAction)
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
+        }else{
+           
         }
     }
     
@@ -304,21 +327,21 @@ extension myPageViewController: UICollectionViewDelegateFlowLayout {
         let deleteAction = UIAlertAction(title: "삭제하기", style: .destructive) { (action) in
             deleteDataManager.shared.deletePost(self, postId: sender.tag)
         }
-        let editAction = UIAlertAction(title: "수정하기", style: .default) { (action) in
-            let postInfo:addedGomin = self.myPosting[sender.tag]
-            
-            let addGominVC = addGominViewController()
-            addGominVC.Title = postInfo.title!
-            addGominVC.Content = postInfo.content!
-            addGominVC.postId = postInfo.postId!
-            addGominVC.modalPresentationStyle = .overFullScreen
-            self.present(addGominVC, animated: true)
-        }
+//        let editAction = UIAlertAction(title: "수정하기", style: .default) { (action) in
+//            let postInfo:addedGomin = self.myPosting[sender.tag]
+//
+//            let addGominVC = addGominViewController()
+//            addGominVC.Title = postInfo.title!
+//            addGominVC.Content = postInfo.content!
+//            addGominVC.postId = postInfo.postId!
+//            addGominVC.modalPresentationStyle = .overFullScreen
+//            self.present(addGominVC, animated: true)
+//        }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
         }
         
         alert.addAction(deleteAction)
-        alert.addAction(editAction)
+//        alert.addAction(editAction)
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
         print("selected")

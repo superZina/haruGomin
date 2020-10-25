@@ -44,7 +44,7 @@ class checkUserDataManager{
                                 mainVC.modalPresentationStyle = .overFullScreen
                                 loginVC
                                     .present(profileVC, animated: true, completion: nil)
-                            }
+                                }
                         }else{ //이미 가입된 유저일때
                             
                             let mainVC = tabBarViewController()

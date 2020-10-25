@@ -107,6 +107,7 @@ extension commentViewController : UITableViewDelegate , UITableViewDataSource {
         
         cell.like.tag = (comment[indexPath.row]?.commentId)!
         cell.like.addTarget(self, action: #selector(likeComment(_:)), for: .touchUpInside)
+        cell.accuseBtn.addTarget(self, action: #selector(accuseGomin) , for: .touchUpInside)
         let urlString = self.comment[indexPath.row]?.profileImage
         if let enc_url = urlString?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) {
             let url = URL(string: enc_url)
@@ -117,7 +118,22 @@ extension commentViewController : UITableViewDelegate , UITableViewDataSource {
        
         return cell
     }
-   
+    @objc func accuseGomin() {
+        let alert = UIAlertController(title: "신고하기", message: "신중히 생각하셨나요?", preferredStyle: .alert)
+        let accuseAction = UIAlertAction(title: "신고하기", style: .destructive) { (action) in
+            let okAlert = UIAlertController(title: "신고완료", message: "신고가 완료되었어요!", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+            okAlert.addAction(ok)
+            self.present(okAlert, animated: true, completion: nil)
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(accuseAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+        print("selected")
+    }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let height:CGFloat = scrollView.frame.size.height
         let contentYOffset:CGFloat = scrollView.contentOffset.y

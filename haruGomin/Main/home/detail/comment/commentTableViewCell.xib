@@ -74,6 +74,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Best"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wlh-l5-tTe">
+                                <rect key="frame" x="282" y="85" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="5fF-94-Vau"/>
+                                    <constraint firstAttribute="height" constant="24" id="gXN-6a-zA8"/>
+                                </constraints>
+                                <state key="normal" image="more"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -88,6 +96,8 @@
                             <constraint firstItem="TYc-eS-bDw" firstAttribute="top" secondItem="GCk-rA-TUp" secondAttribute="bottom" constant="12" id="ZGC-UQ-e7c"/>
                             <constraint firstItem="GCk-rA-TUp" firstAttribute="leading" secondItem="CQD-Dv-h6E" secondAttribute="trailing" constant="8" id="crs-mf-8rw"/>
                             <constraint firstAttribute="bottom" secondItem="1lD-Sd-6O6" secondAttribute="bottom" constant="10" id="e8l-RR-cb2"/>
+                            <constraint firstAttribute="trailing" secondItem="Wlh-l5-tTe" secondAttribute="trailing" constant="14" id="eFc-MM-FSi"/>
+                            <constraint firstAttribute="bottom" secondItem="Wlh-l5-tTe" secondAttribute="bottom" constant="10" id="k2s-c5-03M"/>
                             <constraint firstItem="CQD-Dv-h6E" firstAttribute="top" secondItem="wbi-yx-eTf" secondAttribute="top" constant="20" id="mhC-EB-gWl"/>
                             <constraint firstItem="GCk-rA-TUp" firstAttribute="top" secondItem="wbi-yx-eTf" secondAttribute="top" constant="16" id="oa1-Pq-30l"/>
                             <constraint firstItem="TYc-eS-bDw" firstAttribute="top" secondItem="6pn-xX-Nkw" secondAttribute="bottom" constant="8" id="pzS-P4-HKj"/>
@@ -108,6 +118,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="accuseBtn" destination="Wlh-l5-tTe" id="xrk-J6-AxR"/>
                 <outlet property="additionLabel" destination="GCk-rA-TUp" id="BdN-nW-zyb"/>
                 <outlet property="ampm" destination="a0g-E2-c7l" id="0lX-P5-fKK"/>
                 <outlet property="comment" destination="TYc-eS-bDw" id="i1h-yt-jN5"/>
@@ -123,6 +134,7 @@
     </objects>
     <resources>
         <image name="like" width="24" height="24"/>
+        <image name="more" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

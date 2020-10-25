@@ -53,7 +53,7 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
         let parameter:[String:Any] = [
             "content": content,
             "postId": self.postId,
-            "postImage": profileImg,
+            "postImage": "",
             "tagName": tagName,
             "title": Title,
             "userId": userId
@@ -156,8 +156,6 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
         toolbar.barStyle = .black
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolbar.items =  [
-            UIBarButtonItem( image: UIImage(named: "24"), style: .done, target: self, action: #selector(takePicture)),
-            UIBarButtonItem(image: UIImage(named: "picture"), style: .done, target: self, action: #selector(addImage)),flexibleSpace ,
             UIBarButtonItem(image: UIImage(named: "keyboardHide"), style: .done, target: self, action: #selector(hideKeyboard))]
         
         toolbar.sizeToFit()

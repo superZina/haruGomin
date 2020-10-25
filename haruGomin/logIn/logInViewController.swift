@@ -66,6 +66,7 @@ class logInViewController: UIViewController {
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
+        
     }
     
     @IBAction func kakaoLogin(_ sender: Any) {

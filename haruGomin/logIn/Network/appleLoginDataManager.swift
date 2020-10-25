@@ -31,21 +31,21 @@ class appleLoginDataManager{
         ]
         AF.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default)
             .validate()
-            .response { (response) in
+            .responseJSON { (response) in
                 switch response.result {
                 case .success(let obj):
                     print(obj)
-//                    do {
-//                        UserDefaults.standard.setValue(user, forKey: "userId")
-//                        let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
-//                        let getData = try JSONDecoder().decode(appleToken.self, from: dataJSON)
-//                        guard let jwt:String = getData.id_token else { return }
-//                        UserDefaults.standard.setValue(jwt, forKey: "jwt")
-//                        UserDefaults.standard.setValue(id, forKey: "userId")
-//                        checkUserDataManager.shared.checkUser(loginVC, jwt: jwt)
-//                    }catch {
-//                        print(error.localizedDescription)
-//                    }
+                    do {
+                        UserDefaults.standard.setValue(user, forKey: "userId")
+                        let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+                        let getData = try JSONDecoder().decode(UserToeken.self, from: dataJSON)
+                        guard let jwt:String = getData.jwt else { return }
+                        UserDefaults.standard.setValue(jwt, forKey: "jwt")
+                        UserDefaults.standard.setValue(id, forKey: "userId")
+                        checkUserDataManager.shared.checkUser(loginVC, jwt: jwt)
+                    }catch {
+                        print(error.localizedDescription)
+                    }
                 default:
                     print(response.error)
                     return

@@ -156,7 +156,15 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
             let differMinute = Int((Int(restTime) - differHour * ( 60 * 60)) / 60 ) //남은 분
 
             storyCell.time.text = String(differHour) + ":" + String(differMinute) //남은시간
-            
+            if differTime == .zero {
+                let alert = UIAlertController(title: "잠깐!", message: "시간이 다 된 고민이 있어요. 고민 다시불러오기를 할게요!", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "알겠어요!", style: .cancel) { (action) in
+                    storyDataManager.shared.getStoryList(self)
+                }
+                alert.addAction(ok)
+                self.present(alert, animated: true, completion: nil)
+                
+            }
             // MARK: IMG SETTING
             let urlString = self.storys[indexPath.row].userProfileImage
             if let enc_url = urlString?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) {
@@ -239,6 +247,10 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
     @objc func accuseGomin(_ sender: UIButton) {
         let alert = UIAlertController(title: "       ", message: "신중히 생각하셨나요?", preferredStyle: .actionSheet)
         let accuseAction = UIAlertAction(title: "신고하기", style: .destructive) { (action) in
+            let confirmAlert = UIAlertController(title: nil, message: "신고 되었어요!", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+            confirmAlert.addAction(ok)
+            self.present(confirmAlert, animated: true, completion: nil)
         }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
         }

@@ -28,6 +28,9 @@ class commentTableViewCell: UITableViewCell {
         self.additionLabel.isHidden = true
         
     }
+
+    @IBOutlet weak var accuseBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.contentView.backgroundColor = ColorPalette.darkBackground

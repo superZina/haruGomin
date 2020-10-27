@@ -15,9 +15,11 @@ class deleteDataManager{
         let url = "http://52.78.127.67:8080/api/v1/posts/\(postId)"
         print("DEBUG: url is \(url)")
         let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        AF.request(encodedUrl as! URLConvertible, method: .delete)
+        AF.request(url, method: .delete)
             .validate()
             .responseJSON { (response) in
+                print(response)
+                print("postid is \(postId)")
                 let alert = UIAlertController(title: nil, message: "고민 삭제 완료!", preferredStyle: .alert)
                 let cancel = UIAlertAction(title: "확인", style: .cancel) { (action) in
                     myPageVC.writingCollectionView.reloadData()

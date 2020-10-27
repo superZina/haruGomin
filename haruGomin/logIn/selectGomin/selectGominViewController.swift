@@ -15,15 +15,15 @@ class selectGominViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var gominCollection: UICollectionView!
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var privacyBtn: UIButton!
     var btnText:[String] = ["돈","일상","가족","건강","친구사이","직장생활","연애","학교생활","진로","기혼자만 아는","육아"]
     var buttons:[UIButton] = []
     override func viewDidLoad() {
         self.view.backgroundColor = ColorPalette.background
         self.infoView.backgroundColor = ColorPalette.borderGray
+        
         self.gominCollection.backgroundColor = ColorPalette.background
         super.viewDidLoad()
-        
-        
         let itemCellNib = UINib(nibName: "CollectionViewCell", bundle: nil)
         self.gominCollection.register(itemCellNib, forCellWithReuseIdentifier: "gomin")
         
@@ -33,12 +33,19 @@ class selectGominViewController: UIViewController, UICollectionViewDataSource {
         layout.minimumLineSpacing = 10
         self.gominCollection.delegate = self
         self.gominCollection.dataSource = self
+      
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        if !self.privacyBtn.isSelected {
         nextBtn.layer.cornerRadius = 8
         nextBtn.isEnabled = false
         nextBtn.backgroundColor = ColorPalette.borderGray
+        }else if self.privacyBtn.isSelected && self.buttons.count>=1 && self.buttons.count<4 {
+            nextBtn.layer.cornerRadius = 8
+            nextBtn.isEnabled = true
+            nextBtn.backgroundColor = ColorPalette.hagoRed
+        }
     }
 
     @IBAction func moveNext(_ sender: Any) {
@@ -74,8 +81,22 @@ class selectGominViewController: UIViewController, UICollectionViewDataSource {
         signUpDataManager().signUp(self, parameter: parameters)
     }
     
-    
-    
+    @IBAction func agreeToPrivacyPolicy(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        let policyVC = privacyViewController()
+        self.navigationController?.pushViewController(policyVC, animated: true)
+        if sender.isSelected {
+            sender.setImage(UIImage(named: "pressed"), for: .normal)
+            if self.buttons.count >= 1 && self.buttons.count < 4 {
+                self.nextBtn.isEnabled = true
+                self.nextBtn.backgroundColor = ColorPalette.hagoRed
+            }
+        }else{
+            sender.setImage(UIImage(named: "normal"), for: .normal)
+            self.nextBtn.isEnabled = false
+            self.nextBtn.backgroundColor = ColorPalette.borderGray
+        }
+    }
 }
 extension selectGominViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -111,7 +132,7 @@ extension selectGominViewController:UICollectionViewDelegateFlowLayout{
                 }
             }
         }
-        if buttons.count != 0 {
+        if buttons.count >= 0 && buttons.count<4 && self.privacyBtn.isSelected {
             self.nextBtn.isEnabled = true
             self.nextBtn.backgroundColor = ColorPalette.hagoRed
         }else {

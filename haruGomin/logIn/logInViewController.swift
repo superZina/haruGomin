@@ -106,7 +106,7 @@ class logInViewController: UIViewController {
         kakaoBtn.addSubview(kakaoIcon)
         let naverIcon:UIImageView = UIImageView(frame: CGRect(x: 25, y: 16, width: 21, height: 19.2))
         naverIcon.image = UIImage(named: "fill1")
-        naverBtn.addSubview(naverIcon)
+//        naverBtn.addSubview(naverIcon)
         
         let appleIcon:UIImageView = UIImageView(frame: CGRect(x: 18, y: 0, width: 37, height: 52))
         appleIcon.image = UIImage(named: "leftBlackLogoMedium")
@@ -114,14 +114,14 @@ class logInViewController: UIViewController {
         
         self.view.backgroundColor = ColorPalette.background
         kakaoBtn.backgroundColor = UIColor(red: 254/255, green: 229/255, blue: 0, alpha: 1)
-        naverBtn.backgroundColor = UIColor(red: 30/255, green: 200/255, blue: 0, alpha: 1)
+//        naverBtn.backgroundColor = UIColor(red: 30/255, green: 200/255, blue: 0, alpha: 1)
         
         kakaoBtn.setTitleColor(UIColor(red: 24/255, green: 22/255, blue: 0, alpha: 1), for: .normal)
         appleLoginBtn.setTitleColor(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1), for: .normal)
         
         appleLoginBtn.layer.cornerRadius = 8
         kakaoBtn.layer.cornerRadius = 8
-        naverBtn.layer.cornerRadius = 8
+//        naverBtn.layer.cornerRadius = 8
         
 //        text1.textColor = ColorPalette.textGray
         setupProviderLoginView()

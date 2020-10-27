@@ -60,6 +60,8 @@
 		FF9CF26B252CD5AD00BA9265 /* searchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF269252CD5AD00BA9265 /* searchResultViewController.swift */; };
 		FF9CF26C252CD5AD00BA9265 /* searchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9CF26A252CD5AD00BA9265 /* searchResultViewController.xib */; };
 		FF9CF271252CDA4D00BA9265 /* searchDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF270252CDA4D00BA9265 /* searchDataManager.swift */; };
+		FF9EE89025484B620085D709 /* privacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9EE88E25484B620085D709 /* privacyViewController.swift */; };
+		FF9EE89125484B620085D709 /* privacyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9EE88F25484B620085D709 /* privacyViewController.xib */; };
 		FFB88804253209D300332FCC /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB88803253209D300332FCC /* UIFont.swift */; };
 		FFBC731C2528870700CF4FA3 /* mainGominDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC731B2528870700CF4FA3 /* mainGominDataManager.swift */; };
 		FFBC73212528A8FF00CF4FA3 /* mainGominResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC73202528A8FF00CF4FA3 /* mainGominResponse.swift */; };
@@ -200,6 +202,8 @@
 		FF9CF269252CD5AD00BA9265 /* searchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchResultViewController.swift; sourceTree = "<group>"; };
 		FF9CF26A252CD5AD00BA9265 /* searchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = searchResultViewController.xib; sourceTree = "<group>"; };
 		FF9CF270252CDA4D00BA9265 /* searchDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchDataManager.swift; sourceTree = "<group>"; };
+		FF9EE88E25484B620085D709 /* privacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = privacyViewController.swift; sourceTree = "<group>"; };
+		FF9EE88F25484B620085D709 /* privacyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = privacyViewController.xib; sourceTree = "<group>"; };
 		FFB88803253209D300332FCC /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		FFBC731B2528870700CF4FA3 /* mainGominDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainGominDataManager.swift; sourceTree = "<group>"; };
 		FFBC73202528A8FF00CF4FA3 /* mainGominResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainGominResponse.swift; sourceTree = "<group>"; };
@@ -589,6 +593,8 @@
 				FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */,
 				FFE05F26251660600048B56F /* CollectionViewCell.swift */,
 				FFE05F27251660600048B56F /* CollectionViewCell.xib */,
+				FF9EE88E25484B620085D709 /* privacyViewController.swift */,
+				FF9EE88F25484B620085D709 /* privacyViewController.xib */,
 			);
 			path = selectGomin;
 			sourceTree = "<group>";
@@ -880,6 +886,7 @@
 				FFE994B1253D7D62002FC7BF /* NotoSansCJKkr-Thin.otf in Resources */,
 				FFFA769725190F490008101C /* noticeViewController.xib in Resources */,
 				FF1A7AE9251F8C1900B95773 /* newGominTableViewCell.xib in Resources */,
+				FF9EE89125484B620085D709 /* privacyViewController.xib in Resources */,
 				FFE99497253D7D62002FC7BF /* Montserrat-LightItalic.ttf in Resources */,
 				FFE994A9253D7D62002FC7BF /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				FFE994AD253D7D62002FC7BF /* NotoSansCJKkr-Black.otf in Resources */,
@@ -1019,6 +1026,7 @@
 				FFFA769B25190F590008101C /* myPageViewController.swift in Sources */,
 				FF1A7AE8251F8C1900B95773 /* newGominTableViewCell.swift in Sources */,
 				FFBC73212528A8FF00CF4FA3 /* mainGominResponse.swift in Sources */,
+				FF9EE89025484B620085D709 /* privacyViewController.swift in Sources */,
 				FF94DD0B252D9E7E005252E4 /* registCommentDataManager.swift in Sources */,
 				FFFA768825190EAA0008101C /* searchViewController.swift in Sources */,
 				FFFA76702518A5230008101C /* gominImgCollectionViewCell.swift in Sources */,
@@ -1168,7 +1176,7 @@
 				CODE_SIGN_ENTITLEMENTS = haruGomin/haruGomin.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = haruGomin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1192,7 +1200,7 @@
 				CODE_SIGN_ENTITLEMENTS = haruGomin/haruGomin.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = haruGomin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

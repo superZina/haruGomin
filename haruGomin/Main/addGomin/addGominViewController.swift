@@ -27,7 +27,7 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
     var Title:String = ""
     var Content:String = ""
     
-    var btnText:[String] = ["돈","일상","가족","건강","친구사이","직장생활","연애","학교생활","진로","기혼자만 아는","육아"]
+    var btnText:[String] = ["돈","일상","가족","건강","친구사이","직장생활","연애","학교생활","진로","기혼자만 아는","육아","취업"]
     //MARK: bar Buttons
     
     @IBAction func close(_ sender: Any) {

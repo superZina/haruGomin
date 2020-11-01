@@ -19,6 +19,7 @@ class setProfileViewController: UIViewController,imgPopUpDelegate {
     @IBOutlet weak var nickName: UITextField!
     @IBOutlet weak var age: UITextField!
     @IBOutlet weak var nextBtn: UIButton!
+    var profileIsUploaded:Bool = false
     
     
     var agePicker:UIPickerView! = UIPickerView()
@@ -51,6 +52,7 @@ class setProfileViewController: UIViewController,imgPopUpDelegate {
         self.age.textColor = ColorPalette.textGray
         self.age.attributedPlaceholder = NSAttributedString(string: "연령을 선택해주세요.",attributes: [NSAttributedString.Key.foregroundColor: ColorPalette.borderGray])
         
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
         self.nickName.addLeftPadding()
         self.age.addLeftPadding()
@@ -61,11 +63,12 @@ class setProfileViewController: UIViewController,imgPopUpDelegate {
         agePicker.delegate = self
         agePicker.dataSource = self
         createAgePicker()
-        
         self.nextBtn.layer.cornerRadius = 8
         self.nextBtn.backgroundColor = ColorPalette.borderGray
     }
-    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
+    }
     override func viewWillAppear(_ animated: Bool) {
         if self.nickName.text == "" || self.age.text == "" {
             self.nextBtn.isEnabled = false
@@ -86,28 +89,38 @@ class setProfileViewController: UIViewController,imgPopUpDelegate {
         imgPopup.imgPopupDelegate = self
         self.present(imgPopup, animated: true, completion: nil)
     }
+    
     func pressDismissBtn(imgName:String) {
         self.selectedImg = imgName
-        
-        
         if let enc_url = imgName.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) {
             let url = URL(string: enc_url)
             let img = UIImageView()
-//            img.kf.setImage(with: <#T##Source?#>)
             self.profileImg.kf.setImage(with: url, for: .normal)
+            self.profileIsUploaded = true
         }
-        
-        
     }
+    
     @IBAction func moveNext(_ sender: Any) {
+        if self.profileIsUploaded {
+            if nickName.text!.count > 8 {
+                let alert = UIAlertController(title: "닉네임 오류", message: "닉네임 길이를 8자 이하로 설정해주세요!", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+                alert.addAction(ok)
+                self.present(alert, animated: true, completion: nil)
+            }else{
         checkNameDataManager().check(self, name: nickName.text! , age: self.age.text! , imageNum: self.selectedImg)
-//        let selectVC = selectGominViewController()
-//        self.navigationController?.pushViewController(selectVC, animated: true)
+            }
+        }else{
+            let alert = UIAlertController(title: "앗 프로필 사진이 없어요!", message: "프로필 사진을 설정해주세요!", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
+    
     func createAgePicker() {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        
         let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneTimePressed))
         doneBtn.title = "확인"
         doneBtn.tintColor = ColorPalette.hagoRed

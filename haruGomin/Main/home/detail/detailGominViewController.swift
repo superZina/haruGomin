@@ -98,7 +98,7 @@ class detailGominViewController: UIViewController {
         self.commentCount.font = UIFont(name: "Montserrat-Regular", size: 16)
         self.gominTextView.font = UIFont(name: "NotoSansCJKkr-Regular", size: 16)
         
-        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.keyboardNotification(notification:)),
@@ -128,6 +128,10 @@ class detailGominViewController: UIViewController {
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
         print("selected")
+    }
+    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
     }
     
     //MARK: 댓글 입력 API

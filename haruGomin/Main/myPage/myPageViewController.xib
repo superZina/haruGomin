@@ -37,8 +37,8 @@
                         <constraint firstAttribute="height" constant="68" id="ZtQ-LC-CJu"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFb-i3-ev3">
-                    <rect key="frame" x="104" y="84" width="84" height="24.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFb-i3-ev3">
+                    <rect key="frame" x="104" y="84" width="237" height="24.5"/>
                     <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -73,8 +73,12 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7g-Rs-itu">
-                    <rect key="frame" x="349" y="84" width="45" height="24"/>
+                    <rect key="frame" x="344" y="84" width="50" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="RBa-8Z-9DD"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
                     <state key="normal" title="편집" image="edit"/>
                     <connections>
                         <action selector="editProfile:" destination="-1" eventType="touchUpInside" id="4Qq-QY-FoL"/>
@@ -116,6 +120,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s7g-Rs-itu" secondAttribute="trailing" constant="20" id="7cl-6g-2bE"/>
                 <constraint firstItem="4Dp-zo-RW5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="EmM-Ma-1rH"/>
                 <constraint firstAttribute="trailing" secondItem="WWv-xW-wuE" secondAttribute="trailing" id="FgP-8q-ug2"/>
+                <constraint firstItem="s7g-Rs-itu" firstAttribute="leading" secondItem="rFb-i3-ev3" secondAttribute="trailing" constant="3" id="GCV-N7-77t"/>
                 <constraint firstItem="s3h-KG-NJv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HdZ-wS-fCT"/>
                 <constraint firstItem="IS3-io-jaO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JCL-4b-kmx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4Dp-zo-RW5" secondAttribute="bottom" id="LdO-zB-EWY"/>
@@ -139,7 +144,6 @@
                 <constraint firstItem="xCZ-jJ-AO1" firstAttribute="leading" secondItem="yjv-7K-hMP" secondAttribute="trailing" constant="4" id="vEJ-2t-UlR"/>
                 <constraint firstItem="MGJ-RB-56D" firstAttribute="top" secondItem="WWv-xW-wuE" secondAttribute="bottom" constant="17.5" id="xYx-fQ-huh"/>
                 <constraint firstItem="yjv-7K-hMP" firstAttribute="top" secondItem="rFb-i3-ev3" secondAttribute="bottom" constant="10" id="zYW-fd-xwa"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="rFb-i3-ev3" secondAttribute="trailing" constant="226" id="zzZ-zZ-rTn"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="67.633928571428569"/>
         </view>

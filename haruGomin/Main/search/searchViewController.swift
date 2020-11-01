@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class searchViewController: UIViewController, UICollectionViewDataSource {
+class searchViewController: UIViewController, UICollectionViewDataSource ,UIScrollViewDelegate{
     @IBOutlet weak var searchGominBar: UISearchBar!
     @IBOutlet weak var gominCategoryCollection: UICollectionView!
     @IBOutlet weak var gominStoryCollection: UICollectionView!
@@ -17,16 +17,21 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var searchGomin: UISearchBar!
     @IBOutlet weak var searchbarAndRight: NSLayoutConstraint!
     @IBOutlet weak var text1: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var innerView: UIView!
     var pageNum:Int = 0
     var tagName:String = "전체"
     var btnText:[tagList] = []
     var btns:[UIButton] = []
     var newGomins:[addedGomin] = []
     var storys:[addedGomin] = []
+    let screenHeight = UIScreen.main.bounds.height
+    let scrollViewContentHeight = 1200 as CGFloat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         searchGominBar.backgroundColor = ColorPalette.darkBackground
+        innerView.backgroundColor = ColorPalette.darkBackground
 
         self.view.backgroundColor = ColorPalette.darkBackground
         self.gominCategoryCollection.backgroundColor = ColorPalette.darkBackground
@@ -62,6 +67,16 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
         textFieldInsideSearchBar?.textColor = ColorPalette.textGray
         self.text1.font = UIFont(name: "NotoSansCJKkr-Medium", size: 20)
         self.searchGominBar.setImage(UIImage(named: "search"), for: .search, state: .normal)
+        
+       
+        
+//        scrollView.contentSize = CGSize(width: self.view.bounds.width, height: scrollViewContentHeight)
+//            scrollView.delegate = self
+//            newGominTable.delegate = self
+//            scrollView.bounces = false
+//        newGominTable.bounces = false
+//        newGominTable.isScrollEnabled = false
+        
         storyDataManager.shared.getStoryList(self)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -83,6 +98,25 @@ class searchViewController: UIViewController, UICollectionViewDataSource {
     func refreshGominTable(){
         self.newGominTable.reloadData()
     }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let yOffset = scrollView.contentOffset.y
+
+        if scrollView == self.scrollView {
+            if yOffset >= scrollViewContentHeight - screenHeight {
+                scrollView.isScrollEnabled = false
+                newGominTable.isScrollEnabled = true
+            }
+        }
+
+        if scrollView == self.newGominTable {
+            if yOffset <= 0 {
+                self.scrollView.isScrollEnabled = true
+                self.newGominTable.isScrollEnabled = false
+            }
+        }
+    }
+
 
 }
 extension searchViewController:UISearchBarDelegate {
@@ -276,6 +310,8 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
             selectTagDatatManager.shared.getTagGomins(self, tagName: self.tagName, pageNum: self.pageNum)
             print("DEBUG: listCount is \(self.newGomins.count)")
         }
+        
+        
         
     }
 //

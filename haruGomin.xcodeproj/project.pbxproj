@@ -142,6 +142,8 @@
 		FFFA769725190F490008101C /* noticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA769525190F490008101C /* noticeViewController.xib */; };
 		FFFA769B25190F590008101C /* myPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA769925190F590008101C /* myPageViewController.swift */; };
 		FFFA769C25190F590008101C /* myPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFA769A25190F590008101C /* myPageViewController.xib */; };
+		FFFB111E255052FB00D109DD /* launchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB111D255052FB00D109DD /* launchViewController.swift */; };
+		FFFB11212550534900D109DD /* lf20_rv9idahq.json in Resources */ = {isa = PBXBuildFile; fileRef = FFFB11202550534900D109DD /* lf20_rv9idahq.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -285,6 +287,8 @@
 		FFFA769525190F490008101C /* noticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = noticeViewController.xib; sourceTree = "<group>"; };
 		FFFA769925190F590008101C /* myPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPageViewController.swift; sourceTree = "<group>"; };
 		FFFA769A25190F590008101C /* myPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myPageViewController.xib; sourceTree = "<group>"; };
+		FFFB111D255052FB00D109DD /* launchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchViewController.swift; sourceTree = "<group>"; };
+		FFFB11202550534900D109DD /* lf20_rv9idahq.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf20_rv9idahq.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -463,6 +467,7 @@
 				FF6FCEBF24F6BF2200451815 /* LaunchScreen.storyboard */,
 				FF6FCEC224F6BF2200451815 /* Info.plist */,
 				FF6FCEBA24F6BF2100451815 /* haruGomin.xcdatamodeld */,
+				FFFB111D255052FB00D109DD /* launchViewController.swift */,
 			);
 			path = haruGomin;
 			sourceTree = "<group>";
@@ -634,6 +639,7 @@
 			isa = PBXGroup;
 			children = (
 				FFE15C762534483500E6A3A6 /* 1page.json */,
+				FFFB11202550534900D109DD /* lf20_rv9idahq.json */,
 				FFE15C8225344B5500E6A3A6 /* 2page.json */,
 				FFE15C7E25344A9200E6A3A6 /* 3page.json */,
 			);
@@ -885,6 +891,7 @@
 				FFFA768925190EAA0008101C /* searchViewController.xib in Resources */,
 				FFE994B1253D7D62002FC7BF /* NotoSansCJKkr-Thin.otf in Resources */,
 				FFFA769725190F490008101C /* noticeViewController.xib in Resources */,
+				FFFB11212550534900D109DD /* lf20_rv9idahq.json in Resources */,
 				FF1A7AE9251F8C1900B95773 /* newGominTableViewCell.xib in Resources */,
 				FF9EE89125484B620085D709 /* privacyViewController.xib in Resources */,
 				FFE99497253D7D62002FC7BF /* Montserrat-LightItalic.ttf in Resources */,
@@ -1005,6 +1012,7 @@
 				FF960710252C86AC00C4D704 /* myGominDataManager.swift in Sources */,
 				FF9A64FA252F7DBC00946DA1 /* deleteUserDataManager.swift in Sources */,
 				FF993E26250BE55000E67251 /* setProfileViewController.swift in Sources */,
+				FFFB111E255052FB00D109DD /* launchViewController.swift in Sources */,
 				FF993E22250BDDFA00E67251 /* colorPalette.swift in Sources */,
 				FF5257F0252435080076C7EB /* myWrittenTableViewCell.swift in Sources */,
 				FF9CF271252CDA4D00BA9265 /* searchDataManager.swift in Sources */,

@@ -27,7 +27,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="52" id="Vjr-kT-TpM"/>
                     </constraints>
-                    <state key="normal" title="카카오로 시작하기">
+                    <state key="normal" title="카카오로 로그인">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -50,7 +50,7 @@
                         <constraint firstAttribute="height" constant="52" id="8VK-az-YeB"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                    <state key="normal" title="Apple로 시작하기">
+                    <state key="normal" title="Apple로 로그인">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>

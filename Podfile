@@ -12,4 +12,6 @@ target 'haruGomin' do
   pod 'Tabman', '~> 2.9'
   pod 'Kingfisher'
   pod 'lottie-ios'
+  pod "AlignedCollectionViewFlowLayout"
+  pod 'SnapKit', '~> 5.0.0'
 end

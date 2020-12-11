@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,8 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="logInViewController" customModule="haruGomin" customModuleProvider="target">
             <connections>
-                <outlet property="appleLoginBtn" destination="y2R-F4-Vui" id="tFp-K2-QZO"/>
-                <outlet property="kakaoBtn" destination="6PZ-NR-jw3" id="IVO-u3-ZGI"/>
+                <outlet property="loginBtn" destination="b91-QD-6eV" id="WmY-d3-wvo"/>
+                <outlet property="signUpBtn" destination="6PZ-NR-jw3" id="6SI-Ao-ind"/>
+                <outlet property="text1" destination="TZb-RO-cLs" id="98C-8X-rXq"/>
+                <outlet property="text2" destination="zBf-aW-KBv" id="FPK-ay-GcA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,64 +24,73 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PZ-NR-jw3">
-                    <rect key="frame" x="20" y="254" width="335" height="52"/>
+                    <rect key="frame" x="20" y="527" width="335" height="52"/>
                     <color key="backgroundColor" red="0.96277731659999999" green="0.4970326424" blue="0.57254827019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="52" id="Vjr-kT-TpM"/>
                     </constraints>
-                    <state key="normal" title="카카오로 로그인">
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="회원가입">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="kakaoLogin:" destination="-1" eventType="touchUpInside" id="z2b-Ti-Ygf"/>
+                        <action selector="signUp:" destination="-1" eventType="touchUpInside" id="oSz-m9-1x2"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gub-uS-edt">
-                    <rect key="frame" x="20" y="214" width="47" height="22"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logowhite" translatesAutoresizingMaskIntoConstraints="NO" id="cOt-DP-mCf">
+                    <rect key="frame" x="89.5" y="122" width="196" height="87"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b91-QD-6eV">
+                    <rect key="frame" x="20" y="463" width="335" height="52"/>
+                    <color key="backgroundColor" red="0.96277731659999999" green="0.4970326424" blue="0.57254827019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="ius-Q4-dTH"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="로그인">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="login:" destination="-1" eventType="touchUpInside" id="dc6-eG-i38"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인 시 서비스 이용약관, " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZb-RO-cLs">
+                    <rect key="frame" x="132.5" y="618" width="110" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cOt-DP-mCf">
-                    <rect key="frame" x="107.5" y="60" width="160" height="71"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2R-F4-Vui">
-                    <rect key="frame" x="20" y="318" width="335" height="52"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="52" id="8VK-az-YeB"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                    <state key="normal" title="Apple로 로그인">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="appleLogin:" destination="-1" eventType="touchUpInside" id="xne-uK-1g9"/>
-                    </connections>
-                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보 이용약관 동의로 간주합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBf-aW-KBv">
+                    <rect key="frame" x="112" y="635" width="151" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="systemGray3Color"/>
             <constraints>
-                <constraint firstItem="cOt-DP-mCf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="1MV-p3-QtQ"/>
-                <constraint firstItem="y2R-F4-Vui" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2ow-lQ-Tyz"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y2R-F4-Vui" secondAttribute="trailing" constant="20" id="4zI-eD-91A"/>
-                <constraint firstItem="y2R-F4-Vui" firstAttribute="top" secondItem="6PZ-NR-jw3" secondAttribute="bottom" constant="12" id="6Vd-Oj-3dV"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="gub-uS-edt" secondAttribute="trailing" constant="347" id="I2Y-Oh-4u6"/>
+                <constraint firstItem="b91-QD-6eV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4Ve-yi-8r6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6PZ-NR-jw3" secondAttribute="bottom" constant="88" id="6LN-L2-Kve"/>
+                <constraint firstItem="6PZ-NR-jw3" firstAttribute="top" secondItem="b91-QD-6eV" secondAttribute="bottom" constant="12" id="9T5-go-Hav"/>
+                <constraint firstItem="zBf-aW-KBv" firstAttribute="top" secondItem="TZb-RO-cLs" secondAttribute="bottom" constant="5" id="Asx-zZ-cAR"/>
+                <constraint firstItem="zBf-aW-KBv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="E7I-x3-qR4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6PZ-NR-jw3" secondAttribute="trailing" constant="20" id="IAj-Et-404"/>
                 <constraint firstItem="cOt-DP-mCf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TyW-hV-139"/>
-                <constraint firstItem="gub-uS-edt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Vfv-mm-ZCS"/>
-                <constraint firstItem="6PZ-NR-jw3" firstAttribute="top" secondItem="cOt-DP-mCf" secondAttribute="bottom" constant="123" id="t3L-7u-XKp"/>
+                <constraint firstItem="b91-QD-6eV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="V0P-SM-uJR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b91-QD-6eV" secondAttribute="trailing" constant="20" id="alm-QZ-3T8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zBf-aW-KBv" secondAttribute="bottom" constant="20" id="bAm-RE-Y31"/>
+                <constraint firstItem="TZb-RO-cLs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mvj-qo-YSq"/>
                 <constraint firstItem="6PZ-NR-jw3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="tK9-2X-2kE"/>
-                <constraint firstItem="6PZ-NR-jw3" firstAttribute="top" secondItem="gub-uS-edt" secondAttribute="bottom" constant="18" id="yE7-L5-uFh"/>
+                <constraint firstItem="cOt-DP-mCf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="122.2" id="uWA-IH-0yJ"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="153"/>
+            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
         </view>
     </objects>
     <resources>
-        <image name="logo" width="160" height="71"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="logowhite" width="196" height="87"/>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -84,7 +84,7 @@ class detailGominViewController: UIViewController {
         self.view.isUserInteractionEnabled = true
         self.commentTextField.attributedPlaceholder = NSAttributedString(string: "   댓글을 입력해 주세요",            attributes: [NSAttributedString.Key.foregroundColor: ColorPalette.borderGray])
         self.commentTextField.delegate = self
-        self.commentTextField.addLeftPadding()
+        self.commentTextField.addLeftPadding(imgName: "")
         self.commentTextField.addTarget(self, action: #selector(textfieldChanged(_:)), for: .editingChanged)
         self.view.bringSubviewToFront(self.commentTextView)
         

@@ -102,7 +102,7 @@ class addGominViewController: UIViewController, UICollectionViewDataSource, UITe
         self.gominTitle.delegate = self
         
         // 제목 디자인 수정
-        self.gominTitle.addLeftPadding()
+        self.gominTitle.addLeftPadding(imgName: "")
         self.gominTitle.attributedPlaceholder = NSAttributedString(string: "제목을 적어주세요",            attributes: [NSAttributedString.Key.foregroundColor: ColorPalette.textGray , NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)])
         self.gominTitle.textColor = .white
         self.gominTitle.font = .boldSystemFont(ofSize: 16)

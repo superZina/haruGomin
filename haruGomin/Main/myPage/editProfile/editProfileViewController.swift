@@ -102,8 +102,8 @@ class editProfileViewController: UIViewController, UICollectionViewDataSource, i
         self.nickName.delegate = self
         agePicker.delegate = self
         agePicker.dataSource = self
-        self.nickName.addLeftPadding()
-        self.age.addLeftPadding()
+        self.nickName.addLeftPadding(imgName: "")
+        self.age.addLeftPadding(imgName: "")
         createAgePicker()
         
         let itemCellNib = UINib(nibName: "CollectionViewCell", bundle: nil)

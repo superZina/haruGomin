@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		439B256925A7539300AFCD41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439B256825A7539300AFCD41 /* AppDelegate.swift */; };
+		439B256B25A7539300AFCD41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439B256A25A7539300AFCD41 /* SceneDelegate.swift */; };
+		439B256D25A7539300AFCD41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439B256C25A7539300AFCD41 /* ViewController.swift */; };
+		439B257025A7539300AFCD41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 439B256E25A7539300AFCD41 /* Main.storyboard */; };
+		439B257225A7539400AFCD41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439B257125A7539400AFCD41 /* Assets.xcassets */; };
+		439B257525A7539400AFCD41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 439B257325A7539400AFCD41 /* LaunchScreen.storyboard */; };
+		9EF55214AFDDB966CE6A7D74 /* Pods_HaruGominClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6696C508F1665BEAB27B25C /* Pods_HaruGominClone.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2308D2F707CD95A66D81E409 /* Pods-HaruGominClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaruGominClone.release.xcconfig"; path = "Target Support Files/Pods-HaruGominClone/Pods-HaruGominClone.release.xcconfig"; sourceTree = "<group>"; };
+		439B256525A7539300AFCD41 /* HaruGominClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaruGominClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		439B256825A7539300AFCD41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		439B256A25A7539300AFCD41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		439B256C25A7539300AFCD41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		439B256F25A7539300AFCD41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		439B257125A7539400AFCD41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		439B257425A7539400AFCD41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		439B257625A7539400AFCD41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64A85D35C144536A03E8650D /* Pods-HaruGominClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaruGominClone.debug.xcconfig"; path = "Target Support Files/Pods-HaruGominClone/Pods-HaruGominClone.debug.xcconfig"; sourceTree = "<group>"; };
+		C6696C508F1665BEAB27B25C /* Pods_HaruGominClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HaruGominClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		439B256225A7539300AFCD41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EF55214AFDDB966CE6A7D74 /* Pods_HaruGominClone.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		439B255C25A7539300AFCD41 = {
+			isa = PBXGroup;
+			children = (
+				439B256725A7539300AFCD41 /* HaruGominClone */,
+				439B256625A7539300AFCD41 /* Products */,
+				DEE341643148457BA8941220 /* Pods */,
+				C6BA856E0960CA508E6176C4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		439B256625A7539300AFCD41 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				439B256525A7539300AFCD41 /* HaruGominClone.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		439B256725A7539300AFCD41 /* HaruGominClone */ = {
+			isa = PBXGroup;
+			children = (
+				439B256825A7539300AFCD41 /* AppDelegate.swift */,
+				439B256A25A7539300AFCD41 /* SceneDelegate.swift */,
+				439B256C25A7539300AFCD41 /* ViewController.swift */,
+				439B256E25A7539300AFCD41 /* Main.storyboard */,
+				439B257125A7539400AFCD41 /* Assets.xcassets */,
+				439B257325A7539400AFCD41 /* LaunchScreen.storyboard */,
+				439B257625A7539400AFCD41 /* Info.plist */,
+			);
+			path = HaruGominClone;
+			sourceTree = "<group>";
+		};
+		C6BA856E0960CA508E6176C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6696C508F1665BEAB27B25C /* Pods_HaruGominClone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEE341643148457BA8941220 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64A85D35C144536A03E8650D /* Pods-HaruGominClone.debug.xcconfig */,
+				2308D2F707CD95A66D81E409 /* Pods-HaruGominClone.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		439B256425A7539300AFCD41 /* HaruGominClone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 439B257925A7539400AFCD41 /* Build configuration list for PBXNativeTarget "HaruGominClone" */;
+			buildPhases = (
+				B3781FEC524AA4D4954FC62A /* [CP] Check Pods Manifest.lock */,
+				439B256125A7539300AFCD41 /* Sources */,
+				439B256225A7539300AFCD41 /* Frameworks */,
+				439B256325A7539300AFCD41 /* Resources */,
+				18020688FA5B0D0D8A5B00AD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HaruGominClone;
+			productName = HaruGominClone;
+			productReference = 439B256525A7539300AFCD41 /* HaruGominClone.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		439B255D25A7539300AFCD41 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					439B256425A7539300AFCD41 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 439B256025A7539300AFCD41 /* Build configuration list for PBXProject "HaruGominClone" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 439B255C25A7539300AFCD41;
+			productRefGroup = 439B256625A7539300AFCD41 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				439B256425A7539300AFCD41 /* HaruGominClone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		439B256325A7539300AFCD41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				439B257525A7539400AFCD41 /* LaunchScreen.storyboard in Resources */,
+				439B257225A7539400AFCD41 /* Assets.xcassets in Resources */,
+				439B257025A7539300AFCD41 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18020688FA5B0D0D8A5B00AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HaruGominClone/Pods-HaruGominClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HaruGominClone/Pods-HaruGominClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HaruGominClone/Pods-HaruGominClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3781FEC524AA4D4954FC62A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HaruGominClone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		439B256125A7539300AFCD41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				439B256D25A7539300AFCD41 /* ViewController.swift in Sources */,
+				439B256925A7539300AFCD41 /* AppDelegate.swift in Sources */,
+				439B256B25A7539300AFCD41 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		439B256E25A7539300AFCD41 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				439B256F25A7539300AFCD41 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		439B257325A7539400AFCD41 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				439B257425A7539400AFCD41 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		439B257725A7539400AFCD41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		439B257825A7539400AFCD41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		439B257A25A7539400AFCD41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64A85D35C144536A03E8650D /* Pods-HaruGominClone.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6M94RM5DH9;
+				INFOPLIST_FILE = HaruGominClone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rubin.HaruGominClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		439B257B25A7539400AFCD41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2308D2F707CD95A66D81E409 /* Pods-HaruGominClone.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6M94RM5DH9;
+				INFOPLIST_FILE = HaruGominClone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rubin.HaruGominClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		439B256025A7539300AFCD41 /* Build configuration list for PBXProject "HaruGominClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				439B257725A7539400AFCD41 /* Debug */,
+				439B257825A7539400AFCD41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		439B257925A7539400AFCD41 /* Build configuration list for PBXNativeTarget "HaruGominClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				439B257A25A7539400AFCD41 /* Debug */,
+				439B257B25A7539400AFCD41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 439B255D25A7539300AFCD41 /* Project object */;
+}

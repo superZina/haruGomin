@@ -6,9 +6,9 @@ target 'haruGomin' do
   use_frameworks!
 
   # Pods for haruGomin
-  pod 'KakaoSDKUser'
-  pod 'KakaoSDKAuth'
-  pod 'naveridlogin-sdk-ios'
+#  pod 'KakaoSDKUser'
+#  pod 'KakaoSDKAuth'
+#  pod 'naveridlogin-sdk-ios'
   pod 'Tabman', '~> 2.9'
   pod 'Kingfisher'
   pod 'lottie-ios'

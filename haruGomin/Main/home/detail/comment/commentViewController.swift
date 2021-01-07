@@ -19,6 +19,11 @@ class commentViewController: UIViewController {
     var isWriter:[Bool] = []
     var pageNum:Int = 0
     var userId:Int64 = 0
+    @IBOutlet weak var commentView: UIView!
+    @IBOutlet weak var commentTextView: UIView!
+    @IBOutlet weak var commentTextField: UITextField!
+    @IBOutlet weak var commentBtn: UIButton!
+    @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.layer.cornerRadius = 8
@@ -29,26 +34,27 @@ class commentViewController: UIViewController {
         self.commentTableVeiw.dataSource = self
         self.commentTableVeiw.register(cellNib, forCellReuseIdentifier: "comment")
         self.commentTableVeiw.backgroundColor = ColorPalette.darkBackground
-        print(self.view.bounds.height)
-        switch(UIScreen.main.nativeBounds.height) {
-        case 1334: //se2 , 8
-            tableAndBottom.constant = 100
-            break
-        case 2688: //promax
-            tableAndBottom.constant = 250
-            break
-        case 2436: //pro
-            tableAndBottom.constant = 150
-            break
-        case 1792: //11
-            tableAndBottom.constant = 300
-            break
-        case 2208: //8+
-            tableAndBottom.constant = 260
-            break
-        default:
-            break
-        }
+        self.commentTextField.delegate = self
+        self.commentTextView.backgroundColor = ColorPalette.darkBackground
+        self.commentView.layer.cornerRadius = 8
+        self.commentView.layer.borderColor = ColorPalette.borderGray.cgColor
+        self.commentView.layer.borderWidth = 1
+        
+        self.commentTextField.textColor = .white
+        self.commentTextView.backgroundColor = ColorPalette.darkBackground
+        self.commentView.backgroundColor = ColorPalette.darkBackground
+        self.commentTextField.isEnabled = true
+        self.view.isUserInteractionEnabled = true
+        self.commentTextField.attributedPlaceholder = NSAttributedString(string: "   댓글을 입력해 주세요",            attributes: [NSAttributedString.Key.foregroundColor: ColorPalette.borderGray])
+//        self.commentTextField.delegate = self
+        self.commentTextField.addLeftPadding(imgName: "")
+        self.commentTextField.addTarget(self, action: #selector(textfieldChanged(_:)), for: .editingChanged)
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardNotification(notification:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -56,8 +62,59 @@ class commentViewController: UIViewController {
         let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
         commentDataManager.shared.getGominDetail(self, postId: self.postId, pageNum: self.pageNum , userId: userId)
 //        self.view.layoutIfNeeded()
+        self.commentBtn.isEnabled  = false
     }
-
+    @IBAction func registComment(_ sender: Any) {
+        let userName:String = UserDefaults.standard.value(forKey: "userName") as! String
+        let profileImg:String = UserDefaults.standard.value(forKey: "profileImage") as! String
+        let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
+        let parameters:[String:Any] = [
+            "content": self.commentTextField.text,
+            "nickname": userName,
+            "postId": self.postId,
+            "profileImage": profileImg,
+            "userId": userId
+        ]
+        registCommentDataManager.shared.registComment(self , parameters: parameters , userId: userId)
+        
+    }
+    @objc func textfieldChanged(_ textfield: UITextField) {
+        if(textfield.text != "") {
+            self.commentBtn.setImage(UIImage(named: "sendMessagePurple"), for: .normal)
+            self.commentBtn.isEnabled  = true
+        }else{
+            self.commentBtn.setImage(UIImage(named: "sendMessageGray"), for: .normal)
+            self.commentBtn.isEnabled  = false
+        }
+    }
+    
+    @objc func keyboardNotification(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else { return }
+        
+        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        let endFrameY = endFrame?.origin.y ?? 0
+        let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+        let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+        
+        if endFrameY >= UIScreen.main.bounds.size.height {
+            self.keyboardHeightLayoutConstraint?.constant = 0.0
+        } else {
+            self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 0.0
+        }
+        
+        UIView.animate(
+            withDuration: duration,
+            delay: TimeInterval(0),
+            options: animationCurve,
+            animations: { self.view.layoutIfNeeded() },
+            completion: nil)
+    }
+    
+    @objc func hideKeyboard(){
+        self.view.endEditing(true)
+    }
 
 }
 var comments:[commentTableViewCell] = []
@@ -134,6 +191,7 @@ extension commentViewController : UITableViewDelegate , UITableViewDataSource {
         self.present(alert, animated: true, completion: nil)
         print("selected")
     }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let height:CGFloat = scrollView.frame.size.height
         let contentYOffset:CGFloat = scrollView.contentOffset.y
@@ -152,33 +210,31 @@ extension commentViewController : UITableViewDelegate , UITableViewDataSource {
         let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
         print("DEBUG: commentID is \(sendr.tag)")
         sendr.isSelected = !sendr.isSelected
-//        var count:Int = 0
-//        for i in comments {
-//            if i.like.tag == sendr.tag {
-//                let countString:String = i.likeCount.text!
-//                count = Int(countString)!
-//                break
-//            }
-//        }
         print(sendr.isSelected)
         if sendr.isSelected {
             sendr.setImage(UIImage(named: "likePressed"), for: .normal)
-//            let current:String = (sendr.title(for: .normal))!
-//            var count:Int = Int(current)!
-//            count = count + 1
-//            sendr.setTitle(String(count), for: .normal)
         }else{
             sendr.setImage(UIImage(named: "like"), for: .normal)
-//            let current:String = (sendr.title(for: .normal))!
-//            var count:Int = Int(current)!
-//            count = count - 1
-//            sendr.setTitle(String(count), for: .normal)
         }
         commentLikeDataManager.shared.likeComment(commentVC: self, commentID: sendr.tag, userId: userId , postId: self.postId)
-        
-        
-        
     }
-    
-    
+}
+extension commentViewController:UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if(textField.text != "") {
+            self.commentBtn.setImage(UIImage(named: "sendMessagePurple"), for: .normal)
+            self.commentBtn.isEnabled  = true
+        }else{
+            self.commentBtn.setImage(UIImage(named: "sendMessageGray"), for: .normal)
+            self.commentBtn.isEnabled  = false
+        }
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            if(string == "\n"){
+                textField.resignFirstResponder()
+            }
+           return true
+       
+        }
+   
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,7 +15,6 @@
                 <outlet property="haruGomin" destination="xCZ-jJ-AO1" id="EEg-GV-ye2"/>
                 <outlet property="line1" destination="WWv-xW-wuE" id="IZb-vd-WDb"/>
                 <outlet property="line2" destination="IS3-io-jaO" id="ln9-SL-wgf"/>
-                <outlet property="loginTypeImg" destination="yjv-7K-hMP" id="zX4-tf-I8X"/>
                 <outlet property="myGominCollectionHeight" destination="5Y1-JL-bne" id="b13-PW-odh"/>
                 <outlet property="myPageTable" destination="4Dp-zo-RW5" id="5kE-Ww-L3F"/>
                 <outlet property="nickName" destination="rFb-i3-ev3" id="5bR-FZ-kGy"/>
@@ -44,7 +43,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="haruGomin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCZ-jJ-AO1">
-                    <rect key="frame" x="128" y="122.5" width="62" height="15"/>
+                    <rect key="frame" x="104" y="122.5" width="62" height="15"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -65,13 +64,6 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yjv-7K-hMP">
-                    <rect key="frame" x="104" y="118.5" width="20" height="20"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="20" id="HTx-04-Ut4"/>
-                        <constraint firstAttribute="width" constant="20" id="gnx-xp-E8y"/>
-                    </constraints>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7g-Rs-itu">
                     <rect key="frame" x="344" y="84" width="50" height="24"/>
                     <constraints>
@@ -131,19 +123,16 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s3h-KG-NJv" secondAttribute="trailing" id="XUW-j6-60D"/>
                 <constraint firstItem="rFb-i3-ev3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="arE-bc-WoH"/>
                 <constraint firstItem="s3h-KG-NJv" firstAttribute="top" secondItem="MGJ-RB-56D" secondAttribute="bottom" constant="14.5" id="bYk-Hs-03z"/>
-                <constraint firstItem="yjv-7K-hMP" firstAttribute="leading" secondItem="VfG-ff-wRE" secondAttribute="trailing" constant="16" id="f8K-cf-zj5"/>
                 <constraint firstItem="VfG-ff-wRE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="fK9-27-9IX"/>
                 <constraint firstItem="WWv-xW-wuE" firstAttribute="top" secondItem="VfG-ff-wRE" secondAttribute="bottom" constant="20" id="fZU-AA-xsA"/>
                 <constraint firstItem="s7g-Rs-itu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="gWr-2v-K7C"/>
+                <constraint firstItem="xCZ-jJ-AO1" firstAttribute="leading" secondItem="VfG-ff-wRE" secondAttribute="trailing" constant="16" id="hIa-Vr-XDE"/>
                 <constraint firstItem="IS3-io-jaO" firstAttribute="top" secondItem="s3h-KG-NJv" secondAttribute="bottom" constant="16.5" id="i8g-we-vbU"/>
                 <constraint firstItem="rFb-i3-ev3" firstAttribute="leading" secondItem="VfG-ff-wRE" secondAttribute="trailing" constant="16" id="pTv-ei-oRU"/>
                 <constraint firstItem="VfG-ff-wRE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="qgF-1O-Tg7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="MGJ-RB-56D" secondAttribute="trailing" constant="264" id="qjo-Ha-ib2"/>
                 <constraint firstItem="xCZ-jJ-AO1" firstAttribute="top" secondItem="rFb-i3-ev3" secondAttribute="bottom" constant="14" id="tVT-pv-pLa"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="xCZ-jJ-AO1" secondAttribute="trailing" constant="247" id="v8S-jA-e8c"/>
-                <constraint firstItem="xCZ-jJ-AO1" firstAttribute="leading" secondItem="yjv-7K-hMP" secondAttribute="trailing" constant="4" id="vEJ-2t-UlR"/>
                 <constraint firstItem="MGJ-RB-56D" firstAttribute="top" secondItem="WWv-xW-wuE" secondAttribute="bottom" constant="17.5" id="xYx-fQ-huh"/>
-                <constraint firstItem="yjv-7K-hMP" firstAttribute="top" secondItem="rFb-i3-ev3" secondAttribute="bottom" constant="10" id="zYW-fd-xwa"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="67.633928571428569"/>
         </view>

@@ -14,14 +14,13 @@ class editProfileDataManager {
     func editProfile(_ editVC: editProfileViewController, parameter:[String:Any]) {
 //        print(parameter)
         print(parameter)
-        let url = "http://52.78.127.67:8080/api/v1/users"
+        let url = "http://15.165.183.122:8080/api/v1/users"
         let request = AF.request(url, method: .put, parameters: parameter, encoding: JSONEncoding.default).validate()
         request.responseJSON { (response) in
             print(parameter)
             print(response)
             switch response.result {
             case .success(let obj):
-                print(obj)
                 do {
                     let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                     let getData = try JSONDecoder().decode(Profile.self, from: dataJSON)

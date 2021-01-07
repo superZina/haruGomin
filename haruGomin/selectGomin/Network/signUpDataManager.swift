@@ -8,42 +8,32 @@
 
 import Alamofire
 
+struct Toeken: Codable {
+    let jwt: String?
+    let error:String?
+}
+
 class signUpDataManager {
-    func signUp(_ selectVC: selectGominViewController, parameter:[String:Any]) {
-//        print(parameter)
-        let url = "http://15.165.183.122:8080/api/v1/users/singup"
-        let request = AF.request(url, method: .put, parameters: parameter, encoding: JSONEncoding.default).validate()
+    func signUp(_ selectVC: selectGominViewController, _ ageRange: Int32 , _ nickname: String , _ password: String , _ profileImage : String , _ hashtags:[String] , _ loginId : String) {
+        var url = "http://15.165.183.122:8080/api/v1/users/signup?ageRange=\(ageRange)&nickname=\(nickname)&password=\(password)&profileImage=\(profileImage)&userLoginId=\(loginId)"
+        for tagname in hashtags {
+            url += "&userhashtags=\(tagname)"
+        }
+        let enc_url = url.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+        let request = AF.request(enc_url as! URLConvertible, method: .post , encoding: URLEncoding.queryString).validate()
         request.responseJSON { (response) in
-            print(parameter)
+            
             print(response)
             switch response.result {
             case .success(let obj):
-                print(obj)
-//                do {
-//                    print(obj)
-//                    let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
-//                    let getData = try JSONDecoder().decode(Profile.self, from: dataJSON)
-//
-//                    UserDefaults.standard.setValue(getData.nickname, forKey: "userName")
-//                    UserDefaults.standard.setValue(getData.userId, forKey: "userId")
-//                    UserDefaults.standard.setValue(getData.profileImage, forKey: "profileImage")
-//                    UserDefaults.standard.setValue(true, forKey: "isLogin")
-//                    UserDefaults.standard.setValue(getData.ageRange, forKey: "ageRange")
-//
-////                    UserDefaults.standard.set(getData.userHashtags, forKey: "hashtags")
-//                    let mainVC = tabBarViewController()
-//                    if let window = UIApplication.shared.windows.first {
-//                        window.rootViewController = UINavigationController(rootViewController:mainVC)
-//                        UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {}, completion: nil)
-//                    } else {
-//                        mainVC.modalPresentationStyle = .overFullScreen
-//                        selectVC
-//                            .present(mainVC, animated: true, completion: nil)
-//                    }
-//
-//                }catch {
-//                    print(error.localizedDescription)
-//                }
+                do {
+                    let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+                    let getData = try JSONDecoder().decode(Toeken.self, from: dataJSON)
+                    print(getData.jwt)
+                    checkUserDataManager.shared.checkUser(selectVC, jwt: getData.jwt!)
+                }catch{
+                    print(error.localizedDescription)
+                }
             default:
                 return
                 

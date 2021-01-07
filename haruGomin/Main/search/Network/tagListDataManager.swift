@@ -13,12 +13,11 @@ class tagListDataManager{
     static let shared = tagListDataManager()
     private init() {}
     func getTagList(_ searchVC: searchViewController) {
-        let url = "http://52.78.127.67:8080/api/v1/posts/home/hashtag"
+        let url = "http://15.165.183.122:8080/api/v1/posts/home/hashtag"
         AF.request(url, method: .get)
             .responseJSON { (response) in
                 switch response.result {
                 case .success(let obj):
-                    print(obj)
                     do{
                         let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                         let getData = try JSONDecoder().decode([tagList].self, from: dataJSON)

@@ -19,6 +19,7 @@ class splashViewController: UIViewController{
     var imgs:[String] = ["illu22", "illu3" , "illu4"]
     let animationView = AnimationView(name: "1page")
     override func viewDidLoad() {
+        
         UserDefaults.standard.setValue(true, forKey: "second")
         super.viewDidLoad()
         self.view.backgroundColor = ColorPalette.background

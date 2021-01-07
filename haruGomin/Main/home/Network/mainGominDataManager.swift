@@ -13,13 +13,12 @@ import Alamofire
 class mainGominDataManager {
     static let shared = mainGominDataManager()
     private init() {}
-    func getMainGomin(_ homeVC:homeViewController ) {
-        let url = "http://52.78.127.67:8080/api/v1/posts/main"
+    func getMainGomin(_ homeVC:homeViewController , _ userId: Int) {
+        let url = "http://15.165.183.122:8080/api/v1/posts/main?userId=\(userId)"
         AF.request(url, method: .get)
             .responseJSON { (response) in
                 switch response.result {
                 case .success(let obj):
-                    print(obj)
                     do{
                         let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                         let getData = try JSONDecoder().decode([gomin].self, from: dataJSON)

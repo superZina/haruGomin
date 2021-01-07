@@ -12,12 +12,11 @@ class detailGominDataManager{
     static let shared = detailGominDataManager()
     private init() {}
     func getGominDetail(_ detailVC:detailGominViewController , postId:Int , pageNum:Int ) {
-        let url = "http://52.78.127.67:8080/api/v1/posts/\(postId)?pageNum=\(pageNum)"
+        let url = "http://15.165.183.122:8080/api/v1/posts/\(postId)?pageNum=\(pageNum)"
         AF.request(url, method: .get)
             .responseJSON { (response) in
                 switch response.result {
                 case .success(let obj):
-                    print(obj)
                     do{
                         let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                         let getData = try JSONDecoder().decode(gomin.self, from: dataJSON)

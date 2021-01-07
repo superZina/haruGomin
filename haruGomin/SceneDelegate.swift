@@ -26,12 +26,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("Not first launch.")
             //token이 존재한다면 -> 토큰검증
             if let jwt = UserDefaults.standard.value(forKey: "jwt") {
-                print("token이 존재")
+                print(jwt)
                     let headers: HTTPHeaders = [
                         HTTPHeader(name: "jwt", value: jwt as! String)
                     ]
-                    let url = "http://52.78.127.67:8080/api/v1/users/check"
-                    AF.request(url , method: .post,headers:  headers)
+                    let url = "http://15.165.183.122:8080/api/v1/users/check"
+                    AF.request(url , method: .get,headers:  headers)
                         .validate()
                         .responseJSON { (response) in
                             switch response.result {

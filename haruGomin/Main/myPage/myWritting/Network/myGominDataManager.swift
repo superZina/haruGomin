@@ -12,7 +12,7 @@ class myGominDataManager{
     static let shared = myGominDataManager()
     private init(){}
     func getmyGomins(myWritngVC: myWritingViewController , userId:Int64 , pageNum: Int){
-        let url = "http://52.78.127.67:8080/api/v1/users/history/\(userId)?pageNum=\(pageNum)"
+        let url = "http://15.165.183.122:8080/api/v1/users/history/\(userId)?pageNum=\(pageNum)"
         let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         AF.request(encodedUrl as! URLConvertible , method: .get )
             .validate()

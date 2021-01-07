@@ -10,7 +10,9 @@ import UIKit
 
 struct userInfo:Codable {
     let userId:Int64?
+    let userLoginId:String?
     let nickname:String?
     let profileImage:String?
     let ageRange:Int?
+    let userHashtags:[String]?
 }

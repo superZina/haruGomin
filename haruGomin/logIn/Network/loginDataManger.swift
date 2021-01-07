@@ -11,7 +11,7 @@ class LoginDataManager {
     static let shared = LoginDataManager()
     private init() {}
     func login(_ loginVC: logInViewController, token: String, id: Int64 ,type:String) {
-        let url = "http://52.78.127.67:8080/api/v1/users/login/\(type)"
+        let url = "http://15.165.183.122:8080/api/v1/users/login/\(type)"
         let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         print(encodedUrl)
         print(url)
@@ -22,14 +22,13 @@ class LoginDataManager {
             .responseJSON { (response) in
                 switch response.result {
                 case .success(let obj):
-                    print(obj)
                     do {
                         let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                         let getData = try JSONDecoder().decode(UserToeken.self, from: dataJSON)
                         guard let jwt:String = getData.jwt else { return }
                         UserDefaults.standard.setValue(jwt, forKey: "jwt")
                         UserDefaults.standard.setValue(id, forKey: "userId")
-                        checkUserDataManager.shared.checkUser(loginVC, jwt: jwt)
+//                        checkUserDataManager.shared.checkUser(loginVC, jwt: jwt)
                     }catch {
                         print(error.localizedDescription)
                     }

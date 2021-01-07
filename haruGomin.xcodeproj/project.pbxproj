@@ -72,14 +72,12 @@
 		FF52587F2524BD380076C7EB /* signUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52587E2524BD380076C7EB /* signUpDataManager.swift */; };
 		FF6FCEB224F6BF2100451815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEB124F6BF2100451815 /* AppDelegate.swift */; };
 		FF6FCEB424F6BF2100451815 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEB324F6BF2100451815 /* SceneDelegate.swift */; };
-		FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEB524F6BF2100451815 /* ViewController.swift */; };
 		FF6FCEBC24F6BF2100451815 /* haruGomin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEBA24F6BF2100451815 /* haruGomin.xcdatamodeld */; };
 		FF6FCEBE24F6BF2200451815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF6FCEBD24F6BF2200451815 /* Assets.xcassets */; };
 		FF6FCEC124F6BF2200451815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6FCEBF24F6BF2200451815 /* LaunchScreen.storyboard */; };
 		FF6FCECB24F6BF3D00451815 /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FCEC924F6BF3D00451815 /* logInViewController.swift */; };
 		FF6FCECC24F6BF3D00451815 /* logInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF6FCECA24F6BF3D00451815 /* logInViewController.xib */; };
 		FF70918E25335B3E00B42B26 /* storyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70918D25335B3E00B42B26 /* storyDataManager.swift */; };
-		FF84D69C253F525E00D16443 /* appleLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF84D69B253F525E00D16443 /* appleLoginDataManager.swift */; };
 		FF8E27392513A8BC00531E40 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E27382513A8BC00531E40 /* UITextField.swift */; };
 		FF94DD0B252D9E7E005252E4 /* registCommentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF94DD0A252D9E7E005252E4 /* registCommentDataManager.swift */; };
 		FF94DD0E252DA957005252E4 /* commentLikeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF94DD0D252DA957005252E4 /* commentLikeDataManager.swift */; };
@@ -112,6 +110,7 @@
 		FFBC734A2528E1FB00CF4FA3 /* profileImgCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBC73482528E1FB00CF4FA3 /* profileImgCollectionViewCell.xib */; };
 		FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9B7C12516385B0039FB22 /* selectGominViewController.swift */; };
 		FFC9B7C42516385B0039FB22 /* selectGominViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */; };
+		FFCAB021258CD3F000CB038A /* signInDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCAB020258CD3F000CB038A /* signInDataManager.swift */; };
 		FFD09DCB253022DE0040FEEF /* editProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD09DC9253022DE0040FEEF /* editProfileViewController.swift */; };
 		FFD09DCC253022DE0040FEEF /* editProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD09DCA253022DE0040FEEF /* editProfileViewController.xib */; };
 		FFD09DD1253064C80040FEEF /* editProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD09DD0253064C80040FEEF /* editProfileDataManager.swift */; };
@@ -221,7 +220,6 @@
 		FF6FCEAE24F6BF2100451815 /* haruGomin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = haruGomin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6FCEB124F6BF2100451815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF6FCEB324F6BF2100451815 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FF6FCEB524F6BF2100451815 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FF6FCEBB24F6BF2100451815 /* haruGomin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = haruGomin.xcdatamodel; sourceTree = "<group>"; };
 		FF6FCEBD24F6BF2200451815 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF6FCEC024F6BF2200451815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 		FF6FCEC924F6BF3D00451815 /* logInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		FF6FCECA24F6BF3D00451815 /* logInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = logInViewController.xib; sourceTree = "<group>"; };
 		FF70918D25335B3E00B42B26 /* storyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storyDataManager.swift; sourceTree = "<group>"; };
-		FF84D69B253F525E00D16443 /* appleLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appleLoginDataManager.swift; sourceTree = "<group>"; };
 		FF8E27382513A8BC00531E40 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		FF94DD0A252D9E7E005252E4 /* registCommentDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registCommentDataManager.swift; sourceTree = "<group>"; };
 		FF94DD0D252DA957005252E4 /* commentLikeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentLikeDataManager.swift; sourceTree = "<group>"; };
@@ -262,6 +259,7 @@
 		FFBC73482528E1FB00CF4FA3 /* profileImgCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = profileImgCollectionViewCell.xib; sourceTree = "<group>"; };
 		FFC9B7C12516385B0039FB22 /* selectGominViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectGominViewController.swift; sourceTree = "<group>"; };
 		FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = selectGominViewController.xib; sourceTree = "<group>"; };
+		FFCAB020258CD3F000CB038A /* signInDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInDataManager.swift; sourceTree = "<group>"; };
 		FFD09DC9253022DE0040FEEF /* editProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProfileViewController.swift; sourceTree = "<group>"; };
 		FFD09DCA253022DE0040FEEF /* editProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = editProfileViewController.xib; sourceTree = "<group>"; };
 		FFD09DD0253064C80040FEEF /* editProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProfileDataManager.swift; sourceTree = "<group>"; };
@@ -470,6 +468,7 @@
 		FF464415258363F900CB9EA6 /* signIn */ = {
 			isa = PBXGroup;
 			children = (
+				FFCAB01F258CD3D800CB038A /* Network */,
 				FF4644172583649200CB9EA6 /* signInViewController.swift */,
 				FF4644182583649200CB9EA6 /* signInViewController.xib */,
 			);
@@ -497,7 +496,6 @@
 				FF5257F925245B9A0076C7EB /* loginDataManger.swift */,
 				FF960713252C9AB900C4D704 /* userInfoResponse.swift */,
 				FF9A64FC252F826F00946DA1 /* checkUserDataManager.swift */,
-				FF84D69B253F525E00D16443 /* appleLoginDataManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -551,7 +549,6 @@
 				FF6FCEC824F6BF2F00451815 /* logIn */,
 				FF6FCEB124F6BF2100451815 /* AppDelegate.swift */,
 				FF6FCEB324F6BF2100451815 /* SceneDelegate.swift */,
-				FF6FCEB524F6BF2100451815 /* ViewController.swift */,
 				FF6FCEBD24F6BF2200451815 /* Assets.xcassets */,
 				FF6FCEBF24F6BF2200451815 /* LaunchScreen.storyboard */,
 				FF6FCEC224F6BF2200451815 /* Info.plist */,
@@ -690,6 +687,14 @@
 				FF9EE88F25484B620085D709 /* privacyViewController.xib */,
 			);
 			path = selectGomin;
+			sourceTree = "<group>";
+		};
+		FFCAB01F258CD3D800CB038A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FFCAB020258CD3F000CB038A /* signInDataManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		FFD09DC8253022CC0040FEEF /* editProfile */ = {
@@ -1035,7 +1040,6 @@
 				FFD09DEF2530D3E70040FEEF /* splashViewController.swift in Sources */,
 				FF0D85CA2529F25700512993 /* myWritingViewController.swift in Sources */,
 				FFBC733D2528DE1100CF4FA3 /* imgPopUpDelegate.swift in Sources */,
-				FF6FCEB624F6BF2100451815 /* ViewController.swift in Sources */,
 				FF4643F825833ECE00CB9EA6 /* UIViewController.swift in Sources */,
 				FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */,
 				FF9A64F4252F3CE600946DA1 /* deleteDataManager.swift in Sources */,
@@ -1060,6 +1064,7 @@
 				FFFA766325188CD70008101C /* tabBarViewController.swift in Sources */,
 				FF960710252C86AC00C4D704 /* myGominDataManager.swift in Sources */,
 				FF9A64FA252F7DBC00946DA1 /* deleteUserDataManager.swift in Sources */,
+				FFCAB021258CD3F000CB038A /* signInDataManager.swift in Sources */,
 				FF993E26250BE55000E67251 /* setProfileViewController.swift in Sources */,
 				FF993E22250BDDFA00E67251 /* colorPalette.swift in Sources */,
 				FF5257F0252435080076C7EB /* myWrittenTableViewCell.swift in Sources */,
@@ -1069,7 +1074,6 @@
 				FF0D85F1252A26A000512993 /* selectTagDatatManager.swift in Sources */,
 				FFFA76762518AE530008101C /* detailGominViewController.swift in Sources */,
 				FF0D85D02529F93100512993 /* myWritingCollectionViewCell.swift in Sources */,
-				FF84D69C253F525E00D16443 /* appleLoginDataManager.swift in Sources */,
 				FFD09DD1253064C80040FEEF /* editProfileDataManager.swift in Sources */,
 				FF9A64F7252F446A00946DA1 /* editDataManager.swift in Sources */,
 				FF9A64FD252F826F00946DA1 /* checkUserDataManager.swift in Sources */,
@@ -1240,7 +1244,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = in.makeus.ios.haruGomin1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1265,7 +1269,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = in.makeus.ios.haruGomin1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

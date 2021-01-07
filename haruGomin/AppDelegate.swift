@@ -17,23 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        
-        let instance = NaverThirdPartyLoginConnection.getSharedInstance()
-        
-        instance?.isNaverAppOauthEnable = true
-        instance?.isInAppOauthEnable = true
-        
-        instance?.isOnlyPortraitSupportedInIphone()
-        
-        instance?.serviceUrlScheme = "naverlogin"
-        instance?.consumerKey = "Nrh_qPIARGpyVB29_9oN"
-        instance?.consumerSecret = "UBeBy58zzX"
-        instance?.appName = "haruGomin"
-        
-        
-        // Override point for customization after application launch.
-        KakaoSDKCommon.initSDK(appKey: "7d5540f989b69a93d156335526309c23")
+       
         return true
     }
     

@@ -32,7 +32,7 @@ class searchViewController: UIViewController, UICollectionViewDataSource ,UIScro
         self.navigationController?.isNavigationBarHidden = true
         searchGominBar.backgroundColor = ColorPalette.darkBackground
         innerView.backgroundColor = ColorPalette.darkBackground
-
+        
         self.view.backgroundColor = ColorPalette.darkBackground
         self.gominCategoryCollection.backgroundColor = ColorPalette.darkBackground
         self.gominCategoryCollection.backgroundColor = ColorPalette.darkBackground
@@ -68,14 +68,12 @@ class searchViewController: UIViewController, UICollectionViewDataSource ,UIScro
         self.text1.font = UIFont(name: "NotoSansCJKkr-Medium", size: 20)
         self.searchGominBar.setImage(UIImage(named: "search"), for: .search, state: .normal)
         
-       
-        
-//        scrollView.contentSize = CGSize(width: self.view.bounds.width, height: scrollViewContentHeight)
-//            scrollView.delegate = self
-//            newGominTable.delegate = self
-//            scrollView.bounces = false
+//        self.scrollView.contentSize = CGSize(width: self.scrollView.contentSize.width, height: scrollViewContentHeight)
+//        scrollView.delegate = self
+//        scrollView.bounces = false
 //        newGominTable.bounces = false
 //        newGominTable.isScrollEnabled = false
+//
         
         storyDataManager.shared.getStoryList(self)
     }
@@ -99,36 +97,36 @@ class searchViewController: UIViewController, UICollectionViewDataSource ,UIScro
         self.newGominTable.reloadData()
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        let yOffset = scrollView.contentOffset.y
-
-        if scrollView == self.scrollView {
-            if yOffset >= scrollViewContentHeight - screenHeight {
-                scrollView.isScrollEnabled = false
-                newGominTable.isScrollEnabled = true
-            }
-        }
-
-        if scrollView == self.newGominTable {
-            if yOffset <= 0 {
-                self.scrollView.isScrollEnabled = true
-                self.newGominTable.isScrollEnabled = false
-            }
-        }
-    }
-
-
+//    func scrollViewDidScroll(scrollView: UIScrollView) {
+//        let yOffset = scrollView.contentOffset.y
+//
+//        if scrollView == self.scrollView {
+//            if yOffset >= scrollViewContentHeight - screenHeight {
+//                scrollView.isScrollEnabled = false
+//                newGominTable.isScrollEnabled = true
+//            }
+//        }
+//
+//        if scrollView == self.newGominTable {
+//            if yOffset <= 0 {
+//                self.scrollView.isScrollEnabled = true
+//                self.newGominTable.isScrollEnabled = false
+//            }
+//        }
+//    }
+    
+    
 }
 extension searchViewController:UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-//        self.searchbarAndRight.constant = -60
+        //        self.searchbarAndRight.constant = -60
         self.searchGominBar.showsCancelButton = true
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let resultVC = searchResultViewController()
         if searchBar.text! != ""{
-        resultVC.keyword = searchBar.text!
-        self.navigationController?.pushViewController(resultVC, animated: true)
+            resultVC.keyword = searchBar.text!
+            self.navigationController?.pushViewController(resultVC, animated: true)
         }else {
             let alert = UIAlertController(title: "잠시만요!", message: "검색어를 입력해주세요! ", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
@@ -180,7 +178,7 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             let date = Date()
             let currnetTimeStr = formatter.string(from: date) //현재시간 String
-                    
+            
             let dates = formatter.date(from: createdAt) // 작성시간 date
             let currentDate = formatter.date(from: currnetTimeStr) //현재시간 date
             //differTime이 0이면 게시물 삭제
@@ -188,9 +186,9 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
             let restTime = (60 * 60 * 24) + differTime!
             let differHour = Int(restTime / (60 * 60)) //남은 시간
             let differMinute = Int((Int(restTime) - differHour * ( 60 * 60)) / 60 ) //남은 분
-
+            
             storyCell.time.text = String(differHour) + ":" + String(differMinute) //남은시간
-            if differTime == .zero {
+            if differTime == .zero { 
                 let alert = UIAlertController(title: "잠깐!", message: "시간이 다 된 고민이 있어요. 고민 다시불러오기를 할게요!", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "알겠어요!", style: .cancel) { (action) in
                     storyDataManager.shared.getStoryList(self)
@@ -259,7 +257,7 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.newGomins.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = newGominTable.dequeueReusableCell(withIdentifier: "newGomin", for: indexPath) as! newGominTableViewCell
         cell.gominTitle.text = self.newGomins[indexPath.row].title
@@ -293,27 +291,29 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
         alert.addAction(accuseAction)
         alert.addAction(cancelAction)
         alert.view.addSubview(icon)
-//        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = ColorPalette.darkBackground
-//        alert.view.tintColor = ColorPalette.textGray
+        //        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = ColorPalette.darkBackground
+        //        alert.view.tintColor = ColorPalette.textGray
         
         self.present(alert, animated: true, completion: nil)
         print("selected")
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let height:CGFloat = scrollView.frame.size.height
-        let contentYOffset:CGFloat = scrollView.contentOffset.y
-        let scrollViewHeight:CGFloat = scrollView.contentSize.height
-        let distanceFromBottom:CGFloat = scrollViewHeight - contentYOffset
-        
-        if distanceFromBottom < height {
-            self.pageNum = self.pageNum + 1
-            selectTagDatatManager.shared.getTagGomins(self, tagName: self.tagName, pageNum: self.pageNum)
-            print("DEBUG: listCount is \(self.newGomins.count)")
+        if scrollView == newGominTable {
+            let height:CGFloat = scrollView.frame.size.height
+            let contentYOffset:CGFloat = scrollView.contentOffset.y
+            let scrollViewHeight:CGFloat = scrollView.contentSize.height
+            let distanceFromBottom:CGFloat = scrollViewHeight - contentYOffset
+            
+            if distanceFromBottom < height {
+                self.pageNum = self.pageNum + 1
+                
+                //api 호출부분
+                selectTagDatatManager.shared.getTagGomins(self, tagName: self.tagName, pageNum: self.pageNum)
+                
+                print("DEBUG: listCount is \(self.newGomins.count)")
+            }
         }
         
-        
-        
     }
-//
     
 }

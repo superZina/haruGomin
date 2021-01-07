@@ -11,12 +11,12 @@ import Alamofire
 class checkUserDataManager{
     static let shared = checkUserDataManager()
     private init() {}
-    func checkUser(_ loginVC:logInViewController , jwt:String) {
+    func checkUser(_ loginVC: UIViewController , jwt:String) {
         let headers: HTTPHeaders = [
             HTTPHeader(name: "jwt", value: jwt)
         ]
-        let url = "http://52.78.127.67:8080/api/v1/users/check"
-        AF.request(url , method: .post,headers:  headers)
+        let url = "http://15.165.183.122:8080/api/v1/users/check"
+        AF.request(url , method: .get,headers:  headers)
             .validate()
             .responseJSON { (response) in
                 switch response.result {
@@ -29,8 +29,9 @@ class checkUserDataManager{
                         UserDefaults.standard.setValue(getData.profileImage, forKey: "profileImage")
                         UserDefaults.standard.setValue(getData.ageRange, forKey: "ageRange")
                         UserDefaults.standard.setValue(getData.nickname, forKey: "userName")
-                        print("DEBUG: userInfo is \(getData)")
-                        
+                        UserDefaults.standard.setValue(getData.userLoginId, forKey: "loginId")
+                        UserDefaults.standard.setValue(jwt, forKey: "jwt")
+                        print("DEBUG : age range is \(getData.ageRange)")
                         //로그인 성공 , 메인으로 넘어가기
                         
                         if getData.ageRange == 0 { //회원가입일때

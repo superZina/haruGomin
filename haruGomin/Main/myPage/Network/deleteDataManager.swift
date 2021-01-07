@@ -12,7 +12,7 @@ class deleteDataManager{
     static let shared = deleteDataManager()
     private init() {}
     func deletePost(_ myPageVC:myPageViewController , postId:Int) {
-        let url = "http://52.78.127.67:8080/api/v1/posts/\(postId)"
+        let url = "http://15.165.183.122:8080/api/v1/posts/\(postId)"
         print("DEBUG: url is \(url)")
         let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         AF.request(url, method: .delete)

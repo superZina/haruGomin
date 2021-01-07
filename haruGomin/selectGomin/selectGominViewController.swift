@@ -67,7 +67,7 @@ class selectGominViewController: UIViewController, UICollectionViewDataSource {
     }
 
     @IBAction func moveNext(_ sender: Any) {
-        var ageRange:Int = 0
+        var ageRange:Int32 = 0
         var hashTags:[String] = []
         let id:String = UserDefaults.standard.value(forKey: "userId") as! String
         let pw: String = UserDefaults.standard.value(forKey: "password") as! String
@@ -93,12 +93,12 @@ class selectGominViewController: UIViewController, UICollectionViewDataSource {
         let parameters:[String:Any] = [
             "ageRange" : ageRange,
             "nickname" : self.nickName,
-            "profileImage" : self.Img,
             "password" : pw,
-            "userHashtags" : hashTags ,
+            "profileImage" : self.Img,
+            "userhashtags" : hashTags ,
             "userLoginId" : id
         ]
-        signUpDataManager().signUp(self, parameter: parameters)
+        signUpDataManager().signUp(self, ageRange, nickName, pw, self.Img, hashTags, id)
     }
     
     @IBAction func agreeToPrivacyPolicy(_ sender: UIButton) {

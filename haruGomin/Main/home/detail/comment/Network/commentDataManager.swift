@@ -13,14 +13,13 @@ class commentDataManager{
         static let shared = commentDataManager()
         private init() {}
     func getGominDetail(_ commentVC:commentViewController , postId:Int , pageNum:Int , userId : Int64 ) {
-            let url = "http://52.78.127.67:8080/api/v1/comments/\(postId)?pageNum=\(pageNum)&userId=\(userId)"
+            let url = "http://15.165.183.122:8080/api/v1/comments/\(postId)?pageNum=\(pageNum)&userId=\(userId)"
         let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         print("DEBUG: uri is \(url)")
             AF.request(encodedUrl as! URLConvertible, method: .get)
                 .responseJSON { (response) in
                     switch response.result {
                     case .success(let obj):
-                        print(obj)
                         do{
                             let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                             let getData = try JSONDecoder().decode([comment].self, from: dataJSON)

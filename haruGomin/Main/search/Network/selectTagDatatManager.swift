@@ -12,7 +12,7 @@ class selectTagDatatManager{
     static let shared = selectTagDatatManager()
     private init() {}
     func getTagGomins(_ searchVC: searchViewController , tagName:String , pageNum:Int) {
-        let url = "http://52.78.127.67:8080/api/v1/posts/home/\(tagName)?pageNum=\(pageNum)"
+        let url = "http://15.165.183.122:8080/api/v1/posts/home/\(tagName)?pageNum=\(pageNum)"
         let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         print(url)
         print(tagName)
@@ -23,7 +23,6 @@ class selectTagDatatManager{
 //                print(response)
                 switch response.result {
                 case .success(let obj):
-                    print(obj)
                     do{
                         let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                         let getData = try JSONDecoder().decode([addedGomin].self, from: dataJSON)

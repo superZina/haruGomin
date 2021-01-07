@@ -24,7 +24,6 @@ class checkNameDataManager {
             print("DEBUG: ageRange is \(age)")
             switch response.result {
             case .success(let obj):
-                print(obj)
                 do {
                     let dataJSON = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                     let getData = try JSONDecoder().decode(checkFlag.self, from: dataJSON)

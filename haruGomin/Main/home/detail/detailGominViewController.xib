@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                 <outlet property="commentTextView" destination="qFj-r4-mvI" id="YnF-sS-bDN"/>
                 <outlet property="commentView" destination="60C-Jf-uvX" id="8wt-ak-Uo6"/>
                 <outlet property="createTime" destination="e8D-Dj-W7P" id="Sv3-Th-BBc"/>
-                <outlet property="gominTextView" destination="iT8-SV-YoG" id="hmd-BG-aU3"/>
+                <outlet property="gominTextView" destination="mCd-x6-Vew" id="jxi-sM-eti"/>
                 <outlet property="keyboardHeightLayoutConstraint" destination="ILg-0F-tFu" id="bXH-Oo-ZbH"/>
                 <outlet property="line" destination="Agd-p4-PcU" id="Rpt-8U-Yqh"/>
                 <outlet property="profileImg" destination="ArY-9n-SKH" id="ALE-Mf-mpI"/>
@@ -38,7 +38,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60C-Jf-uvX">
                             <rect key="frame" x="20" y="10" width="374" height="48"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  댓글을 작성해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IOq-5w-vkO">
+                                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  댓글을 작성해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IOq-5w-vkO">
                                     <rect key="frame" x="0.0" y="0.0" width="328" height="48"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="lZz-oA-8G8"/>
@@ -104,18 +104,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iT8-SV-YoG">
-                    <rect key="frame" x="20" y="182" width="374" height="450"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="450" id="MqZ-Dd-VZO"/>
-                    </constraints>
-                    <string key="text">대학을 졸업하고 카페를 운영하다 상황이 안좋아져서 정리하게 되었어요. 취업을 해야하는데 졸업하고 지금까지 4년 간 카페일만 해와서 너무 막막하네요… 이제 곧 서른이라는 나이에 제가 다시 공부를 시작하고, 취업을 할 수 있을지 요즘 너무 걱정되네요… 
-혹시라도 저와 비슷한 경험을 하신 분들이 있으시다면, 현실적인 조언 부탁드립니다! ㅠㅠ </string>
-                    <color key="textColor" systemColor="labelColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yn-d9-9m0">
                     <rect key="frame" x="0.0" y="793" width="414" height="1"/>
                     <color key="backgroundColor" white="0.46999999999999997" alpha="1" colorSpace="calibratedWhite"/>
@@ -163,15 +151,24 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                 </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mCd-x6-Vew">
+                    <rect key="frame" x="20" y="163.66666666666669" width="374" height="609.33333333333326"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemGray4Color"/>
             <constraints>
-                <constraint firstItem="iT8-SV-YoG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="5Uc-j2-EEZ"/>
+                <constraint firstItem="8yn-d9-9m0" firstAttribute="top" secondItem="mCd-x6-Vew" secondAttribute="bottom" constant="20" id="8s4-W3-JB6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mCd-x6-Vew" secondAttribute="trailing" constant="20" id="A5Y-qr-06U"/>
                 <constraint firstAttribute="trailing" secondItem="Agd-p4-PcU" secondAttribute="trailing" id="BcG-FQ-QvW"/>
                 <constraint firstItem="hzT-Dc-Xjz" firstAttribute="leading" secondItem="2qL-Tl-A94" secondAttribute="trailing" constant="6" id="CKK-um-Pud"/>
-                <constraint firstItem="iT8-SV-YoG" firstAttribute="top" secondItem="Agd-p4-PcU" secondAttribute="bottom" constant="18.5" id="F0B-Rb-tY6"/>
                 <constraint firstItem="8yn-d9-9m0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="G20-9V-bPA"/>
+                <constraint firstItem="mCd-x6-Vew" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="H00-mN-VE1"/>
                 <constraint firstItem="ZxL-ze-YXh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="22" id="H8P-9g-bgL"/>
                 <constraint firstItem="ArY-9n-SKH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="HcY-nb-dRK"/>
                 <constraint firstAttribute="bottom" secondItem="qFj-r4-mvI" secondAttribute="bottom" id="ILg-0F-tFu"/>
@@ -179,11 +176,11 @@
                 <constraint firstItem="Agd-p4-PcU" firstAttribute="top" secondItem="VOU-Xd-wab" secondAttribute="bottom" constant="14.5" id="QAe-8d-imN"/>
                 <constraint firstItem="qFj-r4-mvI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WrI-zf-THi"/>
                 <constraint firstItem="VOU-Xd-wab" firstAttribute="top" secondItem="ArY-9n-SKH" secondAttribute="bottom" constant="16" id="WzQ-sP-4Nm"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iT8-SV-YoG" secondAttribute="trailing" constant="20" id="WzY-fx-6vI"/>
                 <constraint firstItem="C5Z-hv-CWj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="X3f-KE-j9l"/>
                 <constraint firstItem="hzT-Dc-Xjz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="82" id="Xnm-bw-vCG"/>
                 <constraint firstItem="VOU-Xd-wab" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="YSP-mR-FOA"/>
                 <constraint firstItem="ArY-9n-SKH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="ZR1-WV-7W0"/>
+                <constraint firstItem="mCd-x6-Vew" firstAttribute="top" secondItem="Agd-p4-PcU" secondAttribute="bottom" id="ctx-Y9-LPc"/>
                 <constraint firstItem="Agd-p4-PcU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hje-2c-2v0"/>
                 <constraint firstItem="2qL-Tl-A94" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="kes-h3-ujA"/>
                 <constraint firstAttribute="trailing" secondItem="8yn-d9-9m0" secondAttribute="trailing" id="oMY-7s-3Lr"/>
@@ -197,15 +194,6 @@
             </constraints>
             <point key="canvasLocation" x="128.98550724637681" y="134.59821428571428"/>
         </view>
-        <viewController id="B24-c7-cOy">
-            <view key="view" contentMode="scaleToFill" id="NPq-TJ-uGJ">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <viewLayoutGuide key="safeArea" id="6n8-pv-Hu0"/>
-                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            </view>
-            <point key="canvasLocation" x="868" y="146"/>
-        </viewController>
     </objects>
     <resources>
         <image name="comment" width="24" height="24"/>

@@ -16,7 +16,6 @@ class signUpViewController: UIViewController {
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var welcomText: UILabel!
     @IBOutlet weak var warnText: UILabel!
-    @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var checkBtn: UIButton!
     var textfields:[UITextField] = []
     var isOk:Bool = false
@@ -49,23 +48,7 @@ class signUpViewController: UIViewController {
         self.cornfirmTextfield.addLeftPadding(imgName: "iconPassword")
         self.cornfirmTextfield.setplacehoderText(text: "비밀번호를 확인해주세요.")
         
-        let button = UIButton(frame: CGRect(x: idTextfield.bounds.width - 34, y: 10, width: 24, height: 24))
-        button.setImage(UIImage(named: "iconVisibility"), for: .normal)
-        button.addTarget(self, action: #selector(self.passwordVisibility), for: .touchUpInside)
-        passwordTextfield.addSubview(button)
-        passwordTextfield.isSecureTextEntry = false
-        
-        let button2 = UIButton(frame: CGRect(x: idTextfield.bounds.width - 34, y: 10, width: 24, height: 24))
-        button2.setImage(UIImage(named: "iconVisibility"), for: .normal)
-        button2.addTarget(self, action: #selector(self.confirmVisibility), for: .touchUpInside)
-        cornfirmTextfield.addSubview(button2)
-        cornfirmTextfield.isSecureTextEntry = false
-        
-        
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
-        
-        self.loginBtn.titleLabel?.font = UIFont.fontEngNumber4
-        self.loginBtn.setTitleColor(ColorPalette.textGray, for: .normal)
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -78,6 +61,7 @@ class signUpViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.backItem?.backButtonTitle = ""
     }
+    
     @IBAction func check(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
@@ -120,7 +104,7 @@ class signUpViewController: UIViewController {
     }
     
     @IBAction func passwordVisibility(_ sender : Any) {
-        (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
+        
         if (sender as! UIButton).isSelected {
             passwordTextfield.isSecureTextEntry = false
             (sender as! UIButton).setImage(UIImage(named: "iconVisibility"), for: .normal)
@@ -128,10 +112,11 @@ class signUpViewController: UIViewController {
             passwordTextfield.isSecureTextEntry = true
             (sender as! UIButton).setImage(UIImage(named: "iconVisibilityOff"), for: .normal)
         }
+        (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
     }
     
     @IBAction func confirmVisibility(_ sender : Any) {
-        (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
+        
         if (sender as! UIButton).isSelected {
             cornfirmTextfield.isSecureTextEntry = false
             (sender as! UIButton).setImage(UIImage(named: "iconVisibility"), for: .normal)
@@ -139,6 +124,7 @@ class signUpViewController: UIViewController {
             cornfirmTextfield.isSecureTextEntry = true
             (sender as! UIButton).setImage(UIImage(named: "iconVisibilityOff"), for: .normal)
         }
+        (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
     }
     
     
@@ -161,19 +147,37 @@ extension signUpViewController : UITextFieldDelegate {
         }
         return false
     }
-    func textFieldDidEndEditing(_ textField: UITextField) {
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        if idTextfield.text != "" && passwordTextfield.text != "" && cornfirmTextfield.text != "" {
+//            self.isOk = true
+//            if self.isOk && self.checkBtn.isSelected {
+//                self.signUpBtn.isEnabled = true
+//                self.signUpBtn.backgroundColor = ColorPalette.hagoRed
+//                self.signUpBtn.setTitleColor(ColorPalette.darkBackground, for: .normal)
+//            }
+//        }else {
+//            self.isOk = false
+//            self.signUpBtn.isEnabled = false
+//            self.signUpBtn.backgroundColor = ColorPalette.borderGray
+//            self.signUpBtn.setTitleColor(ColorPalette.textGray, for: .normal)
+//        }
+//    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if idTextfield.text != "" && passwordTextfield.text != "" && cornfirmTextfield.text != "" {
             self.isOk = true
-            if self.isOk && self.checkBtn.isSelected {
+            if self.isOk {
                 self.signUpBtn.isEnabled = true
                 self.signUpBtn.backgroundColor = ColorPalette.hagoRed
                 self.signUpBtn.setTitleColor(ColorPalette.darkBackground, for: .normal)
+                return true
             }
         }else {
             self.isOk = false
             self.signUpBtn.isEnabled = false
             self.signUpBtn.backgroundColor = ColorPalette.borderGray
             self.signUpBtn.setTitleColor(ColorPalette.textGray, for: .normal)
+            return true
         }
+        return false
     }
 }

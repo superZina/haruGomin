@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class detailGominViewController: UIViewController {
     
@@ -62,8 +63,15 @@ class detailGominViewController: UIViewController {
         tag.isEnabled = false
         self.tag.layer.borderWidth = 1
         self.tag.layer.borderColor = ColorPalette.hagoRed.cgColor
+        
         self.gominTextView.backgroundColor = .none
         self.gominTextView.textColor = .white
+        self.gominTextView.isUserInteractionEnabled = true
+        self.gominTextView.isScrollEnabled = true
+        self.gominTextView.contentSize = CGSize(width: self.gominTextView.frame.width, height: self.gominTextView.frame.height + 300)
+        
+        
+        self.commentTextField.isEnabled = false;
         self.commentTextView.backgroundColor = ColorPalette.darkBackground
         self.commentView.layer.cornerRadius = 8
         self.commentView.layer.borderColor = ColorPalette.borderGray.cgColor
@@ -72,22 +80,17 @@ class detailGominViewController: UIViewController {
         self.commentView.backgroundColor = ColorPalette.darkBackground
         self.profileImg.layer.cornerRadius = 12
         
-        setupCommend()
+//        setupCommend()
         self.line.backgroundColor = ColorPalette.borderGray
         self.underline.backgroundColor = ColorPalette.borderGray
         self.commentTextView.layer.zPosition = 1
         self.underline.layer.zPosition = 1
         self.commentView.layer.zPosition = 1
-//        self.accuseBtn.layer.zPosition = .infinity
         
         self.commentTextField.isEnabled = true
         self.view.isUserInteractionEnabled = true
         self.commentTextField.attributedPlaceholder = NSAttributedString(string: "   댓글을 입력해 주세요",            attributes: [NSAttributedString.Key.foregroundColor: ColorPalette.borderGray])
-        self.commentTextField.delegate = self
         self.commentTextField.addLeftPadding(imgName: "")
-        self.commentTextField.addTarget(self, action: #selector(textfieldChanged(_:)), for: .editingChanged)
-        self.view.bringSubviewToFront(self.commentTextView)
-        
         
         let accuseBarButton = UIBarButtonItem(image: UIImage(named: "more"), style: .plain, target: self, action: #selector(accuseGomin))
         self.navigationController?.navigationBar.topItem?.rightBarButtonItem = accuseBarButton
@@ -98,12 +101,10 @@ class detailGominViewController: UIViewController {
         self.commentCount.font = UIFont(name: "Montserrat-Regular", size: 16)
         self.gominTextView.font = UIFont(name: "NotoSansCJKkr-Regular", size: 16)
         
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        self.commentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(moveToCommentVC)))
+        self.commentTextField.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(moveToCommentVC)))
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.keyboardNotification(notification:)),
-                                               name: UIResponder.keyboardWillChangeFrameNotification,
-                                               object: nil)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -130,63 +131,20 @@ class detailGominViewController: UIViewController {
         print("selected")
     }
     
-    @objc func hideKeyboard() {
-        self.view.endEditing(true)
-    }
     
-    //MARK: 댓글 입력 API
-    @IBAction func registComment(_ sender: Any) {
-        let userName:String = UserDefaults.standard.value(forKey: "userName") as! String
-        let profileImg:String = UserDefaults.standard.value(forKey: "profileImage") as! String
-        let userId:Int64 = UserDefaults.standard.value(forKey: "userId") as! Int64
-        let parameters:[String:Any] = [
-            "content": self.commentTextField.text,
-            "nickname": userName,
-            "postId": self.postId,
-            "profileImage": profileImg,
-            "userId": userId
-        ]
-        registCommentDataManager.shared.registComment(self ,self.commentVC , parameters: parameters , userId: userId)
-        
-    }
     
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    @objc func textfieldChanged(_ textfield: UITextField) {
-        if(textfield.text != "") {
-            self.commentBtn.setImage(UIImage(named: "sendMessagePurple"), for: .normal)
-            self.commentBtn.isEnabled  = true
-        }else{
-            self.commentBtn.setImage(UIImage(named: "sendMessageGray"), for: .normal)
-            self.commentBtn.isEnabled  = false
-        }
+    
+    @objc func moveToCommentVC() {
+        let commentVC = commentViewController()
+        commentVC.postId = self.postId
+        self.present(commentVC, animated: true, completion: nil)
     }
     
-    @objc func keyboardNotification(notification: NSNotification) {
-        guard let userInfo = notification.userInfo else { return }
-        
-        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-        let endFrameY = endFrame?.origin.y ?? 0
-        let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
-        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
-        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
-        let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
-        
-        if endFrameY >= UIScreen.main.bounds.size.height {
-            self.keyboardHeightLayoutConstraint?.constant = 0.0
-        } else {
-            self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 0.0
-        }
-        
-        UIView.animate(
-            withDuration: duration,
-            delay: TimeInterval(0),
-            options: animationCurve,
-            animations: { self.view.layoutIfNeeded() },
-            completion: nil)
-    }
+
     
     //MARK: gomin content Settings
     func setGominContent(gomin: gomin) {
@@ -208,175 +166,173 @@ class detailGominViewController: UIViewController {
             self.profileImg.contentMode = .scaleAspectFit
         }
     }
-    
+}
     //MARK: commentVC Settings
-    func setupCommend(){
-        switch(UIScreen.main.nativeBounds.height) {
-        case 1334: //se2 , 8
-            commentHandleArea = 500
-            commentHeight = 500
-            distance = 270
-            break
-        case 2688: //promax
-            commentHandleArea = 250
-            commentHeight = 800
-            distance = -200
-            break
-        case 2436: //pro
-            commentHandleArea = 400
-            commentHeight = 600
-            distance = 100
-            break
-        case 1792: //1
-            commentHandleArea = 300
-            commentHeight = 750
-            distance = -100
-            break
-        case 2208: //8+
-            commentHandleArea = 300
-            commentHeight = 650
-            distance = 0
-            break
-        default:
-            break
-        }
-        visualEffectView = UIVisualEffectView()
-        visualEffectView.frame = self.view.frame
-        self.view.addSubview(visualEffectView)
-        
-        commentVC.postId = self.postId
-        
-        self.addChild(commentVC)
-        self.view.addSubview(commentVC.view)
-        
-        
-        commentVC.view.frame = CGRect(x: 0, y: self.view.frame.height - commentHandleArea, width: self.view.bounds.width, height: commentVC.view.bounds.height)
-        
-        print("commentVC Height : ",self.view.frame.height - commentHandleArea)
-        
-        
-        commentVC.view.clipsToBounds = true
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleCommentTap(recognizer:)))
-        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.handleCommentPan(recognizer:)))
-        
-        commentVC.handleArea.addGestureRecognizer(tapGestureRecognizer)
-        commentVC.handleArea.addGestureRecognizer(panGestureRecognizer)
-        
-    }
-    @objc func handleCommentTap(recognizer: UITapGestureRecognizer) {
-        switch  recognizer.state {
-        case .ended:
-            //continueTranse
-            animationTransitionIfNeeded(state: nextState, duration: 0.9)
-        default:
-            break
-        }
-    }
+//    func setupCommend(){
+//        switch(UIScreen.main.nativeBounds.height) {
+//        case 1334: //se2 , 8
+//            commentHandleArea = 500
+//            commentHeight = 500
+//            distance = 270
+//            break
+//        case 2688: //promax
+//            commentHandleArea = 250
+//            commentHeight = 800
+//            distance = -200
+//            break
+//        case 2436: //pro , 12 mini
+//            commentHandleArea = 400
+//            commentHeight = 600
+//            distance = 100
+//            break
+//        case 1792: //1
+//            commentHandleArea = 300
+//            commentHeight = 750
+//            distance = -100
+//            break
+//        case 2208: //8+
+//            commentHandleArea = 300
+//            commentHeight = 650
+//            distance = 0
+//            break
+//        case 2532: //12 pro , 12
+//            commentHandleArea = 400
+//            commentHeight = 600
+//            distance = 100
+//            break
+//        case 2778: //12 pro max
+//            commentHandleArea = 400
+//            commentHeight = 650
+//            distance = 100
+//            break
+//        default:
+//            break
+//        }
+//        visualEffectView = UIVisualEffectView()
+//        visualEffectView.frame = self.view.frame
+//        self.view.addSubview(visualEffectView)
+//
+//        commentVC.postId = self.postId
+//
+//        self.addChild(commentVC)
+//        self.view.addSubview(commentVC.view)
+//        commentVC.view.snp.makeConstraints { (make) in
+//            make.leading.equalToSuperview()
+//            make.trailing.equalToSuperview()
+//            make.top.equalTo(self.view.frame.height - commentHandleArea)
+//            make.height.equalTo(self.view.frame.height)
+//        }
+//
+//
+//
+//        print("commentVC Height : ",self.view.frame.height - commentHandleArea)
+//
+//
+////        commentVC.view.clipsToBounds = true
+//
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleCommentTap(recognizer:)))
+//        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.handleCommentPan(recognizer:)))
+//
+//        commentVC.handleArea.addGestureRecognizer(tapGestureRecognizer)
+//        commentVC.handleArea.addGestureRecognizer(panGestureRecognizer)
+//
+//    }
+//    @objc func handleCommentTap(recognizer: UITapGestureRecognizer) {
+//        switch  recognizer.state {
+//        case .ended:
+//            //continueTranse
+//            animationTransitionIfNeeded(state: nextState, duration: 0.9)
+//        default:
+//            break
+//        }
+//    }
+//
+//    @objc func handleCommentPan(recognizer: UIPanGestureRecognizer){
+//        switch recognizer.state {
+//        case .began:
+//            startInteractiveTransition(state: nextState, duration: 0.9)
+//        case .changed:
+//            let translation = recognizer.translation(in: self.commentVC.handleArea)
+//            var fractionComplete = translation.y / commentHeight
+//            fractionComplete = commentVisible ? fractionComplete : -fractionComplete
+//            updateInteractiveTransition(fractionCompleted: fractionComplete)
+//        case .ended:
+//            continueInteractiveTransition()
+//        default:
+//            break
+//        }
+//
+//    }
     
-    @objc func handleCommentPan(recognizer: UIPanGestureRecognizer){
-        switch recognizer.state {
-        case .began:
-            startInteractiveTransition(state: nextState, duration: 0.9)
-        case .changed:
-            let translation = recognizer.translation(in: self.commentVC.handleArea)
-            var fractionComplete = translation.y / commentHeight
-            fractionComplete = commentVisible ? fractionComplete : -fractionComplete
-            updateInteractiveTransition(fractionCompleted: fractionComplete)
-        case .ended:
-            continueInteractiveTransition()
-        default:
-            break
-        }
-        
-    }
+//    func animationTransitionIfNeeded(state: commentState, duration: TimeInterval) {
+//        if runningAnimations.isEmpty {
+//            let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) { [self] in
+//                switch state {
+//                case .expanded:
+//                    self.commentVC.view.frame.origin.y = self.view.frame.height - self.commentHeight
+//                    self.view.sendSubviewToBack(self.gominTextView)
+//                case .collapsed:
+//                    self.commentVC.view.frame.origin.y = self.view.frame.height - self.commentHandleArea + distance
+//                    print("y : ",self.commentVC.view.frame.origin.y)
+//                    self.view.bringSubviewToFront(self.gominTextView)
+//                }
+//            }
+//
+//            frameAnimator.addCompletion { _ in
+//                self.commentVisible = !self.commentVisible
+//                self.runningAnimations.removeAll()
+//            }
+//
+//            frameAnimator.startAnimation()
+//            runningAnimations.append(frameAnimator)
+//
+//
+//            let cornerRadiusAnimator = UIViewPropertyAnimator(duration: duration, curve: .linear) {
+//                switch state {
+//                case .expanded:
+//                    self.commentVC.view.layer.cornerRadius = 12
+//                case .collapsed:
+//                    self.commentVC.view.layer.cornerRadius = 0
+//                }
+//            }
+//
+//            cornerRadiusAnimator.startAnimation()
+//            runningAnimations.append(cornerRadiusAnimator)
+//
+//            let blurAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
+//                switch state {
+//                case .expanded:
+//                    self.visualEffectView.effect = nil
+//                case .collapsed:
+//                    self.visualEffectView.effect = nil
+//                }
+//            }
+//
+//            blurAnimator.startAnimation()
+//            runningAnimations.append(blurAnimator)
+//
+//        }
+//    }
     
-    func animationTransitionIfNeeded(state: commentState, duration: TimeInterval) {
-        if runningAnimations.isEmpty {
-            let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) { [self] in
-                switch state {
-                case .expanded:
-                    self.commentVC.view.frame.origin.y = self.view.frame.height - self.commentHeight
-                case .collapsed:
-                    self.commentVC.view.frame.origin.y = self.view.frame.height - self.commentHandleArea + distance
-                    print("y : ",self.commentVC.view.frame.origin.y)
-                }
-            }
-            
-            frameAnimator.addCompletion { _ in
-                self.commentVisible = !self.commentVisible
-                self.runningAnimations.removeAll()
-            }
-            
-            frameAnimator.startAnimation()
-            runningAnimations.append(frameAnimator)
-            
-            
-            let cornerRadiusAnimator = UIViewPropertyAnimator(duration: duration, curve: .linear) {
-                switch state {
-                case .expanded:
-                    self.commentVC.view.layer.cornerRadius = 12
-                case .collapsed:
-                    self.commentVC.view.layer.cornerRadius = 0
-                }
-            }
-            
-            cornerRadiusAnimator.startAnimation()
-            runningAnimations.append(cornerRadiusAnimator)
-            
-            let blurAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
-                switch state {
-                case .expanded:
-                    self.visualEffectView.effect = nil
-                case .collapsed:
-                    self.visualEffectView.effect = nil
-                }
-            }
-            
-            blurAnimator.startAnimation()
-            runningAnimations.append(blurAnimator)
-            
-        }
-    }
-    
-    func startInteractiveTransition(state: commentState , duration:TimeInterval) {
-        if runningAnimations.isEmpty {
-            //run ani
-            animationTransitionIfNeeded(state: state, duration: duration)
-        }
-        for animator in runningAnimations {
-            animator.pauseAnimation()
-            animationProgressWhenInterrupted = animator.fractionComplete
-        }
-    }
-    func updateInteractiveTransition(fractionCompleted:CGFloat) {
-        for animator in runningAnimations {
-            animator.fractionComplete = fractionCompleted + animationProgressWhenInterrupted
-        }
-    }
-    func continueInteractiveTransition(){
-        for animator in runningAnimations {
-            animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
-        }
-    }
-}
+//    func startInteractiveTransition(state: commentState , duration:TimeInterval) {
+//        if runningAnimations.isEmpty {
+//            //run ani
+//            animationTransitionIfNeeded(state: state, duration: duration)
+//        }
+//        for animator in runningAnimations {
+//            animator.pauseAnimation()
+//            animationProgressWhenInterrupted = animator.fractionComplete
+//        }
+//    }
+//    func updateInteractiveTransition(fractionCompleted:CGFloat) {
+//        for animator in runningAnimations {
+//            animator.fractionComplete = fractionCompleted + animationProgressWhenInterrupted
+//        }
+//    }
+//    func continueInteractiveTransition(){
+//        for animator in runningAnimations {
+//            animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+//        }
+//    }
 
-extension detailGominViewController:UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if(textField.text != "") {
-            self.commentBtn.setImage(UIImage(named: "sendMessagePurple"), for: .normal)
-            self.commentBtn.isEnabled  = true
-        }else{
-            self.commentBtn.setImage(UIImage(named: "sendMessageGray"), for: .normal)
-            self.commentBtn.isEnabled  = false
-        }
-    }
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-            if(string == "\n"){
-                textField.resignFirstResponder()
-            }
-           return true
-       
-        }
-   
-}
+

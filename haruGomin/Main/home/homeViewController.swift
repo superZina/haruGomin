@@ -47,7 +47,8 @@ class homeViewController: UIViewController, UICollectionViewDataSource {
         self.gominCollection.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
-        mainGominDataManager.shared.getMainGomin(self)
+        let userId:Int = UserDefaults.standard.value(forKey: "userId") as! Int
+        mainGominDataManager.shared.getMainGomin(self , userId)
         self.navigationController?.isNavigationBarHidden = true
         gominPageControll.numberOfPages = 3
         gominPageControll.currentPageIndicatorTintColor = ColorPalette.hagoRed

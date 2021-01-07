@@ -12,7 +12,7 @@ class registGominDataManager{
     static let shared = registGominDataManager()
     private init() {}
     func registGomin(_ addGominVC:addGominViewController , parameter:[String:Any]) {
-        let url = "http://52.78.127.67:8080/api/v1/posts"
+        let url = "http://15.165.183.122:8080/api/v1/posts"
         AF.request(url, method: .post, parameters: parameter , encoding: JSONEncoding.default)
             .validate()
             .responseJSON { (response) in

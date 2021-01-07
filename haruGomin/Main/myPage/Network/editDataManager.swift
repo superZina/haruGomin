@@ -12,6 +12,6 @@ class editDataManager{
     static let shared = editDataManager()
     private init() {}
     func editGomin(_ myPageVC:myPageViewController ,parameter:[String:Any]){
-        let url = "http://52.78.127.67:8080/api/v1/users/posts"
+        let url = "http://15.165.183.122:8080/api/v1/users/posts"
     }
 }

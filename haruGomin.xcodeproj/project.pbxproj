@@ -538,8 +538,8 @@
 		FF6FCEB024F6BF2100451815 /* haruGomin */ = {
 			isa = PBXGroup;
 			children = (
-				FFD09DEC2530D3D40040FEEF /* splash */,
 				FFD09DDF253076D30040FEEF /* haruGomin.entitlements */,
+				FFD09DEC2530D3D40040FEEF /* splash */,
 				FFFA766025188C770008101C /* Main */,
 				FF993E20250BDDE300E67251 /* config */,
 				FFC9B7C0251638460039FB22 /* selectGomin */,

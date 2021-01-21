@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04DA2E706C5F58E01D6934BE /* Pods_haruGomin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F612E390C7B06EC3EBE00E /* Pods_haruGomin.framework */; };
-		FF06A45525B9A9240027B76B /* haruGomin in Resources */ = {isa = PBXBuildFile; fileRef = FF06A45425B9A9240027B76B /* haruGomin */; };
+		FF06A45525B9A9240027B76B /* haruGominFont in Resources */ = {isa = PBXBuildFile; fileRef = FF06A45425B9A9240027B76B /* haruGominFont */; };
 		FF0D85CA2529F25700512993 /* myWritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85C82529F25700512993 /* myWritingViewController.swift */; };
 		FF0D85CB2529F25700512993 /* myWritingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0D85C92529F25700512993 /* myWritingViewController.xib */; };
 		FF0D85D02529F93100512993 /* myWritingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85CE2529F93100512993 /* myWritingCollectionViewCell.swift */; };
@@ -27,36 +27,6 @@
 		FF1A7AE9251F8C1900B95773 /* newGominTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1A7AE7251F8C1900B95773 /* newGominTableViewCell.xib */; };
 		FF1A7AEE251FA11700B95773 /* noticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A7AEC251FA11700B95773 /* noticeTableViewCell.swift */; };
 		FF1A7AEF251FA11700B95773 /* noticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1A7AED251FA11700B95773 /* noticeTableViewCell.xib */; };
-		FF20E1EA25827EEB00E92581 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1D725827EEB00E92581 /* Montserrat-LightItalic.ttf */; };
-		FF20E1EB25827EEB00E92581 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1D825827EEB00E92581 /* Montserrat-Medium.ttf */; };
-		FF20E1EC25827EEB00E92581 /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1D925827EEB00E92581 /* Montserrat-BoldItalic.ttf */; };
-		FF20E1ED25827EEB00E92581 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1DA25827EEB00E92581 /* Montserrat-Light.ttf */; };
-		FF20E1EE25827EEB00E92581 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1DB25827EEB00E92581 /* Montserrat-ThinItalic.ttf */; };
-		FF20E1EF25827EEB00E92581 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1DC25827EEB00E92581 /* Montserrat-ExtraLight.ttf */; };
-		FF20E1F025827EEB00E92581 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1DD25827EEB00E92581 /* Montserrat-Thin.ttf */; };
-		FF20E1F125827EEB00E92581 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1DE25827EEB00E92581 /* Montserrat-Bold.ttf */; };
-		FF20E1F225827EEB00E92581 /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1DF25827EEB00E92581 /* Montserrat-MediumItalic.ttf */; };
-		FF20E1F325827EEB00E92581 /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1E025827EEB00E92581 /* Montserrat-BlackItalic.ttf */; };
-		FF20E1F425827EEB00E92581 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1E125827EEB00E92581 /* Montserrat-SemiBold.ttf */; };
-		FF20E1F525827EEB00E92581 /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1E225827EEB00E92581 /* Montserrat-ExtraLightItalic.ttf */; };
-		FF20E1F625827EEB00E92581 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1E325827EEB00E92581 /* Montserrat-ExtraBold.ttf */; };
-		FF20E1F725827EEB00E92581 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1E425827EEB00E92581 /* OFL.txt */; };
-		FF20E1F825827EEB00E92581 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1E525827EEB00E92581 /* Montserrat-Black.ttf */; };
-		FF20E1F925827EEB00E92581 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1E625827EEB00E92581 /* Montserrat-Regular.ttf */; };
-		FF20E1FA25827EEB00E92581 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1E725827EEB00E92581 /* Montserrat-Italic.ttf */; };
-		FF20E1FB25827EEB00E92581 /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1E825827EEB00E92581 /* Montserrat-SemiBoldItalic.ttf */; };
-		FF20E1FC25827EEB00E92581 /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1E925827EEB00E92581 /* Montserrat-ExtraBoldItalic.ttf */; };
-		FF20E20A25827EF400E92581 /* NotoSansMonoCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1FF25827EF400E92581 /* NotoSansMonoCJKkr-Bold.otf */; };
-		FF20E20B25827EF400E92581 /* NotoSansMonoCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E20025827EF400E92581 /* NotoSansMonoCJKkr-Regular.otf */; };
-		FF20E20C25827EF400E92581 /* NotoSansCJKkr-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E20125827EF400E92581 /* NotoSansCJKkr-DemiLight.otf */; };
-		FF20E20D25827EF400E92581 /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E20225827EF400E92581 /* NotoSansCJKkr-Black.otf */; };
-		FF20E20E25827EF400E92581 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E20325827EF400E92581 /* NotoSansCJKkr-Medium.otf */; };
-		FF20E20F25827EF400E92581 /* README in Resources */ = {isa = PBXBuildFile; fileRef = FF20E20425827EF400E92581 /* README */; };
-		FF20E21025827EF400E92581 /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E20525827EF400E92581 /* NotoSansCJKkr-Light.otf */; };
-		FF20E21125827EF400E92581 /* NotoSansCJKkr-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E20625827EF400E92581 /* NotoSansCJKkr-Thin.otf */; };
-		FF20E21225827EF400E92581 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E20725827EF400E92581 /* NotoSansCJKkr-Regular.otf */; };
-		FF20E21325827EF400E92581 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E20825827EF400E92581 /* NotoSansCJKkr-Bold.otf */; };
-		FF20E21425827EF400E92581 /* LICENSE_OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = FF20E20925827EF400E92581 /* LICENSE_OFL.txt */; };
 		FF20E2192582814300E92581 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF20E2172582814300E92581 /* signUpViewController.swift */; };
 		FF20E21A2582814300E92581 /* signUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF20E2182582814300E92581 /* signUpViewController.xib */; };
 		FF4643EB2583344F00CB9EA6 /* checkIdDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4643EA2583344F00CB9EA6 /* checkIdDataManager.swift */; };
@@ -108,7 +78,6 @@
 		FFBC733A2528DB5B00CF4FA3 /* imgPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC73392528DB5B00CF4FA3 /* imgPopUp.swift */; };
 		FFBC733D2528DE1100CF4FA3 /* imgPopUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC733C2528DE1100CF4FA3 /* imgPopUpDelegate.swift */; };
 		FFBC73492528E1FB00CF4FA3 /* profileImgCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC73472528E1FB00CF4FA3 /* profileImgCollectionViewCell.swift */; };
-		FFBC734A2528E1FB00CF4FA3 /* profileImgCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBC73482528E1FB00CF4FA3 /* profileImgCollectionViewCell.xib */; };
 		FFC9B7C32516385B0039FB22 /* selectGominViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9B7C12516385B0039FB22 /* selectGominViewController.swift */; };
 		FFC9B7C42516385B0039FB22 /* selectGominViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC9B7C22516385B0039FB22 /* selectGominViewController.xib */; };
 		FFCAB021258CD3F000CB038A /* signInDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCAB020258CD3F000CB038A /* signInDataManager.swift */; };
@@ -156,7 +125,7 @@
 		1E82307EA5C4B6C7E6375768 /* Pods-haruGomin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-haruGomin.release.xcconfig"; path = "Target Support Files/Pods-haruGomin/Pods-haruGomin.release.xcconfig"; sourceTree = "<group>"; };
 		A7FC68437CA99C1233C92595 /* Pods-haruGomin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-haruGomin.debug.xcconfig"; path = "Target Support Files/Pods-haruGomin/Pods-haruGomin.debug.xcconfig"; sourceTree = "<group>"; };
 		C6F612E390C7B06EC3EBE00E /* Pods_haruGomin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_haruGomin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF06A45425B9A9240027B76B /* haruGomin */ = {isa = PBXFileReference; lastKnownFileType = folder; path = haruGomin; sourceTree = "<group>"; };
+		FF06A45425B9A9240027B76B /* haruGominFont */ = {isa = PBXFileReference; lastKnownFileType = folder; path = haruGominFont; sourceTree = "<group>"; };
 		FF0D85C82529F25700512993 /* myWritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myWritingViewController.swift; sourceTree = "<group>"; };
 		FF0D85C92529F25700512993 /* myWritingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myWritingViewController.xib; sourceTree = "<group>"; };
 		FF0D85CE2529F93100512993 /* myWritingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myWritingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -540,7 +509,7 @@
 		FF6FCEB024F6BF2100451815 /* haruGomin */ = {
 			isa = PBXGroup;
 			children = (
-				FF06A45425B9A9240027B76B /* haruGomin */,
+				FF06A45425B9A9240027B76B /* haruGominFont */,
 				FFD09DDF253076D30040FEEF /* haruGomin.entitlements */,
 				FFD09DEC2530D3D40040FEEF /* splash */,
 				FFFA766025188C770008101C /* Main */,
@@ -908,74 +877,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF20E1ED25827EEB00E92581 /* Montserrat-Light.ttf in Resources */,
 				FF1A7AE3251F83F300B95773 /* storyCollectionViewCell.xib in Resources */,
 				FFFA769125190F3B0008101C /* addGominViewController.xib in Resources */,
-				FF20E1EA25827EEB00E92581 /* Montserrat-LightItalic.ttf in Resources */,
 				FF6FCECC24F6BF3D00451815 /* logInViewController.xib in Resources */,
 				FFFA766A2518959A0008101C /* gominCollectionViewCell.xib in Resources */,
 				FFBC73332528DA2200CF4FA3 /* imgPopUp.storyboard in Resources */,
-				FF20E1EB25827EEB00E92581 /* Montserrat-Medium.ttf in Resources */,
 				FFFA766425188CD70008101C /* tabBarViewController.xib in Resources */,
 				FFE15C792534483500E6A3A6 /* 1page.json in Resources */,
-				FF20E1F425827EEB00E92581 /* Montserrat-SemiBold.ttf in Resources */,
-				FF20E1F025827EEB00E92581 /* Montserrat-Thin.ttf in Resources */,
 				FFFA769C25190F590008101C /* myPageViewController.xib in Resources */,
 				FFD09E042530DED80040FEEF /* splash3ViewController.xib in Resources */,
 				FFFA76712518A5230008101C /* gominImgCollectionViewCell.xib in Resources */,
 				FFE15C7F25344A9200E6A3A6 /* 3page.json in Resources */,
 				FF5257F1252435080076C7EB /* myWrittenTableViewCell.xib in Resources */,
-				FF20E1F225827EEB00E92581 /* Montserrat-MediumItalic.ttf in Resources */,
-				FF20E1EE25827EEB00E92581 /* Montserrat-ThinItalic.ttf in Resources */,
 				FF0D85D12529F93100512993 /* myWritingCollectionViewCell.xib in Resources */,
-				FF20E21125827EF400E92581 /* NotoSansCJKkr-Thin.otf in Resources */,
 				FF20E21A2582814300E92581 /* signUpViewController.xib in Resources */,
-				FF20E1EF25827EEB00E92581 /* Montserrat-ExtraLight.ttf in Resources */,
 				FF0D85DE252A091A00512993 /* myGominTableViewCell.xib in Resources */,
-				FF20E1F325827EEB00E92581 /* Montserrat-BlackItalic.ttf in Resources */,
 				FF993E27250BE55000E67251 /* setProfileViewController.xib in Resources */,
 				FFD09DFE2530DDD10040FEEF /* splash2ViewController.xib in Resources */,
 				FFE05F29251660600048B56F /* CollectionViewCell.xib in Resources */,
 				FF1A7AEF251FA11700B95773 /* noticeTableViewCell.xib in Resources */,
-				FF20E21425827EF400E92581 /* LICENSE_OFL.txt in Resources */,
-				FF20E21325827EF400E92581 /* NotoSansCJKkr-Bold.otf in Resources */,
-				FF20E20F25827EF400E92581 /* README in Resources */,
-				FF20E1F525827EEB00E92581 /* Montserrat-ExtraLightItalic.ttf in Resources */,
-				FF20E21025827EF400E92581 /* NotoSansCJKkr-Light.otf in Resources */,
 				FF6FCEC124F6BF2200451815 /* LaunchScreen.storyboard in Resources */,
 				FF9CF26C252CD5AD00BA9265 /* searchResultViewController.xib in Resources */,
 				FFFA763325185C100008101C /* homeViewController.xib in Resources */,
 				FFFA768925190EAA0008101C /* searchViewController.xib in Resources */,
 				FFFA769725190F490008101C /* noticeViewController.xib in Resources */,
 				FFFB11212550534900D109DD /* lf20_rv9idahq.json in Resources */,
-				FF20E1F725827EEB00E92581 /* OFL.txt in Resources */,
-				FF20E1FA25827EEB00E92581 /* Montserrat-Italic.ttf in Resources */,
-				FF20E1F625827EEB00E92581 /* Montserrat-ExtraBold.ttf in Resources */,
-				FF20E1F925827EEB00E92581 /* Montserrat-Regular.ttf in Resources */,
-				FF20E1F125827EEB00E92581 /* Montserrat-Bold.ttf in Resources */,
-				FF20E20E25827EF400E92581 /* NotoSansCJKkr-Medium.otf in Resources */,
-				FF20E21225827EF400E92581 /* NotoSansCJKkr-Regular.otf in Resources */,
-				FF20E1FC25827EEB00E92581 /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				FF46441A2583649200CB9EA6 /* signInViewController.xib in Resources */,
-				FF20E20B25827EF400E92581 /* NotoSansMonoCJKkr-Regular.otf in Resources */,
-				FF06A45525B9A9240027B76B /* haruGomin in Resources */,
+				FF06A45525B9A9240027B76B /* haruGominFont in Resources */,
 				FF1A7AE9251F8C1900B95773 /* newGominTableViewCell.xib in Resources */,
 				FF9EE89125484B620085D709 /* privacyViewController.xib in Resources */,
 				FF5257F62524351C0076C7EB /* deleteTableViewCell.xib in Resources */,
-				FF20E20C25827EF400E92581 /* NotoSansCJKkr-DemiLight.otf in Resources */,
-				FF20E1FB25827EEB00E92581 /* Montserrat-SemiBoldItalic.ttf in Resources */,
 				FFD09DF02530D3E70040FEEF /* splashViewController.xib in Resources */,
 				FFD09DCC253022DE0040FEEF /* editProfileViewController.xib in Resources */,
-				FF20E20D25827EF400E92581 /* NotoSansCJKkr-Black.otf in Resources */,
 				FFFA767E2518BEF60008101C /* commentViewController.xib in Resources */,
 				FFFA76832518EE0F0008101C /* commentTableViewCell.xib in Resources */,
-				FFBC734A2528E1FB00CF4FA3 /* profileImgCollectionViewCell.xib in Resources */,
 				FFE15C8325344B5500E6A3A6 /* 2page.json in Resources */,
-				FF20E1F825827EEB00E92581 /* Montserrat-Black.ttf in Resources */,
 				FF6FCEBE24F6BF2200451815 /* Assets.xcassets in Resources */,
-				FF20E20A25827EF400E92581 /* NotoSansMonoCJKkr-Bold.otf in Resources */,
 				FF951C772533F5C80059C999 /* defaultCollectionViewCell.xib in Resources */,
-				FF20E1EC25827EEB00E92581 /* Montserrat-BoldItalic.ttf in Resources */,
 				FFFA76772518AE530008101C /* detailGominViewController.xib in Resources */,
 				FF0D85CB2529F25700512993 /* myWritingViewController.xib in Resources */,
 				FFC9B7C42516385B0039FB22 /* selectGominViewController.xib in Resources */,

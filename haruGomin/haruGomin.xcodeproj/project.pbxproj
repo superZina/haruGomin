@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04DA2E706C5F58E01D6934BE /* Pods_haruGomin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F612E390C7B06EC3EBE00E /* Pods_haruGomin.framework */; };
+		FF06A45525B9A9240027B76B /* haruGomin in Resources */ = {isa = PBXBuildFile; fileRef = FF06A45425B9A9240027B76B /* haruGomin */; };
 		FF0D85CA2529F25700512993 /* myWritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85C82529F25700512993 /* myWritingViewController.swift */; };
 		FF0D85CB2529F25700512993 /* myWritingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0D85C92529F25700512993 /* myWritingViewController.xib */; };
 		FF0D85D02529F93100512993 /* myWritingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85CE2529F93100512993 /* myWritingCollectionViewCell.swift */; };
@@ -155,6 +156,7 @@
 		1E82307EA5C4B6C7E6375768 /* Pods-haruGomin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-haruGomin.release.xcconfig"; path = "Target Support Files/Pods-haruGomin/Pods-haruGomin.release.xcconfig"; sourceTree = "<group>"; };
 		A7FC68437CA99C1233C92595 /* Pods-haruGomin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-haruGomin.debug.xcconfig"; path = "Target Support Files/Pods-haruGomin/Pods-haruGomin.debug.xcconfig"; sourceTree = "<group>"; };
 		C6F612E390C7B06EC3EBE00E /* Pods_haruGomin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_haruGomin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF06A45425B9A9240027B76B /* haruGomin */ = {isa = PBXFileReference; lastKnownFileType = folder; path = haruGomin; sourceTree = "<group>"; };
 		FF0D85C82529F25700512993 /* myWritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myWritingViewController.swift; sourceTree = "<group>"; };
 		FF0D85C92529F25700512993 /* myWritingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myWritingViewController.xib; sourceTree = "<group>"; };
 		FF0D85CE2529F93100512993 /* myWritingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myWritingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -538,6 +540,7 @@
 		FF6FCEB024F6BF2100451815 /* haruGomin */ = {
 			isa = PBXGroup;
 			children = (
+				FF06A45425B9A9240027B76B /* haruGomin */,
 				FFD09DDF253076D30040FEEF /* haruGomin.entitlements */,
 				FFD09DEC2530D3D40040FEEF /* splash */,
 				FFFA766025188C770008101C /* Main */,
@@ -955,6 +958,7 @@
 				FF20E1FC25827EEB00E92581 /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				FF46441A2583649200CB9EA6 /* signInViewController.xib in Resources */,
 				FF20E20B25827EF400E92581 /* NotoSansMonoCJKkr-Regular.otf in Resources */,
+				FF06A45525B9A9240027B76B /* haruGomin in Resources */,
 				FF1A7AE9251F8C1900B95773 /* newGominTableViewCell.xib in Resources */,
 				FF9EE89125484B620085D709 /* privacyViewController.xib in Resources */,
 				FF5257F62524351C0076C7EB /* deleteTableViewCell.xib in Resources */,
@@ -1237,7 +1241,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6M94RM5DH9;
+				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = haruGomin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1262,7 +1266,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6M94RM5DH9;
+				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = haruGomin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

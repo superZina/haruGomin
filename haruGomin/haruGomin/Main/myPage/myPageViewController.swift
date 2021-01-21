@@ -7,10 +7,6 @@
 //
 
 import UIKit
-import KakaoSDKAuth
-import KakaoSDKCommon
-import KakaoSDKUser
-import NaverThirdPartyLogin
 import Kingfisher
 
 class myPageViewController: UIViewController, UICollectionViewDataSource {

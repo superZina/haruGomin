@@ -27,8 +27,20 @@ class searchViewController: UIViewController, UICollectionViewDataSource ,UIScro
     var storys:[addedGomin] = []
     let screenHeight = UIScreen.main.bounds.height
     let scrollViewContentHeight = 1200 as CGFloat
+    
+    //    private var tableView: UITableView  = {
+    //        let tableView = UITableView(frame: .zero , style:  .grouped)
+    //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    //        return tableView
+    //    }()
+    //
+    //    override func viewWillLayoutSubviews() {
+    //
+    //    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //        self.view.addSubview(tableView)
         self.navigationController?.isNavigationBarHidden = true
         searchGominBar.backgroundColor = ColorPalette.darkBackground
         innerView.backgroundColor = ColorPalette.darkBackground
@@ -68,13 +80,6 @@ class searchViewController: UIViewController, UICollectionViewDataSource ,UIScro
         self.text1.font = UIFont(name: "NotoSansCJKkr-Medium", size: 20)
         self.searchGominBar.setImage(UIImage(named: "search"), for: .search, state: .normal)
         
-//        self.scrollView.contentSize = CGSize(width: self.scrollView.contentSize.width, height: scrollViewContentHeight)
-//        scrollView.delegate = self
-//        scrollView.bounces = false
-//        newGominTable.bounces = false
-//        newGominTable.isScrollEnabled = false
-//
-        
         storyDataManager.shared.getStoryList(self)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -96,24 +101,6 @@ class searchViewController: UIViewController, UICollectionViewDataSource ,UIScro
     func refreshGominTable(){
         self.newGominTable.reloadData()
     }
-    
-//    func scrollViewDidScroll(scrollView: UIScrollView) {
-//        let yOffset = scrollView.contentOffset.y
-//
-//        if scrollView == self.scrollView {
-//            if yOffset >= scrollViewContentHeight - screenHeight {
-//                scrollView.isScrollEnabled = false
-//                newGominTable.isScrollEnabled = true
-//            }
-//        }
-//
-//        if scrollView == self.newGominTable {
-//            if yOffset <= 0 {
-//                self.scrollView.isScrollEnabled = true
-//                self.newGominTable.isScrollEnabled = false
-//            }
-//        }
-//    }
     
     
 }
@@ -297,21 +284,48 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
         self.present(alert, animated: true, completion: nil)
         print("selected")
     }
+    private func createSpinningFooter() -> UIView {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
+        
+        let spinner = UIActivityIndicatorView()
+        spinner.center = footerView.center
+        spinner.color = .white
+        footerView.addSubview(spinner)
+        spinner.startAnimating()
+        return footerView
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == newGominTable {
-            let height:CGFloat = scrollView.frame.size.height
-            let contentYOffset:CGFloat = scrollView.contentOffset.y
-            let scrollViewHeight:CGFloat = scrollView.contentSize.height
-            let distanceFromBottom:CGFloat = scrollViewHeight - contentYOffset
+        
+        //        if scrollView == tableView {
+        //            print("scrolleded")
+        //        }
+        let height:CGFloat = scrollView.frame.size.height
+        let position:CGFloat = scrollView.contentOffset.y
+        
+        if position > ( newGominTable.contentSize.height - 100  - height){
             
-            if distanceFromBottom < height {
-                self.pageNum = self.pageNum + 1
-                
-                //api 호출부분
-                selectTagDatatManager.shared.getTagGomins(self, tagName: self.tagName, pageNum: self.pageNum)
-                
-                print("DEBUG: listCount is \(self.newGomins.count)")
+            guard !selectTagDatatManager.shared.isPaginating else{
+                return
             }
+            //roading ui
+            self.newGominTable.tableFooterView = createSpinningFooter()
+            self.pageNum = self.pageNum + 1
+            selectTagDatatManager.shared.fetchData(tagName: tagName, pageNum: pageNum, pagination: true) { [weak self] result in
+                self?.newGominTable.tableFooterView = nil
+                switch result {
+                case .success(let data):
+                    self?.newGomins.append(contentsOf: data)
+                    DispatchQueue.main.async {
+                        self?.newGominTable.reloadData()
+                    }
+                case .failure(_):
+                    break
+                    
+                }
+            }
+            
+            print("DEBUG: listCount is \(self.newGomins.count)")
         }
         
     }

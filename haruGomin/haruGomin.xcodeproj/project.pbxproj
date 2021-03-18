@@ -35,7 +35,6 @@
 		43CF501725B9AF5B0023D25A /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1E725827EEB00E92581 /* Montserrat-Italic.ttf */; };
 		43CF501925B9AF5E0023D25A /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1E825827EEB00E92581 /* Montserrat-SemiBoldItalic.ttf */; };
 		43CF501B25B9AF600023D25A /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF20E1E925827EEB00E92581 /* Montserrat-ExtraBoldItalic.ttf */; };
-		43CF502625B9AF8F0023D25A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF6FCEC224F6BF2200451815 /* Info.plist */; };
 		FF0D85CA2529F25700512993 /* myWritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85C82529F25700512993 /* myWritingViewController.swift */; };
 		FF0D85CB2529F25700512993 /* myWritingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0D85C92529F25700512993 /* myWritingViewController.xib */; };
 		FF0D85D02529F93100512993 /* myWritingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D85CE2529F93100512993 /* myWritingCollectionViewCell.swift */; };
@@ -922,7 +921,6 @@
 				FF0D85D12529F93100512993 /* myWritingCollectionViewCell.xib in Resources */,
 				43CF500F25B9AF500023D25A /* Montserrat-ExtraLightItalic.ttf in Resources */,
 				43CF501B25B9AF600023D25A /* Montserrat-ExtraBoldItalic.ttf in Resources */,
-				43CF502625B9AF8F0023D25A /* Info.plist in Resources */,
 				FF20E21A2582814300E92581 /* signUpViewController.xib in Resources */,
 				43CF500125B9AF3F0023D25A /* Montserrat-ThinItalic.ttf in Resources */,
 				FF0D85DE252A091A00512993 /* myGominTableViewCell.xib in Resources */,

@@ -304,13 +304,15 @@ extension searchViewController: UICollectionViewDelegateFlowLayout , UITableView
         let position:CGFloat = scrollView.contentOffset.y
         
         if position > ( newGominTable.contentSize.height - 100  - height){
-            
+            print("DEBUG : is called")
+            //페이징을 하고 있지 않다면 함수를 종료
             guard !selectTagDatatManager.shared.isPaginating else{
                 return
             }
             //roading ui
             self.newGominTable.tableFooterView = createSpinningFooter()
             self.pageNum = self.pageNum + 1
+            //pagination : true
             selectTagDatatManager.shared.fetchData(tagName: tagName, pageNum: pageNum, pagination: true) { [weak self] result in
                 self?.newGominTable.tableFooterView = nil
                 switch result {

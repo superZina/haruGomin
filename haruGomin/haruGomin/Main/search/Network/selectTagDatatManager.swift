@@ -13,7 +13,7 @@ class selectTagDatatManager{
     private init() {}
     var isPaginating = false
     func fetchData(tagName:String , pageNum:Int,pagination: Bool = false , completion : @escaping (Result<[addedGomin] , Error>) -> Void) {
-        
+        //pagination: true면 페이징 하고있음을 표시
         if pagination {
             isPaginating = true
         }
@@ -24,7 +24,7 @@ class selectTagDatatManager{
             AF.request(encodedUrl as! URLConvertible , method: .get )
                 .validate()
                 .responseJSON { (response) in
-    //                print(response)
+    
                     switch response.result {
                     case .success(let obj):
                         do{
@@ -32,6 +32,7 @@ class selectTagDatatManager{
                             let getData = try JSONDecoder().decode([addedGomin].self, from: dataJSON)
                                 
                             completion(.success(pagination ? getData : []))
+                            //데이터 넘겨준 후 ispaingnating 변수 false로 만듬
                             if pagination {
                                 self.isPaginating = false
                             }
